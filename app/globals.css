@@ -1,0 +1,683 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   The Sausage Guy — design system
+   Three runtime-switchable variants via [data-variant]. No pure white anywhere.
+   Tokens are semantic so components never hardcode a hex value.
+   ========================================================================= */
+
+:root {
+  --font-display: var(--font-fraunces), "Fraunces", Georgia, serif;
+  --font-body: var(--font-hanken), "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Motion + shape primitives shared across variants */
+  --radius: 14px;
+  --radius-lg: 22px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --maxw: 1180px;
+}
+
+/* -------- Per-variant SHAPE + TYPE personality (beyond color) ----------- */
+/* Golden Daily: rounder, softer, friendlier market feel. */
+[data-variant="golden"] {
+  --radius: 20px;
+  --radius-lg: 30px;
+  --maxw: 1200px;
+}
+/* Island Provision Locker: sharper, tighter, utilitarian. Mono labels. */
+[data-variant="locker"] {
+  --radius: 7px;
+  --radius-lg: 12px;
+  --maxw: 1240px;
+}
+[data-variant="locker"] .eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+/* -------------------------------------------------------------------------
+   A) NOIR DELI  — default. Deep charcoal black ground, bone text, burnished gold accent.
+      Refined editorial system: elegant black + gold + deep oxblood sub-accent.
+   ------------------------------------------------------------------------- */
+:root,
+[data-variant="noir"] {
+  --bg: #0a0908;
+  --bg-2: #12100e;
+  --surface: #181614;
+  --surface-2: #22201d;
+  --text: #e3dcd2;
+  --text-strong: #f4efe6;
+  --muted: #a39788;
+  --faint: #786d5f;
+  --line: color-mix(in oklab, var(--text) 12%, transparent);
+  --line-strong: color-mix(in oklab, var(--text) 24%, transparent);
+  --accent: #d4af37; /* burnished gold */
+  --accent-strong: #e5c158;
+  --accent-2: #8b261e; /* deep oxblood red */
+  --on-accent: #0a0908;
+  --shadow: 0 28px 65px -30px rgb(0 0 0 / 0.85), 0 8px 24px -16px rgb(0 0 0 / 0.7);
+  --grain-opacity: 0.05;
+  --halo: radial-gradient(
+      120% 90% at 78% -8%,
+      color-mix(in oklab, var(--accent) 18%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      90% 80% at -8% 0%,
+      color-mix(in oklab, var(--accent-2) 22%, transparent),
+      transparent 55%
+    );
+  --page-gradient: linear-gradient(180deg, #0e0d0c 0%, #0a0908 38%, #070605 100%);
+}
+
+/* -------------------------------------------------------------------------
+   B) GOLDEN DAILY — warm sand ground, dark charcoal ink, terracotta + coffee.
+      Anthropic-inspired warm-neutral editorial system: sand ground + carbon text
+      + vibrant terracotta red-orange accent.
+   ------------------------------------------------------------------------- */
+[data-variant="golden"] {
+  --bg: #f5f2ed;
+  --bg-2: #eae6e0;
+  --surface: #fbf9f6;
+  --surface-2: #f2ede5;
+  --text: #1f1f1f;
+  --text-strong: #111111;
+  --muted: #6b7280;
+  --faint: #9ca3af;
+  --line: color-mix(in oklab, var(--text) 8%, transparent);
+  --line-strong: color-mix(in oklab, var(--text) 18%, transparent);
+  --accent: #d97757; /* terracotta orange */
+  --accent-strong: #c46344;
+  --accent-2: #7a4a26; /* warm coffee brown */
+  --on-accent: #fbf9f6;
+  --shadow: 0 24px 50px -30px rgb(60 50 40 / 0.15), 0 6px 18px -14px rgb(60 50 40 / 0.1);
+  --grain-opacity: 0.03;
+  --halo: radial-gradient(
+      120% 90% at 82% -10%,
+      color-mix(in oklab, var(--accent) 24%, transparent),
+      transparent 58%
+    ),
+    radial-gradient(
+      90% 80% at -6% -4%,
+      color-mix(in oklab, var(--accent-2) 18%, transparent),
+      transparent 55%
+    );
+  --page-gradient: linear-gradient(180deg, #faf8f5 0%, #f5f2ed 40%, #ede9e1 100%);
+}
+
+/* -------------------------------------------------------------------------
+   C) ISLAND PROVISION LOCKER — deep spruce ground, sage text, brushed brass.
+      Provisions locker theme: alpine-spruce ground + sage-grey text + brass accent.
+   ------------------------------------------------------------------------- */
+[data-variant="locker"] {
+  --bg: #0e120f;
+  --bg-2: #141a15;
+  --surface: #1a221c;
+  --surface-2: #242f27;
+  --text: #dce3dd;
+  --text-strong: #edf2ee;
+  --muted: #8fa093;
+  --faint: #69796e;
+  --line: color-mix(in oklab, var(--text) 12%, transparent);
+  --line-strong: color-mix(in oklab, var(--text) 23%, transparent);
+  --accent: #cda250; /* brushed brass */
+  --accent-strong: #dfb564;
+  --accent-2: #4a7856; /* deep pine green */
+  --on-accent: #0e120f;
+  --shadow: 0 26px 58px -30px rgb(0 0 0 / 0.7), 0 8px 20px -16px rgb(0 0 0 / 0.6);
+  --grain-opacity: 0.05;
+  --halo: radial-gradient(
+      120% 90% at 80% -8%,
+      color-mix(in oklab, var(--accent-2) 30%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      90% 80% at -8% 0%,
+      color-mix(in oklab, var(--accent) 18%, transparent),
+      transparent 55%
+    );
+  --page-gradient: linear-gradient(180deg, #121814 0%, #0e120f 42%, #0a0d0b 100%);
+}
+
+/* -------------------------------------------------------------------------
+   D) OCEAN PEARL — premium beachside resort pantry & fresh seafood grill.
+      Seafoam, pearl, deep teal and warm coral pink.
+   ------------------------------------------------------------------------- */
+[data-variant="ocean"] {
+  --bg: #051416;
+  --bg-2: #081d20;
+  --surface: #0a2528;
+  --surface-2: #0f3438;
+  --text: #d0ebe7;
+  --text-strong: #f0faf9;
+  --muted: #95bdb6;
+  --faint: #6c9991;
+  --line: color-mix(in oklab, var(--text) 12%, transparent);
+  --line-strong: color-mix(in oklab, var(--text) 22%, transparent);
+  --accent: #2dd4bf; /* mother of pearl teal */
+  --accent-strong: #14b8a6;
+  --accent-2: #f43f5e; /* coral pink */
+  --on-accent: #020b0c;
+  --shadow: 0 24px 60px -20px rgb(2 15 17 / 0.8), 0 8px 24px -14px rgb(2 15 17 / 0.6);
+  --grain-opacity: 0.03;
+  --halo: radial-gradient(
+      120% 90% at 85% -10%,
+      color-mix(in oklab, var(--accent) 35%, transparent),
+      transparent 58%
+    ),
+    radial-gradient(
+      90% 80% at -5% 10%,
+      color-mix(in oklab, var(--accent-2) 22%, transparent),
+      transparent 50%
+    );
+  --page-gradient: linear-gradient(180deg, #071c1e 0%, #051416 45%, #030a0b 100%);
+  --radius: 22px;
+  --radius-lg: 32px;
+  --maxw: 1220px;
+}
+
+/* -------------------------------------------------------------------------
+   E) FUEGO GRILL — intense live-fire smoked barbecue & pit kitchen.
+      Volcanic soot black, glowing ember orange, hot fire crimson & warm ash.
+   ------------------------------------------------------------------------- */
+[data-variant="fuego"] {
+  --bg: #0c0908;
+  --bg-2: #140f0d;
+  --surface: #1b1411;
+  --surface-2: #261a15;
+  --text: #e8deda;
+  --text-strong: #fdfaf9;
+  --muted: #b39e96;
+  --faint: #806c64;
+  --line: color-mix(in oklab, var(--text) 14%, transparent);
+  --line-strong: color-mix(in oklab, var(--text) 26%, transparent);
+  --accent: #ff6b00; /* blaze orange */
+  --accent-strong: #ff4d00;
+  --accent-2: #e11d48; /* fire crimson */
+  --on-accent: #0c0908;
+  --shadow: 6px 6px 0px color-mix(in oklab, var(--accent) 35%, black);
+  --grain-opacity: 0.06;
+  --halo: radial-gradient(
+      125% 95% at 75% -5%,
+      color-mix(in oklab, var(--accent) 26%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      100% 80% at 20% 90%,
+      color-mix(in oklab, var(--accent-2) 18%, transparent),
+      transparent 50%
+    );
+  --page-gradient: linear-gradient(180deg, #110c0a 0%, #0c0908 40%, #080605 100%);
+  --radius: 6px;
+  --radius-lg: 10px;
+  --maxw: 1180px;
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-accent: var(--accent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.55;
+}
+
+/* Atmospheric page shell: layered gradient + grain, never a flat fill. */
+.atmosphere {
+  position: relative;
+  min-height: 100dvh;
+  background: var(--page-gradient);
+  isolation: isolate;
+}
+.atmosphere::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--halo);
+  z-index: -2;
+  pointer-events: none;
+}
+.atmosphere::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 38%, transparent);
+  color: var(--text-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---- Brand logo (single transparent asset, recolored per theme) -------- */
+.brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+/* Dark grounds: neutralize then invert the dark line-art to a clean bone. */
+[data-variant="noir"] .brand-logo,
+[data-variant="locker"] .brand-logo {
+  filter: grayscale(1) invert(1) brightness(1.06) contrast(1.02);
+}
+/* Light ground: keep the original ink art crisp. */
+[data-variant="golden"] .brand-logo {
+  filter: contrast(1.05);
+}
+
+/* ---- Typography helpers ------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.balance {
+  text-wrap: balance;
+}
+
+/* ---- Surfaces & lines --------------------------------------------------- */
+.surface {
+  background: color-mix(in oklab, var(--surface) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.surface-solid {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+.hairline {
+  border-color: var(--line);
+}
+
+/* ---- Buttons ------------------------------------------------------------ */
+.btn {
+  --btn-pad-y: 0.8rem;
+  --btn-pad-x: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  min-height: 48px; /* generous mobile tap target */
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease),
+    border-color 0.25s var(--ease), color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--accent) 80%, black);
+}
+.btn-primary:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: color-mix(in oklab, var(--surface) 70%, transparent);
+  color: var(--text-strong);
+  border-color: var(--line-strong);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--text-strong);
+  transform: translateY(-1px);
+}
+.btn-wa {
+  background: #1faa55;
+  color: #f3fff7;
+  box-shadow: 0 10px 26px -14px rgb(31 170 85 / 0.7);
+}
+.btn-wa:hover {
+  background: #189048;
+  transform: translateY(-1px);
+}
+
+/* ---- Chips -------------------------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  min-height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in oklab, var(--surface) 60%, transparent);
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  white-space: nowrap;
+}
+.chip:hover {
+  color: var(--text-strong);
+  border-color: var(--accent);
+}
+.chip[data-active="true"] {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+/* ---- Cards -------------------------------------------------------------- */
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+  overflow: hidden;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+}
+
+/* Category card media placeholder — tasteful, not an emoji. */
+.media-placeholder {
+  position: relative;
+  background:
+    radial-gradient(
+      130% 120% at 20% 0%,
+      color-mix(in oklab, var(--accent) 16%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(135deg, var(--surface-2), var(--bg-2));
+}
+.media-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      var(--line) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 40%, black, transparent);
+  mask-image: radial-gradient(70% 70% at 50% 40%, black, transparent);
+}
+
+/* ---- Layout helpers ----------------------------------------------------- */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
+}
+.section {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--line-strong),
+    transparent
+  );
+}
+
+/* ---- Reveal-on-load (staggered) ---------------------------------------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  animation: rise 0.8s var(--ease) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+}
+
+/* Marquee for the trust strip on wide screens */
+.tracking-tightish {
+  letter-spacing: -0.02em;
+}
+
+/* Hide scrollbars on chip rows but keep scroll */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- Variant Specific Overrides & Animations ---------------------------- */
+
+/* Ocean Pearl: Sea-glass blur, smooth card tilts, and floating wave animation */
+[data-variant="ocean"] .surface {
+  background: color-mix(in oklab, var(--surface) 65%, transparent);
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+}
+
+[data-variant="ocean"] .card {
+  background: color-mix(in oklab, var(--surface) 50%, transparent);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-variant="ocean"] .card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 36px -12px color-mix(in oklab, var(--accent) 35%, black);
+}
+
+[data-variant="ocean"] .btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  box-shadow: 0 8px 24px -8px color-mix(in oklab, var(--accent) 70%, black);
+}
+
+[data-variant="ocean"] .btn-wa {
+  box-shadow: 0 8px 24px -8px rgb(31 170 85 / 0.5);
+}
+
+/* Ocean Wave details */
+.wave-path {
+  animation: waveMotion 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+@keyframes waveMotion {
+  0% { transform: translateX(0) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.9); }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+/* Fuego Grill: Industrial iron, sizzling sparks, solid offset shadows */
+[data-variant="fuego"] .surface {
+  background: var(--surface);
+  border: 2px solid var(--line-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+[data-variant="fuego"] .card {
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+
+[data-variant="fuego"] .card-hover:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--accent);
+  box-shadow: 8px 8px 0px var(--accent);
+}
+
+[data-variant="fuego"] .btn {
+  border-radius: var(--radius) !important;
+  border-width: 2px;
+}
+
+[data-variant="fuego"] .btn-primary {
+  background: var(--accent);
+  border-color: var(--accent-strong);
+  color: var(--on-accent);
+  box-shadow: 4px 4px 0px color-mix(in oklab, var(--accent) 30%, black);
+}
+[data-variant="fuego"] .btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px color-mix(in oklab, var(--accent) 30%, black);
+  background: var(--accent-strong);
+}
+
+[data-variant="fuego"] .btn-ghost {
+  border-color: var(--line-strong);
+  box-shadow: 4px 4px 0px var(--line);
+}
+[data-variant="fuego"] .btn-ghost:hover {
+  border-color: var(--accent);
+  box-shadow: 6px 6px 0px color-mix(in oklab, var(--accent) 30%, black);
+  color: var(--text-strong);
+  transform: translate(-2px, -2px);
+}
+
+[data-variant="fuego"] .btn-wa {
+  box-shadow: 4px 4px 0px #0e5e2b;
+}
+[data-variant="fuego"] .btn-wa:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #0e5e2b;
+}
+
+[data-variant="fuego"] .chip {
+  border-radius: var(--radius);
+  border-width: 2px;
+}
+
+[data-variant="fuego"] .chip[data-active="true"] {
+  background: var(--accent);
+  border-color: var(--accent-strong);
+  color: var(--on-accent);
+  box-shadow: 2px 2px 0px var(--accent-strong);
+}
+
+[data-variant="fuego"] .eyebrow {
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+
+/* Ember Particle Animation */
+.ember-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ember {
+  position: absolute;
+  bottom: -20px;
+  background: radial-gradient(circle, var(--accent) 30%, var(--accent-2) 75%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(1px);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floatUp1 {
+  0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+  10% { opacity: 0.8; }
+  45% { transform: translateY(-45vh) translateX(35px) scale(1); }
+  75% { transform: translateY(-80vh) translateX(-25px) scale(0.8); opacity: 0.4; }
+  100% { transform: translateY(-115vh) translateX(15px) scale(0.5); opacity: 0; }
+}
+
+@keyframes floatUp2 {
+  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
+  15% { opacity: 0.9; }
+  50% { transform: translateY(-55vh) translateX(-45px) scale(0.7); }
+  80% { transform: translateY(-85vh) translateX(20px) scale(0.8); opacity: 0.3; }
+  100% { transform: translateY(-115vh) translateX(-35px) scale(0.4); opacity: 0; }
+}
+
+@keyframes floatUp3 {
+  0% { transform: translateY(0) translateX(0) scale(0.5); opacity: 0; }
+  12% { opacity: 0.7; }
+  40% { transform: translateY(-40vh) translateX(25px) scale(0.8); }
+  70% { transform: translateY(-75vh) translateX(-15px) scale(0.6); opacity: 0.5; }
+  100% { transform: translateY(-115vh) translateX(30px) scale(0.4); opacity: 0; }
+}
+
