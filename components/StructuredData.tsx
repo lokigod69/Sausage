@@ -25,7 +25,7 @@ export function StructuredData({
       "Premium sausages, steaks, salmon, hams, bacon and deli goods in Panglao, Bohol.",
     url: pageUrl,
     telephone: phone,
-    image: `${siteUrl}/brand/sausage-guy-logo.png`,
+    image: `${siteUrl}/brand/logo-lockup-dark.png`,
     priceRange: "$$",
     currenciesAccepted: "PHP",
     address: {

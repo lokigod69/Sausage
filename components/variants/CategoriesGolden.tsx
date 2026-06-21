@@ -6,6 +6,7 @@ import {
 } from "@/lib/products";
 import { SectionHeading } from "../SectionHeading";
 import { ArrowUpRight } from "../icons";
+import { CategoryPhoto } from "../CategoryPhoto";
 
 /**
  * GOLDEN — warm market shelves. Friendly horizontal cards (rounded media
@@ -41,17 +42,13 @@ export function CategoriesGolden({
               className="card card-hover group reveal flex items-center gap-4 p-3.5 pr-5"
               style={{ animationDelay: `${i * 50}ms` }}
             >
-              <span
-                className="media-placeholder grid aspect-square w-24 flex-shrink-0 place-items-center rounded-[calc(var(--radius)-2px)] sm:w-28"
-                aria-hidden
-              >
-                <span
-                  className="font-display text-3xl font-semibold"
-                  style={{ color: "color-mix(in oklab, var(--accent) 75%, var(--text))" }}
-                >
-                  {card.label.charAt(0)}
-                </span>
-              </span>
+              <CategoryPhoto
+                slug={card.slug}
+                label={card.label}
+                sizes="(min-width: 640px) 112px, 96px"
+                priority={i < 2}
+                className="aspect-square w-24 flex-shrink-0 rounded-[calc(var(--radius)-2px)] sm:w-28"
+              />
               <span className="min-w-0 flex-1">
                 <span className="flex items-center justify-between gap-2">
                   <span

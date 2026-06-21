@@ -3,8 +3,10 @@
 import { useState } from "react";
 import type { Branch } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
+import { Brand } from "../Brand";
 import { OpenStatus } from "../OpenStatus";
 import { WhatsAppIcon, MapPinIcon, SearchIcon } from "../icons";
+import { HeroPhoto } from "../HeroPhoto";
 
 /**
  * LOCKER — utility "what's available today" dashboard.
@@ -52,8 +54,11 @@ export function HeroLocker({
       />
       <div className="wrap relative">
         <div className="mx-auto max-w-3xl text-center reveal">
+          <div className="mb-8 flex justify-center">
+            <Brand size="lg" />
+          </div>
           <h1
-            className="font-display balance text-[clamp(2.2rem,5.5vw,3.8rem)] font-semibold leading-[1.02] tracking-tightish"
+            className="font-display balance mx-auto max-w-[12ch] text-[clamp(2rem,5.5vw,3.8rem)] font-semibold leading-[1.02] tracking-tightish sm:max-w-none"
             style={{ color: "var(--text-strong)" }}
           >
             What are you stocking up on today?
@@ -148,6 +153,12 @@ export function HeroLocker({
               Directions
             </a>
           </div>
+
+          <HeroPhoto
+            branch={branch}
+            priority
+            className="mx-auto mt-9 aspect-[3/2] max-w-3xl rounded-[var(--radius)]"
+          />
         </div>
       </div>
     </section>

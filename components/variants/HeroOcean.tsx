@@ -3,6 +3,7 @@ import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
 import { Brand } from "../Brand";
 import { OpenStatus } from "../OpenStatus";
 import { WhatsAppIcon, ArrowUpRight, MapPinIcon } from "../icons";
+import { HeroPhoto } from "../HeroPhoto";
 
 /**
  * OCEAN PEARL — luxury beachside resort pantry & fresh seafood grill.
@@ -33,7 +34,7 @@ export function HeroOcean({ branch }: { branch: Branch }) {
           </div>
 
           <h1
-            className="font-display balance text-[clamp(2.8rem,7.5vw,5.2rem)] font-semibold leading-[0.95] tracking-tightish"
+            className="font-display balance max-w-[11ch] text-[clamp(2.35rem,7.5vw,5.2rem)] font-semibold leading-[0.95] tracking-tightish sm:max-w-none"
             style={{ color: "var(--text-strong)" }}
           >
             Taste the coastal <span style={{ color: "var(--accent)" }}>freshness</span> of Bohol.
@@ -88,9 +89,15 @@ export function HeroOcean({ branch }: { branch: Branch }) {
               zIndex: 2,
             }}
           >
+            <HeroPhoto
+              branch={branch}
+              priority
+              className="mb-6 aspect-[3/2] rounded-[var(--radius)]"
+            />
+
             <div className="flex justify-between items-start gap-4 mb-6">
               <div>
-                <Brand size="md" />
+                <Brand size="lg" />
                 <p className="mt-1.5 text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--faint)" }}>
                   Meat &amp; deli store
                 </p>

@@ -3,6 +3,7 @@ import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
 import { Brand } from "../Brand";
 import { OpenStatus } from "../OpenStatus";
 import { WhatsAppIcon, MapPinIcon, ArrowUpRight } from "../icons";
+import { HeroPhoto } from "../HeroPhoto";
 
 /**
  * GOLDEN — warm daily market.
@@ -66,16 +67,14 @@ export function HeroGolden({ branch }: { branch: Branch }) {
           style={{ animationDelay: "160ms" }}
         >
           <div className="surface-solid p-6" style={{ boxShadow: "var(--shadow)" }}>
-            <div
-              className="grid h-44 place-items-center rounded-[var(--radius)]"
-              style={{
-                background:
-                  "linear-gradient(160deg, color-mix(in oklab, var(--accent) 8%, var(--surface)), var(--surface-2))",
-                border: "1px solid var(--line)",
-              }}
-            >
-              <Brand size="lg" priority />
+            <div className="mb-5 flex justify-center">
+              <Brand size="lg" />
             </div>
+            <HeroPhoto
+              branch={branch}
+              priority
+              className="aspect-[3/2] rounded-[var(--radius)]"
+            />
             <p
               className="mt-5 text-center text-sm"
               style={{ color: "var(--muted)" }}

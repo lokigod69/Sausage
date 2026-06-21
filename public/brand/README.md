@@ -1,14 +1,12 @@
 # Brand assets
 
-- `logo.jpg` — original logo supplied by the owner (white background).
-- `logo.png` — processed transparent version actually used by the site
-  (white background chroma-keyed out, margins trimmed). Generated from
-  `logo.jpg` with sharp.
+- `logo.jpg` - original logo supplied by the owner with a white background.
+- `logo.png` - earlier transparent crop kept for compatibility.
+- `logo-lockup-dark.png` - generated transparent full lockup for light pages.
+- `logo-lockup-light.png` - generated transparent full lockup for dark pages.
+- `logo-mark-dark.png` - generated transparent sausage-only mark for light pages.
+- `logo-mark-light.png` - generated transparent sausage-only mark for dark pages.
 
-The site uses `logo.png` everywhere via `components/Brand.tsx`. It's recolored
-per theme in `app/globals.css` (`.brand-logo`): kept as ink art on the light
-Golden theme, inverted to bone on the dark Noir/Locker themes.
-
-To regenerate `logo.png` after replacing `logo.jpg`, re-run the sharp
-chroma-key snippet (see git history / ask the dev) — or drop in your own
-transparent PNG named `logo.png`.
+The site uses the two lockup assets through `components/Brand.tsx`. CSS in
+`app/globals.css` shows the dark asset on the Golden theme and the light asset
+on Noir, Locker, Ocean, and Fuego.

@@ -3,6 +3,7 @@ import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
 import { Brand } from "../Brand";
 import { OpenStatus } from "../OpenStatus";
 import { WhatsAppIcon, ArrowUpRight } from "../icons";
+import { HeroPhoto } from "../HeroPhoto";
 
 /**
  * NOIR — editorial / magazine masthead.
@@ -19,8 +20,8 @@ export function HeroNoir({ branch }: { branch: Branch }) {
         {/* masthead top line */}
         <div className="mb-8 flex items-center justify-between gap-4">
           <p className="eyebrow">Boutique butcher &amp; European deli</p>
-          <span className="hidden opacity-90 sm:block">
-            <Brand size="sm" />
+          <span className="hidden opacity-95 lg:block">
+            <Brand size="lg" />
           </span>
         </div>
 
@@ -33,6 +34,12 @@ export function HeroNoir({ branch }: { branch: Branch }) {
           <span style={{ color: "var(--accent)" }}>seafood</span>, done
           properly.
         </h1>
+
+        <HeroPhoto
+          branch={branch}
+          priority
+          className="mt-9 aspect-[3/2] rounded-[var(--radius-lg)] reveal"
+        />
 
         <div className="mt-8 grid gap-8 reveal lg:grid-cols-[1.1fr_0.9fr]" style={{ animationDelay: "120ms" }}>
           <p

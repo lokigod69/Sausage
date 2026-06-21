@@ -1,42 +1,57 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 
 /**
- * Brand wordmark — the real logo at /public/brand/logo.png.
- *
- * The asset is a single transparent PNG of the dark line-art lockup. It is
- * recolored per theme in CSS via `.brand-logo` (see globals.css): kept as ink
- * art on the light Golden ground, inverted to bone on the dark Noir/Locker
- * grounds. One asset, three themes, no white box.
+ * Brand wordmark. The site ships explicit transparent dark and light lockups
+ * so the logo stays crisp on both parchment and dark editorial themes.
  */
+const DARK_SRC = "/brand/logo-lockup-dark.png";
+const LIGHT_SRC = "/brand/logo-lockup-light.png";
 
-// Intrinsic ratio of logo.png (948 x 470).
-const RATIO = 948 / 470;
+// Intrinsic ratio of logo-lockup-*.png (1800 x 679).
+const RATIO = 1800 / 679;
 
-const HEIGHTS = { sm: 36, md: 46, lg: 128 } as const;
+const HEIGHTS = { sm: 46, md: 64, header: 92, lg: 150, hero: 190 } as const;
 
 export function Brand({
   size = "md",
   showBadge = false,
   priority = false,
 }: {
-  size?: "sm" | "md" | "lg";
+  size?: keyof typeof HEIGHTS;
   showBadge?: boolean;
   priority?: boolean;
 }) {
   const h = HEIGHTS[size];
   const w = Math.round(h * RATIO);
+  const style = {
+    "--brand-w": `${w}px`,
+  } as CSSProperties;
 
   return (
-    <span className="inline-flex items-center gap-3">
-      <Image
-        src="/brand/logo.png"
-        alt="The Sausage Guy"
-        width={w}
-        height={h}
-        priority={priority}
-        className="brand-logo"
-        style={{ height: h, width: "auto" }}
-      />
+    <span
+      className={`brand-lockup brand-lockup--${size} inline-flex items-center gap-3`}
+      role="img"
+      aria-label="The Sausage Guy"
+    >
+      <span className="brand-logo-frame" style={style} aria-hidden="true">
+        <Image
+          src={DARK_SRC}
+          alt=""
+          fill
+          sizes={`${w}px`}
+          priority={priority}
+          className="brand-logo brand-logo--dark"
+        />
+        <Image
+          src={LIGHT_SRC}
+          alt=""
+          fill
+          sizes={`${w}px`}
+          priority={priority}
+          className="brand-logo brand-logo--light"
+        />
+      </span>
       {showBadge && <BranchBadge />}
     </span>
   );

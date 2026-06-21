@@ -27,7 +27,7 @@ export function Header({ branch }: { branch: Branch }) {
     >
       <div className="wrap flex items-center justify-between gap-4 py-3">
         <a href="#top" aria-label="The Sausage Guy — home">
-          <Brand size="md" priority />
+          <Brand size="header" priority />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">

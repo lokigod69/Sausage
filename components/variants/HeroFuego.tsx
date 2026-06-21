@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import type { Branch } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
+import { Brand } from "../Brand";
 import { OpenStatus } from "../OpenStatus";
 import { WhatsAppIcon, ArrowUpRight, MapPinIcon } from "../icons";
+import { HeroPhoto } from "../HeroPhoto";
 
 /**
  * FUEGO GRILL — live-fire smokehouse & boutique butcher.
@@ -55,6 +57,9 @@ export function HeroFuego({
 
       <div className="wrap relative grid gap-12 items-center lg:grid-cols-[1.15fr_0.85fr]">
         <div className="reveal z-10">
+          <div className="mb-7">
+            <Brand size="lg" />
+          </div>
           <div className="mb-5 inline-flex items-center gap-2 border-2 border-[var(--accent)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[var(--accent)]" style={{ transform: "rotate(-1deg)" }}>
             <span className="h-2 w-2 animate-pulse bg-[var(--accent-2)]" style={{ borderRadius: "2px" }} />
             Live Fire &amp; Smoked Deli
@@ -102,6 +107,12 @@ export function HeroFuego({
               boxShadow: "var(--shadow)",
             }}
           >
+            <HeroPhoto
+              branch={branch}
+              priority
+              className="mb-5 aspect-[3/2] rounded-[calc(var(--radius)-2px)]"
+            />
+
             {/* Sizzling Grill Header */}
             <div className="border-b-2 pb-4 mb-5 flex justify-between items-center" style={{ borderColor: "var(--line-strong)" }}>
               <div className="mono text-xs uppercase tracking-widest" style={{ color: "var(--accent)" }}>

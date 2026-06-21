@@ -5,6 +5,7 @@ import {
   matchesFeatured,
 } from "@/lib/products";
 import { SectionHeading } from "../SectionHeading";
+import { CategoryPhoto } from "../CategoryPhoto";
 
 /**
  * LOCKER — compartment grid. Dense, sharp-cornered tiles laid out like locker
@@ -37,13 +38,28 @@ export function CategoriesLocker({
               key={card.slug}
               href="#products"
               data-target-category={resolveTarget(card)}
-              className="card card-hover group relative flex flex-col justify-between p-4 reveal"
+              className="card card-hover group relative flex min-h-[150px] flex-col justify-between p-4 reveal"
               style={{ minHeight: 132, animationDelay: `${i * 40}ms` }}
             >
-              <div className="flex items-start justify-between">
+              <CategoryPhoto
+                slug={card.slug}
+                label={card.label}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                priority={i < 2}
+                className="absolute inset-0 rounded-[inherit] opacity-[0.62]"
+              />
+              <span
+                className="absolute inset-0 rounded-[inherit]"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgb(0 0 0 / 0.42), rgb(0 0 0 / 0.72))",
+                }}
+                aria-hidden
+              />
+              <div className="relative z-10 flex items-start justify-between">
                 <span
                   className="mono text-xs"
-                  style={{ color: "var(--faint)" }}
+                  style={{ color: "color-mix(in oklab, var(--text-strong) 76%, transparent)" }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -57,7 +73,7 @@ export function CategoriesLocker({
                   {String(card.count).padStart(2, "0")}
                 </span>
               </div>
-              <div>
+              <div className="relative z-10">
                 <span
                   className="font-display block text-lg font-semibold leading-tight"
                   style={{ color: "var(--text-strong)" }}

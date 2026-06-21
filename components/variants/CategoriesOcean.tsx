@@ -6,6 +6,7 @@ import {
 } from "@/lib/products";
 import { SectionHeading } from "../SectionHeading";
 import { ArrowUpRight } from "../icons";
+import { CategoryPhoto } from "../CategoryPhoto";
 
 /**
  * OCEAN PEARL — beach-lounge horizontal categories.
@@ -54,7 +55,7 @@ export function CategoriesOcean({
               key={card.slug}
               href="#products"
               data-target-category={resolveTarget(card)}
-              className="card card-hover group reveal shrink-0 w-[290px] snap-center flex flex-col justify-between p-6 sm:w-auto min-h-[220px]"
+              className="card card-hover group reveal flex min-h-[300px] w-[290px] shrink-0 snap-center flex-col justify-between sm:w-auto"
               style={{
                 animationDelay: `${i * 60}ms`,
                 background: "color-mix(in oklab, var(--surface) 60%, transparent)",
@@ -62,9 +63,16 @@ export function CategoriesOcean({
                 boxShadow: "0 10px 30px -15px rgb(0 0 0 / 0.3)",
               }}
             >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  {/* Category icon placeholder: stylized first letter in sea pearl circle */}
+              <CategoryPhoto
+                slug={card.slug}
+                label={card.label}
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 290px"
+                priority={i < 2}
+                className="aspect-[4/3] w-full"
+              />
+              <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
+                <div>
+                <div className="mb-4 flex items-center justify-between">
                   <span
                     className="grid h-12 w-12 place-items-center rounded-full font-display text-xl font-bold transition-transform duration-500 group-hover:rotate-[360deg]"
                     style={{
@@ -115,6 +123,7 @@ export function CategoriesOcean({
                 >
                   <ArrowUpRight width={14} height={14} />
                 </span>
+              </div>
               </div>
             </a>
           ))}

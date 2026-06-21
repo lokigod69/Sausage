@@ -5,6 +5,7 @@ import {
   matchesFeatured,
 } from "@/lib/products";
 import { SectionHeading } from "../SectionHeading";
+import { CategoryPhoto } from "../CategoryPhoto";
 
 /**
  * FUEGO GRILL — hot coals iron-grate board.
@@ -46,7 +47,7 @@ export function CategoriesFuego({
               key={card.slug}
               href="#products"
               data-target-category={resolveTarget(card)}
-              className="card card-hover group reveal flex flex-col justify-between p-6 min-h-[160px]"
+              className="card card-hover group reveal flex min-h-[260px] flex-col justify-between"
               style={{
                 animationDelay: `${i * 50}ms`,
                 background: "var(--surface)",
@@ -56,6 +57,14 @@ export function CategoriesFuego({
                 boxShadow: "4px 4px 0px color-mix(in oklab, var(--line) 40%, black)",
               }}
             >
+              <CategoryPhoto
+                slug={card.slug}
+                label={card.label}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                priority={i < 2}
+                className="aspect-[16/9] w-full"
+              />
+              <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
               <div className="flex justify-between items-start">
                 <span
                   className="mono text-sm font-black border-b-2 pb-0.5 leading-none"
@@ -99,6 +108,7 @@ export function CategoriesFuego({
                 >
                   OPEN SECTION &raquo;
                 </span>
+              </div>
               </div>
             </a>
           ))}

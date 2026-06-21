@@ -6,6 +6,7 @@ import {
 } from "@/lib/products";
 import { SectionHeading } from "../SectionHeading";
 import { ArrowUpRight } from "../icons";
+import { CategoryPhoto } from "../CategoryPhoto";
 
 /**
  * NOIR — editorial index. A numbered list (01–08) with big serif names and
@@ -38,7 +39,7 @@ export function CategoriesNoir({
               <a
                 href="#products"
                 data-target-category={resolveTarget(card)}
-                className="group grid grid-cols-[auto_1fr_auto] items-center gap-5 py-6 transition-colors sm:gap-8"
+                className="group grid grid-cols-[auto_4.75rem_1fr_auto] items-center gap-3 py-5 transition-colors sm:grid-cols-[auto_6.5rem_1fr_auto] sm:gap-6 sm:py-6"
                 style={{ borderBottom: "1px solid var(--line)" }}
               >
                 <span
@@ -47,6 +48,13 @@ export function CategoriesNoir({
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
+                <CategoryPhoto
+                  slug={card.slug}
+                  label={card.label}
+                  sizes="(min-width: 640px) 104px, 76px"
+                  priority={i < 2}
+                  className="aspect-[4/3] w-[4.75rem] rounded-[10px] sm:w-[6.5rem]"
+                />
                 <span className="min-w-0">
                   <span className="flex flex-wrap items-baseline gap-x-3">
                     <span

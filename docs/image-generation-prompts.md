@@ -25,7 +25,10 @@ into `/public` at the paths below.
 
 | Key | Path | Crops |
 | --- | --- | --- |
-| Brand logo | `/public/brand/sausage-guy-logo.png` | transparent PNG |
+| Brand lockup, dark | `/public/brand/logo-lockup-dark.png` | transparent PNG |
+| Brand lockup, light | `/public/brand/logo-lockup-light.png` | transparent PNG |
+| Sausage mark, dark | `/public/brand/logo-mark-dark.png` | transparent PNG |
+| Sausage mark, light | `/public/brand/logo-mark-light.png` | transparent PNG |
 | Hero | `/public/branches/panglao-hero.jpg` | 3:2, 16:9 |
 | Sausages | `/public/products/sausages.jpg` | 4:3, 1:1 |
 | Steaks & Beef | `/public/products/steaks-beef.jpg` | 4:3, 1:1 |
@@ -47,8 +50,8 @@ The exact per-subject prompts live in [`data/image-prompts.ts`](../data/image-pr
 ## Wiring images in once generated
 
 1. Drop the file at the path above.
-2. **Brand logo:** set `HAS_LOGO = true` in
-   [`components/Brand.tsx`](../components/Brand.tsx).
+2. **Brand logo:** update the asset paths in
+   [`components/Brand.tsx`](../components/Brand.tsx) if the filenames change.
 3. **Category cards:** the placeholder is a `.media-placeholder` block — swap it
    for a `next/image` using the matching `/public/products/{slug}.jpg`.
 4. **Individual products:** set `image: "/products/{slug}.jpg"` on the row in

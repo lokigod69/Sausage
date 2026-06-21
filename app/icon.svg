@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="The Sausage Guy">
   <rect width="64" height="64" rx="15" fill="#15110f"/>
-  <!-- sausage body: thick round-capped arc reads as a sausage even at 16px -->
-  <path d="M15.5 43 Q32 14.5 48.5 43" fill="none" stroke="#d68d58" stroke-width="14" stroke-linecap="round"/>
+  <!-- sausage body: gentle banana arc, thick round caps -> reads as a sausage even at 16px -->
+  <path d="M12.5 39 Q32 23 51.5 39" fill="none" stroke="#d68d58" stroke-width="13" stroke-linecap="round"/>
   <!-- top sheen for a little dimension -->
-  <path d="M21 37 Q32 21 43 37" fill="none" stroke="#f0b483" stroke-width="3.4" stroke-linecap="round" opacity="0.55"/>
+  <path d="M18.5 34 Q32 26 45.5 34" fill="none" stroke="#f0b483" stroke-width="3.2" stroke-linecap="round" opacity="0.5"/>
   <!-- casing score marks -->
   <g stroke="#9c5a30" stroke-width="2" stroke-linecap="round" opacity="0.6">
-    <path d="M26.5 26.5 l3.6 5"/>
-    <path d="M33 25.2 l3.6 5"/>
-    <path d="M39.5 27.5 l3.6 5"/>
+    <path d="M26 30 l3.4 4.6"/>
+    <path d="M32.4 29 l3.4 4.6"/>
+    <path d="M38.8 30 l3.4 4.6"/>
   </g>
   <!-- twisted casing ends -->
-  <g stroke="#d68d58" stroke-width="5" stroke-linecap="round">
-    <path d="M15.5 43 l-3.2 5.2"/>
-    <path d="M48.5 43 l3.2 5.2"/>
+  <g stroke="#d68d58" stroke-width="4.6" stroke-linecap="round">
+    <path d="M12.5 39 l-3 5"/>
+    <path d="M51.5 39 l3 5"/>
   </g>
 </svg>
