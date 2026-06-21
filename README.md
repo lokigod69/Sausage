@@ -76,7 +76,26 @@ Copy `.env.local.example` → `.env.local`:
 - `NEXT_PUBLIC_SITE_URL` — canonical/OG base (no trailing slash)
 - `NEXT_PUBLIC_PANGLAO_PATH` — public path for the branch (default `/panglao`)
 
+## Deploy (Vercel)
+
+Repo: [`lokigod69/Sausage`](https://github.com/lokigod69/Sausage). Imported
+manually into Vercel by the owner.
+
+1. **Import** `lokigod69/Sausage` into Vercel.
+2. **Framework preset:** Next.js (auto-detected).
+3. **Root directory:** project root (not a monorepo).
+4. **Build command:** `npm run build` · **Install command:** `npm install`.
+5. **Environment variables** (Project Settings → Environment Variables):
+   - `NEXT_PUBLIC_SITE_URL=https://thesausageguy.shop` (no trailing slash)
+   - `NEXT_PUBLIC_PANGLAO_PATH=/panglao`
+6. **Domains** (Project Settings → Domains): add both `thesausageguy.shop`
+   (production) and `www.thesausageguy.shop`.
+7. Live page is `/panglao`; `/` redirects to it. Google Fonts are fetched at
+   build time — this works on Vercel (only a local TLS-intercepting proxy blocks
+   it; see the proxy note under [Run](#run)).
+
 ## Images
 
 See `docs/image-generation-prompts.md`. Tasteful placeholders render until real
-photos are added to `/public`.
+photos are added to `/public`. Rejected AI candidates live in
+`public/**/_alternates/` and are git-ignored — only the wired-in finals ship.
