@@ -19,6 +19,7 @@ import { CategoriesGolden } from "./variants/CategoriesGolden";
 import { CategoriesLocker } from "./variants/CategoriesLocker";
 import { CategoriesOcean } from "./variants/CategoriesOcean";
 import { CategoriesFuego } from "./variants/CategoriesFuego";
+import { NoirProvisionsStory } from "./variants/NoirProvisionsStory";
 
 /**
  * Generic branch page with THREE distinct layouts (not just palettes):
@@ -129,6 +130,7 @@ export function BranchPage({
       <>
         {hero}
         {trust}
+        <NoirProvisionsStory branch={branch} />
         {categories}
         {browser}
         {reviews}

@@ -1,74 +1,82 @@
+import Image from "next/image";
 import type { Branch } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
-import { Brand } from "../Brand";
 import { OpenStatus } from "../OpenStatus";
-import { WhatsAppIcon, ArrowUpRight } from "../icons";
-import { HeroPhoto } from "../HeroPhoto";
+import { WhatsAppIcon, ArrowUpRight, MapPinIcon } from "../icons";
 
-/**
- * NOIR — editorial / magazine masthead.
- * Single dominant serif headline, a refined logo mark top-right, and a
- * full-width hairline META RULE beneath (Find us · Hours · The shop) instead
- * of a boxed contact card. Lots of negative space.
- */
 export function HeroNoir({ branch }: { branch: Branch }) {
   const links = branchLinks(branch, DEFAULT_WA_MESSAGE);
 
   return (
-    <section id="top" className="relative pt-12 sm:pt-20">
-      <div className="wrap">
-        {/* masthead top line */}
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <p className="eyebrow">Boutique butcher &amp; European deli</p>
-          <span className="hidden opacity-95 lg:block">
-            <Brand size="lg" />
-          </span>
-        </div>
-
-        {/* giant headline */}
-        <h1
-          className="font-display balance max-w-[14ch] text-[clamp(2.8rem,9vw,6.5rem)] font-semibold leading-[0.92] tracking-tightish reveal"
-          style={{ color: "var(--text-strong)" }}
-        >
-          Sausages, steaks &amp;{" "}
-          <span style={{ color: "var(--accent)" }}>seafood</span>, done
-          properly.
-        </h1>
-
-        <HeroPhoto
-          branch={branch}
-          priority
-          className="mt-9 aspect-[3/2] rounded-[var(--radius-lg)] reveal"
+    <section id="top" className="relative">
+      <div className="relative min-h-[430px] overflow-hidden bg-[var(--accent-2)] sm:min-h-[500px]">
+        {branch.heroImage && (
+          <Image
+            src={branch.heroImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        )}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgb(23 17 12 / 0.76), rgb(23 17 12 / 0.42) 48%, rgb(23 17 12 / 0.08)), linear-gradient(180deg, rgb(23 17 12 / 0.05), rgb(23 17 12 / 0.22))",
+          }}
         />
 
-        <div className="mt-8 grid gap-8 reveal lg:grid-cols-[1.1fr_0.9fr]" style={{ animationDelay: "120ms" }}>
-          <p
-            className="max-w-xl text-lg leading-relaxed"
-            style={{ color: "var(--muted)" }}
-          >
-            Steaks, salmon, sausages, hams, bacon and deli favorites — inside
-            Dason Store, Bolod.
-          </p>
-          <div className="flex flex-wrap items-start gap-3 lg:justify-end">
-            <a
-              href={links.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-wa"
-            >
-              <WhatsAppIcon width={18} height={18} />
-              Message us
-            </a>
+        <div className="wrap relative z-10 flex min-h-[430px] items-center pb-16 pt-14 sm:min-h-[500px]">
+          <div className="w-full max-w-2xl reveal">
+            <p className="eyebrow" style={{ color: "#f5d7ba" }}>
+              Boutique butcher &amp; European deli
+            </p>
+            <h1 className="font-display balance mt-5 max-w-[13ch] text-[clamp(2.65rem,7.8vw,6.1rem)] font-semibold leading-[0.94] tracking-tightish text-[#fff8ee]">
+              Premium provisions in Panglao.
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#f7eadb] sm:text-xl">
+              Steaks, salmon, sausages, hams, bacon and deli favorites inside
+              Dason Store, Bolod.
+            </p>
+            <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
+              <a
+                href={links.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary w-full sm:w-auto"
+              >
+                <WhatsAppIcon width={18} height={18} />
+                Ask today&apos;s stock
+              </a>
+              <a
+                href={links.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn w-full sm:w-auto"
+                style={{
+                  color: "#fff8ee",
+                  borderColor: "rgb(255 248 238 / 0.38)",
+                  background: "rgb(255 248 238 / 0.12)",
+                }}
+              >
+                <MapPinIcon width={18} height={18} />
+                Get directions
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* full-width meta rule — editorial masthead, not a card */}
+      <div className="wrap relative z-10 -mt-12">
         <div
-          className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-lg)] reveal sm:grid-cols-3"
+          className="grid gap-px overflow-hidden rounded-[var(--radius-lg)] reveal sm:grid-cols-3"
           style={{
             background: "var(--line)",
             border: "1px solid var(--line)",
-            animationDelay: "220ms",
+            boxShadow: "var(--shadow)",
+            animationDelay: "140ms",
           }}
         >
           <MetaCell label="Find us">
@@ -112,7 +120,7 @@ function MetaCell({
 }) {
   return (
     <div
-      className="px-5 py-5 sm:px-6 sm:py-6"
+      className="min-w-0 px-5 py-5 sm:px-6 sm:py-6"
       style={{ background: "var(--surface)" }}
     >
       <p
@@ -121,7 +129,7 @@ function MetaCell({
       >
         {label}
       </p>
-      <div className="text-sm leading-relaxed">{children}</div>
+      <div className="min-w-0 break-words text-sm leading-relaxed">{children}</div>
     </div>
   );
 }

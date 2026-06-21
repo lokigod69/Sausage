@@ -7,6 +7,9 @@
    ========================================================================= */
 
 :root {
+  --font-fraunces: "Fraunces";
+  --font-hanken: "Hanken Grotesk";
+  --font-plex-mono: "IBM Plex Mono";
   --font-display: var(--font-fraunces), "Fraunces", Georgia, serif;
   --font-body: var(--font-hanken), "Hanken Grotesk", system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
@@ -48,33 +51,33 @@
    ------------------------------------------------------------------------- */
 :root,
 [data-variant="noir"] {
-  --bg: #0a0908;
-  --bg-2: #12100e;
-  --surface: #181614;
-  --surface-2: #22201d;
-  --text: #e3dcd2;
-  --text-strong: #f4efe6;
-  --muted: #a39788;
-  --faint: #786d5f;
+  --bg: #f7f2e9;
+  --bg-2: #eee4d6;
+  --surface: #fffaf2;
+  --surface-2: #efe6d8;
+  --text: #342d25;
+  --text-strong: #211b15;
+  --muted: #6f6255;
+  --faint: #9a8b7b;
   --line: color-mix(in oklab, var(--text) 12%, transparent);
   --line-strong: color-mix(in oklab, var(--text) 24%, transparent);
-  --accent: #d4af37; /* burnished gold */
-  --accent-strong: #e5c158;
-  --accent-2: #8b261e; /* deep oxblood red */
-  --on-accent: #0a0908;
-  --shadow: 0 28px 65px -30px rgb(0 0 0 / 0.85), 0 8px 24px -16px rgb(0 0 0 / 0.7);
-  --grain-opacity: 0.05;
+  --accent: #a94313; /* butcher red-orange */
+  --accent-strong: #87320b;
+  --accent-2: #2e261f; /* charcoal */
+  --on-accent: #fff8ee;
+  --shadow: 0 28px 60px -34px rgb(75 52 34 / 0.42), 0 8px 22px -18px rgb(75 52 34 / 0.28);
+  --grain-opacity: 0.025;
   --halo: radial-gradient(
       120% 90% at 78% -8%,
-      color-mix(in oklab, var(--accent) 18%, transparent),
+      color-mix(in oklab, var(--accent) 10%, transparent),
       transparent 60%
     ),
     radial-gradient(
       90% 80% at -8% 0%,
-      color-mix(in oklab, var(--accent-2) 22%, transparent),
+      color-mix(in oklab, #d7b487 16%, transparent),
       transparent 55%
     );
-  --page-gradient: linear-gradient(180deg, #0e0d0c 0%, #0a0908 38%, #070605 100%);
+  --page-gradient: linear-gradient(180deg, #fbf7ef 0%, #f7f2e9 44%, #eee4d6 100%);
 }
 
 /* -------------------------------------------------------------------------
@@ -315,9 +318,11 @@ body {
 .brand-logo--light {
   display: block;
 }
+[data-variant="noir"] .brand-logo--dark,
 [data-variant="golden"] .brand-logo--dark {
   display: block;
 }
+[data-variant="noir"] .brand-logo--light,
 [data-variant="golden"] .brand-logo--light {
   display: none;
 }

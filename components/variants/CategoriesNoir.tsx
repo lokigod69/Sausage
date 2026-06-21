@@ -8,10 +8,6 @@ import { SectionHeading } from "../SectionHeading";
 import { ArrowUpRight } from "../icons";
 import { CategoryPhoto } from "../CategoryPhoto";
 
-/**
- * NOIR — editorial index. A numbered list (01–08) with big serif names and
- * hairline dividers, like a magazine contents page. No image tiles.
- */
 export function CategoriesNoir({
   branch,
   products,
@@ -25,71 +21,71 @@ export function CategoriesNoir({
     productCategories.find((c) => matchesFeatured(card, c)) ?? "";
 
   return (
-    <section className="section" aria-label="Product categories">
+    <section className="section pt-8" aria-label="Product categories">
       <div className="wrap">
         <SectionHeading
-          eyebrow="What we carry"
-          title="The counters"
-          intro="From German-style sausages to frozen Pacific salmon. Select a counter to jump into the full list."
+          eyebrow="Browse the counter"
+          title="Choose your provisions"
+          intro="Jump into sausages, beef, poultry, salmon, deli goods and today's limited stock."
+          align="center"
         />
 
-        <ol className="mt-10" style={{ borderTop: "1px solid var(--line)" }}>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card, i) => (
-            <li key={card.slug}>
-              <a
-                href="#products"
-                data-target-category={resolveTarget(card)}
-                className="group grid grid-cols-[auto_4.75rem_1fr_auto] items-center gap-3 py-5 transition-colors sm:grid-cols-[auto_6.5rem_1fr_auto] sm:gap-6 sm:py-6"
-                style={{ borderBottom: "1px solid var(--line)" }}
-              >
-                <span
-                  className="font-display text-2xl font-semibold tabular-nums sm:text-3xl"
-                  style={{ color: "var(--accent)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <CategoryPhoto
-                  slug={card.slug}
-                  label={card.label}
-                  sizes="(min-width: 640px) 104px, 76px"
-                  priority={i < 2}
-                  className="aspect-[4/3] w-[4.75rem] rounded-[10px] sm:w-[6.5rem]"
-                />
-                <span className="min-w-0">
-                  <span className="flex flex-wrap items-baseline gap-x-3">
-                    <span
-                      className="font-display text-2xl font-semibold leading-tight tracking-tightish sm:text-4xl"
-                      style={{ color: "var(--text-strong)" }}
-                    >
-                      {card.label}
-                    </span>
-                    <span
-                      className="text-sm"
-                      style={{ color: "var(--faint)" }}
-                    >
-                      {card.count} item{card.count === 1 ? "" : "s"}
-                    </span>
+            <a
+              key={card.slug}
+              href="#products"
+              data-target-category={resolveTarget(card)}
+              className="group overflow-hidden rounded-[var(--radius)] transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--line)",
+                boxShadow: "var(--shadow)",
+              }}
+            >
+              <CategoryPhoto
+                slug={card.slug}
+                label={card.label}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 92vw"
+                priority={i < 4}
+                className="aspect-[4/3] w-full"
+              />
+              <span className="block p-4">
+                <span className="flex items-start justify-between gap-3">
+                  <span
+                    className="font-display text-xl font-semibold leading-tight tracking-tightish"
+                    style={{ color: "var(--text-strong)" }}
+                  >
+                    {card.label}
                   </span>
                   <span
-                    className="mt-1 block max-w-xl text-sm leading-snug sm:text-base"
-                    style={{ color: "var(--muted)" }}
+                    className="mt-0.5 text-xs font-semibold tabular-nums"
+                    style={{ color: "var(--accent)" }}
                   >
-                    {card.blurb}
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                 </span>
                 <span
-                  className="grid h-11 w-11 place-items-center rounded-full transition-all duration-300 group-hover:translate-x-1"
-                  style={{
-                    border: "1px solid var(--line-strong)",
-                    color: "var(--accent)",
-                  }}
+                  className="mt-2 block min-h-[3.25rem] text-sm leading-snug"
+                  style={{ color: "var(--muted)" }}
                 >
-                  <ArrowUpRight width={18} height={18} />
+                  {card.blurb}
                 </span>
-              </a>
-            </li>
+                <span
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold"
+                  style={{ color: "var(--accent)" }}
+                >
+                  {card.count} item{card.count === 1 ? "" : "s"}
+                  <ArrowUpRight
+                    width={14}
+                    height={14}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </span>
+              </span>
+            </a>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   );

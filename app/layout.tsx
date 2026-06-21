@@ -1,27 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-fraunces",
-  axes: ["opsz"],
-});
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-hanken",
-});
-
-// Used for the Island Provision Locker variant's utility labels.
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-  variable: "--font-plex-mono",
-});
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -64,10 +42,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${hanken.variable} ${plexMono.variable}`}
-    >
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
