@@ -22,7 +22,7 @@ export function CategoriesGolden({
   const cards = getFeaturedCategoryCards(branch, products);
   const productCategories = getCategories(products);
   const resolveTarget = (card: (typeof cards)[number]) =>
-    productCategories.find((c) => matchesFeatured(card, c)) ?? "";
+    productCategories.filter((c) => matchesFeatured(card, c)).join(",");
 
   return (
     <section className="section" aria-label="Product categories">

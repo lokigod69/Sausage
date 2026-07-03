@@ -4,6 +4,8 @@ import type { CSSProperties } from "react";
 /**
  * Brand wordmark. The site ships explicit transparent dark and light lockups
  * so the logo stays crisp on both parchment and dark editorial themes.
+ * Both render (CSS picks one per variant), but only the visible tone is
+ * allowed to preload — otherwise two 1800px PNGs fight for priority.
  */
 const DARK_SRC = "/brand/logo-lockup-dark.png";
 const LIGHT_SRC = "/brand/logo-lockup-light.png";
@@ -17,10 +19,13 @@ export function Brand({
   size = "md",
   showBadge = false,
   priority = false,
+  tone,
 }: {
   size?: keyof typeof HEIGHTS;
   showBadge?: boolean;
   priority?: boolean;
+  /** Which lockup the active variant displays (for preload targeting). */
+  tone?: "dark" | "light";
 }) {
   const h = HEIGHTS[size];
   const w = Math.round(h * RATIO);
@@ -40,7 +45,8 @@ export function Brand({
           alt=""
           fill
           sizes={`${w}px`}
-          priority={priority}
+          priority={priority && tone !== "light"}
+          loading={tone === "light" ? "lazy" : undefined}
           className="brand-logo brand-logo--dark"
         />
         <Image
@@ -48,7 +54,8 @@ export function Brand({
           alt=""
           fill
           sizes={`${w}px`}
-          priority={priority}
+          priority={priority && tone !== "dark"}
+          loading={tone === "dark" ? "lazy" : undefined}
           className="brand-logo brand-logo--light"
         />
       </span>

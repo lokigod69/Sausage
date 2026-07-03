@@ -109,15 +109,27 @@ export interface Branch {
 }
 
 /** Design directions selectable via ?variant= or the dev switcher. */
-export type Variant = "noir" | "golden" | "locker" | "ocean" | "fuego";
+export type Variant = "fable" | "noir" | "golden" | "locker" | "ocean" | "fuego";
 
-export const VARIANTS: Variant[] = ["noir", "golden", "locker", "ocean", "fuego"];
-export const DEFAULT_VARIANT: Variant = "noir";
+export const VARIANTS: Variant[] = [
+  "fable",
+  "noir",
+  "golden",
+  "locker",
+  "ocean",
+  "fuego",
+];
+export const DEFAULT_VARIANT: Variant = "fable";
 
 export const VARIANT_META: Record<
   Variant,
   { name: string; blurb: string }
 > = {
+  fable: {
+    name: "Fable Atelier",
+    blurb:
+      "Charcoal, butcher paper & copper — candlelit editorial atelier for fine provisions.",
+  },
   noir: {
     name: "Noir Deli",
     blurb: "Premium black, charcoal & bone — boutique butcher and European deli.",

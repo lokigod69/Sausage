@@ -2,7 +2,8 @@ import { DEFAULT_VARIANT, isVariant, type Variant } from "@/lib/types";
 
 /**
  * Resolve the active design variant from a Next.js searchParams value.
- * Accepts ?variant=noir|golden|locker; anything else falls back to default.
+ * Accepts ?variant=fable|noir|golden|locker|ocean|fuego; anything else
+ * falls back to the default (fable).
  */
 export function resolveVariant(
   raw: string | string[] | undefined,

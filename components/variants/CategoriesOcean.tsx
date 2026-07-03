@@ -23,7 +23,7 @@ export function CategoriesOcean({
   const cards = getFeaturedCategoryCards(branch, products);
   const productCategories = getCategories(products);
   const resolveTarget = (card: (typeof cards)[number]) =>
-    productCategories.find((c) => matchesFeatured(card, c)) ?? "";
+    productCategories.filter((c) => matchesFeatured(card, c)).join(",");
 
   return (
     <section className="section bg-[var(--bg-2)] relative overflow-hidden" aria-label="Product categories">

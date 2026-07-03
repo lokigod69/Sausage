@@ -9,6 +9,10 @@ import { LocationSection } from "./LocationSection";
 import { Footer } from "./Footer";
 import { StickyContactBar } from "./StickyContactBar";
 import { VariantSwitcher } from "./VariantSwitcher";
+import { RevealObserver } from "./RevealObserver";
+import { HeroFable } from "./variants/HeroFable";
+import { FableStory } from "./variants/FableStory";
+import { CategoriesFable } from "./variants/CategoriesFable";
 import { HeroNoir } from "./variants/HeroNoir";
 import { HeroGolden } from "./variants/HeroGolden";
 import { HeroLocker } from "./variants/HeroLocker";
@@ -22,10 +26,13 @@ import { CategoriesFuego } from "./variants/CategoriesFuego";
 import { NoirProvisionsStory } from "./variants/NoirProvisionsStory";
 
 /**
- * Generic branch page with THREE distinct layouts (not just palettes):
+ * Generic branch page with distinct layouts per variant (not just palettes):
+ *  - fable  → default. Candlelit atelier: photo masthead, ticker, story,
+ *             plate grid — slow editorial flow with scroll reveals
  *  - noir   → editorial masthead + numbered index, classic flow
  *  - golden → warm market hero + shelf cards, goods shown early
  *  - locker → search-first dashboard, product browser pulled high
+ *  - ocean / fuego → resort pantry / smokehouse arrangements
  *
  * Each variant chooses its own hero, category presentation and section order.
  */
@@ -53,7 +60,23 @@ export function BranchPage({
   let categories: React.ReactNode;
   let sections: React.ReactNode;
 
-  if (variant === "golden") {
+  if (variant === "fable") {
+    hero = <HeroFable branch={branch} />;
+    categories = <CategoriesFable branch={branch} products={products} />;
+    // Atelier: masthead + ticker → story & promo → plates → list → reviews → visit.
+    // (No TrustStrip: the ticker and stats rail already carry its content.)
+    sections = (
+      <>
+        {hero}
+        <FableStory branch={branch} productCount={products.length} />
+        {categories}
+        {browser}
+        {reviews}
+        {location}
+        <RevealObserver />
+      </>
+    );
+  } else if (variant === "golden") {
     hero = <HeroGolden branch={branch} />;
     categories = <CategoriesGolden branch={branch} products={products} />;
     // Market: show the goods early, then reassurance, full list, reviews.
@@ -142,7 +165,7 @@ export function BranchPage({
   return (
     <div className="atmosphere" data-variant={variant}>
       <AnnouncementBar branch={branch} />
-      <Header branch={branch} />
+      <Header branch={branch} variant={variant} />
       <main className="pb-24 md:pb-0">{sections}</main>
       <Footer branch={branch} />
       <StickyContactBar branch={branch} />

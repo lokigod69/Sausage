@@ -22,23 +22,27 @@ Scripts: `npm run dev | build | start | lint | typecheck`.
 
 ## Design variants
 
-Three directions ship together for comparison. Switch via the URL (or the
-dev-only floating switcher, bottom-left):
+Six directions ship together for comparison. Switch via the URL or the
+floating switcher (bottom-left on desktop, above the contact bar on mobile):
 
 | Variant | URL | Feel |
 | --- | --- | --- |
-| **Noir Deli** (default) | `/panglao` or `/panglao?variant=noir` | Espresso/bone/brass boutique butcher & European deli |
+| **Fable Atelier** (default) | `/panglao` or `/panglao?variant=fable` | Charcoal/butcher-paper/copper candlelit editorial atelier |
+| **Noir Deli** | `/panglao?variant=noir` | Parchment/bone/butcher-red boutique butcher & European deli |
 | **Golden Daily** | `/panglao?variant=golden` | Warm parchment/gold/coffee, family-friendly daily market |
 | **Island Provision Locker** | `/panglao?variant=locker` | Charcoal/deep-green/brass modern provision store |
+| **Ocean Pearl** | `/panglao?variant=ocean` | Seafoam/pearl/deep-teal beachside pantry |
+| **Fuego Grill** | `/panglao?variant=fuego` | Volcanic black/ember-orange live-fire smokehouse |
 
-The switcher UI is hidden in production; the `?variant=` URL always works.
+Fonts (Fraunces, Hanken Grotesk, IBM Plex Mono) are self-hosted via
+`next/font` in `app/layout.tsx`. A full architecture readout lives in
+`docs/CODEBASE-READOUT.md`.
 
 ## Architecture (branch-ready)
 
 ```
 data/branches.ts      Branch registry (add Tagbilaran here)
 data/products.ts      RAW rows — mirrors the Google Sheet (PRIVATE shape)
-data/deal.ts          "Today's pick" block config (no invented prices)
 data/image-prompts.ts Reusable AI photo prompts
 lib/types.ts          Public Product vs private RawProductRow boundary
 lib/products.ts       Normalizer/parser/search (the only public data chokepoint)

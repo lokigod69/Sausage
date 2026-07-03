@@ -33,21 +33,28 @@ export function ProductBrowser({
   mode?: "sections" | "grid";
 }) {
   const [query, setQuery] = useState("");
-  const [active, setActive] = useState<string>(ALL);
+  // Active filter: empty array = All. Featured cards can activate several
+  // source categories at once (e.g. "Hams & Deli" = Hams + Bacon + Charcuterie).
+  const [active, setActive] = useState<string[]>([]);
   const rootRef = useRef<HTMLDivElement>(null);
 
   const categories = useMemo(() => getCategories(products), [products]);
 
   // Let the featured CategoryGrid drive this filter. We attach listeners to
-  // any element carrying data-target-category (rendered server-side).
+  // any element carrying data-target-category (rendered server-side); the
+  // attribute may hold a comma-separated list of source categories.
   useEffect(() => {
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>("[data-target-category]"),
     );
     const handler = (e: Event) => {
-      const target = (e.currentTarget as HTMLElement).dataset.targetCategory;
+      const raw = (e.currentTarget as HTMLElement).dataset.targetCategory ?? "";
+      const targets = raw
+        .split(",")
+        .map((t) => t.trim())
+        .filter((t) => categories.includes(t));
       setQuery("");
-      setActive(target && categories.includes(target) ? target : ALL);
+      setActive(targets);
     };
     nodes.forEach((n) => n.addEventListener("click", handler));
     return () => nodes.forEach((n) => n.removeEventListener("click", handler));
@@ -57,7 +64,7 @@ export function ProductBrowser({
   useEffect(() => {
     const onSearch = (e: Event) => {
       const detail = (e as CustomEvent<string>).detail ?? "";
-      setActive(ALL);
+      setActive([]);
       setQuery(detail);
     };
     window.addEventListener("sg:search", onSearch as EventListener);
@@ -67,9 +74,9 @@ export function ProductBrowser({
 
   const filtered = useMemo(() => {
     const byQuery = searchProducts(products, query);
-    return active === ALL
+    return active.length === 0
       ? byQuery
-      : byQuery.filter((p) => p.category === active);
+      : byQuery.filter((p) => active.includes(p.category));
   }, [products, query, active]);
 
   const groups = useMemo(() => groupByCategory(filtered), [filtered]);
@@ -112,10 +119,10 @@ export function ProductBrowser({
           <button
             type="button"
             className="chip"
-            data-active={active === ALL}
-            onClick={() => setActive(ALL)}
+            data-active={active.length === 0}
+            onClick={() => setActive([])}
           >
-            All
+            {ALL}
             <span style={{ opacity: 0.7 }}>{products.length}</span>
           </button>
           {categories.map((cat) => (
@@ -123,8 +130,8 @@ export function ProductBrowser({
               key={cat}
               type="button"
               className="chip"
-              data-active={active === cat}
-              onClick={() => setActive(cat)}
+              data-active={active.includes(cat)}
+              onClick={() => setActive([cat])}
             >
               {cat}
             </button>
@@ -161,7 +168,7 @@ export function ProductBrowser({
                   key={group.category}
                   category={group.category}
                   products={group.products}
-                  defaultOpen={i < 3 || active !== ALL || query.length > 0}
+                  defaultOpen={i < 3 || active.length > 0 || query.length > 0}
                 />
               ))}
         </div>
