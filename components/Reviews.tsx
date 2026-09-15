@@ -1,17 +1,19 @@
 import type { Branch } from "@/lib/types";
-import { getReviewQuotes } from "@/data/reviews";
+import { getBranchReviews } from "@/lib/reviews";
 import { SectionHeading } from "./SectionHeading";
 import { StarIcon, ArrowUpRight } from "./icons";
 
 /**
- * Social-proof section. Aggregate rating + count are real (from the Branch).
- * Quote cards come from data/reviews.ts (placeholders until real text is added)
- * and only render if present. Always links out to the live Google listing.
+ * Social-proof section. Rating, count and quotes come from `lib/reviews.ts`:
+ * the Google sync when it has run, the hand-kept file otherwise. Quotes from
+ * Google are shown verbatim and credited to their author, which is what
+ * Google's terms require in exchange for the right to display them.
  */
 export function Reviews({ branch }: { branch: Branch }) {
-  if (!branch.rating || !branch.reviewCount) return null;
-  const quotes = getReviewQuotes(branch.slug);
-  const reviewsUrl = branch.reviewsUrl ?? "#";
+  const { rating, reviewCount, quotes, fromGoogle, ...rest } =
+    getBranchReviews(branch);
+  if (!rating || !reviewCount) return null;
+  const reviewsUrl = rest.reviewsUrl ?? "#";
 
   return (
     <section
@@ -38,9 +40,9 @@ export function Reviews({ branch }: { branch: Branch }) {
                   className="font-semibold"
                   style={{ color: "var(--text-strong)" }}
                 >
-                  {branch.rating.toFixed(1)}
+                  {rating.toFixed(1)}
                 </span>{" "}
-                · {branch.reviewCount} reviews
+                · {reviewCount} reviews
               </p>
             </div>
           </div>
@@ -60,12 +62,13 @@ export function Reviews({ branch }: { branch: Branch }) {
                 className="card flex shrink-0 snap-start flex-col p-6"
                 style={{ width: "min(85vw, 360px)" }}
               >
+                {/* The stars this reviewer gave, not a decorative five. */}
                 <div
                   className="mb-3 flex items-center gap-0.5"
                   style={{ color: "var(--accent)" }}
-                  aria-hidden
+                  aria-label={`${Math.round(r.rating ?? 5)} out of 5 stars`}
                 >
-                  {Array.from({ length: 5 }).map((_, s) => (
+                  {Array.from({ length: Math.round(r.rating ?? 5) }).map((_, s) => (
                     <StarIcon key={s} width={15} height={15} />
                   ))}
                 </div>
@@ -76,12 +79,26 @@ export function Reviews({ branch }: { branch: Branch }) {
                   &ldquo;{r.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5">
-                  <span
-                    className="block text-sm font-semibold"
-                    style={{ color: "var(--text)" }}
-                  >
-                    {r.author}
-                  </span>
+                  {/* Google requires the reviewer to be credited, and linked
+                      back to their profile where it gives us one. */}
+                  {r.authorUri ? (
+                    <a
+                      href={r.authorUri}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-sm font-semibold underline-offset-2 hover:underline"
+                      style={{ color: "var(--text)" }}
+                    >
+                      {r.author}
+                    </a>
+                  ) : (
+                    <span
+                      className="block text-sm font-semibold"
+                      style={{ color: "var(--text)" }}
+                    >
+                      {r.author}
+                    </span>
+                  )}
                   {r.meta && (
                     <span
                       className="block text-xs"
@@ -99,6 +116,8 @@ export function Reviews({ branch }: { branch: Branch }) {
         {quotes.length > 0 && (
           <p className="mt-3 text-xs" style={{ color: "var(--faint)" }}>
             Swipe to read more →
+            {/* Attribution is required whenever Places data is displayed. */}
+            {fromGoogle && <span> · Reviews from Google</span>}
           </p>
         )}
 
@@ -108,7 +127,7 @@ export function Reviews({ branch }: { branch: Branch }) {
           rel="noopener noreferrer"
           className="btn btn-ghost mt-8"
         >
-          Read all {branch.reviewCount} reviews on Google
+          Read all {reviewCount} reviews on Google
           <ArrowUpRight width={16} height={16} />
         </a>
       </div>

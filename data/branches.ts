@@ -25,8 +25,10 @@ export const BRANCHES: Branch[] = [
     mapQuery: "The Sausage Guy - Meat & Deli Store, Panglao, Bohol",
     heroImage: "/branches/panglao-hero.jpg",
     wayfinding: "Look for The Sausage Guy inside Dason Store.",
+    // Read off the live Google listing on 16 Sep 2026. Hand-maintained for
+    // now — there is no automated review sync yet.
     rating: 5,
-    reviewCount: 16,
+    reviewCount: 18,
     reviewsUrl:
       "https://www.google.com/maps/place/The+Sausage+Guy+-+Meat+%26+Deli+Store/@9.5690154,123.7897527,17z/",
     featuredCategories: [

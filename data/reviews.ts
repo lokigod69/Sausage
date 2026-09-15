@@ -8,6 +8,14 @@ export interface ReviewQuote {
   author: string;
   /** Reviewer context shown under the name, e.g. "Local Guide · 133 reviews". */
   meta?: string;
+  /**
+   * Link to the reviewer's Google profile. Set on quotes that came from the
+   * Places API, where crediting the author is a condition of displaying the
+   * review at all.
+   */
+  authorUri?: string;
+  /** Stars this reviewer actually gave. Defaults to 5 when not recorded. */
+  rating?: number;
 }
 
 export const REVIEW_QUOTES: Record<string, ReviewQuote[]> = {
