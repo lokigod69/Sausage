@@ -10,6 +10,7 @@ import {
   slugify,
 } from "@/lib/products";
 import Image from "next/image";
+import { getCategorySilhouette } from "@/data/category-images";
 import { SearchIcon, ChevronDown } from "./icons";
 import { SectionHeading } from "./SectionHeading";
 
@@ -76,6 +77,8 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
     );
   }
 
+  const silhouette = getCategorySilhouette(product.category);
+
   return (
     <span
       aria-hidden
@@ -88,7 +91,28 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
         color: "var(--accent)",
       }}
     >
-      {product.productName.charAt(0)}
+      {silhouette ? (
+        // Masked rather than an <img>: the source SVGs are a fixed dark fill,
+        // which would vanish on the four dark variants. As a mask they take
+        // the theme's accent colour in all six.
+        <span
+          style={{
+            width: size * 0.64,
+            height: size * 0.64,
+            background: "var(--accent)",
+            WebkitMaskImage: `url(${silhouette})`,
+            maskImage: `url(${silhouette})`,
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+          }}
+        />
+      ) : (
+        product.productName.charAt(0)
+      )}
     </span>
   );
 }

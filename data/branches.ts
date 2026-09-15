@@ -29,8 +29,11 @@ export const BRANCHES: Branch[] = [
     // now — there is no automated review sync yet.
     rating: 5,
     reviewCount: 18,
-    reviewsUrl:
-      "https://www.google.com/maps/place/The+Sausage+Guy+-+Meat+%26+Deli+Store/@9.5690154,123.7897527,17z/",
+    // Addressed by the listing's CID, not by name + coordinates: the old
+    // /maps/place/<name>/@<coords> form dropped the name on load and left
+    // visitors staring at an empty map pin. A CID resolves to this exact
+    // business and survives renames and moves.
+    reviewsUrl: "https://maps.google.com/?cid=4915944145284651818",
     featuredCategories: [
       {
         label: "Sausages",
