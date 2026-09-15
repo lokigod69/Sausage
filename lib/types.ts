@@ -2,11 +2,28 @@
  * Shared domain types for the multi-branch discovery microsite.
  *
  * IMPORTANT — public data boundary:
- * The public `Product` type below deliberately does NOT include buy price,
- * sell price, margin, or internal notes. Those live only in `RawProductRow`
- * (the private spreadsheet/POS shape) and are stripped by `normalizeProduct`
- * in `lib/products.ts`. Never widen `Product` to carry cost data.
+ * The public `Product` type carries the SELL price and stock level. Those are
+ * published deliberately, synced from Loyverse POS, and are the only money
+ * fields allowed to cross. Buy price, cost, margin and internal notes must
+ * NEVER appear here: they live only in `RawProductRow` (the private sheet
+ * shape) and in the POS, and are stripped in two places — `normalizeProduct`
+ * in `lib/products.ts` and `mapItem` in `lib/loyverse.ts`. Never widen
+ * `Product` to carry cost data.
  */
+
+/** Whether an item is on the shelf right now, per the POS. */
+export type StockStatus = "in" | "low" | "out" | "untracked";
+
+/** Public-safe stock reading for one product. */
+export interface ProductStock {
+  status: StockStatus;
+  /** Exact quantity held, when the POS tracks a count for this item. */
+  quantity?: number;
+  /** Unit for `quantity` — "kg" for weight items, otherwise "pcs". */
+  quantityUnit?: string;
+  /** ISO timestamp of the POS reading, for the "as of" line. */
+  updatedAt?: string;
+}
 
 /** A category slug used for chips, anchors, and grouping. */
 export type CategorySlug = string;
@@ -29,6 +46,19 @@ export interface Product {
   tags?: string[];
   /** Optional explicit feature flag — only honored if the source sets it. */
   featured?: boolean;
+  /** Counter sell price, synced from the POS. Never a cost or margin. */
+  price?: number;
+  /**
+   * True when the POS prices this item at the counter by weight, so there is
+   * no fixed price to show. The card says so rather than showing a blank.
+   */
+  variablePrice?: boolean;
+  /** ISO currency code for `price`, e.g. "PHP". */
+  currency?: string;
+  /** Live stock reading, when the POS carries one. */
+  stock?: ProductStock;
+  /** POS variant id — the join key for the live stock/price overlay. */
+  posVariantId?: string;
 }
 
 /**
@@ -44,12 +74,37 @@ export interface RawProductRow {
   unit?: string | null;
   /** INTERNAL — never rendered. */
   buyPrice?: number | string | null;
-  /** INTERNAL — not rendered for now (prices change often). */
+  /**
+   * INTERNAL — the private sheet's own price column, still never rendered.
+   * Public prices come from the POS via `price` below, so that publishing
+   * stays an explicit act of the sync rather than a side effect of a
+   * spreadsheet column happening to be named the right thing.
+   */
   sellPrice?: number | string | null;
   /** INTERNAL — never rendered. */
   margin?: number | string | null;
   /** INTERNAL — never rendered. */
   notes?: string | null;
+
+  // ---- PUBLIC, POS-sourced (written only by scripts/sync-loyverse.ts) ----
+  /** Counter sell price from Loyverse. */
+  price?: number | null;
+  /** POS uses VARIABLE pricing — weighed and priced at the counter. */
+  variablePrice?: boolean | null;
+  /** ISO currency code for `price`. */
+  currency?: string | null;
+  /** POS variant id — join key for the live overlay. */
+  posVariantId?: string | null;
+  /** Quantity on hand at sync time. */
+  inStock?: number | null;
+  /** Whether the POS keeps a stock count for this item at all. */
+  trackStock?: boolean | null;
+  /** Weight items are priced per kg and counted in kg. */
+  soldByWeight?: boolean | null;
+  /** Per-item "running low" threshold set in the POS. */
+  lowStock?: number | null;
+  /** ISO timestamp of the stock reading. */
+  stockUpdatedAt?: string | null;
   /** Optional explicit public fields, if the sheet adds them. */
   featured?: boolean | string | null;
   status?: string | null;

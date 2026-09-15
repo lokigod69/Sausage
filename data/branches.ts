@@ -58,7 +58,7 @@ export const BRANCHES: Branch[] = [
         label: "Cheese & Dairy",
         slug: "cheese-dairy",
         blurb: "Cheese-counter favorites and deli dairy pairings.",
-        match: ["Bakery & Pies"],
+        match: ["Cheese", "Dairy"],
       },
       {
         label: "Hams & Deli",

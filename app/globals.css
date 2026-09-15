@@ -268,6 +268,29 @@
   --maxw: 1180px;
 }
 
+/*
+ * Stock badge colours.
+ *
+ * Deliberately quiet: "sold out" is a normal fact of a butcher counter, not
+ * an error state, so it reads as muted rather than alarm-red. Defaults suit
+ * the light variants (noir, golden); the dark variants lift them so they stay
+ * legible against charcoal.
+ */
+:root {
+  --stock-in: #2f7d4f;
+  --stock-low: #94620f;
+  --stock-out: #8a7f74;
+}
+
+[data-variant="fable"],
+[data-variant="locker"],
+[data-variant="ocean"],
+[data-variant="fuego"] {
+  --stock-in: #7fc79a;
+  --stock-low: #dcb057;
+  --stock-out: #8d8175;
+}
+
 @theme inline {
   --font-display: var(--font-display);
   --font-body: var(--font-body);

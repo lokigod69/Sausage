@@ -1,5 +1,6 @@
 import type { Branch, Variant } from "@/lib/types";
-import { getProductsForBranch, getCategories } from "@/lib/products";
+import { getCategories } from "@/lib/products";
+import { getBranchCatalog } from "@/lib/catalog";
 import { AnnouncementBar } from "./AnnouncementBar";
 import { Header } from "./Header";
 import { TrustStrip } from "./TrustStrip";
@@ -36,7 +37,7 @@ import { NoirProvisionsStory } from "./variants/NoirProvisionsStory";
  *
  * Each variant chooses its own hero, category presentation and section order.
  */
-export function BranchPage({
+export async function BranchPage({
   branch,
   variant,
   basePath,
@@ -45,13 +46,22 @@ export function BranchPage({
   variant: Variant;
   basePath: string;
 }) {
-  const products = getProductsForBranch(branch.slug);
+  // POS snapshot + live stock/price overlay. Never throws: see lib/catalog.ts.
+  const catalog = await getBranchCatalog(branch);
+  const products = catalog.products;
 
   // Shared building blocks (referenced by the per-variant arrangements below).
   const trust = <TrustStrip />;
-  const browser = <ProductBrowser branch={branch} products={products} />;
+  const browser = (
+    <ProductBrowser branch={branch} products={products} syncedAt={catalog.syncedAt} />
+  );
   const lockerBrowser = (
-    <ProductBrowser branch={branch} products={products} mode="grid" />
+    <ProductBrowser
+      branch={branch}
+      products={products}
+      mode="grid"
+      syncedAt={catalog.syncedAt}
+    />
   );
   const reviews = <Reviews branch={branch} />;
   const location = <LocationSection branch={branch} />;

@@ -43,3 +43,6 @@ next-env.d.ts
 # image candidates / rejected alternates — kept local, not deployed
 /public/**/_alternates/
 /public/**/_alternates
+
+# local editor/agent tooling — launch.json holds machine-specific paths
+/.claude

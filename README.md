@@ -57,21 +57,52 @@ thin route that renders `<BranchPage branch={...} />`. No layout rewrite.
 
 ## Public-data safety (enforced in code)
 
-`Product` (public) carries only `category`, `productName`, optional
-`unit/image/tags/featured`. **Buy price, sell price, margin and internal notes
-live only in `RawProductRow` and are stripped by `normalizeProduct`** — they
-physically cannot reach a component. Prices are not shown (they change often);
-every counter has an "Ask today's price/availability" WhatsApp CTA instead.
+`Product` (public) carries `category`, `productName`, optional
+`unit/image/tags/featured`, and — since the POS sync — the **counter sell
+price** and a **stock reading**. Those two are published deliberately.
+
+**Buy price, cost and margin are still never published.** They are dropped in
+two places: `mapItem` in `lib/loyverse.ts` never reads Loyverse's `cost` /
+`purchase_cost`, and `normalizeProduct` in `lib/products.ts` never reads the
+sheet's `buyPrice` / `sellPrice` / `margin` / `notes`. Neither the snapshot on
+disk nor the client bundle contains them.
 
 Featured status is honored **only** from an explicit `featured`/`status` field —
 never inferred from spreadsheet row colors.
 
-## Connecting real product data later
+## Loyverse POS sync
 
-Replace `RAW_PRODUCTS` in `data/products.ts` with the parsed spreadsheet (Google
-Sheets / POS / Airtable / Supabase). As long as rows match `RawProductRow`, the
-rest of the site is unchanged. To go async, swap `loadRawRows` in
-`lib/products.ts` for a fetch.
+The catalog is the POS. `data/loyverse-catalog.json` is a committed snapshot;
+at runtime the page lays live stock and prices over it.
+
+```bash
+npm run sync:loyverse    # rewrites data/loyverse-catalog.json
+```
+
+Needs `LOYVERSE_ACCESS_TOKEN` in `.env.local` (Back Office → Settings → Access
+tokens). Add `LOYVERSE_STORE_ID` only if the account has several stores — the
+sync prints every store id when it cannot pick one.
+
+How the two layers combine, in `lib/catalog.ts`:
+
+| Situation | What the visitor sees |
+| --- | --- |
+| Token set, API healthy | Live prices + stock, re-read every 10 min (ISR) |
+| Token set, API down or rejected | Last committed snapshot; error logged server-side |
+| No token (e.g. a preview build) | Last committed snapshot |
+| No snapshot either | Curated list from `data/products.ts`, no prices |
+
+Stock never silently lies: when an item drops out of the POS the overlay clears
+its stock reading rather than keeping the snapshot's older claim, and items the
+POS does not count show no badge at all.
+
+Categories: POS category names are mapped to the site's groupings in
+`data/loyverse-category-map.ts`. Each sync prints every category it saw and
+flags any that match no featured card in `data/branches.ts`.
+
+To put the live overlay in production, add `LOYVERSE_ACCESS_TOKEN` to the
+Vercel project's environment variables. Without it the deploy still works — it
+just serves the snapshot.
 
 ## Configuration
 
