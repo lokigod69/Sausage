@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-16T03:44:27.734Z",
+  "generatedAt": "2026-09-16T03:55:24.728Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-09-16T03:44:27.734Z",
+      "syncedAt": "2026-09-16T03:55:24.728Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -40,6 +40,18 @@
           "trackStock": true,
           "soldByWeight": false,
           "stockUpdatedAt": "2026-09-09T06:53:32.000Z"
+        },
+        {
+          "posVariantId": "4013f6bf-26c3-41ef-ae8b-d3ad594f2699",
+          "category": "Bakery & Desserts",
+          "productName": "Burger Buns (Pack of 2)",
+          "image": "/products/loyverse/b2f03580-765d-4215-9a28-cc59617783a4.webp",
+          "price": 79,
+          "inStock": 16,
+          "trackStock": true,
+          "soldByWeight": false,
+          "lowStock": 3,
+          "stockUpdatedAt": "2026-09-12T07:59:21.000Z"
         },
         {
           "posVariantId": "973e101a-16c1-46bc-b8a7-b9d1debe7d0f",
@@ -254,6 +266,17 @@
           "trackStock": true,
           "soldByWeight": false,
           "stockUpdatedAt": "2026-09-16T01:03:42.000Z"
+        },
+        {
+          "posVariantId": "b7463901-303e-47b5-acfe-d681da8a8930",
+          "category": "Bakery & Desserts",
+          "productName": "Sticky Toffee Pudding",
+          "image": "/products/loyverse/c9a022ca-96fe-47cb-b489-9daeb66fbbf4.webp",
+          "price": 180,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-16T01:07:23.000Z"
         },
         {
           "posVariantId": "9058ef3b-c147-462e-ab42-9cf7b7b6b420",
@@ -574,6 +597,18 @@
           "soldByWeight": false,
           "lowStock": 3,
           "stockUpdatedAt": "2026-06-29T02:46:43.000Z"
+        },
+        {
+          "posVariantId": "f70db421-e446-4d2c-a01a-2ebfee06735c",
+          "category": "Breakfast & Cereals",
+          "productName": "Rolled Oats 200G (Nature Food)",
+          "image": "/products/loyverse/39fd3b88-86b5-4d4a-94d6-0ad09e04c95a.webp",
+          "price": 80,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "lowStock": 5,
+          "stockUpdatedAt": "2026-09-11T09:00:05.000Z"
         },
         {
           "posVariantId": "7442155c-d5b6-48fb-9500-3b88d9b2370e",
@@ -3484,6 +3519,18 @@
           "stockUpdatedAt": "2026-09-12T07:25:48.000Z"
         },
         {
+          "posVariantId": "85bbc25c-daea-452b-819c-5b5cf82aef5b",
+          "category": "Pantry & Preserves",
+          "productName": "Peanut Butter Creamy 800g (Herman)",
+          "image": "/products/loyverse/f4f2b4cb-86f3-4b8e-bba6-5dbf001765e8.webp",
+          "price": 299,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "lowStock": 2,
+          "stockUpdatedAt": "2026-09-09T06:52:37.000Z"
+        },
+        {
           "posVariantId": "eee32fc5-8f23-4794-a890-e63930a9e1ff",
           "category": "Pantry & Preserves",
           "productName": "Peanut Butter Creamy 800g (Member's Value)",
@@ -3494,6 +3541,18 @@
           "soldByWeight": false,
           "lowStock": 2,
           "stockUpdatedAt": "2026-09-02T06:35:22.000Z"
+        },
+        {
+          "posVariantId": "212f9e8f-727b-4deb-a4a4-591b0f239395",
+          "category": "Pantry & Preserves",
+          "productName": "Peanut Butter Crunchy 800g (Herman)",
+          "image": "/products/loyverse/2358470d-afae-41f5-b45b-0769e6993998.webp",
+          "price": 299,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "lowStock": 2,
+          "stockUpdatedAt": "2026-09-02T06:35:54.000Z"
         },
         {
           "posVariantId": "687bb246-7460-47ee-babd-18fe6bfbcf45",
@@ -3836,18 +3895,6 @@
           "soldByWeight": false,
           "lowStock": 3,
           "stockUpdatedAt": "2026-09-09T06:40:51.000Z"
-        },
-        {
-          "posVariantId": "4013f6bf-26c3-41ef-ae8b-d3ad594f2699",
-          "category": "Ready Meals",
-          "productName": "Burger Buns (Pack of 2)",
-          "image": "/products/loyverse/b2f03580-765d-4215-9a28-cc59617783a4.webp",
-          "price": 79,
-          "inStock": 16,
-          "trackStock": true,
-          "soldByWeight": false,
-          "lowStock": 3,
-          "stockUpdatedAt": "2026-09-12T07:59:21.000Z"
         },
         {
           "posVariantId": "d2149625-77ed-4f25-846e-95738896b060",
@@ -4876,30 +4923,6 @@
           "stockUpdatedAt": "2026-09-09T07:26:11.000Z"
         },
         {
-          "posVariantId": "85bbc25c-daea-452b-819c-5b5cf82aef5b",
-          "category": "Snacks & Sweets",
-          "productName": "Peanut Butter Creamy 800g (Herman)",
-          "image": "/products/loyverse/f4f2b4cb-86f3-4b8e-bba6-5dbf001765e8.webp",
-          "price": 299,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "lowStock": 2,
-          "stockUpdatedAt": "2026-09-09T06:52:37.000Z"
-        },
-        {
-          "posVariantId": "212f9e8f-727b-4deb-a4a4-591b0f239395",
-          "category": "Snacks & Sweets",
-          "productName": "Peanut Butter Crunchy 800g (Herman)",
-          "image": "/products/loyverse/2358470d-afae-41f5-b45b-0769e6993998.webp",
-          "price": 299,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "lowStock": 2,
-          "stockUpdatedAt": "2026-09-02T06:35:54.000Z"
-        },
-        {
           "posVariantId": "7cf4384a-c277-4f01-ad76-afb56e4b1a28",
           "category": "Snacks & Sweets",
           "productName": "Peanuts 200g (Nature Food)",
@@ -5037,29 +5060,6 @@
           "trackStock": true,
           "soldByWeight": false,
           "stockUpdatedAt": "2026-09-09T07:45:31.000Z"
-        },
-        {
-          "posVariantId": "f70db421-e446-4d2c-a01a-2ebfee06735c",
-          "category": "Snacks & Sweets",
-          "productName": "Rolled Oats 200G (Nature Food)",
-          "image": "/products/loyverse/39fd3b88-86b5-4d4a-94d6-0ad09e04c95a.webp",
-          "price": 80,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T09:00:05.000Z"
-        },
-        {
-          "posVariantId": "b7463901-303e-47b5-acfe-d681da8a8930",
-          "category": "Snacks & Sweets",
-          "productName": "Sticky Toffee Pudding",
-          "image": "/products/loyverse/c9a022ca-96fe-47cb-b489-9daeb66fbbf4.webp",
-          "price": 180,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T01:07:23.000Z"
         },
         {
           "posVariantId": "1eb32163-a24e-4953-b094-0d575615d0d6",

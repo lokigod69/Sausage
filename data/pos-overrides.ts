@@ -245,8 +245,22 @@ export const MISFILED_CATEGORIES: Record<string, string> = {
   "Breakfast Sausage Patty": "Sausages",
 
   // Filed under "Ready-Cook Expat Meals" in the POS.
-  "Burger Buns": "Bakery & Desserts",
+  "Burger Buns (Pack of 2)": "Bakery & Desserts",
   "Hotdog Buns 2-pack": "Bakery & Desserts",
+
+  // Filed under "Snacks" in the POS. A spread for bread belongs with the
+  // other spreads — and the Member's Value jars of the same thing already
+  // sit in Pantry, so leaving these in Snacks split one product across two
+  // categories.
+  "Peanut Butter Creamy 800g (Herman)": "Pantry & Preserves",
+  "Peanut Butter Crunchy 800g (Herman)": "Pantry & Preserves",
+
+  // Oats are breakfast, not a snack — every other oat product is already in
+  // Breakfast & Cereals.
+  "Rolled Oats 200G (Nature Food)": "Breakfast & Cereals",
+
+  // A pudding is a dessert.
+  "Sticky Toffee Pudding": "Bakery & Desserts",
 };
 
 const misfiled = new Map(
