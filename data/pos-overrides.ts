@@ -89,9 +89,9 @@ export const WEIGHT_PRICES: Record<string, WeightPrice> = {
   "Chicken Ham": PER_KG(800),
   "Turkey Ham": PER_KG(1100),
   "Beef Pastrami": PER_KG(1050),
-  "Honey ham": PER_KG(1000),
-  "Forest Ham (Not 200g)": PER_KG(1000),
-  "Farmers Ham": PER_KG(1000),
+  // Farmers, Forest and Honey ham are not priced here: the shop sells them as
+  // 200g packs at a fixed price, and those POS entries carry their own price.
+  // The kilo variants are hidden — see EXCLUDED_PRODUCTS.
 
   // ---- Cheese ---------------------------------------------------------
   "Emmenthaler (Emborg)": PER_KG(1350),
@@ -163,12 +163,27 @@ export function getDisplayName(productName: string): string {
  * wins over this list.
  */
 export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
-  // Named by the owner as missing from the site, 16 Sep 2026.
+  // ---- Meat & steaks ---------------------------------------------------
   "Ostrich Steak (Big Bird)": "Meat",
   "Ostrich Ground 1kg (Big Bird)": "Meat",
-  "Cake in a Tub": "Cakes & Desserts",
+  "Australian Veal Beef Liver": "Meat",
+  "Beef and Lamb Kofta": "Meat",
+  "USDA Choice Black Angus Ribeye (Demkota)": "Beef",
 
-  // Bakery counter — a real shelf, scattered across "Other" until now.
+  // ---- Poultry ---------------------------------------------------------
+  "Whole Brazilian Chicken 1.3kg (Seara)": "Poultry",
+  "Whole Chicken Leg 2kg (Coopavel)": "Poultry",
+  "Chicken Boneless Legs 2kg (Seara)": "Poultry",
+  "Frozen Chicken Breast in Halves 2kg (Avivar)": "Poultry",
+
+  // ---- Cold cuts & sausages -------------------------------------------
+  // The POS names carry a "(not 200g pack)" suffix; match it exactly.
+  "Honey ham(not 200g pack)": "Hams & Cold Cuts",
+  "Farmers Ham(not 200g pack)": "Hams & Cold Cuts",
+  "Forest Ham (Not 200g)": "Hams & Cold Cuts",
+  Cervelat: "Sausages",
+
+  // ---- Bakery counter --------------------------------------------------
   "Croissant 2-pack": "Bakery",
   "Pain au Chocolate 2-pack": "Bakery",
   "Cinnamon Rolls 2-pack": "Bakery",
@@ -176,20 +191,41 @@ export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   "Sausage Roll": "Bakery",
   "Cornish Pasty": "Bakery",
   "Baked Puff": "Bakery",
+  "Cake in a Tub": "Cakes & Desserts",
 
-  // Already priced as cold cuts in WEIGHT_PRICES; filing them anywhere else
-  // was just inconsistent.
-  "Honey ham": "Hams & Cold Cuts",
-  "Forest Ham (Not 200g)": "Hams & Cold Cuts",
-  "Farmers Ham": "Hams & Cold Cuts",
-  Cervelat: "Sausages",
+  // ---- Dairy -----------------------------------------------------------
+  "Ice Cream": "Dairy",
+  "Goat Milk Icecream": "Dairy",
+  "Kefir Homemade": "Dairy",
 
-  // Plainly what they say they are.
-  "Australian Veal Beef Liver": "Beef",
-  "USDA Choice Black Angus Ribeye (Demkota)": "Beef",
-  "Whole Brazilian Chicken 1.3kg (Seara)": "Poultry",
-  "Whole Chicken Leg 2kg (Coopavel)": "Poultry",
-  "Chicken Boneless Legs 2kg (Seara)": "Poultry",
+  // ---- Drinks ----------------------------------------------------------
+  "Dr Pepper 350ml": "Drinks",
+  "Rhodes 1L": "Drinks",
+  "Cawarra Cabernet Merlot 750ml (Lindemann)": "Drinks",
+
+  // ---- Sauces & pantry -------------------------------------------------
+  "Barbecue Sauce (Sweet Baby Ray's)": "Sauces & Condiments",
+  "Original Dijon Mustard 185g(Kühne)": "Sauces & Condiments",
+  "Sweet Mustard 260g(Kühne)": "Sauces & Condiments",
+  "Organic Apple Cider Vinegar 946ml (Kirkland Signature)":
+    "Sauces & Condiments",
+  "Cherry Tomatoes 425ml(Mazza)": "Delicatessen",
+  "Red Kidney Beans (Dolce Vita)": "Delicatessen",
+  "Grünkohl nach Oldenburger Art 660g (Kühne)": "Delicatessen",
+  "Peanut Butter Creamy 800g (Member's Value)": "Delicatessen",
+  "Peanut Butter Crunchy 800g (Member's Value)": "Delicatessen",
+
+  // ---- Everything else -------------------------------------------------
+  "Protein Instant Oatmeal 500G (Picky Farm)": "Breakfast",
+  "Sunflower Seed ( spiced flavor)": "Snacks",
+  "Oregano flakes": "Spices",
+  "Rock Salt 50g": "Spices",
+  "Sesame Seeds Black 50g (Chef's Cabinet)": "Spices",
+  "Bambi Spring Roll 200g(Lumpia Wrapper)": "Wraps & Tortillas",
+
+  // Deliberately absent: "Delivery Fee" and "No Item (Put Price
+  // Individually)". They are till mechanics and are hidden from the site
+  // entirely — see EXCLUDED_PRODUCTS below.
 };
 
 const fallbackCategories = new Map(
@@ -222,6 +258,19 @@ export const EXCLUDED_PRODUCTS: string[] = [
    * them in Loyverse is the proper fix.
    */
   "Frozen Chicken Breast in Halves 2kg (Avivar)",
+
+  /*
+   * The by-the-kilo counterparts of three hams the shop normally sells only
+   * as 200g packs at a fixed price (owner, 16 Sep 2026). Both entries exist in
+   * the POS, so the site was listing each ham twice — once at PHP 220-240 for
+   * a pack and once at a per-kilo rate. The fixed-price pack entries stay.
+   *
+   * If you start selling these by the kilo again, delete the three lines below
+   * and add their per-kilo prices to WEIGHT_PRICES.
+   */
+  "Farmers Ham(not 200g pack)",
+  "Forest Ham (Not 200g)",
+  "Honey ham(not 200g pack)",
 ];
 
 const excluded = new Set(EXCLUDED_PRODUCTS.map((n) => n.toLowerCase()));
