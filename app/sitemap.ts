@@ -1,15 +1,39 @@
 import type { MetadataRoute } from "next";
-import { getAllBranchSlugs } from "@/data/branches";
+import { BRANCHES } from "@/data/branches";
+import { categorySlug } from "@/lib/routes";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
+  "https://www.thesausageguy.shop";
 
+/**
+ * Every page that should be indexed: each branch, and each of its category
+ * landing pages. The category pages carry the long-form content and the
+ * product data, so they are the ones most likely to answer a search — they
+ * are listed at the same priority as the branch page rather than below it.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return getAllBranchSlugs().map((slug) => ({
-    url: `${SITE_URL}/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 1,
-  }));
+  const now = new Date();
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const branch of BRANCHES) {
+    entries.push({
+      url: `${SITE_URL}/${branch.slug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 1,
+    });
+
+    for (const card of branch.featuredCategories) {
+      entries.push({
+        url: `${SITE_URL}/${branch.slug}/${categorySlug(card.label)}`,
+        lastModified: now,
+        // Stock and prices change daily; the editorial content does not.
+        changeFrequency: "daily",
+        priority: 0.9,
+      });
+    }
+  }
+
+  return entries;
 }

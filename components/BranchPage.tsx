@@ -1,185 +1,61 @@
-import type { Branch, Variant } from "@/lib/types";
-import { getCategories } from "@/lib/products";
+import type { Branch } from "@/lib/types";
 import { getBranchCatalog } from "@/lib/catalog";
 import { AnnouncementBar } from "./AnnouncementBar";
 import { Header } from "./Header";
+import { Hero } from "./Hero";
+import { QuickActions } from "./QuickActions";
+import { CategoryGrid } from "./CategoryGrid";
 import { TrustStrip } from "./TrustStrip";
 import { ProductBrowser } from "./ProductBrowser";
 import { Reviews } from "./Reviews";
 import { LocationSection } from "./LocationSection";
 import { Footer } from "./Footer";
 import { StickyContactBar } from "./StickyContactBar";
-import { VariantSwitcher } from "./VariantSwitcher";
-import { RevealObserver } from "./RevealObserver";
-import { HeroFable } from "./variants/HeroFable";
-import { FableStory } from "./variants/FableStory";
-import { CategoriesFable } from "./variants/CategoriesFable";
-import { HeroNoir } from "./variants/HeroNoir";
-import { HeroGolden } from "./variants/HeroGolden";
-import { HeroLocker } from "./variants/HeroLocker";
-import { HeroOcean } from "./variants/HeroOcean";
-import { HeroFuego } from "./variants/HeroFuego";
-import { CategoriesNoir } from "./variants/CategoriesNoir";
-import { CategoriesGolden } from "./variants/CategoriesGolden";
-import { CategoriesLocker } from "./variants/CategoriesLocker";
-import { CategoriesOcean } from "./variants/CategoriesOcean";
-import { CategoriesFuego } from "./variants/CategoriesFuego";
-import { NoirProvisionsStory } from "./variants/NoirProvisionsStory";
 
 /**
- * Generic branch page with distinct layouts per variant (not just palettes):
- *  - fable  → default. Candlelit atelier: photo masthead, ticker, story,
- *             plate grid — slow editorial flow with scroll reveals
- *  - noir   → editorial masthead + numbered index, classic flow
- *  - golden → warm market hero + shelf cards, goods shown early
- *  - locker → search-first dashboard, product browser pulled high
- *  - ocean / fuego → resort pantry / smokehouse arrangements
+ * The branch page.
  *
- * Each variant chooses its own hero, category presentation and section order.
+ * One design — Golden Daily — chosen from the six that shipped side by side
+ * while the direction was being settled.
+ *
+ * The order answers a visitor's questions in the order they ask them:
+ * who are you (hero) → how do I reach you and what do you have (quick
+ * actions: search + WhatsApp + Facebook + directions) → what do you sell
+ * (categories) → can I trust you (trust strip) → the full list → what do
+ * others say → where exactly are you.
  */
 export async function BranchPage({
   branch,
-  variant,
   basePath,
 }: {
   branch: Branch;
-  variant: Variant;
   basePath: string;
 }) {
   // POS snapshot + live stock/price overlay. Never throws: see lib/catalog.ts.
   const catalog = await getBranchCatalog(branch);
   const products = catalog.products;
 
-  // Shared building blocks (referenced by the per-variant arrangements below).
-  const trust = <TrustStrip />;
-  const browser = (
-    <ProductBrowser branch={branch} products={products} syncedAt={catalog.syncedAt} />
-  );
-  const lockerBrowser = (
-    <ProductBrowser
-      branch={branch}
-      products={products}
-      mode="grid"
-      syncedAt={catalog.syncedAt}
-    />
-  );
-  const reviews = <Reviews branch={branch} />;
-  const location = <LocationSection branch={branch} />;
-
-  let hero: React.ReactNode;
-  let categories: React.ReactNode;
-  let sections: React.ReactNode;
-
-  if (variant === "fable") {
-    hero = <HeroFable branch={branch} />;
-    categories = <CategoriesFable branch={branch} products={products} />;
-    // Atelier: masthead + ticker → story & promo → plates → list → reviews → visit.
-    // (No TrustStrip: the ticker and stats rail already carry its content.)
-    sections = (
-      <>
-        {hero}
-        <FableStory branch={branch} productCount={products.length} />
-        {categories}
-        {browser}
-        {reviews}
-        {location}
-        <RevealObserver />
-      </>
-    );
-  } else if (variant === "golden") {
-    hero = <HeroGolden branch={branch} />;
-    categories = <CategoriesGolden branch={branch} products={products} />;
-    // Market: show the goods early, then reassurance, full list, reviews.
-    sections = (
-      <>
-        {hero}
-        {categories}
-        {trust}
-        {browser}
-        {reviews}
-        {location}
-      </>
-    );
-  } else if (variant === "locker") {
-    hero = (
-      <HeroLocker
-        branch={branch}
-        productCount={products.length}
-        categoryCount={getCategories(products).length}
-      />
-    );
-    categories = <CategoriesLocker branch={branch} products={products} />;
-    // Utility: search-first → dense inventory grid → compartments → reviews.
-    sections = (
-      <>
-        {hero}
-        {trust}
-        {lockerBrowser}
-        {categories}
-        {reviews}
-        {location}
-      </>
-    );
-  } else if (variant === "ocean") {
-    hero = <HeroOcean branch={branch} />;
-    categories = <CategoriesOcean branch={branch} products={products} />;
-    // Resort: breezy flow — goods early, reassurance, full list, reviews.
-    sections = (
-      <>
-        {hero}
-        {categories}
-        {trust}
-        {browser}
-        {reviews}
-        {location}
-      </>
-    );
-  } else if (variant === "fuego") {
-    hero = (
-      <HeroFuego
-        branch={branch}
-        productCount={products.length}
-        categoryCount={getCategories(products).length}
-      />
-    );
-    categories = <CategoriesFuego branch={branch} products={products} />;
-    // Smokehouse: Hero → Trust → Categories → Browser → Reviews → Location
-    sections = (
-      <>
-        {hero}
-        {trust}
-        {categories}
-        {browser}
-        {reviews}
-        {location}
-      </>
-    );
-  } else {
-    hero = <HeroNoir branch={branch} />;
-    categories = <CategoriesNoir branch={branch} products={products} />;
-    // Editorial: masthead → reassurance → index → list → reviews → visit.
-    // (No deal block here — it duplicated the browser's closing "message us".)
-    sections = (
-      <>
-        {hero}
-        {trust}
-        <NoirProvisionsStory branch={branch} />
-        {categories}
-        {browser}
-        {reviews}
-        {location}
-      </>
-    );
-  }
-
   return (
-    <div className="atmosphere" data-variant={variant}>
+    <div className="atmosphere">
       <AnnouncementBar branch={branch} />
-      <Header branch={branch} variant={variant} />
-      <main className="pb-24 md:pb-0">{sections}</main>
+      <Header branch={branch} basePath={basePath} />
+
+      <main id="top" className="pb-24 md:pb-0">
+        <Hero branch={branch} />
+        <QuickActions branch={branch} products={products} basePath={basePath} />
+        <CategoryGrid branch={branch} products={products} basePath={basePath} />
+        <TrustStrip />
+        <ProductBrowser
+          branch={branch}
+          products={products}
+          syncedAt={catalog.syncedAt}
+        />
+        <Reviews branch={branch} />
+        <LocationSection branch={branch} />
+      </main>
+
       <Footer branch={branch} />
       <StickyContactBar branch={branch} />
-      <VariantSwitcher active={variant} basePath={basePath} />
     </div>
   );
 }

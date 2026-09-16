@@ -1,29 +1,27 @@
 import type { Branch, Product } from "@/lib/types";
-import {
-  getCategories,
-  getFeaturedCategoryCards,
-  matchesFeatured,
-} from "@/lib/products";
-import { SectionHeading } from "../SectionHeading";
-import { ArrowUpRight } from "../icons";
-import { CategoryPhoto } from "../CategoryPhoto";
+import { getFeaturedCategoryCards } from "@/lib/products";
+import Link from "next/link";
+import { categoryPath } from "@/lib/routes";
+import { SectionHeading } from "./SectionHeading";
+import { ArrowUpRight } from "./icons";
+import { CategoryPhoto } from "./CategoryPhoto";
 
 /**
- * GOLDEN — warm market shelves. Friendly horizontal cards (rounded media
- * plate on the left, text on the right), two-up, with soft shadows on hover.
+ * The aisles: one card per category, each linking to that category's own
+ * page rather than filtering the list further down. A page can carry a title
+ * image, an explanation and its own address — a filtered anchor cannot.
  */
-export function CategoriesGolden({
+export function CategoryGrid({
   branch,
   products,
+  basePath,
 }: {
   branch: Branch;
   products: Product[];
+  /** Each card now links to that category's own page. */
+  basePath: string;
 }) {
   const cards = getFeaturedCategoryCards(branch, products);
-  const productCategories = getCategories(products);
-  const resolveTarget = (card: (typeof cards)[number]) =>
-    productCategories.filter((c) => matchesFeatured(card, c)).join(",");
-
   return (
     <section className="section" aria-label="Product categories">
       <div className="wrap">
@@ -35,10 +33,9 @@ export function CategoriesGolden({
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {cards.map((card, i) => (
-            <a
+            <Link
               key={card.slug}
-              href="#products"
-              data-target-category={resolveTarget(card)}
+              href={categoryPath(basePath, card.label)}
               className="card card-hover group reveal flex items-center gap-4 p-3.5 pr-5"
               style={{ animationDelay: `${i * 50}ms` }}
             >
@@ -80,7 +77,7 @@ export function CategoriesGolden({
                   {card.count} item{card.count === 1 ? "" : "s"}
                 </span>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -199,6 +199,8 @@ export function ProductBrowser({
   products,
   mode = "sections",
   syncedAt,
+  showChips = true,
+  heading,
 }: {
   branch?: Branch;
   products: Product[];
@@ -206,6 +208,13 @@ export function ProductBrowser({
   mode?: "sections" | "grid";
   /** When the POS reading behind these prices/stock was taken. */
   syncedAt?: string;
+  /**
+   * Category pages pass false: the list is already one category, so a chip
+   * row offering to filter it to itself is noise.
+   */
+  showChips?: boolean;
+  /** Replaces the section heading when the page needs its own words. */
+  heading?: { eyebrow: string; title: string; intro: string };
 }) {
   const [query, setQuery] = useState("");
   // Resolved after mount: a relative time rendered on the server would not
@@ -265,9 +274,12 @@ export function ProductBrowser({
     <section id="products" className="section scroll-mt-20" ref={rootRef}>
       <div className="wrap">
         <SectionHeading
-          eyebrow="The full list"
-          title="Everything we carry"
-          intro="Prices and stock come straight from the counter — message us to set anything aside."
+          eyebrow={heading?.eyebrow ?? "The full list"}
+          title={heading?.title ?? "Everything we carry"}
+          intro={
+            heading?.intro ??
+            "Prices and stock come straight from the counter — message us to set anything aside."
+          }
         />
 
         {updated && (
@@ -304,6 +316,7 @@ export function ProductBrowser({
         </div>
 
         {/* Category chips */}
+        {showChips && (
         <div className="no-scrollbar mt-4 flex gap-2 overflow-x-auto pb-1">
           <button
             type="button"
@@ -326,6 +339,7 @@ export function ProductBrowser({
             </button>
           ))}
         </div>
+        )}
 
         {/* Results */}
         <div className="mt-8 space-y-4">
