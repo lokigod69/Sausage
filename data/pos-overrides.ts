@@ -164,11 +164,11 @@ export function getDisplayName(productName: string): string {
  */
 export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   // ---- Meat & steaks ---------------------------------------------------
-  "Ostrich Steak (Big Bird)": "Meat",
-  "Ostrich Ground 1kg (Big Bird)": "Meat",
-  "Australian Veal Beef Liver": "Meat",
-  "Beef and Lamb Kofta": "Meat",
-  "USDA Choice Black Angus Ribeye (Demkota)": "Beef",
+  "Ostrich Steak (Big Bird)": "Meat & Steaks",
+  "Ostrich Ground 1kg (Big Bird)": "Meat & Steaks",
+  "Australian Veal Beef Liver": "Meat & Steaks",
+  "Beef and Lamb Kofta": "Meat & Steaks",
+  "USDA Choice Black Angus Ribeye (Demkota)": "Meat & Steaks",
 
   // ---- Poultry ---------------------------------------------------------
   "Whole Brazilian Chicken 1.3kg (Seara)": "Poultry",
@@ -184,19 +184,19 @@ export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   Cervelat: "Sausages",
 
   // ---- Bakery counter --------------------------------------------------
-  "Croissant 2-pack": "Bakery",
-  "Pain au Chocolate 2-pack": "Bakery",
-  "Cinnamon Rolls 2-pack": "Bakery",
-  "Sourdough Bread 2-pack": "Bakery",
-  "Sausage Roll": "Bakery",
-  "Cornish Pasty": "Bakery",
-  "Baked Puff": "Bakery",
-  "Cake in a Tub": "Cakes & Desserts",
+  "Croissant 2-pack": "Bakery & Desserts",
+  "Pain au Chocolate 2-pack": "Bakery & Desserts",
+  "Cinnamon Rolls 2-pack": "Bakery & Desserts",
+  "Sourdough Bread 2-pack": "Bakery & Desserts",
+  "Sausage Roll": "Bakery & Desserts",
+  "Cornish Pasty": "Bakery & Desserts",
+  "Baked Puff": "Bakery & Desserts",
+  "Cake in a Tub": "Bakery & Desserts",
 
   // ---- Dairy -----------------------------------------------------------
-  "Ice Cream": "Dairy",
-  "Goat Milk Icecream": "Dairy",
-  "Kefir Homemade": "Dairy",
+  "Ice Cream": "Cheese & Dairy",
+  "Goat Milk Icecream": "Cheese & Dairy",
+  "Kefir Homemade": "Cheese & Dairy",
 
   // ---- Drinks ----------------------------------------------------------
   "Dr Pepper 350ml": "Drinks",
@@ -204,29 +204,62 @@ export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   "Cawarra Cabernet Merlot 750ml (Lindemann)": "Drinks",
 
   // ---- Sauces & pantry -------------------------------------------------
-  "Barbecue Sauce (Sweet Baby Ray's)": "Sauces & Condiments",
-  "Original Dijon Mustard 185g(Kühne)": "Sauces & Condiments",
-  "Sweet Mustard 260g(Kühne)": "Sauces & Condiments",
+  "Barbecue Sauce (Sweet Baby Ray's)": "Pantry & Preserves",
+  "Original Dijon Mustard 185g(Kühne)": "Pantry & Preserves",
+  "Sweet Mustard 260g(Kühne)": "Pantry & Preserves",
   "Organic Apple Cider Vinegar 946ml (Kirkland Signature)":
-    "Sauces & Condiments",
-  "Cherry Tomatoes 425ml(Mazza)": "Delicatessen",
-  "Red Kidney Beans (Dolce Vita)": "Delicatessen",
-  "Grünkohl nach Oldenburger Art 660g (Kühne)": "Delicatessen",
-  "Peanut Butter Creamy 800g (Member's Value)": "Delicatessen",
-  "Peanut Butter Crunchy 800g (Member's Value)": "Delicatessen",
+    "Pantry & Preserves",
+  "Cherry Tomatoes 425ml(Mazza)": "Pantry & Preserves",
+  "Red Kidney Beans (Dolce Vita)": "Pantry & Preserves",
+  "Grünkohl nach Oldenburger Art 660g (Kühne)": "Pantry & Preserves",
+  "Peanut Butter Creamy 800g (Member's Value)": "Pantry & Preserves",
+  "Peanut Butter Crunchy 800g (Member's Value)": "Pantry & Preserves",
 
   // ---- Everything else -------------------------------------------------
-  "Protein Instant Oatmeal 500G (Picky Farm)": "Breakfast",
-  "Sunflower Seed ( spiced flavor)": "Snacks",
-  "Oregano flakes": "Spices",
-  "Rock Salt 50g": "Spices",
-  "Sesame Seeds Black 50g (Chef's Cabinet)": "Spices",
-  "Bambi Spring Roll 200g(Lumpia Wrapper)": "Wraps & Tortillas",
+  "Protein Instant Oatmeal 500G (Picky Farm)": "Breakfast & Cereals",
+  "Sunflower Seed ( spiced flavor)": "Snacks & Sweets",
+  "Oregano flakes": "Herbs & Spices",
+  "Rock Salt 50g": "Herbs & Spices",
+  "Sesame Seeds Black 50g (Chef's Cabinet)": "Herbs & Spices",
+  "Bambi Spring Roll 200g(Lumpia Wrapper)": "Bakery & Desserts",
 
   // Deliberately absent: "Delivery Fee" and "No Item (Put Price
   // Individually)". They are till mechanics and are hidden from the site
   // entirely — see EXCLUDED_PRODUCTS below.
 };
+
+/**
+ * Items whose POS category is simply wrong, corrected even though Loyverse
+ * has an opinion — the one place the POS does not win.
+ *
+ * Each of these is a filing mistake rather than a matter of taste: hotdogs
+ * are sausages however early in the day you eat them, and buns are bakery
+ * whatever you put in them. Fix them in Loyverse and delete the line here;
+ * the result on the site is identical either way.
+ */
+export const MISFILED_CATEGORIES: Record<string, string> = {
+  // Filed under "Breakfast" in the POS.
+  "Beef Hotdog": "Sausages",
+  "Cheese Hotdog": "Sausages",
+  "Special Hotdog": "Sausages",
+  "Breakfast Sausage Patty": "Sausages",
+
+  // Filed under "Ready-Cook Expat Meals" in the POS.
+  "Burger Buns": "Bakery & Desserts",
+  "Hotdog Buns 2-pack": "Bakery & Desserts",
+};
+
+const misfiled = new Map(
+  Object.entries(MISFILED_CATEGORIES).map(([name, cat]) => [
+    name.toLowerCase(),
+    cat,
+  ]),
+);
+
+/** Corrected category for an item the POS has filed in the wrong place. */
+export function getMisfiledCategory(itemName: string): string | undefined {
+  return misfiled.get(itemName.trim().toLowerCase());
+}
 
 const fallbackCategories = new Map(
   Object.entries(UNCATEGORISED_CATEGORIES).map(([name, cat]) => [
@@ -248,16 +281,11 @@ export const EXCLUDED_PRODUCTS: string[] = [
   "Delivery Fee",
   "No Item (Put Price Individually)",
   /*
-   * The same product as "Brazilian Chicken Breast 2kg", entered twice in the
-   * POS under two supplier names (confirmed by the owner, 16 Sep 2026). Both
-   * were listing at ₱760 for a 2kg pack, which reads as a mistake to anyone
-   * browsing. The POS-priced entry is kept because it needs no override here.
-   *
-   * Consequence to be aware of: the stock shown is only the surviving entry's
-   * count, so if both entries hold real packs the site under-reports. Merging
-   * them in Loyverse is the proper fix.
+   * "Frozen Chicken Breast in Halves 2kg (Avivar)" used to be hidden here as
+   * a duplicate of "Brazilian Chicken Breast 2kg". It has since been merged
+   * in Loyverse, so the entry is gone and the exclusion with it — the stock
+   * count on the site is whole again.
    */
-  "Frozen Chicken Breast in Halves 2kg (Avivar)",
 
   /*
    * The by-the-kilo counterparts of three hams the shop normally sells only

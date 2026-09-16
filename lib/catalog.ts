@@ -12,7 +12,10 @@ import {
   resolveStore,
 } from "@/lib/loyverse";
 import { mapCategory } from "@/data/loyverse-category-map";
-import { getFallbackCategory } from "@/data/pos-overrides";
+import {
+  getFallbackCategory,
+  getMisfiledCategory,
+} from "@/data/pos-overrides";
 
 /**
  * The catalog the page actually renders: a committed POS snapshot, with live
@@ -145,9 +148,11 @@ async function applyLiveOverlay(
           : item.name,
         // And the same category, so it does not sit in "Other" until someone
         // re-runs the sync.
-        category: posCategory
-          ? mapCategory(posCategory)
-          : (getFallbackCategory(item.name) ?? "Other"),
+        category:
+          getMisfiledCategory(item.name) ??
+          (posCategory
+            ? mapCategory(posCategory)
+            : (getFallbackCategory(item.name) ?? "Other")),
         price: variant.price ?? null,
         variablePrice: variant.variablePrice,
         inStock: level?.inStock ?? null,

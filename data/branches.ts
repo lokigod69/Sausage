@@ -34,54 +34,90 @@ export const BRANCHES: Branch[] = [
     // visitors staring at an empty map pin. A CID resolves to this exact
     // business and survives renames and moves.
     reviewsUrl: "https://maps.google.com/?cid=4915944145284651818",
+    /*
+     * One card per category, in shopping order: the counter first — what the
+     * shop is known for and what someone drives out for — then the shelves.
+     *
+     * `match` is omitted throughout because the category names produced by
+     * data/loyverse-category-map.ts are exactly these labels. If a card ever
+     * needs to gather several source categories again, add `match`.
+     *
+     * `slug` picks the card photo from /public/products/<slug>.jpg. The eight
+     * without artwork fall back to a category mark — see CategoryPhoto.
+     */
     featuredCategories: [
+      // ---- The counter ---------------------------------------------------
       {
         label: "Sausages",
         slug: "sausages",
         blurb: "German and Swiss-style bratwurst, krainer, bangers and franks.",
-        match: ["Sausages"],
       },
       {
-        label: "Steaks & Beef",
+        label: "Meat & Steaks",
         slug: "steaks-beef",
-        blurb: "Brazilian and US Angus cuts - ribeye, tenderloin, chuck eye.",
-        match: ["Beef"],
+        blurb: "Brazilian and USDA cuts, mince, bacon, lamb and ostrich.",
       },
       {
         label: "Poultry",
         slug: "poultry",
-        blurb: "Whole chicken, breast, wings, duck and whole turkey.",
-        match: ["Poultry"],
+        blurb: "Whole chicken, breast, wings, duck and turkey.",
       },
       {
-        label: "Seafood & Salmon",
+        label: "Seafood",
         slug: "seafood-salmon",
-        blurb: "Smoked and frozen Pacific salmon - whole and portioned.",
-        match: ["Seafood"],
+        blurb: "Salmon, tuna, pompano, squid and scallops.",
+      },
+      {
+        label: "Hams & Cold Cuts",
+        slug: "hams-deli",
+        blurb: "Cooked hams, salami, mortadella, pastrami and lyoner.",
       },
       {
         label: "Cheese & Dairy",
         slug: "cheese-dairy",
-        blurb: "Cheese-counter favorites and deli dairy pairings.",
-        match: ["Cheese", "Dairy"],
+        blurb: "Cut-to-order cheese, butter, yoghurt, milk and ice cream.",
+      },
+
+      // ---- The shelves ---------------------------------------------------
+      {
+        label: "Bakery & Desserts",
+        slug: "bakery-desserts",
+        blurb: "Sourdough, croissants, pasties, buns, wraps and cakes.",
       },
       {
-        label: "Hams & Deli",
-        slug: "hams-deli",
-        blurb: "Cooked hams, salami, mortadella, bacon and charcuterie.",
-        match: ["Hams & Cold Cuts", "Charcuterie", "Bacon"],
+        label: "Ready Meals",
+        slug: "ready-meals",
+        blurb: "Lasagna, stew, chili, pies — heat and eat.",
       },
       {
-        label: "Burgers & Hot Dogs",
-        slug: "burgers-hot-dogs",
-        blurb: "Burger patties, franks, hot dogs and buns for the freezer.",
-        match: ["Beef", "Sausages", "Bakery & Pies"],
+        label: "Breakfast & Cereals",
+        slug: "breakfast-cereals",
+        blurb: "Granola, muesli, oats and breakfast sausage.",
       },
       {
-        label: "Specials",
-        slug: "specials",
-        blurb: "Ask what is new, limited or especially good at the counter.",
-        match: ["Sausages", "Beef", "Seafood", "Hams & Cold Cuts"],
+        label: "Frozen Fruit & Veg",
+        slug: "frozen-fruit-veg",
+        blurb: "Berries, broccoli, peas, mushrooms and mixed vegetables.",
+      },
+      {
+        label: "Pantry & Preserves",
+        slug: "pantry-preserves",
+        blurb: "Olives, capers, tomatoes, sauces, mustards and vinegars.",
+      },
+      {
+        label: "Herbs & Spices",
+        slug: "herbs-spices",
+        blurb: "Seventy single spices, rubs and blends by the sachet.",
+      },
+      {
+        label: "Snacks & Sweets",
+        slug: "snacks-sweets",
+        blurb: "Nuts, dried fruit, crisps, crackers and chocolate.",
+      },
+      {
+        label: "Drinks",
+        slug: "drinks",
+        blurb: "Wine, beer, juice, kombucha, coffee and tea.",
       },
     ],
   },

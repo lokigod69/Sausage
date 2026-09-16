@@ -26,6 +26,7 @@ import {
 import { mapCategory } from "../data/loyverse-category-map.ts";
 import {
   getFallbackCategory,
+  getMisfiledCategory,
   getWeightPrice,
   isExcludedProduct,
 } from "../data/pos-overrides.ts";
@@ -179,11 +180,14 @@ async function main() {
     const posCategory = item.categoryId
       ? categories.get(item.categoryId)
       : undefined;
-    // An item the POS left uncategorised gets our opinion if we have one,
-    // rather than dropping into the unfindable "Other" bucket.
-    const category = posCategory
-      ? mapCategory(posCategory)
-      : (getFallbackCategory(item.name) ?? mapCategory(undefined));
+    // A known filing mistake wins outright; otherwise the POS decides, and
+    // an uncategorised item gets our opinion rather than dropping into the
+    // unfindable "Other" bucket.
+    const category =
+      getMisfiledCategory(item.name) ??
+      (posCategory
+        ? mapCategory(posCategory)
+        : (getFallbackCategory(item.name) ?? mapCategory(undefined)));
     seenCategories.add(`${posCategory ?? "(uncategorised)"} -> ${category}`);
 
     for (const variant of item.variants) {
