@@ -16,11 +16,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyContactBar } from "@/components/StickyContactBar";
 import { ProductBrowser } from "@/components/ProductBrowser";
+import { SITE_URL } from "@/lib/site";
 
 const BRANCH_SLUG = "panglao";
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://www.thesausageguy.shop";
 const BASE_PATH = process.env.NEXT_PUBLIC_PANGLAO_PATH || "/panglao";
 
 type Params = Promise<{ category: string }>;

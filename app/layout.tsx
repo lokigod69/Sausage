@@ -2,10 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { HOME_SEO } from "@/data/seo";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Self-hosted via next/font — zero layout shift, no external requests.

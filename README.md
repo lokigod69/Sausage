@@ -178,7 +178,10 @@ just serves the snapshot.
 
 Copy `.env.local.example` → `.env.local`:
 
-- `NEXT_PUBLIC_SITE_URL` — canonical/OG base (no trailing slash)
+- `NEXT_PUBLIC_SITE_URL` — canonical/OG base (no trailing slash). Optional:
+  `lib/site.ts` defaults to the production domain in a production build and to
+  localhost in development, so Vercel needs nothing. Set it only to aim a
+  build at another host
 - `NEXT_PUBLIC_PANGLAO_PATH` — public path for the branch (default `/panglao`)
 - `LOYVERSE_ACCESS_TOKEN` — POS token, server-side only
 - `LOYVERSE_STORE_ID` — only if the account has several stores

@@ -4,6 +4,7 @@ import { getCategorySeo } from "@/data/seo";
 import { getCategoryContent } from "@/data/category-content";
 import { categorySlug } from "@/lib/routes";
 import { branchLinks } from "@/lib/contact";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * /llms.txt — a plain-language map of this site for language models.
@@ -24,9 +25,6 @@ import { branchLinks } from "@/lib/contact";
 
 export const revalidate = 3600;
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://www.thesausageguy.shop";
 
 export async function GET() {
   const branch = BRANCHES[0];

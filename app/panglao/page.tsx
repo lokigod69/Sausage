@@ -4,12 +4,10 @@ import { getBranch } from "@/data/branches";
 import { BranchPage } from "@/components/BranchPage";
 import { StructuredData } from "@/components/StructuredData";
 import { HOME_SEO } from "@/data/seo";
+import { SITE_URL } from "@/lib/site";
 
 const BRANCH_SLUG = "panglao";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
 const PANGLAO_PATH = process.env.NEXT_PUBLIC_PANGLAO_PATH || "/panglao";
 
 /*

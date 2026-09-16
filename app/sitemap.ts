@@ -1,10 +1,7 @@
 import type { MetadataRoute } from "next";
 import { BRANCHES } from "@/data/branches";
 import { categorySlug } from "@/lib/routes";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://www.thesausageguy.shop";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Every page that should be indexed: each branch, and each of its category
