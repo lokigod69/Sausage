@@ -100,7 +100,7 @@ export function QuickActions({
               className="w-full rounded-full py-4 pl-12 pr-4 text-base outline-none"
               style={{
                 background: "var(--surface)",
-                border: "1px solid var(--line-strong)",
+                border: "1px solid var(--control-border)",
                 color: "var(--text-strong)",
               }}
             />

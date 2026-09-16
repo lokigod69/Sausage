@@ -32,5 +32,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  /*
+   * The accessibility statement. Low priority — nobody searches for it — but
+   * it belongs in the sitemap: it is a real page, it is linked from the
+   * footer of every other one, and leaving it out would be the one page on
+   * the site we quietly did not want found.
+   */
+  entries.push({
+    url: `${SITE_URL}/accessibility`,
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.3,
+  });
+
   return entries;
 }

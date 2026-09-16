@@ -150,7 +150,19 @@ export function Footer({
         <p>
           © {year} The Sausage Guy · {branch.locality}
         </p>
-        <p>Prices come from the shop counter. Stock can change during the day.</p>
+        {/*
+          The accessibility statement, where a statement belongs: in the
+          footer of every page, next to the legal line. Not a badge saying the
+          site is accessible — a link to what we have actually done, what is
+          not finished, and how to tell us when we have got it wrong.
+        */}
+        <p className="site-footer__legal-links">
+          <Link href="/accessibility">Accessibility</Link>
+          <span aria-hidden> · </span>
+          <span>
+            Prices come from the shop counter. Stock can change during the day.
+          </span>
+        </p>
       </div>
     </footer>
   );

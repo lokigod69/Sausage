@@ -26,7 +26,7 @@ export function LocationSection({ branch }: { branch: Branch }) {
 
         <div
           id="contact"
-          className="mt-10 grid gap-5 lg:grid-cols-[1fr_1fr] scroll-mt-20"
+          className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] scroll-mt-20"
         >
           {/* Details card */}
           <div className="surface-solid p-6 sm:p-8">

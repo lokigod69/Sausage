@@ -57,6 +57,19 @@
   --line: color-mix(in oklab, var(--text) 8%, transparent);
   --line-strong: color-mix(in oklab, var(--text) 18%, transparent);
   /*
+   * The edge of anything you can actually operate — a search field, an
+   * outlined button. WCAG 1.4.11 wants 3:1 for the boundary that identifies a
+   * control, and --line-strong measured 1.52:1 against the field it was
+   * drawing around. The search box, the most useful control on the page, was
+   * a white rectangle on an off-white page with a hairline nobody with poor
+   * contrast vision was going to find.
+   *
+   * Kept separate from --line-strong so the decorative hairlines between
+   * sections stay as quiet as they were: a border that has a job gets to be
+   * darker than one that is only tidying up.
+   */
+  --control-border: #8e8982;
+  /*
    * Two terracottas, and the split matters.
    *
    * --accent is the brand colour and stays exactly as it was: the halo behind
@@ -258,7 +271,15 @@ body {
     border-color 0.25s var(--ease), color 0.25s var(--ease),
     box-shadow 0.25s var(--ease);
   text-decoration: none;
-  white-space: nowrap;
+  /*
+   * Labels wrap rather than overflow. This was white-space: nowrap, which is
+   * right for "Call" and wrong for "Read all 18 reviews on Google" — and
+   * under WCAG 1.4.12, where a reader may set their own letter and word
+   * spacing, it pushed the whole document 32px wider than a 320px screen. A
+   * button on two lines is a button; a page that scrolls sideways is a bug.
+   */
+  max-width: 100%;
+  text-align: center;
 }
 .btn:active {
   transform: translateY(1px) scale(0.99);
@@ -275,7 +296,8 @@ body {
 .btn-ghost {
   background: color-mix(in oklab, var(--surface) 70%, transparent);
   color: var(--text-strong);
-  border-color: var(--line-strong);
+  /* This outline is the whole button — nothing else marks where it is. */
+  border-color: var(--control-border);
 }
 .btn-ghost:hover {
   border-color: var(--accent);
@@ -595,8 +617,14 @@ body {
 }
 .quick-actions__links {
   display: grid;
-  /* Four actions: two up on a phone rather than a four-deep stack. */
-  grid-template-columns: repeat(2, 1fr);
+  /*
+   * Four actions: two up on a phone rather than a four-deep stack.
+   *
+   * minmax(0, 1fr), not 1fr: a bare 1fr track has an implicit min-width of
+   * auto, so a button wider than its share of the row makes the track wider
+   * instead of making the button narrower, and the row overflows the screen.
+   */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.6rem;
 }
 .quick-actions__links .btn {
@@ -654,7 +682,7 @@ body {
 
 @media (min-width: 640px) {
   .quick-actions__links {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 @media (min-width: 900px) {
@@ -1081,6 +1109,21 @@ body {
   padding-block: 1.5rem;
   font-size: 0.75rem;
   color: var(--faint);
+}
+.site-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.site-footer__legal-links a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.site-footer__legal-links a:hover {
+  color: var(--text-strong);
 }
 @media (min-width: 640px) {
   .site-footer__legal {

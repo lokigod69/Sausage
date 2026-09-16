@@ -319,7 +319,7 @@ export function ProductBrowser({
             className="w-full rounded-full py-3.5 pl-11 pr-4 text-base outline-none"
             style={{
               background: "var(--surface)",
-              border: "1px solid var(--line-strong)",
+              border: "1px solid var(--control-border)",
               color: "var(--text-strong)",
             }}
           />
