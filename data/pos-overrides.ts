@@ -151,6 +151,60 @@ export function getDisplayName(productName: string): string {
 }
 
 /**
+ * Categories for POS items that have none.
+ *
+ * An item with no category in Loyverse lands in "Other" — a bucket of 55
+ * items with no featured card, collapsed by default. The ostrich steaks and
+ * the cakes were sitting in there: on the site, but effectively unfindable.
+ *
+ * Keyed by the Loyverse ITEM name (not the variant), so one entry covers all
+ * nine "Cake in a Tub" flavours. Applied ONLY when the POS has no category of
+ * its own, so categorising an item in Loyverse — the durable fix — always
+ * wins over this list.
+ */
+export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
+  // Named by the owner as missing from the site, 16 Sep 2026.
+  "Ostrich Steak (Big Bird)": "Meat",
+  "Ostrich Ground 1kg (Big Bird)": "Meat",
+  "Cake in a Tub": "Cakes & Desserts",
+
+  // Bakery counter — a real shelf, scattered across "Other" until now.
+  "Croissant 2-pack": "Bakery",
+  "Pain au Chocolate 2-pack": "Bakery",
+  "Cinnamon Rolls 2-pack": "Bakery",
+  "Sourdough Bread 2-pack": "Bakery",
+  "Sausage Roll": "Bakery",
+  "Cornish Pasty": "Bakery",
+  "Baked Puff": "Bakery",
+
+  // Already priced as cold cuts in WEIGHT_PRICES; filing them anywhere else
+  // was just inconsistent.
+  "Honey ham": "Hams & Cold Cuts",
+  "Forest Ham (Not 200g)": "Hams & Cold Cuts",
+  "Farmers Ham": "Hams & Cold Cuts",
+  Cervelat: "Sausages",
+
+  // Plainly what they say they are.
+  "Australian Veal Beef Liver": "Beef",
+  "USDA Choice Black Angus Ribeye (Demkota)": "Beef",
+  "Whole Brazilian Chicken 1.3kg (Seara)": "Poultry",
+  "Whole Chicken Leg 2kg (Coopavel)": "Poultry",
+  "Chicken Boneless Legs 2kg (Seara)": "Poultry",
+};
+
+const fallbackCategories = new Map(
+  Object.entries(UNCATEGORISED_CATEGORIES).map(([name, cat]) => [
+    name.toLowerCase(),
+    cat,
+  ]),
+);
+
+/** Category for an item the POS left uncategorised, if we have an opinion. */
+export function getFallbackCategory(itemName: string): string | undefined {
+  return fallbackCategories.get(itemName.trim().toLowerCase());
+}
+
+/**
  * POS entries that are till mechanics, not things a customer buys. They were
  * appearing in the public product list.
  */

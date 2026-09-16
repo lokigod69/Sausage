@@ -3,6 +3,7 @@ import { normalizeProduct } from "@/lib/products";
 import { RAW_PRODUCTS } from "@/data/products";
 import snapshot from "@/data/loyverse-catalog.json";
 import {
+  fetchCategories,
   fetchInventory,
   fetchItems,
   fetchStores,
@@ -10,6 +11,8 @@ import {
   hasLoyverseCredentials,
   resolveStore,
 } from "@/lib/loyverse";
+import { mapCategory } from "@/data/loyverse-category-map";
+import { getFallbackCategory } from "@/data/pos-overrides";
 
 /**
  * The catalog the page actually renders: a committed POS snapshot, with live
@@ -104,9 +107,10 @@ async function applyLiveOverlay(
   const store = resolveStore(stores, getConfiguredStoreId(), branch.name);
   const storeId = store?.id;
 
-  const [items, inventory] = await Promise.all([
+  const [items, inventory, categories] = await Promise.all([
     fetchItems(storeId, { revalidate: LIVE_REVALIDATE_SECONDS }),
     fetchInventory(storeId, { revalidate: LIVE_REVALIDATE_SECONDS }),
+    fetchCategories({ revalidate: LIVE_REVALIDATE_SECONDS }),
   ]);
 
   // variantId -> the live facts we are willing to publish.
@@ -121,16 +125,29 @@ async function applyLiveOverlay(
       | "soldByWeight"
       | "lowStock"
       | "stockUpdatedAt"
-    > & { productName: string; categoryId?: string }
+    > & { productName: string; category: string }
   >();
 
   for (const item of items) {
     for (const variant of item.variants) {
       if (!variant.availableForSale) continue;
       const level = inventory.get(variant.variantId);
+      const posCategory = item.categoryId
+        ? categories.get(item.categoryId)
+        : undefined;
+
       live.set(variant.variantId, {
-        productName: item.name,
-        categoryId: item.categoryId,
+        // Same display name the sync would write, so an item added to the POS
+        // today reads "Cake in a Tub — Mango Float", not nine rows all called
+        // "Cake in a Tub".
+        productName: variant.optionValue
+          ? `${item.name} — ${variant.optionValue}`
+          : item.name,
+        // And the same category, so it does not sit in "Other" until someone
+        // re-runs the sync.
+        category: posCategory
+          ? mapCategory(posCategory)
+          : (getFallbackCategory(item.name) ?? "Other"),
         price: variant.price ?? null,
         variablePrice: variant.variablePrice,
         inStock: level?.inStock ?? null,
@@ -174,7 +191,7 @@ async function applyLiveOverlay(
   for (const [variantId, fresh] of live) {
     if (seen.has(variantId)) continue;
     merged.push({
-      category: "Other",
+      category: fresh.category,
       productName: fresh.productName,
       posVariantId: variantId,
       currency,

@@ -24,7 +24,11 @@ import {
   resolveStore,
 } from "../lib/loyverse.ts";
 import { mapCategory } from "../data/loyverse-category-map.ts";
-import { getWeightPrice, isExcludedProduct } from "../data/pos-overrides.ts";
+import {
+  getFallbackCategory,
+  getWeightPrice,
+  isExcludedProduct,
+} from "../data/pos-overrides.ts";
 import { RAW_PRODUCTS } from "../data/products.ts";
 import { BRANCHES } from "../data/branches.ts";
 import { mkdir, readdir, writeFile } from "node:fs/promises";
@@ -175,7 +179,11 @@ async function main() {
     const posCategory = item.categoryId
       ? categories.get(item.categoryId)
       : undefined;
-    const category = mapCategory(posCategory);
+    // An item the POS left uncategorised gets our opinion if we have one,
+    // rather than dropping into the unfindable "Other" bucket.
+    const category = posCategory
+      ? mapCategory(posCategory)
+      : (getFallbackCategory(item.name) ?? mapCategory(undefined));
     seenCategories.add(`${posCategory ?? "(uncategorised)"} -> ${category}`);
 
     for (const variant of item.variants) {
