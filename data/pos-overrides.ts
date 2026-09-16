@@ -108,13 +108,12 @@ export const WEIGHT_PRICES: Record<string, WeightPrice> = {
 
   // ---- Own-label counter goods ----------------------------------------
   // Sold under the shop's own label; supplier varies (currently Emborg), so
-  // the brand is not shown — see DISPLAY_NAMES below.
+  // the brand is not shown — see DISPLAY_NAMES below. All three prices
+  // confirmed by the owner on 16 Sep 2026.
   "Premium Red Cheddar (Sausage Guy)": PER_KG(1120),
+  // Priced by the kilo, handed over as a pack: the pack is weighed at the
+  // till, so "per kg" is the honest label even though nobody buys a loose kilo.
   "Mozzarella Cheese Block (Sausage Guy)": PER_KG(745),
-  "Frozen Chicken Breast in Halves 2kg (Avivar)": {
-    price: 760,
-    unit: "2kg pack",
-  },
 };
 
 /**
@@ -140,9 +139,6 @@ export const DISPLAY_NAMES: Record<string, string> = {
   // packet the customer picks up, and is part of what they are buying.
   "Cheddar Burger Slices 130g (Emborg)": "Cheddar Burger Slices 130g",
 
-  // Chicken
-  "Frozen Chicken Breast in Halves 2kg (Avivar)":
-    "Frozen Chicken Breast in Halves 2kg",
 };
 
 const displayNames = new Map(
@@ -161,6 +157,17 @@ export function getDisplayName(productName: string): string {
 export const EXCLUDED_PRODUCTS: string[] = [
   "Delivery Fee",
   "No Item (Put Price Individually)",
+  /*
+   * The same product as "Brazilian Chicken Breast 2kg", entered twice in the
+   * POS under two supplier names (confirmed by the owner, 16 Sep 2026). Both
+   * were listing at ₱760 for a 2kg pack, which reads as a mistake to anyone
+   * browsing. The POS-priced entry is kept because it needs no override here.
+   *
+   * Consequence to be aware of: the stock shown is only the surviving entry's
+   * count, so if both entries hold real packs the site under-reports. Merging
+   * them in Loyverse is the proper fix.
+   */
+  "Frozen Chicken Breast in Halves 2kg (Avivar)",
 ];
 
 const excluded = new Set(EXCLUDED_PRODUCTS.map((n) => n.toLowerCase()));

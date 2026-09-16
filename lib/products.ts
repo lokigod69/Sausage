@@ -210,7 +210,10 @@ export function normalizeProduct(
     // counts the packs on the shelf. Say "packs" so the count matches what a
     // customer would actually be handed. Items the POS weighs keep "kg", and
     // genuinely single units (cans, jars, sachets) keep "pcs".
-    if (stock.quantityUnit === "pcs" && /per\s*kg/i.test(product.unit ?? "")) {
+    if (
+      stock.quantityUnit === "pcs" &&
+      /per\s*kg|pack/i.test(product.unit ?? "")
+    ) {
       stock.quantityUnit = "pack";
     }
     product.stock = stock;
