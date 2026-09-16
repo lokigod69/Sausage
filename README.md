@@ -1,10 +1,10 @@
 # The Sausage Guy — Panglao
 
 A mobile-first **discovery and message-to-order** site for The Sausage Guy, a
-butcher, delicatessen and provisions shop in Panglao, Bohol. It answers, above
-the fold: _is this worth driving to, where is it, are they open, and what do
-they carry?_ It is **not** a checkout site — the conversation happens on
-Messenger.
+meat and deli store in Panglao, Bohol. It answers, above the fold: _is this
+worth the trip, where is it, are they open, and what do they carry?_ It is
+**not** a checkout site — the conversation happens on Messenger, and delivery
+goes out by Maxim.
 
 Built with **Next.js (App Router) + TypeScript + Tailwind v4**. Minimal deps,
 no animation libraries.
@@ -19,14 +19,32 @@ npm run dev      # http://localhost:3000  → redirects to /panglao
 > Behind a TLS-intercepting proxy/AV, prefix commands with
 > `NODE_OPTIONS=--use-system-ca` so npm trusts the Windows certificate store.
 
-Scripts: `npm run dev | build | start | lint | typecheck | sync:loyverse`.
+Scripts: `npm run dev | build | start | lint | typecheck | sync:loyverse |
+sync:reviews | migrate:categories | gen:images`.
+
+## What the shop actually is
+
+This matters for every line of copy on the site, so it is written down here
+rather than left to be inferred.
+
+It is a **meat and deli store**, not a butcher's shop. Real counter work does
+happen — steaks are cut to order, cold cuts are sliced to order, and the
+ground beef, the beef and lamb burgers and the köfte are made in the shop. But
+the steaks are imported (USDA Choice, Brazilian grass-fed), the sausages and
+charcuterie come from small local and homemade producers, and most of the
+shelf is bought in.
+
+So the words the copy leans on are **meat and deli store**, **steaks**, **cut
+to order** and **homemade, locally made** — and what it must never claim is
+curing, smoking or sausage-making the shop does not do. If you are editing
+copy, that is the line.
 
 ## Pages
 
 | Route | What it is |
 | --- | --- |
 | `/` | Redirects to `/panglao` |
-| `/panglao` | The branch page: hero, search, categories, full product list, reviews, location |
+| `/panglao` | The branch page: hero, search, categories, full product list, delivery, reviews, location |
 | `/panglao/<category>` | One landing page per category — title image, the products, a 1,000–1,500 word article |
 | `/llms.txt`, `/llms-full.txt` | Machine-readable summary and full text, regenerated hourly |
 | `/sitemap.xml`, `/robots.txt` | Generated; AI crawlers explicitly allowed |
@@ -73,6 +91,24 @@ Five, in this order wherever they appear: **Messenger**, WhatsApp, phone,
 Facebook page, Google Maps. Messenger leads because in the Philippines that is
 how people open a conversation with a business. `lib/contact.ts` builds the
 `m.me` link from the Facebook URL, so there is one place to change it.
+
+## Delivery
+
+By Maxim, to Panglao, Dauis, Tagbilaran, Baclayon, Alburquerque and Cortes.
+The towns live in `components/DeliverySection.tsx` and are repeated as
+`areaServed` in `components/StructuredData.tsx` and in `/llms.txt` — change
+them in all three. No delivery fee is published anywhere on purpose: the fare
+is Maxim's, it moves with distance and time of day, and a number on the page
+would be wrong within a week.
+
+## Internal linking
+
+Header and footer link all fourteen aisles from every page. On top of that,
+`data/related-aisles.ts` gives each category three hand-picked neighbours with
+a reason that only makes sense from that page ("Kühne mustard and sauerkraut —
+the two things a German sausage asks for"), rendered by `RelatedAisles` at the
+foot of every category page. That is the link graph a small site needs; a
+fourteenth copy of the same list is not.
 
 ## Public-data safety (enforced in code)
 
@@ -146,6 +182,7 @@ Copy `.env.local.example` → `.env.local`:
 - `NEXT_PUBLIC_PANGLAO_PATH` — public path for the branch (default `/panglao`)
 - `LOYVERSE_ACCESS_TOKEN` — POS token, server-side only
 - `LOYVERSE_STORE_ID` — only if the account has several stores
+- `OPENAI_API_KEY` — only for `npm run gen:images`; never needed at runtime
 
 ## Deploy (Vercel)
 
@@ -161,10 +198,27 @@ Repo: [`lokigod69/Sausage`](https://github.com/lokigod69/Sausage). Pushing to
 
 ## Images
 
-Category title images: `data/image-prompts.ts` is the brief and the checklist
-of what is still missing; `docs/image-generation-prompts.md` has the long form
+```bash
+npm run gen:images              # every category still marked have:false
+npm run gen:images -- drinks    # one slug
+```
+
+Generates the missing category title images with OpenAI's image API and writes
+them to `/public/products/<slug>.jpg` at 1200x900, then flips `have` in
+`data/image-prompts.ts` and adds the slug to `CATEGORY_PHOTO_SLUGS` in
+`data/category-images.ts`. Needs `OPENAI_API_KEY` in `.env.local`; it prints
+the cost estimate before spending anything and will not overwrite an existing
+file without `--force`. **Look at what comes back before committing** — an
+image that is wrong about the products is worse than the tinted panel it
+replaces.
+
+The prompts and the checklist of what is still missing live in
+`data/image-prompts.ts`; `docs/image-generation-prompts.md` has the long form
 and the crop specs. Product photos come from Loyverse via the sync. Rejected AI
 candidates live in `public/**/_alternates/` and are git-ignored — only the
 wired-in finals ship.
+
+The favicon (`app/icon.png`, `app/apple-icon.png`) is the real logo mark on
+the brand's dark ground, generated from `public/brand/logo-mark-light.png`.
 
 A full architecture readout lives in `docs/CODEBASE-READOUT.md`.

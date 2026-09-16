@@ -14,7 +14,7 @@ const PANGLAO_PATH = process.env.NEXT_PUBLIC_PANGLAO_PATH || "/panglao";
 
 /*
  * The branch page. Its title leads with what the shop IS and where, because
- * that is the search someone actually types — "butcher Panglao", "where to
+ * that is the search someone actually types — "meat shop Panglao", "where to
  * buy steak Bohol" — rather than the shop's own name, which only people who
  * already know it will search for.
  *

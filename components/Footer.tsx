@@ -115,9 +115,14 @@ export function Footer({
               <span className="site-footer__dim"> · {branch.hours.display}</span>
             </span>
           </p>
-          <Link href={`${basePath}#location`} className="site-footer__more">
-            Map &amp; opening hours
-          </Link>
+          <div className="site-footer__more-links">
+            <Link href={`${basePath}#location`} className="site-footer__more">
+              Map &amp; opening hours
+            </Link>
+            <Link href={`${basePath}#delivery`} className="site-footer__more">
+              Delivery by Maxim
+            </Link>
+          </div>
         </div>
 
         <nav aria-label="Contact">

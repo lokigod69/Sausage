@@ -314,3 +314,31 @@ export function getFeaturedCategoryCards(branch: Branch, products: Product[]) {
     count: countForFeatured(card, products),
   }));
 }
+
+/**
+ * Strip the fields the browser has no use for before handing a product list
+ * to a client component.
+ *
+ * Every prop of a client component is serialised twice into the document —
+ * once as rendered HTML, once as React's flight payload — so a field nobody
+ * reads is paid for 443 times. Three qualify:
+ *
+ *   - `posVariantId` is the POS join key. It is how lib/catalog.ts matches
+ *     the live overlay onto the snapshot, which happens on the server. It is
+ *     an internal Loyverse identifier with no business in a page source.
+ *   - `branchSlug` is the same string on every row of a branch page.
+ *   - `stock.updatedAt` is a timestamp per product; the one the page actually
+ *     prints is `catalog.syncedAt`, passed separately.
+ *
+ * Together that is roughly 110 bytes a product, about 49 KB off the document.
+ * Call it at the boundary — where products cross into a "use client"
+ * component — not earlier, because server components still want the full
+ * shape for structured data and the category counts.
+ */
+export function forClient(products: Product[]): Product[] {
+  return products.map(({ branchSlug: _b, posVariantId: _v, stock, ...rest }) => {
+    if (!stock) return rest as Product;
+    const { updatedAt: _u, ...keptStock } = stock;
+    return { ...rest, stock: keptStock } as Product;
+  });
+}

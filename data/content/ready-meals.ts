@@ -1,11 +1,11 @@
 import type { CategoryContent } from "@/data/category-content";
 
 export const readyMeals: CategoryContent = {
-  lede: "Lasagna, beef stew, chili con carne and shepherd's pie in trays, plus pies and pizza — cooked here, chilled, and finished in your oven.",
+  lede: "Lasagna, beef stew, chili con carne and shepherd's pie in trays, plus pies and pizza — cooked by local kitchens, chilled, and finished in your oven.",
   metaDescription:
-    "Ready-to-cook lasagna, beef stew, chili con carne, shepherd's pie, meat pies and pizza in Panglao, Bohol. Made at The Sausage Guy, finished in your oven.",
+    "Ready-to-cook lasagna, beef stew, chili con carne, shepherd's pie, meat pies and pizza in Panglao, Bohol. Cooked by local kitchens, finished in your oven.",
   intro:
-    "Food for the nights when cooking is not going to happen. Everything here is made rather than assembled from a box, and all of it is designed to be finished in a domestic oven. Below: how to reheat each without drying it out.",
+    "Food for the nights when cooking is not going to happen. These come from kitchens on Bohol that cook them properly rather than assembling them from a box, and all of it is designed to be finished in a domestic oven. Below: how to reheat each without drying it out.",
   sections: [
     {
       heading: "What a ready meal should be",

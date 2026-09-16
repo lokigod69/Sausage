@@ -1,9 +1,9 @@
 import type { CategoryContent } from "@/data/category-content";
 
 export const meatSteaks: CategoryContent = {
-  lede: "Brazilian and USDA beef, house-cured bacon, lamb and ostrich — cut to order at the counter, priced by the kilo.",
+  lede: "Brazilian and USDA beef, bacon, lamb and ostrich — cut to order at the counter, priced by the kilo, with the ground beef and burgers made here.",
   metaDescription:
-    "Ribeye, tenderloin and chuck eye from Brazil and the USA, house-smoked bacon, lamb shanks and ostrich, cut to order in Panglao, Bohol. Counter prices and daily stock.",
+    "Ribeye, tenderloin and chuck eye from Brazil and the USA, cut to order in Panglao, Bohol, plus bacon, lamb shanks, ostrich and burgers we grind ourselves.",
   intro:
     "This is the busiest part of the counter and the one with the widest price spread — from ₱900 a kilo to ₱3,300. Below: what separates those two numbers, which cut suits which night, and how to cook each without wasting it.",
   sections: [
@@ -21,7 +21,7 @@ export const meatSteaks: CategoryContent = {
         "Ribeye is the cut for a steak you want to enjoy rather than merely eat. It has a fat cap, an eye of tender muscle and a seam of fat through the middle that renders into everything around it. It is almost impossible to make dry and it does not need a sauce. This is the default answer if someone asks what to buy.",
         "Tenderloin — ours at ₱1,700 Brazilian and ₱2,450 USDA — is the softest cut on the animal and the least flavourful, which is a trade some people are happy to make and others are not. It has almost no fat, so it goes from perfect to grey very quickly, and it is the one cut that genuinely benefits from a sauce or a compound butter. Buy it for someone who dislikes chew, or for beef Wellington, or for medallions.",
         "Chuck eye is the cook's cut. It comes from the shoulder end, adjacent to the ribeye, and carries much of the same marbling for roughly a third of the price. It is slightly less tender and slightly more work to trim, and if you are happy with that it is the best-value steak in the shop.",
-        "Sukiyaki cut is beef shaved thin across the grain, sold in 1kg packs. It is not a steak and should not be treated as one: it exists for hotpot, for stir-fries and for Philly-style sandwiches, and it cooks in under a minute. Ground beef we grind from two different cuts — chuck eye for the everyday version, ribeye for the one that makes a noticeably better burger — in 250g, 500g and 1kg packs.",
+        "Sukiyaki cut is beef shaved thin across the grain, sold in 1kg packs. It is not a steak and should not be treated as one: it exists for hotpot, for stir-fries and for Philly-style sandwiches, and it cooks in under a minute. Ground beef is one of the few things in this shop we make rather than buy: we grind it here from two different cuts — chuck eye for the everyday version, ribeye for the one that makes a noticeably better burger — in 250g, 500g and 1kg packs. The beef burgers, the lamb burgers and the köfte are ours too, made from the same meat rather than from trimmings.",
       ],
     },
     {
@@ -35,9 +35,9 @@ export const meatSteaks: CategoryContent = {
       ],
     },
     {
-      heading: "Bacon, cured in-house",
+      heading: "Bacon, three ways",
       paragraphs: [
-        "The bacon is ours, cured and smoked here rather than bought in, and it comes in three: natural, honey, and wood-smoked. Natural is the plainest and the most useful in cooking, where you want bacon flavour rather than sweetness. Honey caramelises hard and fast, which is wonderful in a pan and a nuisance on a barbecue. Wood-smoked is the one to buy if the bacon is the point of the dish rather than a background note.",
+        "The bacon comes from a local producer who cures and smokes it properly, and it comes in three: natural, honey, and wood-smoked. Natural is the plainest and the most useful in cooking, where you want bacon flavour rather than sweetness. Honey caramelises hard and fast, which is wonderful in a pan and a nuisance on a barbecue. Wood-smoked is the one to buy if the bacon is the point of the dish rather than a background note.",
         "It is sold in 500g and 1kg packs, with 3kg+ and 5kg+ prices for households and small kitchens that get through it — the per-kilo price drops meaningfully at those sizes. Picnic bacon, at ₱1,300 a kilo, is the cut from the shoulder: meatier, less fatty, and better in stews and carbonara than under a fried egg.",
         "Cook bacon from a cold pan, not a hot one. Starting cold lets the fat render out slowly so the meat crisps in its own fat instead of seizing and curling. It takes a few minutes longer and the difference is not subtle. For the oven, 200 °C on a rack for fifteen to twenty minutes gives the flattest, most even result, which matters if you are cooking for a table.",
       ],

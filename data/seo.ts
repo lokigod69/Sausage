@@ -2,11 +2,21 @@
  * Search titles and descriptions, written per page rather than templated.
  *
  * The job these have to do is narrow and local: someone on Panglao or in
- * Tagbilaran types "where to buy steak Bohol" or "German sausage Panglao" and
- * has to see a result that is obviously a real shop, obviously near them, and
+ * Tagbilaran types "where to buy steak Bohol" or "meat shop near me" and has
+ * to see a result that is obviously a real shop, obviously near them, and
  * obviously has the thing. So every title carries the category and the place,
  * and every description carries something concrete — a product name, a price,
  * the location — rather than adjectives.
+ *
+ * On what the shop is. It is a meat and deli store first, and that is the
+ * phrase these lead with. Real counter work happens — steaks are cut to
+ * order, cold cuts are sliced to order, and the ground beef, the beef and
+ * lamb burgers and the köfte are made here — so "cut to order" and "we make"
+ * are fair where they appear. What these must not do is sell the place as a
+ * butcher's shop that makes its own charcuterie: the steaks are imported US
+ * and Brazilian, and most of the rest comes from small local and homemade
+ * producers. So: "meat and deli store", "steaks", "cut to order", "homemade,
+ * locally made".
  *
  * Length discipline: Google renders roughly 580px of title, which is about
  * 55-60 characters, and around 155 characters of description. Past that it
@@ -21,21 +31,21 @@ export interface SeoEntry {
 }
 
 export const HOME_SEO: SeoEntry = {
-  title: "Butcher & Deli in Panglao, Bohol",
+  title: "Meat & Deli Store in Panglao, Bohol",
   description:
-    "German sausages, USDA and Brazilian steaks, salmon, European cheese and deli goods in Bolod, Panglao. 440+ products with live prices and stock. Open daily 8am–8pm.",
+    "Steaks cut to order, sausages, cold cuts, cheese and groceries in Bolod, Panglao. Imported and locally made, fair prices, 440+ items live from the till.",
 };
 
 export const CATEGORY_SEO: Record<string, SeoEntry> = {
   Sausages: {
     title: "German Sausages in Panglao, Bohol",
     description:
-      "Bratwurst, Nürnberger, Weisswurst, cheese krainer, Landjäger, bangers and Merguez — hand-made in Panglao and sold by the kilo. Live stock from the counter.",
+      "Bratwurst, Nürnberger, Weisswurst, cheese krainer, Landjäger, bangers and Merguez, sold by the kilo. Homemade by small producers. Live stock from the counter.",
   },
   "Meat & Steaks": {
     title: "Steaks & Fresh Meat in Panglao, Bohol",
     description:
-      "USDA and Brazilian ribeye, tenderloin and chuck eye from ₱900/kg, house-smoked bacon, lamb shanks and ostrich. Cut to order in Bolod, Panglao.",
+      "USDA and Brazilian grass-fed ribeye, tenderloin and chuck eye from ₱900/kg, cut to order. Bacon, lamb shanks, ostrich, and burgers we grind here. Panglao.",
   },
   Poultry: {
     title: "Chicken, Duck & Turkey in Panglao, Bohol",
@@ -50,7 +60,7 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   "Hams & Cold Cuts": {
     title: "Ham, Salami & Cold Cuts in Panglao, Bohol",
     description:
-      "Cooked hams, mortadella, lyoner, beef salami, pastrami and wood-smoked ham, sliced to order at a German-Swiss deli counter in Bolod, Panglao.",
+      "Cooked hams, mortadella, lyoner, beef salami, pastrami and wood-smoked ham from German-Swiss makers, sliced to order at the deli counter in Bolod, Panglao.",
   },
   "Cheese & Dairy": {
     title: "European Cheese & Dairy in Panglao, Bohol",
@@ -60,12 +70,12 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   "Bakery & Desserts": {
     title: "Sourdough, Croissants & Cakes in Panglao",
     description:
-      "Sourdough bread, croissants, pain au chocolat, cinnamon rolls, Cornish pasties, sausage rolls and nine flavours of cake in a tub. Bolod, Panglao, Bohol.",
+      "Sourdough, croissants, pain au chocolat, cinnamon rolls, Cornish pasties, sausage rolls and nine flavours of cake, from local bakers. Bolod, Panglao, Bohol.",
   },
   "Ready Meals": {
     title: "Ready Meals & Pies in Panglao, Bohol",
     description:
-      "Lasagna, beef stew, chili con carne and shepherd's pie in trays, plus meat pies and ready-to-bake pizza. Made here, finished in your oven. Panglao, Bohol.",
+      "Lasagna, beef stew, chili con carne and shepherd's pie in trays, plus meat pies and ready-to-bake pizza from local kitchens. Finished in your oven. Panglao.",
   },
   "Breakfast & Cereals": {
     title: "Granola, Muesli & Oats in Panglao, Bohol",

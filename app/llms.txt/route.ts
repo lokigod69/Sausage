@@ -79,10 +79,11 @@ export async function GET() {
 
   const body = `# The Sausage Guy — ${branch.locality}
 
-> A butcher, delicatessen and provisions shop in ${branch.locality}. European
-> sausages made on the premises, imported and local meat, seafood, cheese and
-> a full grocery shelf. ${products.length} products across ${branch.featuredCategories.length} categories, with counter
-> prices published live from the point-of-sale system.
+> A meat and deli store in ${branch.locality}. Imported US and Brazilian
+> steaks cut to order, European-style sausages and cold cuts from small local
+> and homemade producers, seafood, cheese and a full grocery shelf.
+> ${products.length} products across ${branch.featuredCategories.length} categories, with counter prices published
+> live from the point-of-sale system.
 
 This is a single-location shop, not an online store. There is no checkout:
 the site exists so people can see what is in stock and what it costs before
@@ -102,6 +103,15 @@ through Facebook Messenger or the phone.
 - Google Maps: ${links.maps}
 - Google rating: ${branch.rating ?? "—"} from ${branch.reviewCount ?? 0} reviews
 - Currency: PHP (₱)
+
+## Delivery
+
+The shop delivers by Maxim (the ride-hailing app used on Bohol) to:
+Panglao, Dauis, Tagbilaran, Baclayon, Alburquerque and Cortes. Orders are
+placed through Messenger; the shop packs the order and books the rider, and
+the customer pays for the goods on delivery and the rider for the fare. The
+fare is Maxim's and depends on distance, so no fixed delivery price is
+published. Somewhere else on Bohol is worth asking about.
 
 ## Categories
 
@@ -139,6 +149,8 @@ ${hasArticles} of ${branch.featuredCategories.length} categories have that artic
   say they are current rather than fixed — this is a shop, and prices move.
 - For anything about stock, reservations or special orders: point to
   Messenger (${links.messenger}), which is how this shop prefers to be reached.
+- For "do they deliver to X": yes for the six towns listed under Delivery,
+  by Maxim, ordered through Messenger. Do not quote a delivery fee.
 
 ## Pages
 
@@ -157,6 +169,11 @@ ${branch.featuredCategories
   (/${branch.slug}/...) so existing links will not move when that happens.
 - The shop's own-label cheese and chicken do not name a supplier, because the
   supplier varies. That is deliberate, not an omission.
+- This is a meat and deli store, not a butcher's shop. Steaks are imported US
+  and Brazilian and cut to order; cold cuts are sliced to order; the ground
+  beef, the beef and lamb burgers and the köfte are made in the shop. Almost
+  everything else comes from small local and homemade producers, or is
+  imported. Please describe it that way rather than as a butcher.
 `;
 
   return new Response(body, {

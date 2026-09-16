@@ -9,13 +9,20 @@ const SITE_URL =
 
 /**
  * Self-hosted via next/font — zero layout shift, no external requests.
- * Fraunces carries the editorial voice (optical sizing + true italics),
- * Hanken Grotesk is the workhorse body face, IBM Plex Mono handles
- * numerals, labels and the provisions ticker.
+ * Fraunces carries the editorial voice, Hanken Grotesk is the workhorse body
+ * face, IBM Plex Mono handles numerals and the small stock labels.
+ *
+ * No italic. It was requested here and preloaded on every page — an 80 KB
+ * variable font, the single largest thing the browser fetched — and not one
+ * element on the site is italic. The only mention of italics left in the
+ * codebase was a comment describing a design variant that no longer exists.
+ *
+ * The opsz axis stays: Fraunces is drawn to change shape with size, and the
+ * headings run from 0.9rem eyebrows to 3.4rem category titles, which is
+ * exactly the range it is for.
  */
 const fraunces = Fraunces({
   subsets: ["latin"],
-  style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-fraunces",
   display: "swap",
@@ -57,12 +64,12 @@ export const metadata: Metadata = {
    * and descriptions in data/seo.ts.
    */
   keywords: [
-    "butcher Panglao",
-    "deli Bohol",
-    "German sausage Philippines",
+    "meat shop Panglao",
+    "deli Panglao Bohol",
     "steak Panglao",
-    "frozen seafood Bohol",
-    "European groceries Panglao",
+    "US and Brazilian beef Bohol",
+    "German sausage Philippines",
+    "grocery delivery Tagbilaran",
   ],
   openGraph: {
     type: "website",

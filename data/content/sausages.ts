@@ -1,11 +1,11 @@
 import type { CategoryContent } from "@/data/category-content";
 
 export const sausages: CategoryContent = {
-  lede: "Twenty-five sausages made the way they are made at home — German bratwurst, Swiss schüblig, Hungarian, Italian, British bangers and Merguez, hand-tied in Panglao.",
+  lede: "Twenty-five sausages made the way they are made at home — German bratwurst, Swiss schüblig, Hungarian, Italian, British bangers and Merguez, from small producers who still make them by hand.",
   metaDescription:
-    "German, Swiss, Hungarian and Italian sausages made in Panglao, Bohol: bratwurst, Nürnberger, cheese krainer, Landjäger, bangers and Merguez, priced by the kilo.",
+    "German, Swiss, Hungarian and Italian sausages in Panglao, Bohol: bratwurst, Nürnberger, cheese krainer, Landjäger, bangers and Merguez, priced by the kilo.",
   intro:
-    "Sausage is the reason the shop has its name, and it is the part of the counter we are slowest to change. Below: what each family tastes like, how to cook it without ruining it, and roughly how much to buy per person.",
+    "Sausage is the reason the shop has its name, and it is the part of the counter we are slowest to change. We do not make these ourselves — they come from small local and homemade producers working to European recipes, and we taste them before they go in the case. Below: what each family tastes like, how to cook it without ruining it, and roughly how much to buy per person.",
   sections: [
     {
       heading: "What makes a sausage worth buying",

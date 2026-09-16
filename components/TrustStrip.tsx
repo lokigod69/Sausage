@@ -1,9 +1,15 @@
-// Distinct value props only — nothing repeated from the announcement bar,
-// the hero, or the stock disclaimer. Delivery is surfaced here (once).
+/*
+ * Three claims, each of which has to be true and has to be worth reading.
+ *
+ * Delivery used to be one of them; it has its own section now, so this says
+ * the things that section does not. "One price for everyone" is here because
+ * it is the quiet worry a visitor arrives with and the shop has an answer to
+ * it — the price on the shelf is the price at the till, whoever is asking.
+ */
 const ITEMS = [
-  "Premium meats & deli",
-  "Frozen seafood & salmon",
-  "Pickup & delivery",
+  "Imported steaks, cut to order",
+  "Homemade & locally made",
+  "One price for everyone",
 ];
 
 export function TrustStrip() {

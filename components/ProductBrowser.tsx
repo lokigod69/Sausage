@@ -275,10 +275,10 @@ export function ProductBrowser({
       <div className="wrap">
         <SectionHeading
           eyebrow={heading?.eyebrow ?? "The full list"}
-          title={heading?.title ?? "Everything we carry"}
+          title={heading?.title ?? "Everything in the store"}
           intro={
             heading?.intro ??
-            "Prices and stock come straight from the counter — message us to set anything aside."
+            "Search it, or open an aisle. Prices and stock come straight from our till, so what you see here is what is on the shelf. Message us and we will set anything aside."
           }
         />
 

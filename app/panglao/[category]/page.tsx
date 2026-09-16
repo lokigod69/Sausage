@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getBranch } from "@/data/branches";
 import { getBranchCatalog } from "@/lib/catalog";
 import { categoryFromSlug, categorySlug, categoryPath } from "@/lib/routes";
 import { getCategoryContent } from "@/data/category-content";
+import { forClient } from "@/lib/products";
 import { getCategorySeo } from "@/data/seo";
 import { CategoryHero } from "@/components/CategoryHero";
 import { CategoryArticle } from "@/components/CategoryArticle";
+import { RelatedAisles } from "@/components/RelatedAisles";
 import { categoryImageSrc } from "@/components/CategoryPhoto";
 import { hasCategoryPhoto } from "@/data/category-images";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
@@ -15,7 +16,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyContactBar } from "@/components/StickyContactBar";
 import { ProductBrowser } from "@/components/ProductBrowser";
-import { ArrowUpRight } from "@/components/icons";
 
 const BRANCH_SLUG = "panglao";
 const SITE_URL =
@@ -194,7 +194,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
         />
 
         <ProductBrowser
-          products={products}
+          products={forClient(products)}
           syncedAt={catalog.syncedAt}
           showChips={false}
           heading={{
@@ -207,14 +207,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
 
         {content && <CategoryArticle label={label} content={content} />}
 
-        <section className="section">
-          <div className="wrap">
-            <Link href={BASE_PATH} className="btn btn-ghost">
-              Back to all categories
-              <ArrowUpRight width={17} height={17} />
-            </Link>
-          </div>
-        </section>
+        <RelatedAisles branch={branch} label={label} basePath={BASE_PATH} />
       </main>
 
       <Footer branch={branch} basePath={BASE_PATH} />

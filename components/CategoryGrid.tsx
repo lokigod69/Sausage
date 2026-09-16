@@ -26,9 +26,9 @@ export function CategoryGrid({
     <section className="section" aria-label="Product categories">
       <div className="wrap">
         <SectionHeading
-          eyebrow="Fresh on the shelves"
-          title="Shop by aisle"
-          intro="Everything for the week, from sausages and steaks to ready meals and fresh bakery."
+          eyebrow="Fourteen aisles"
+          title="What we have"
+          intro="Everything for the week in one stop — the meat counter, the deli, the cheese, and the shelves that fill the rest of the basket. Each aisle has its own page with today's prices."
         />
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">

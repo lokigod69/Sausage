@@ -18,11 +18,17 @@ export function StructuredData({
 
   const json = {
     "@context": "https://schema.org",
-    "@type": "Store",
+    /*
+     * Store plus GroceryStore: this is a meat and deli counter attached to a
+     * grocery shelf, and the pair describes that better than either alone.
+     * Deliberately not a butcher shop type — the steaks are imported and the
+     * charcuterie comes from local producers.
+     */
+    "@type": ["Store", "GroceryStore"],
     "@id": `${pageUrl}#store`,
     name: branch.name,
     description:
-      "Premium sausages, steaks, salmon, hams, bacon and deli goods in Panglao, Bohol.",
+      "Meat and deli store in Panglao, Bohol. Imported US and Brazilian steaks cut to order, sausages and cold cuts from local producers, cheese, seafood and groceries. Delivery by Maxim across Panglao, Dauis and Tagbilaran.",
     url: pageUrl,
     telephone: phone,
     image: `${siteUrl}/brand/logo-lockup-dark.png`,
@@ -36,7 +42,21 @@ export function StructuredData({
       postalCode: "6340",
       addressCountry: "PH",
     },
-    areaServed: ["Panglao", "Bohol"],
+    /*
+     * The towns a Maxim rider will actually go to, not a vague "Bohol". This
+     * is what a local pack is matched against when someone in Tagbilaran
+     * searches for a shop that delivers, and it has to stay in step with
+     * components/DeliverySection.tsx.
+     */
+    areaServed: [
+      "Panglao",
+      "Dauis",
+      "Tagbilaran",
+      "Baclayon",
+      "Alburquerque",
+      "Cortes",
+      "Bohol",
+    ].map((name) => ({ "@type": "City", name })),
     hasMap: mapsHref(branch.mapQuery),
     openingHoursSpecification: [
       {

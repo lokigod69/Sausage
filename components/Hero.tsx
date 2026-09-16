@@ -16,14 +16,33 @@ import { MessengerIcon, PhoneIcon, ArrowUpRight } from "./icons";
  * moment someone touches the controls: an auto-rotating banner that keeps
  * yanking the content away while you read it is worse than no rotation.
  * Respects prefers-reduced-motion by not rotating at all.
+ *
+ * With six promos behind the shop slide, a fixed order would mean the last
+ * two were seen by almost nobody — at seven seconds a slide, a full cycle is
+ * the better part of a minute and most visits are shorter than that. So the
+ * rotation enters the promo list at a different point each visit. Slide 0 is
+ * still always first and still what the server renders, so the promo list can
+ * be as long as the shop wants without the tail going to waste.
  */
 const ROTATE_MS = 7000;
 
 export function Hero({ branch }: { branch: Branch }) {
   const links = branchLinks(branch, DEFAULT_WA_MESSAGE);
+  const slides = HERO_SLIDES;
+  const promoCount = Math.max(slides.length - 1, 1);
+
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const slides = HERO_SLIDES;
+  /*
+   * Where the promo run starts. Zero on the server and on the first paint —
+   * a random value during render would not match what the server sent — and
+   * chosen once after mount, before the first tick fires.
+   */
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    setOffset(Math.floor(Math.random() * promoCount));
+  }, [promoCount]);
 
   useEffect(() => {
     if (paused || slides.length < 2) return;
@@ -35,7 +54,12 @@ export function Hero({ branch }: { branch: Branch }) {
     return () => clearInterval(id);
   }, [paused, slides.length]);
 
-  const slide = slides[index];
+  /** Position in the slide list for a given step of the rotation. */
+  const slideAt = (step: number) =>
+    step === 0 ? 0 : 1 + ((step - 1 + offset) % promoCount);
+
+  const current = slideAt(index);
+  const slide = slides[current];
 
   return (
     <section className="relative overflow-hidden pt-8 sm:pt-12">
@@ -56,7 +80,7 @@ export function Hero({ branch }: { branch: Branch }) {
           the shop, stated once, and each slide's headline is an h2.
         */}
         <h1 className="sr-only">
-          {branch.name} — butcher, deli and provisions in {branch.locality}
+          {branch.name} — meat and deli store in {branch.locality}
         </h1>
 
         <div
@@ -143,14 +167,16 @@ export function Hero({ branch }: { branch: Branch }) {
                   key={s.headline}
                   type="button"
                   role="tab"
-                  aria-selected={i === index}
+                  aria-selected={i === current}
                   aria-label={s.headline}
                   onClick={() => {
-                    setIndex(i);
+                    // Clicking a dot means "show me that one", so step to
+                    // wherever the shuffled run currently puts it.
+                    setIndex(i === 0 ? 0 : 1 + ((i - 1 - offset + promoCount) % promoCount));
                     setPaused(true);
                   }}
                   className="hero-banner__dot"
-                  data-active={i === index}
+                  data-active={i === current}
                 />
               ))}
             </div>
