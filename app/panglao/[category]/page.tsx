@@ -183,7 +183,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
       <AnnouncementBar branch={branch} />
       <Header branch={branch} basePath={BASE_PATH} />
 
-      <main className="pb-24 md:pb-0">
+      <main id="main" className="pb-24 md:pb-0">
         <CategoryHero
           branch={branch}
           label={label}

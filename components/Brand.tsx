@@ -39,7 +39,12 @@ export function Brand({
       role="img"
       aria-label="The Sausage Guy"
     >
-      <span className="brand-logo-frame" style={style} aria-hidden="true">
+      <span
+        className="brand-logo-frame"
+        style={style}
+        title="The Sausage Guy"
+        aria-hidden="true"
+      >
         <Image
           src={DARK_SRC}
           alt=""
@@ -70,7 +75,7 @@ export function BranchBadge() {
       className="hidden items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold sm:inline-flex"
       style={{
         border: "1px solid var(--line-strong)",
-        color: "var(--accent)",
+        color: "var(--accent-ink)",
         background: "color-mix(in oklab, var(--surface) 60%, transparent)",
       }}
     >

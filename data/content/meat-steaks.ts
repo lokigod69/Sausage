@@ -31,7 +31,7 @@ export const meatSteaks: CategoryContent = {
         "Salt generously, and either right before cooking or a full hour before. The window in between is the worst of both worlds: the salt has drawn moisture to the surface but has not yet been reabsorbed, so you are searing a wet steak.",
         "Get the pan properly hot — cast iron if you have it — and leave the steak alone. A 2.5cm ribeye wants roughly three minutes a side for medium rare, but thickness matters far more than weight, and the only reliable method is a thermometer: 52 °C for rare, 55 for medium rare, 60 for medium. Pull it three degrees early, because it keeps cooking as it rests.",
         "Rest it. Five minutes for a steak, ten for a thick one, on a warm plate, uncovered or loosely tented. Cutting straight into a steak empties it onto the board. This single step separates most disappointing home steaks from good ones.",
-        "For the leaner Brazilian cuts, add a knob of butter and a crushed garlic clove to the pan in the last minute and spoon it over. Grass-fed beef has less internal fat to baste itself with, and that thirty seconds of basting closes most of the gap.",
+        "For the leaner Brazilian cuts, add a spoon of butter and a crushed garlic clove to the pan in the last minute and spoon it over. Grass-fed beef has less internal fat to baste itself with, and that thirty seconds of basting closes most of the gap.",
       ],
     },
     {

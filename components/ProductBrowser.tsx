@@ -66,7 +66,8 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
     return (
       <Image
         src={product.image}
-        alt=""
+        alt={`${product.productName} at The Sausage Guy Panglao`}
+        title={product.productName}
         width={size}
         height={size}
         className="flex-shrink-0 rounded-md object-cover"
@@ -79,16 +80,24 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
 
   const silhouette = getCategorySilhouette(product.category);
 
+  /*
+   * No photograph yet — about a quarter of the catalogue. The tile keeps the
+   * list's rhythm and says so on hover rather than pretending to be a
+   * picture; `title` is the right tool for that, being supplementary. The
+   * accessible name says it outright, because a screen reader has no hover.
+   */
   return (
     <span
-      aria-hidden
+      role="img"
+      aria-label={`${product.productName} — photo coming soon`}
+      title={`${product.productName} — photo coming soon`}
       className="grid flex-shrink-0 place-items-center rounded-md font-display font-semibold"
       style={{
         width: size,
         height: size,
         fontSize: size * 0.4,
         background: "color-mix(in oklab, var(--accent) 16%, transparent)",
-        color: "var(--accent)",
+        color: "var(--accent-ink)",
       }}
     >
       {silhouette ? (
@@ -96,6 +105,7 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
         // which would vanish on the four dark variants. As a mask they take
         // the theme's accent colour in all six.
         <span
+          aria-hidden
           style={{
             width: size * 0.64,
             height: size * 0.64,
@@ -403,6 +413,9 @@ function CategorySection({
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
+        // Names the region it opens, so a screen reader can jump to the
+        // products rather than only being told the button is expanded.
+        aria-controls={`cat-${slugify(category)}-items`}
         className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
       >
         <span className="flex items-baseline gap-3">
@@ -428,7 +441,7 @@ function CategorySection({
       </button>
 
       {open && (
-        <div className="px-5 pb-5">
+        <div className="px-5 pb-5" id={`cat-${slugify(category)}-items`}>
           <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
               <ProductCard key={p.id} product={p} />
@@ -454,7 +467,7 @@ function LockerCell({ product }: { product: Product }) {
     >
       <span
         className="mono text-[0.62rem] uppercase tracking-wider"
-        style={{ color: "var(--accent)" }}
+        style={{ color: "var(--accent-ink)" }}
       >
         {product.category}
       </span>

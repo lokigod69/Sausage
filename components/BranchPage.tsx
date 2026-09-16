@@ -50,7 +50,7 @@ export async function BranchPage({
       <AnnouncementBar branch={branch} />
       <Header branch={branch} basePath={basePath} />
 
-      <main id="top" className="pb-24 md:pb-0">
+      <main id="main" className="pb-24 md:pb-0">
         <Hero branch={branch} />
         <QuickActions branch={branch} products={listed} basePath={basePath} />
         <CategoryGrid branch={branch} products={products} basePath={basePath} />

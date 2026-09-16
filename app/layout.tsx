@@ -102,7 +102,18 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${hanken.variable} ${plexMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {/*
+          First thing in the tab order on every page. The header below it
+          holds the brand, three contact controls and fifteen aisle links —
+          nineteen stops before the first word of content for anyone using a
+          keyboard or a switch. It is off-screen until focused.
+        */}
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

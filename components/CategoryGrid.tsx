@@ -42,6 +42,7 @@ export function CategoryGrid({
               <CategoryPhoto
                 slug={card.slug}
                 label={card.label}
+                showFallbackLabel={false}
                 sizes="(min-width: 640px) 112px, 96px"
                 priority={i < 2}
                 className="aspect-square w-24 flex-shrink-0 rounded-[calc(var(--radius)-2px)] sm:w-28"

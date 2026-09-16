@@ -85,14 +85,24 @@ export function Hero({ branch }: { branch: Branch }) {
 
         <div
           className="hero-banner"
+          role="group"
           aria-roledescription="carousel"
-          aria-live="polite"
+          aria-label="Shop promotions"
+          /*
+           * Silent while it rotates on its own. It was aria-live="polite",
+           * which meant a screen reader read out a whole new slide every
+           * seven seconds, unasked, over whatever the person was doing. Once
+           * the rotation is stopped the slide is only ever changed by the
+           * person, and announcing that is useful.
+           */
+          aria-live={paused ? "polite" : "off"}
           onMouseEnter={() => setPaused(true)}
           onFocusCapture={() => setPaused(true)}
         >
           <div className="hero-banner__media">
             {slide.image ? (
               <Image
+                title={slide.imageAlt}
                 src={slide.image}
                 alt={slide.imageAlt ?? ""}
                 fill
@@ -161,14 +171,24 @@ export function Hero({ branch }: { branch: Branch }) {
           </div>
 
           {slides.length > 1 && (
-            <div className="hero-banner__dots" role="tablist" aria-label="Banner slides">
+            <div
+              className="hero-banner__dots"
+              role="group"
+              aria-label="Choose a promotion"
+            >
+              {/*
+                Plain buttons, not role="tab". The tab pattern promises a
+                tabpanel with an id, an aria-controls pointing at it and arrow
+                -key navigation between tabs; this had none of those, so a
+                screen reader announced "tab" and then went looking for
+                something that was not there.
+              */}
               {slides.map((s, i) => (
                 <button
                   key={s.headline}
                   type="button"
-                  role="tab"
-                  aria-selected={i === current}
-                  aria-label={s.headline}
+                  aria-label={`Show: ${s.headline}`}
+                  aria-current={i === current ? "true" : undefined}
                   onClick={() => {
                     // Clicking a dot means "show me that one", so step to
                     // wherever the shuffled run currently puts it.
@@ -179,6 +199,24 @@ export function Hero({ branch }: { branch: Branch }) {
                   data-active={i === current}
                 />
               ))}
+              {/*
+                WCAG 2.2.2: anything that moves by itself for more than five
+                seconds needs a way to stop it. Pausing on hover and focus is
+                not that — a phone has neither.
+              */}
+              <button
+                type="button"
+                onClick={() => setPaused((p) => !p)}
+                className="hero-banner__pause"
+                /*
+                 * The label changes, so there is no aria-pressed: a button
+                 * reading "Play" while announcing itself as pressed is a
+                 * riddle. One or the other, and a changing label is the
+                 * clearer of the two.
+                 */
+              >
+                {paused ? "Play" : "Pause"}
+              </button>
             </div>
           )}
         </div>

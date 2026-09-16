@@ -46,7 +46,7 @@ export const herbsSpices: CategoryContent = {
       heading: "Storing spices so they last",
       paragraphs: [
         "The four enemies are heat, light, air and moisture, and a tropical kitchen supplies all four generously. The worst place for spices is the most common one: on a rack above the stove, where every pot of boiling water steams them.",
-        "Keep them in a closed cupboard away from the hob, in airtight containers rather than the original sachet folded over. Clip-top jars or small screw-top containers are ideal, and decanting also lets you see how much is left and how old it looks.",
+        "Keep them in a closed cupboard away from the stove, in airtight containers rather than the original sachet folded over. Clip-top jars or small screw-top containers are ideal, and decanting also lets you see how much is left and how old it looks.",
         "Never shake a spice directly from its container into a steaming pot. The rising steam condenses inside the container and the moisture will clump the contents and eventually grow mould. Measure into your hand or a spoon first — this is the single most common way home spice collections are ruined.",
         "A rough test for whether a ground spice is still worth using: rub a pinch between your fingers and smell it. If you have to work to detect anything, it is contributing colour and nothing else. Replace it, or use three times as much.",
       ],

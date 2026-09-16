@@ -74,9 +74,20 @@ export function QuickActions({
               className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
               style={{ color: "var(--faint)" }}
             />
+            {/*
+              A real combobox, not a text field with a list under it. The
+              suggestions used to be a role="listbox" whose children were
+              plain links, with nothing tying the input to it — so a screen
+              reader announced a search box, said nothing when matches
+              appeared, and offered no way to reach them.
+            */}
             <input
               type="search"
               inputMode="search"
+              role="combobox"
+              aria-expanded={open && matches.length > 0}
+              aria-controls="sg-search-results"
+              aria-autocomplete="list"
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);
@@ -95,12 +106,19 @@ export function QuickActions({
             />
 
             {open && matches.length > 0 && (
-              <ul className="quick-actions__results" role="listbox">
+              <div className="quick-actions__panel">
+              <ul
+                className="quick-actions__results"
+                role="listbox"
+                id="sg-search-results"
+                aria-label="Matching products"
+              >
                 {matches.map((p) => (
-                  <li key={p.id}>
+                  <li key={p.id} role="option" aria-selected={false}>
                     <a
                       href={categoryPath(basePath, p.category)}
                       className="quick-actions__result"
+                      tabIndex={-1}
                     >
                       <span className="min-w-0">
                         <span className="block truncate text-sm font-medium">
@@ -122,17 +140,20 @@ export function QuickActions({
                     </a>
                   </li>
                 ))}
-                <li>
-                  <button
-                    type="button"
-                    onClick={() => submit(query)}
-                    className="quick-actions__result w-full text-left text-sm"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    See all matches for “{query}”
-                  </button>
-                </li>
               </ul>
+
+              {/*
+                A sibling of the listbox, not a child of it: a listbox may
+                only contain options, and this is an action.
+              */}
+              <button
+                type="button"
+                onClick={() => submit(query)}
+                className="quick-actions__see-all"
+              >
+                See all matches for “{query}”
+              </button>
+              </div>
             )}
           </div>
 

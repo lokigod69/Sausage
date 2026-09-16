@@ -47,10 +47,29 @@
   --text: #1f1f1f;
   --text-strong: #111111;
   --muted: #6b7280;
-  --faint: #9ca3af;
+  /*
+   * --faint was #9ca3af, a cool grey that measured 2.0-2.4:1 on every ground
+   * here — well under the 4.5:1 that small text needs, and effectively
+   * unreadable on a phone in Panglao sun. This warm grey is 4.7-5.5:1 and
+   * still reads as the quiet tier.
+   */
+  --faint: #6b645d;
   --line: color-mix(in oklab, var(--text) 8%, transparent);
   --line-strong: color-mix(in oklab, var(--text) 18%, transparent);
-  --accent: #d97757; /* terracotta orange */
+  /*
+   * Two terracottas, and the split matters.
+   *
+   * --accent is the brand colour and stays exactly as it was: the halo behind
+   * the hero, the bullet dots, icon glyphs, hover borders. All decoration,
+   * none of it load-bearing text.
+   *
+   * --accent-ink is the same hue taken down until it passes: at least 4.55:1
+   * as text on every ground here, and 5.4:1 with white on top of it. Anything
+   * a person has to read uses it — eyebrow labels, inline links, and the
+   * primary button, whose white label on #d97757 measured 2.97:1.
+   */
+  --accent: #d97757; /* terracotta orange — decoration only */
+  --accent-ink: #9a543e; /* the readable one: text and button grounds */
   --accent-strong: #c46344;
   --accent-2: #7a4a26; /* warm coffee brown */
   --on-accent: #fbf9f6;
@@ -150,8 +169,14 @@ body {
   color: var(--text-strong);
 }
 
+/*
+ * The focus ring was terracotta, which is invisible on a terracotta button —
+ * exactly the control a keyboard user tabs to first. Ink reads against every
+ * surface on the site, including the primary button (3.7:1) and the dark
+ * footer, where the footer's own --text-strong takes over.
+ */
 :focus-visible {
-  outline: 2px solid var(--accent-strong);
+  outline: 2px solid var(--text-strong);
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -192,7 +217,7 @@ body {
   letter-spacing: 0.22em;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .balance {
   text-wrap: balance;
@@ -239,12 +264,12 @@ body {
   transform: translateY(1px) scale(0.99);
 }
 .btn-primary {
-  background: var(--accent);
+  background: var(--accent-ink);
   color: var(--on-accent);
-  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--accent) 80%, black);
+  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--accent-ink) 80%, black);
 }
 .btn-primary:hover {
-  background: var(--accent-strong);
+  background: color-mix(in oklab, var(--accent-ink) 88%, black);
   transform: translateY(-1px);
 }
 .btn-ghost {
@@ -335,6 +360,35 @@ body {
   opacity: 0.35;
   -webkit-mask-image: radial-gradient(70% 70% at 50% 40%, black, transparent);
   mask-image: radial-gradient(70% 70% at 50% 40%, black, transparent);
+}
+
+/*
+ * Skip link. The header carries the brand, three contact controls and fifteen
+ * aisle links, so a keyboard or switch user faced nineteen stops before the
+ * first word of content — on every page. Off-screen until focused, then it
+ * lands in the top-left like any other.
+ */
+.skip-link {
+  /* Fixed, not absolute: tabbing to it halfway down a long category page
+     should show it where the eye is, not scroll the document to find it. */
+  position: fixed;
+  left: 0.75rem;
+  top: -4rem;
+  z-index: 60;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  background: var(--accent-ink);
+  color: var(--on-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s var(--ease);
+}
+/* :focus, not :focus-visible. The link sits off-screen, so the only way to
+   reach it is the keyboard — and leaving it to the browser's heuristic for
+   what counts as keyboard focus is a risk with no upside here. */
+.skip-link:focus {
+  top: 0.75rem;
 }
 
 /* ---- Layout helpers ----------------------------------------------------- */
@@ -549,7 +603,9 @@ body {
   width: 100%;
   justify-content: center;
 }
-.quick-actions__results {
+/* The dropdown: a listbox of matches plus one action beneath it, which is
+   why the panel and the list are separate elements — see QuickActions. */
+.quick-actions__panel {
   position: absolute;
   z-index: 25;
   inset-inline: 0;
@@ -559,6 +615,26 @@ body {
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
+}
+.quick-actions__results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.quick-actions__see-all {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-ink);
+  border-top: 1px solid var(--line);
+  background: transparent;
+  transition: background 0.15s var(--ease);
+}
+.quick-actions__see-all:hover {
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
 }
 .quick-actions__result {
   display: flex;
@@ -641,19 +717,57 @@ body {
   right: clamp(1rem, 3vw, 1.75rem);
   top: clamp(1rem, 3vw, 1.75rem);
   display: flex;
+  align-items: center;
   gap: 0.4rem;
+  /* The controls sit over whatever photograph the slide carries, so they get
+     their own dark plate rather than trusting the image behind them. */
+  padding: 0.4rem 0.55rem;
+  border-radius: 999px;
+  background: rgb(20 16 13 / 0.42);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .hero-banner__dot {
   height: 0.5rem;
   width: 0.5rem;
   border-radius: 999px;
-  border: 1px solid rgb(255 255 255 / 0.75);
+  border: 1px solid rgb(255 255 255 / 0.85);
   background: transparent;
   transition: width 0.25s var(--ease), background 0.25s var(--ease);
 }
 .hero-banner__dot[data-active="true"] {
   width: 1.6rem;
   background: rgb(255 255 255 / 0.95);
+}
+.hero-banner__pause {
+  margin-left: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 0.55);
+  background: transparent;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  transition: background 0.2s var(--ease);
+}
+.hero-banner__pause:hover {
+  background: rgb(255 255 255 / 0.18);
+}
+/* The dots and the pause button are the one place a 44px target would eat the
+   picture, so they get a transparent halo instead of a bigger box. */
+@media (pointer: coarse) {
+  .hero-banner__dot,
+  .hero-banner__pause {
+    position: relative;
+  }
+  .hero-banner__dot::after,
+  .hero-banner__pause::after {
+    content: "";
+    position: absolute;
+    inset: -0.65rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -1019,5 +1133,15 @@ body {
   }
   .chip {
     min-height: 2.5rem;
+  }
+  /* The footer's link columns measured 22px tall — they clear WCAG 2.5.8 on
+     spacing alone, but only just, and a thumb does not measure. */
+  .site-footer__aisles a,
+  .site-footer__channels a,
+  .site-footer__more,
+  .site-footer__rating {
+    min-height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
   }
 }

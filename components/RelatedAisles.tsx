@@ -57,6 +57,7 @@ export function RelatedAisles({
                   slug={card.slug}
                   label={card.label}
                   sizes="88px"
+                  showFallbackLabel={false}
                   className="h-[72px] w-[72px] flex-shrink-0 rounded-[calc(var(--radius)-6px)]"
                 />
                 <span className="min-w-0 self-center">
@@ -93,7 +94,7 @@ export function RelatedAisles({
             Can&rsquo;t come to Bolod?{" "}
             <Link
               href={`${basePath}#delivery`}
-              style={{ color: "var(--accent)", textDecoration: "underline" }}
+              style={{ color: "var(--accent-ink)", textDecoration: "underline" }}
             >
               We deliver by Maxim
             </Link>{" "}
@@ -103,7 +104,7 @@ export function RelatedAisles({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1"
-              style={{ color: "var(--accent)", textDecoration: "underline" }}
+              style={{ color: "var(--accent-ink)", textDecoration: "underline" }}
             >
               <MessengerIcon width={14} height={14} aria-hidden />
               message us

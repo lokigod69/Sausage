@@ -55,7 +55,7 @@ export const BRANCHES: Branch[] = [
       {
         label: "Meat & Steaks",
         slug: "steaks-beef",
-        blurb: "Brazilian and USDA cuts, mince, bacon, lamb and ostrich.",
+        blurb: "Brazilian and USDA steaks, ground beef, bacon, lamb and ostrich.",
       },
       {
         label: "Poultry",

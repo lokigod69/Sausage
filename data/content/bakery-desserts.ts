@@ -28,7 +28,7 @@ export const bakeryDesserts: CategoryContent = {
     {
       heading: "The savoury counter",
       paragraphs: [
-        "Cornish pasties are a complete meal in a shortcrust shell — beef, potato, swede and onion, seasoned heavily with pepper, crimped along one side. They were built to be carried down a mine and eaten without cutlery, which makes them very well suited to a motorbike and a beach.",
+        "Cornish pasties are a complete meal in a shortcrust shell — beef, potato, turnip and onion, seasoned heavily with pepper, crimped along one side. They were built to be carried down a mine and eaten without cutlery, which makes them very well suited to a motorbike and a beach.",
         "Sausage rolls are seasoned sausage meat in puff pastry. Baked puffs come in smoked ham and cheese, or spinach and cream cheese. All three reheat properly in an oven at 180 °C for eight to ten minutes and badly in a microwave, for the same reason as the croissants.",
         "Burger buns and hotdog buns are here rather than with the meat because that is where bread belongs. They are worth the small effort of warming and splitting before use: a cold, un-toasted bun goes soggy the moment a hot patty lands on it, and thirty seconds cut-side down in a dry pan prevents it.",
       ],

@@ -31,11 +31,26 @@ export const metadata: Metadata = {
     description: HOME_SEO.description,
     type: "website",
     locale: "en_PH",
+    /*
+     * Repeated from the layout on purpose. Declaring `openGraph` on a page
+     * replaces the parent's block rather than merging into it, so leaving
+     * this out shipped the most-shared URL on the site — the one people paste
+     * into Messenger — with no preview picture at all.
+     */
+    images: [
+      {
+        url: `${SITE_URL}/branches/panglao-hero.jpg`,
+        width: 1536,
+        height: 1024,
+        alt: "The Sausage Guy counter in Panglao: ribeye, salmon, cheese, ham and sausages",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_SEO.title,
     description: HOME_SEO.description,
+    images: [`${SITE_URL}/branches/panglao-hero.jpg`],
   },
 };
 

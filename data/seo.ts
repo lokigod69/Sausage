@@ -40,7 +40,7 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   Sausages: {
     title: "German Sausages in Panglao, Bohol",
     description:
-      "Bratwurst, Nürnberger, Weisswurst, cheese krainer, Landjäger, bangers and Merguez, sold by the kilo. Homemade by small producers. Live stock from the counter.",
+      "Bratwurst, Nürnberger, Weisswurst, cheese krainer, Landjäger, bangers and Merguez, sold by the kilo. Made by hand by small local producers. Panglao, Bohol.",
   },
   "Meat & Steaks": {
     title: "Steaks & Fresh Meat in Panglao, Bohol",

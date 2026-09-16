@@ -87,8 +87,9 @@ export async function GET() {
 
 This is a single-location shop, not an online store. There is no checkout:
 the site exists so people can see what is in stock and what it costs before
-travelling, then message or call to reserve it. Orders and questions go
-through Facebook Messenger or the phone.
+they come, then message to reserve it or have it delivered. Orders and
+questions go through Facebook Messenger, which is how this shop prefers to be
+reached, or by phone. Delivery is by Maxim — see below.
 
 ## Essentials
 

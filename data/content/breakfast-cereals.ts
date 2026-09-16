@@ -56,7 +56,7 @@ export const breakfastCereals: CategoryContent = {
       paragraphs: [
         "A 400g bag of granola is roughly eight to ten bowls, which is a week and a half for one person or four days for a family that all eat it. A 500g pack of oats is considerably more — twelve to sixteen portions — because a porridge serving is 40 to 50g dry.",
         "If you are buying for children, look at the sugar figure before the flavour name. The fruity and chocolate versions on this shelf are consistently the sweetest, which is not a criticism so much as a fact worth having before breakfast becomes a negotiation.",
-        "This shelf turns over steadily and the imported lines come in batches, so a flavour can be absent for a fortnight and then return. The list on this page reads from the till and shows what is there now.",
+        "This shelf turns over steadily and the imported lines come in batches, so a flavour can be missing for a couple of weeks and then return. The list on this page reads from the till and shows what is there now.",
       ],
     },
   ],
