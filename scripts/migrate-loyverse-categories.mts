@@ -136,15 +136,15 @@ async function main() {
   /*
    * Phase 0 — clear the way for that rename. Loyverse refuses two categories
    * with the same name, so "Beverages" cannot become "Drinks" while the old
-   * "Drinks" still holds it. Empty the old one, then park it under a name
-   * that says it is disposable. Deleting is left to the back office: an empty
-   * category is trivial to remove by hand and impossible to un-delete here.
+   * "Drinks" still holds it. Move its four items across, then delete the
+   * empty category — the owner asked for it to go rather than linger under a
+   * placeholder name. It is emptied first, so nothing is deleted with it.
    */
   if (legacyDrinks && beveragesId) {
     const strays = items.filter((i) => i.category_id === legacyDrinks.id);
     console.log(
-      `  Phase 0 — free the name "Drinks": move ${strays.length} items into Beverages, ` +
-        `then park the empty category as "Drinks (old — safe to delete)"`,
+      `  Phase 0 — free the name "Drinks": move ${strays.length} items into ` +
+        `Beverages, then delete the emptied category`,
     );
     if (APPLY) {
       for (const item of strays) {
@@ -152,18 +152,13 @@ async function main() {
           method: "POST",
           body: JSON.stringify({ ...item, category_id: beveragesId }),
         });
+        item.category_id = beveragesId;
       }
-      await api("/categories", {
-        method: "POST",
-        body: JSON.stringify({
-          id: legacyDrinks.id,
-          name: "Drinks (old — safe to delete)",
-        }),
+      await fetch(`${API}/categories/${legacyDrinks.id}`, {
+        method: "DELETE",
+        headers,
       });
-      for (const item of strays) item.category_id = beveragesId;
-      categories = categories.map((c) =>
-        c.id === legacyDrinks.id ? { ...c, name: "Drinks (old — safe to delete)" } : c,
-      );
+      categories = categories.filter((c) => c.id !== legacyDrinks.id);
     }
   }
 

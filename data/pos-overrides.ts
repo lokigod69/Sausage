@@ -313,6 +313,14 @@ export const EXCLUDED_PRODUCTS: string[] = [
   "Farmers Ham(not 200g pack)",
   "Forest Ham (Not 200g)",
   "Honey ham(not 200g pack)",
+
+  /*
+   * An older, sizeless duplicate of "Oregano Flakes 50g (Chef's Cabinet)",
+   * which is the product actually stocked (owner, 16 Sep 2026). Its POS stock
+   * had drifted to -2, which is what a dead entry looks like. Hidden here;
+   * deleting it in Loyverse is the tidier end of the same fix.
+   */
+  "Oregano flakes",
 ];
 
 const excluded = new Set(EXCLUDED_PRODUCTS.map((n) => n.toLowerCase()));
