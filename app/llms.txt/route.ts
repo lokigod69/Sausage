@@ -79,7 +79,7 @@ export async function GET() {
 
   const body = `# The Sausage Guy — ${branch.locality}
 
-> A butcher, delicatessen and provisions shop in ${branch.address}. European
+> A butcher, delicatessen and provisions shop in ${branch.locality}. European
 > sausages made on the premises, imported and local meat, seafood, cheese and
 > a full grocery shelf. ${products.length} products across ${branch.featuredCategories.length} categories, with counter
 > prices published live from the point-of-sale system.
