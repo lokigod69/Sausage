@@ -1,5 +1,6 @@
 /**
- * Prompts for the category title images.
+ * Prompts for the pictures the site is missing: category title images and
+ * hero banners.
  *
  * These are NOT generated in code — they are a curated brief so every picture
  * on the site looks like it came from the same shoot. Generate externally,
@@ -29,6 +30,13 @@ export interface ImagePrompt {
   have: boolean;
   /** The subject-specific prompt (HOUSE_STYLE is appended at use time). */
   prompt: string;
+  /**
+   * Output shape. "card" is the 1200x900 category title image; "banner" is
+   * the 1600x1000 hero slide, which is 16/10 on a wide screen and has the
+   * copy panel sitting over its left half — so a banner prompt puts its
+   * subject right of centre and leaves that side quiet. Defaults to "card".
+   */
+  shape?: "card" | "banner";
 }
 
 /** Keyed by category slug — see featuredCategories in data/branches.ts. */
@@ -126,6 +134,45 @@ export const IMAGE_PROMPTS: Record<string, ImagePrompt> = {
     prompt:
       "a cold bottle of beer with condensation, a glass of iced tea and a bottle of sparkling water on dark slate, backlit so the liquid glows",
   },
+
+  /*
+   * Hero banners, keyed by the promo they belong to in data/promos.ts. Wider
+   * than the category cards, and composed for copy over the left half.
+   *
+   * No brand names, no signage, no readable text of any kind in these. The
+   * delivery banner in particular must not put a courier's livery on a rider
+   * — it is a picture of an order going out, not an endorsement, and an
+   * invented logo on a real company's bike would be a small lie in a big
+   * frame.
+   */
+  "banner-delivery": {
+    path: "/banners/delivery.jpg",
+    have: false,
+    shape: "banner",
+    prompt:
+      "a delivery rider on a small motorbike on a palm-lined tropical island road at golden hour, a plain grey insulated food bag strapped behind the seat, seen from behind and to the right so the left third of the frame is open road and soft sky, no logos, no lettering, no branding on the bag or the bike",
+  },
+  "banner-pies": {
+    path: "/banners/pies.jpg",
+    have: false,
+    shape: "banner",
+    prompt:
+      "three golden hand-sized meat pies on dark slate, one broken open to show a thick beef and gravy filling, steam rising, a fork and a linen cloth to the right, the left third of the frame empty dark surface, no packaging, no lettering",
+  },
+  "banner-frozen": {
+    path: "/banners/frozen.jpg",
+    have: false,
+    shape: "banner",
+    prompt:
+      "frozen blueberries, raspberries and strawberries spilling across dark slate with visible frost crystals, green asparagus spears and broccoli florets behind them, cold blue-tinged light on the right against warm shadow, the left third of the frame empty, no packaging, no lettering",
+  },
+  "banner-ostrich": {
+    path: "/banners/ostrich.jpg",
+    have: false,
+    shape: "banner",
+    prompt:
+      "two thick dark-red ostrich steaks resting on butcher paper beside a mound of coarse ground ostrich meat, cracked black pepper and a sprig of thyme, the deep burgundy colour of very lean red meat, arranged to the right of the frame with the left third empty dark stone, no packaging, no lettering",
+  },
 };
 
 /** Compose a final prompt string with the shared house style appended. */
@@ -133,7 +180,7 @@ export function buildPrompt(key: keyof typeof IMAGE_PROMPTS): string {
   return `${IMAGE_PROMPTS[key].prompt}, ${HOUSE_STYLE}`;
 }
 
-/** Category slugs still waiting on a photograph. */
+/** Slugs still waiting on a picture — category cards and banners alike. */
 export function missingImages(): string[] {
   return Object.entries(IMAGE_PROMPTS)
     .filter(([, p]) => !p.have)

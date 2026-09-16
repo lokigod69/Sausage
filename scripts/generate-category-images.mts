@@ -1,9 +1,11 @@
 /**
- * Generate the missing category title images with OpenAI's image API.
+ * Generate the site's missing pictures with OpenAI's image API — the category
+ * title images and the hero banners.
  *
  * Run it with:
- *   npm run gen:images              # every category marked have:false
- *   npm run gen:images -- drinks    # just these slugs, have:false or not
+ *   npm run gen:images                      # everything marked have:false
+ *   npm run gen:images -- drinks            # just these slugs
+ *   npm run gen:images -- banner-delivery   # banners are slugs too
  *
  * Needs OPENAI_API_KEY in .env.local. That key is billable — a gpt-image-1
  * render at this size runs to roughly USD 0.20, so eight images is a couple of
@@ -20,7 +22,7 @@
  * use a real relative path with its extension — no "@/" aliases at runtime.
  */
 
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
@@ -30,13 +32,17 @@ const API_URL = "https://api.openai.com/v1/images/generations";
 const MODEL = "gpt-image-1";
 
 /**
- * gpt-image-1 renders 3:2; the site wants 4:3. Generating wide and cropping
- * to the centre is the right way round — asking for a square and stretching
- * would distort, and the prompts already say to leave air at the edges.
+ * gpt-image-1 renders 3:2. Both output shapes are cropped from that: the
+ * category card is 4:3 (taller, so the sides come off) and the hero banner is
+ * 16:10 (wider, so the top and bottom do). Generating wide and cropping is
+ * the right way round — asking for a square and stretching would distort, and
+ * the prompts already say to leave air at the edges.
  */
 const GEN_SIZE = "1536x1024";
-const OUT_W = 1200;
-const OUT_H = 900;
+const SHAPES = {
+  card: { width: 1200, height: 900 },
+  banner: { width: 1600, height: 1000 },
+} as const;
 /** Matches the six photographs already in /public/products (200-250 KB). */
 const JPEG_QUALITY = 82;
 
@@ -160,13 +166,17 @@ async function main() {
 
     process.stdout.write(`· ${slug}: generating… `);
     try {
+      const { width, height } = SHAPES[spec.shape ?? "card"];
       const raw = await generate(slug, spec.prompt);
       const jpeg = await sharp(raw)
-        .resize(OUT_W, OUT_H, { fit: "cover", position: "centre" })
+        .resize(width, height, { fit: "cover", position: "centre" })
         .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
         .toBuffer();
+      await mkdir(path.dirname(outPath), { recursive: true });
       await writeFile(outPath, jpeg);
-      console.log(`${(jpeg.length / 1024).toFixed(0)} KB → ${spec.path}`);
+      console.log(
+        `${width}x${height}, ${(jpeg.length / 1024).toFixed(0)} KB → ${spec.path}`,
+      );
       done.push(slug);
     } catch (error) {
       // One bad prompt should not lose the images already paid for.
@@ -184,8 +194,10 @@ async function main() {
   let registry = await readFile(REGISTRY_FILE, "utf8");
   for (const slug of done) {
     prompts = markHave(prompts, slug);
-    // "hero" is the banner, not a category page — it has no card to light up.
-    if (slug !== "hero") registry = addToRegistry(registry, slug);
+    // Only category cards belong in the photo registry. "hero" is the branch
+    // page's own image and "banner-*" are hero slides; neither has a card.
+    const isCategoryCard = slug !== "hero" && !slug.startsWith("banner-");
+    if (isCategoryCard) registry = addToRegistry(registry, slug);
   }
   await writeFile(PROMPTS_FILE, prompts);
   await writeFile(REGISTRY_FILE, registry);

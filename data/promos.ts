@@ -29,6 +29,8 @@
  * producers and the steaks are imported, so nothing here sells the place as a
  * butcher's shop that cures its own hams.
  */
+import { IMAGE_PROMPTS } from "./image-prompts";
+
 export interface HeroSlide {
   /** Small line above the headline, e.g. "New in". */
   eyebrow?: string;
@@ -38,6 +40,21 @@ export interface HeroSlide {
   /** Alt text — required whenever `image` is set. */
   imageAlt?: string;
   cta?: { label: string; href: string };
+}
+
+/**
+ * Attach a generated banner, but only once it exists.
+ *
+ * data/image-prompts.ts already tracks which pictures have been made — the
+ * generator flips `have` when it writes the file. Reading that here lets a
+ * slide name its banner before the picture exists without shipping a broken
+ * image: until then the slide renders on the warm gradient, which is a
+ * perfectly good backdrop, and the photograph appears on the next build after
+ * `npm run gen:images` without anyone editing this file.
+ */
+function banner(key: string, alt: string): Partial<HeroSlide> {
+  const spec = IMAGE_PROMPTS[key];
+  return spec?.have ? { image: spec.path, imageAlt: alt } : {};
 }
 
 export const HERO_SLIDES: HeroSlide[] = [
@@ -70,6 +87,10 @@ export const HERO_SLIDES: HeroSlide[] = [
     eyebrow: "We deliver",
     headline: "Order by Messenger, get it by Maxim.",
     body: "We send orders across Panglao, Dauis, Tagbilaran, Baclayon, Alburquerque and Cortes by Maxim. Message us what you need, we pack it, you pay the rider for the ride.",
+    ...banner(
+      "banner-delivery",
+      "A delivery rider on a palm-lined Panglao road with an insulated food bag",
+    ),
     cta: { label: "How delivery works", href: "#delivery" },
   },
   {
@@ -79,18 +100,27 @@ export const HERO_SLIDES: HeroSlide[] = [
     eyebrow: "Dinner, sorted",
     headline: "Twelve pies from Zac's Pie House.",
     body: "Beef and mushroom, beef curry, pulled pork, breakfast, vegetarian — ₱245 each, and ₱215 for apple or choco brownie. Twenty minutes in your oven and it is done.",
+    ...banner("banner-pies", "Golden meat pies, one broken open to show the filling"),
     cta: { label: "See the pies", href: "/panglao/ready-meals" },
   },
   {
     eyebrow: "What Bohol doesn't grow",
     headline: "Real berries. Straight from the freezer.",
     body: "Blueberries from ₱120 for 250g, strawberries, raspberries and mixed berries by the kilo. Broccoli, cauliflower, green asparagus and peas too — picked and frozen properly, not dried out.",
+    ...banner(
+      "banner-frozen",
+      "Frosted blueberries, raspberries and strawberries with asparagus and broccoli",
+    ),
     cta: { label: "See frozen fruit & veg", href: "/panglao/frozen-fruit-veg" },
   },
   {
     eyebrow: "New in",
     headline: "Ostrich, now at the counter.",
     body: "Lean, high in iron and genuinely different: ostrich steaks at ₱1,750 a kilo, and 1kg packs of ground ostrich at ₱950 for burgers and ragù. Limited supply from Big Bird.",
+    ...banner(
+      "banner-ostrich",
+      "Two dark-red ostrich steaks on butcher paper beside coarse ground ostrich",
+    ),
     cta: { label: "See the ostrich cuts", href: "/panglao/meat-steaks" },
   },
 ];
