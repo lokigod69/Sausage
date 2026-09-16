@@ -6,6 +6,7 @@ import {
   MapPinIcon,
   ClockIcon,
   PhoneIcon,
+  MessengerIcon,
   WhatsAppIcon,
   FacebookIcon,
   ArrowUpRight,
@@ -49,7 +50,17 @@ export function LocationSection({ branch }: { branch: Branch }) {
 
             <div className="divider my-7" />
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {/* All five channels, Messenger first — see QuickActions. */}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <a
+                href={links.messenger}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                <MessengerIcon width={17} height={17} />
+                Messenger
+              </a>
               <a
                 href={links.whatsapp}
                 target="_blank"
@@ -71,6 +82,15 @@ export function LocationSection({ branch }: { branch: Branch }) {
               >
                 <FacebookIcon width={17} height={17} />
                 Facebook
+              </a>
+              <a
+                href={links.directions}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+              >
+                <MapPinIcon width={17} height={17} />
+                Directions
               </a>
             </div>
           </div>

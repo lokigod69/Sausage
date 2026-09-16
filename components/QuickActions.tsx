@@ -5,7 +5,14 @@ import type { Branch, Product } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
 import { searchProducts } from "@/lib/products";
 import { categoryPath } from "@/lib/routes";
-import { SearchIcon, WhatsAppIcon, FacebookIcon, MapPinIcon } from "./icons";
+import {
+  SearchIcon,
+  MessengerIcon,
+  WhatsAppIcon,
+  PhoneIcon,
+  FacebookIcon,
+  MapPinIcon,
+} from "./icons";
 
 /**
  * The band directly under the hero: search first, then the three ways to
@@ -129,7 +136,23 @@ export function QuickActions({
             )}
           </div>
 
+          {/*
+            All five ways to reach the shop, in the order they are actually
+            used here: Messenger first because in the Philippines that is how
+            people open a conversation with a business, then WhatsApp for the
+            expat half of the customer base, then the phone. The page and the
+            map follow — useful, but not the action.
+          */}
           <div className="quick-actions__links">
+            <a
+              href={links.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              <MessengerIcon width={18} height={18} />
+              Messenger
+            </a>
             <a
               href={links.whatsapp}
               target="_blank"
@@ -138,6 +161,10 @@ export function QuickActions({
             >
               <WhatsAppIcon width={18} height={18} />
               WhatsApp
+            </a>
+            <a href={links.phone} className="btn btn-primary">
+              <PhoneIcon width={18} height={18} />
+              Call
             </a>
             <a
               href={links.facebook}
@@ -149,13 +176,13 @@ export function QuickActions({
               Facebook
             </a>
             <a
-              href={links.maps}
+              href={links.directions}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
+              className="btn btn-ghost"
             >
               <MapPinIcon width={18} height={18} />
-              Get directions
+              Directions
             </a>
           </div>
         </div>

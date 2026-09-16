@@ -6,7 +6,7 @@ import type { Branch } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
 import { HERO_SLIDES } from "@/data/promos";
 import { OpenStatus } from "./OpenStatus";
-import { WhatsAppIcon, ArrowUpRight } from "./icons";
+import { MessengerIcon, PhoneIcon, ArrowUpRight } from "./icons";
 
 /**
  * Hero banner — a rotating stage for the shop and its promotions.
@@ -98,14 +98,20 @@ export function Hero({ branch }: { branch: Branch }) {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
+              {/* Messenger leads: in the Philippines it is the default way
+                  people message a shop. Calling is the other half. */}
               <a
-                href={links.whatsapp}
+                href={links.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-wa"
+                className="btn btn-primary"
               >
-                <WhatsAppIcon width={18} height={18} />
+                <MessengerIcon width={18} height={18} />
                 Message us
+              </a>
+              <a href={links.phone} className="btn btn-ghost">
+                <PhoneIcon width={18} height={18} />
+                Call
               </a>
               {slide.cta && (
                 <a href={slide.cta.href} className="btn btn-ghost">

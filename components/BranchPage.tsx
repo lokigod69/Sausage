@@ -54,7 +54,7 @@ export async function BranchPage({
         <LocationSection branch={branch} />
       </main>
 
-      <Footer branch={branch} />
+      <Footer branch={branch} basePath={basePath} />
       <StickyContactBar branch={branch} />
     </div>
   );

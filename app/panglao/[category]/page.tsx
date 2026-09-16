@@ -8,6 +8,8 @@ import { getCategoryContent } from "@/data/category-content";
 import { getCategorySeo } from "@/data/seo";
 import { CategoryHero } from "@/components/CategoryHero";
 import { CategoryArticle } from "@/components/CategoryArticle";
+import { categoryImageSrc } from "@/components/CategoryPhoto";
+import { hasCategoryPhoto } from "@/data/category-images";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -67,6 +69,24 @@ export async function generateMetadata({
     seo?.description ??
     `${card.blurb} ${products.length} products at The Sausage Guy in Panglao, Bohol, with counter prices and today's stock.`;
 
+  /*
+   * Share image. Where the category has a photograph of its own, use it
+   * rather than the shop-wide hero: most traffic here arrives as a link
+   * pasted into Messenger, and a link to Sausages that previews as sausages
+   * is worth more than the same counter shot fourteen times over.
+   */
+  const image = hasCategoryPhoto(card.slug)
+    ? {
+        url: `${SITE_URL}${categoryImageSrc(card.slug)}`,
+        width: 1200,
+        height: 900,
+      }
+    : {
+        url: `${SITE_URL}/branches/panglao-hero.jpg`,
+        width: 1536,
+        height: 1024,
+      };
+
   return {
     title,
     description,
@@ -77,8 +97,14 @@ export async function generateMetadata({
       url: `${SITE_URL}${path}`,
       type: "website",
       locale: "en_PH",
+      images: [{ ...image, alt: `${label} at The Sausage Guy, Panglao` }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image.url],
+    },
   };
 }
 
@@ -191,7 +217,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
         </section>
       </main>
 
-      <Footer branch={branch} />
+      <Footer branch={branch} basePath={BASE_PATH} />
       <StickyContactBar branch={branch} />
     </div>
   );

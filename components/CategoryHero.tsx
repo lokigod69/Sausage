@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Branch } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
 import { CategoryPhoto } from "./CategoryPhoto";
-import { WhatsAppIcon, MapPinIcon } from "./icons";
+import { MessengerIcon, PhoneIcon, MapPinIcon } from "./icons";
 
 /**
  * The title image of a category page, with the copy sitting inside it.
@@ -70,16 +70,20 @@ export function CategoryHero({
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href={links.whatsapp}
+                href={links.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-wa"
+                className="btn btn-primary"
               >
-                <WhatsAppIcon width={18} height={18} />
+                <MessengerIcon width={18} height={18} />
                 Ask what&rsquo;s in today
               </a>
+              <a href={links.phone} className="btn btn-ghost">
+                <PhoneIcon width={18} height={18} />
+                Call
+              </a>
               <a
-                href={links.maps}
+                href={links.directions}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-ghost"

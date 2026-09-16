@@ -1,37 +1,27 @@
+import Link from "next/link";
 import type { Branch } from "@/lib/types";
 import { branchLinks, DEFAULT_WA_MESSAGE } from "@/lib/contact";
+import { categoryPath } from "@/lib/routes";
 import { Brand } from "./Brand";
+import { HeaderNav } from "./HeaderNav";
 import { OpenStatus } from "./OpenStatus";
-import { WhatsAppIcon } from "./icons";
+import { MessengerIcon, PhoneIcon } from "./icons";
 
 /**
- * Header: brand, category nav, open/closed status and one contact action.
+ * Header: brand, whether the shop is open, one contact action, and the aisle
+ * strip.
  *
- * The nav lists the six counter categories rather than page anchors — those
- * are what people come for, and each now has its own page. The shelf
- * categories stay one level down, on the home page grid, so the bar does not
- * turn into a fourteen-item list nobody reads.
+ * Two rows rather than one. Cramming the nav in beside the brand leaves it
+ * about 300px wide on a laptop, which is not enough for fourteen aisles, and
+ * a burger menu would hide the one thing worth showing. The second row costs
+ * 40px and carries the whole shop.
  *
- * On phones the nav collapses to a horizontally scrollable strip: a burger
- * menu would hide the one thing worth showing.
+ * On a phone the top row is brand + a compact "Open now" — no hours, because
+ * the bar directly above already prints them, and the long version wrapped
+ * onto two lines and made the header 30px taller for no new information. The
+ * contact actions live in the sticky bar at the bottom of the screen, where a
+ * thumb is, so they are not repeated here.
  */
-const COUNTER_NAV = [
-  "Sausages",
-  "Meat & Steaks",
-  "Poultry",
-  "Seafood",
-  "Hams & Cold Cuts",
-  "Cheese & Dairy",
-];
-
-function categoryHref(basePath: string, label: string): string {
-  return `${basePath}/${label
-    .toLowerCase()
-    .replace(/&/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")}`;
-}
-
 export function Header({
   branch,
   basePath,
@@ -41,76 +31,58 @@ export function Header({
 }) {
   const links = branchLinks(branch, DEFAULT_WA_MESSAGE);
 
+  // One source of truth for the slugs: categoryPath, the same helper the
+  // cards, the footer and the sitemap use. This used to build its own and
+  // would have drifted the first time a category was renamed.
+  const navItems = branch.featuredCategories.map((card) => ({
+    label: card.label,
+    href: categoryPath(basePath, card.label),
+  }));
+
   return (
-    <header
-      className="sticky top-0 z-30"
-      style={{
-        background: "color-mix(in oklab, var(--bg) 88%, transparent)",
-        borderBottom: "1px solid var(--line)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-      }}
-    >
-      <div className="wrap flex items-center justify-between gap-4 py-3">
-        <a
+    <header className="site-header">
+      <div className="wrap site-header__bar">
+        <Link
           href={basePath}
-          aria-label="The Sausage Guy — home"
+          aria-label={`${branch.name} — home`}
           className="flex-shrink-0"
         >
           <Brand size="header" priority tone="dark" />
-        </a>
+        </Link>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <OpenStatus
             open={branch.hours.open}
             close={branch.hours.close}
             display={branch.hours.display}
           />
+          <span className="site-header__rule" aria-hidden />
+          <a href={links.phone} className="btn btn-ghost">
+            <PhoneIcon width={17} height={17} />
+            {branch.phone}
+          </a>
           <a
-            href={links.whatsapp}
+            href={links.messenger}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-wa"
+            className="btn btn-primary"
           >
-            <WhatsAppIcon width={17} height={17} />
-            Message us
+            <MessengerIcon width={17} height={17} />
+            Messenger
           </a>
         </div>
 
-        {/* Phone: the status pill alone, so the bar stays one line. */}
-        <div className="lg:hidden">
+        <div className="text-sm lg:hidden">
           <OpenStatus
             open={branch.hours.open}
             close={branch.hours.close}
             display={branch.hours.display}
+            compact
           />
         </div>
       </div>
 
-      <nav
-        aria-label="Categories"
-        className="no-scrollbar overflow-x-auto"
-        style={{ borderTop: "1px solid var(--line)" }}
-      >
-        <div className="wrap flex items-center gap-1 py-1.5">
-          <a
-            href={`${basePath}#products`}
-            className="header-nav-link"
-            style={{ color: "var(--text-strong)" }}
-          >
-            All products
-          </a>
-          {COUNTER_NAV.map((label) => (
-            <a
-              key={label}
-              href={categoryHref(basePath, label)}
-              className="header-nav-link"
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-      </nav>
+      <HeaderNav items={navItems} homeHref={basePath} />
     </header>
   );
 }

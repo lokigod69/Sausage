@@ -216,12 +216,8 @@ body {
 .brand-lockup {
   max-width: 100%;
 }
-.brand-logo--dark {
-  display: none;
-}
-.brand-logo--light {
-  display: block;
-}
+/* The page ground is parchment, so the dark-ink lockup is the one that
+   shows. The light lockup is kept for dark surfaces — see .site-footer. */
 .brand-logo--dark {
   display: block;
 }
@@ -396,11 +392,16 @@ body {
 }
 
 /* ---- Layout helpers ----------------------------------------------------- */
+:root {
+  /* The page gutter, named so a full-bleed child (the header's aisle strip)
+     can re-apply exactly the same inset to its own content. */
+  --gutter: clamp(1.1rem, 4vw, 2.5rem);
+}
 .wrap {
   width: 100%;
   max-width: var(--maxw);
   margin-inline: auto;
-  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
+  padding-inline: var(--gutter);
 }
 .section {
   padding-block: clamp(3.5rem, 8vw, 6.5rem);
@@ -700,61 +701,40 @@ body {
   }
 }
 
-/* -------- Variant switcher (all breakpoints) ----------------------------- */
-.vswitch-panel {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 0;
-  min-width: 200px;
-  padding: 6px;
-  display: grid;
-  gap: 2px;
-}
-.vswitch--right .vswitch-panel {
-  left: auto;
-  right: 0;
-}
-.vswitch summary {
-  list-style: none;
-  cursor: pointer;
-}
-.vswitch summary::-webkit-details-marker {
-  display: none;
-}
-.vswitch-option {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  border-radius: calc(var(--radius) - 4px);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-decoration: none;
-  transition: background 0.2s var(--ease), color 0.2s var(--ease);
-}
-.vswitch-option:hover {
-  background: color-mix(in oklab, var(--text) 8%, transparent);
-  color: var(--text-strong);
-}
-.vswitch-option[data-active="true"] {
-  background: color-mix(in oklab, var(--accent) 16%, transparent);
-  color: var(--text-strong);
-}
-.vswitch-swatch {
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  flex: 0 0 auto;
-  border: 1px solid rgb(0 0 0 / 0.25);
+/* Compact sticky-header lockup on small screens — the full 92px lockup is
+   too tall to pin over a phone viewport. */
+@media (max-width: 640px) {
+  .site-header .brand-lockup .brand-logo-frame {
+    width: min(10.5rem, var(--brand-w));
+  }
 }
 
-/* Compact sticky-header lockup on small screens — the full 92px lockup is
-   too tall to pin over a phone viewport. Applies to every variant. */
-@media (max-width: 640px) {
-  header .brand-lockup .brand-logo-frame {
-    width: min(11.5rem, var(--brand-w));
-  }
+/* -------------------------------------------------------------------------
+   Site header
+   ------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: color-mix(in oklab, var(--bg) 86%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+}
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.7rem;
+}
+/* Hairline between the status pill and the two buttons, so the right-hand
+   group reads as "information, then actions" instead of one long row. */
+.site-header__rule {
+  width: 1px;
+  align-self: stretch;
+  margin-block: 0.15rem;
+  background: var(--line);
 }
 
 /* -------------------------------------------------------------------------
@@ -763,6 +743,48 @@ body {
    names are the most useful thing in the bar, so hiding them behind an icon
    costs more than the space it saves.
    ------------------------------------------------------------------------- */
+.header-nav {
+  border-top: 1px solid var(--line);
+}
+.header-nav__wrap {
+  /* The strip bleeds to the screen edge inside the centred wrap, so the last
+     aisle scrolls right off the edge rather than stopping at a gutter and
+     looking like the end of the list. */
+  padding-inline: 0;
+}
+.header-nav__scroller {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  padding-block: 0.3rem;
+  padding-inline: var(--gutter, 1.25rem);
+  /* Fade whichever end still has aisles behind it. Both flags off (short
+     enough to fit) leaves the strip completely opaque. */
+  --fade: 2.5rem;
+  mask-image: none;
+}
+.header-nav__scroller[data-fade-right] {
+  mask-image: linear-gradient(
+    to right,
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+}
+.header-nav__scroller[data-fade-left] {
+  mask-image: linear-gradient(to right, transparent 0, #000 var(--fade));
+}
+.header-nav__scroller[data-fade-left][data-fade-right] {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade),
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+}
 .header-nav-link {
   flex-shrink: 0;
   padding: 0.4rem 0.7rem;
@@ -777,9 +799,14 @@ body {
   background: color-mix(in oklab, var(--accent) 12%, transparent);
   color: var(--text-strong);
 }
+.header-nav-link--home {
+  color: var(--text-strong);
+  font-weight: 600;
+}
 .header-nav-link[aria-current="page"] {
   background: color-mix(in oklab, var(--accent) 16%, transparent);
   color: var(--text-strong);
+  font-weight: 600;
 }
 
 /* -------------------------------------------------------------------------
@@ -797,7 +824,8 @@ body {
 }
 .quick-actions__links {
   display: grid;
-  grid-template-columns: 1fr;
+  /* Four actions: two up on a phone rather than a four-deep stack. */
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.6rem;
 }
 .quick-actions__links .btn {
@@ -833,7 +861,7 @@ body {
 
 @media (min-width: 640px) {
   .quick-actions__links {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 @media (min-width: 900px) {
@@ -843,7 +871,7 @@ body {
     gap: 1.25rem;
   }
   .quick-actions__links {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(5, auto);
   }
   .quick-actions__links .btn {
     width: auto;
@@ -1007,6 +1035,227 @@ body {
 }
 .category-article p:last-child {
   margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Site footer
+   Four columns on a wide screen, stacking to one on a phone. The aisle list
+   is two columns of its own throughout — fourteen items in a single column
+   is a very long footer.
+   ------------------------------------------------------------------------- */
+.site-footer {
+  /*
+   * The footer runs its own palette rather than inheriting the page's.
+   *
+   * It used to be the page ground mixed toward black, which on a parchment
+   * palette lands on a mid grey — and --faint, tuned for text on parchment,
+   * had almost no contrast against it. The column headings and the legal
+   * line were effectively invisible. A deep warm band with light text fixes
+   * that, closes the page properly, and because these are the same token
+   * names, the Brand lockup, .divider and the buttons all follow without
+   * knowing anything about it.
+   */
+  --text: #f3ece4;
+  --text-strong: #ffffff;
+  --muted: #c3b6a6;
+  --faint: #968a7c;
+  --line: color-mix(in oklab, #f3ece4 12%, transparent);
+  --line-strong: color-mix(in oklab, #f3ece4 22%, transparent);
+
+  position: relative;
+  /* No top margin: the last section already carries its own padding, and the
+     colour change is separation enough. */
+  background: #221d18;
+  color: var(--text);
+}
+/* Light ink on the dark band. */
+.site-footer .brand-logo--dark {
+  display: none;
+}
+.site-footer .brand-logo--light {
+  display: block;
+}
+.site-footer__grid {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: clamp(2.75rem, 6vw, 4rem);
+}
+@media (min-width: 680px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1040px) {
+  .site-footer__grid {
+    grid-template-columns: 1.15fr 1.35fr 1fr 0.9fr;
+    gap: 3rem;
+  }
+}
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.site-footer__tagline {
+  margin-top: 1.1rem;
+  max-width: 22rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.site-footer__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.site-footer__rating svg {
+  color: var(--accent);
+}
+.site-footer__rating:hover {
+  color: var(--text-strong);
+}
+
+.site-footer__heading {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Shared link behaviour for the three list columns: an underline that grows
+   from the left on hover, which reads as a link without underlining fourteen
+   items at rest and turning the block into a thicket. */
+.site-footer__aisles a,
+.site-footer__channels a,
+.site-footer__more {
+  position: relative;
+  color: var(--muted);
+  transition: color 0.15s var(--ease);
+}
+.site-footer__aisles a::after,
+.site-footer__channels a::after,
+.site-footer__more::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s var(--ease);
+}
+.site-footer__aisles a:hover,
+.site-footer__channels a:hover,
+.site-footer__more:hover {
+  color: var(--text-strong);
+}
+.site-footer__aisles a:hover::after,
+.site-footer__channels a:hover::after,
+.site-footer__more:hover::after {
+  transform: scaleX(1);
+}
+
+.site-footer__aisles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1.5rem;
+  margin-top: 1.1rem;
+  font-size: 0.875rem;
+}
+.site-footer__aisles a {
+  display: inline-block;
+}
+
+.site-footer__address {
+  margin-top: 1.1rem;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.site-footer__shop-name {
+  display: block;
+  color: var(--text-strong);
+  font-weight: 600;
+}
+.site-footer__wayfinding {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--faint);
+}
+.site-footer__hours {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.site-footer__hours svg {
+  flex: 0 0 auto;
+  color: var(--faint);
+}
+.site-footer__dim {
+  color: var(--faint);
+}
+.site-footer__more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.875rem;
+}
+
+.site-footer__channels {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+  font-size: 0.875rem;
+}
+.site-footer__channels a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.site-footer__channels svg {
+  flex: 0 0 auto;
+  color: var(--faint);
+  transition: color 0.15s var(--ease);
+}
+.site-footer__channels a:hover svg {
+  color: var(--accent);
+}
+/* The icon is decoration; the underline belongs under the words. */
+.site-footer__channels a::after {
+  left: calc(16px + 0.6rem);
+  width: calc(100% - 16px - 0.6rem);
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-block: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+@media (min-width: 640px) {
+  .site-footer__legal {
+    flex-direction: row;
+  }
+}
+/* Clear the sticky contact bar, which is fixed over the bottom of the screen
+   below md and would otherwise sit on top of the copyright line. */
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* -------------------------------------------------------------------------

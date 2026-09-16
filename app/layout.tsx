@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { HOME_SEO } from "@/data/seo";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -42,25 +43,31 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Sausage Guy Panglao — Sausages, Steaks, Seafood & Deli",
+    default: `${HOME_SEO.title} | The Sausage Guy`,
+    // Pages supply the specific half; the shop name is appended once here so
+    // no page has to remember to add it.
     template: "%s · The Sausage Guy",
   },
-  description:
-    "Premium sausages, steaks, salmon, hams, bacon and deli goods in Panglao, Bohol. Open daily 8 AM–8 PM inside Dason Store, Bolod.",
+  description: HOME_SEO.description,
   applicationName: "The Sausage Guy Panglao",
+  /*
+   * Keywords are ignored by Google and have been for years. Kept short and
+   * honest for the handful of smaller engines that still read them, and
+   * because they cost nothing; the real work is done by the per-page titles
+   * and descriptions in data/seo.ts.
+   */
   keywords: [
-    "Panglao deli",
-    "Bohol steaks",
-    "frozen seafood Panglao",
-    "sausages Bohol",
-    "salmon Panglao",
     "butcher Panglao",
+    "deli Bohol",
+    "German sausage Philippines",
+    "steak Panglao",
+    "frozen seafood Bohol",
+    "European groceries Panglao",
   ],
   openGraph: {
     type: "website",
-    title: "The Sausage Guy Panglao — Sausages, Steaks, Seafood & Deli",
-    description:
-      "Premium sausages, steaks, salmon, hams, bacon and deli goods in Panglao, Bohol. Open daily 8 AM–8 PM inside Dason Store, Bolod.",
+    title: `${HOME_SEO.title} | The Sausage Guy`,
+    description: HOME_SEO.description,
     siteName: "The Sausage Guy Panglao",
     locale: "en_PH",
     images: [
@@ -74,9 +81,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Sausage Guy Panglao — Sausages, Steaks, Seafood & Deli",
-    description:
-      "Premium sausages, steaks, salmon, hams, bacon and deli goods in Panglao, Bohol. Open daily 8 AM–8 PM.",
+    title: `${HOME_SEO.title} | The Sausage Guy`,
+    description: HOME_SEO.description,
     images: ["/branches/panglao-hero.jpg"],
   },
 };

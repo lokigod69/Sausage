@@ -8,7 +8,7 @@ const PANGLAO_PATH = process.env.NEXT_PUBLIC_PANGLAO_PATH || "/panglao";
  */
 export default function NotFound() {
   return (
-    <div className="atmosphere" data-variant="noir">
+    <div className="atmosphere">
       <main className="wrap grid min-h-[100dvh] place-items-center py-20 text-center">
         <div>
           <p className="eyebrow mb-4">The Sausage Guy · Panglao</p>

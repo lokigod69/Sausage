@@ -151,7 +151,7 @@ function StockBadge({ product }: { product: Product }) {
  *
  * Sausages, premium steaks and the cheese counter are weighed and priced at
  * the till, so the POS holds no number for them. Those say "by weight" — an
- * honest answer, and the WhatsApp CTA is right there for the exact figure.
+ * honest answer, and the Messenger CTA is right there for the exact figure.
  */
 function PriceTag({ product }: { product: Product }) {
   const price = formatPrice(product.price, product.currency);

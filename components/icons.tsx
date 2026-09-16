@@ -119,3 +119,16 @@ export function SausageMark(props: IconProps) {
     </svg>
   );
 }
+
+/**
+ * Facebook Messenger. Distinct from the Facebook "f" on purpose: they lead to
+ * different places — a chat versus a page — and using one mark for both is
+ * how people end up on the wrong one.
+ */
+export function MessengerIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M12 2C6.24 2 2 6.22 2 11.86c0 2.95 1.23 5.5 3.23 7.26.17.15.27.35.28.58l.05 1.83c.02.58.62.96 1.15.73l2.04-.9c.17-.08.37-.09.55-.04 1.08.3 2.23.45 3.4.45 5.76 0 10-4.22 10-9.86S17.76 2 12 2Zm6 7.6-2.94 4.66c-.47.74-1.47.92-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66c.47-.74 1.47-.92 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z" />
+    </svg>
+  );
+}
