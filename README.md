@@ -61,10 +61,11 @@ so the POS and the site agree. `data/loyverse-category-map.ts` maps POS
 category names onto them, and `data/pos-overrides.ts` holds the handful of
 deliberate exceptions.
 
-A category page is complete when it has three things: a title image
-(`data/image-prompts.ts` carries the brief and marks which are missing — eight
-still are), SERP copy (`data/seo.ts`) and an article (`data/content/*.ts`).
-Copy and articles are done for all fourteen.
+A category page is complete when it has three things: a title image, SERP copy
+(`data/seo.ts`) and an article (`data/content/*.ts`). All fourteen have all
+three. `data/image-prompts.ts` keeps the brief and the `have` flag for each
+picture, so adding a fifteenth category shows up as a gap rather than as a
+broken image.
 
 ## Architecture
 

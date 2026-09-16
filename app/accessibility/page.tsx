@@ -159,14 +159,14 @@ export default function AccessibilityPage() {
               <article>
                 <h2>What is not finished</h2>
                 <p>
-                  Six of our fourteen aisles have a photograph; the other eight
-                  show a marked placeholder while we shoot them. Most products
-                  have no picture yet either — those tiles say &ldquo;photo
-                  coming soon&rdquo; instead of pretending. Product names come
-                  straight from the shop till, so some are abbreviated in ways
-                  that read oddly out loud: &ldquo;2-pack&rdquo;,
-                  &ldquo;500g&rdquo;, the odd bracket. We are tidying those at
-                  source.
+                  All fourteen aisles now have a photograph with a written
+                  description. Most individual products still do not — those
+                  tiles say &ldquo;photo coming soon&rdquo; instead of
+                  pretending, and the name is read out either way, so nothing
+                  is lost but the picture. Product names come straight from the
+                  shop till, so some are abbreviated in ways that read oddly
+                  out loud: &ldquo;2-pack&rdquo;, &ldquo;500g&rdquo;, the odd
+                  bracket. We are tidying those at source.
                 </p>
                 <p>
                   We have tested this ourselves with the tools available to us.

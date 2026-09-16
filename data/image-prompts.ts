@@ -88,49 +88,49 @@ export const IMAGE_PROMPTS: Record<string, ImagePrompt> = {
   // currently opens on a tinted panel instead of a photograph.
   "bakery-desserts": {
     path: "/products/bakery-desserts.jpg",
-    have: false,
+    have: true,
     prompt:
       "a rustic loaf of dark rye bread, soft burger buns and a slice of sticky toffee pudding on a wooden board dusted with flour, bakery morning light",
   },
   "ready-meals": {
     path: "/products/ready-meals.jpg",
-    have: false,
+    have: true,
     prompt:
       "a baked beef lasagne in a white ceramic dish with one portion lifted out, steam rising, fork and linen napkin beside it",
   },
   "breakfast-cereals": {
     path: "/products/breakfast-cereals.jpg",
-    have: false,
+    have: true,
     prompt:
       "a bowl of rolled oats with honey drizzling in, a jar of muesli and a jug of milk on a linen cloth, soft morning window light",
   },
   "frozen-fruit-veg": {
     path: "/products/frozen-fruit-veg.jpg",
-    have: false,
+    have: true,
     prompt:
       "frozen berries, garden peas and green beans spilling from a paper bag onto dark slate, visible frost crystals, cold blue-tinged light against warm shadows",
   },
   "pantry-preserves": {
     path: "/products/pantry-preserves.jpg",
-    have: false,
+    have: true,
     prompt:
       "glass jars of jam, honey and pickles with a jar of peanut butter and a bottle of olive oil on a wooden pantry shelf, warm larder light",
   },
   "herbs-spices": {
     path: "/products/herbs-spices.jpg",
-    have: false,
+    have: true,
     prompt:
       "small mounds of paprika, black peppercorns, dried oregano and bay leaves on dark slate beside a brass spice spoon, top-down, rich colour",
   },
   "snacks-sweets": {
     path: "/products/snacks-sweets.jpg",
-    have: false,
+    have: true,
     prompt:
       "a broken bar of dark chocolate, salted pretzels and a handful of roasted nuts scattered on dark stone, evening light",
   },
   drinks: {
     path: "/products/drinks.jpg",
-    have: false,
+    have: true,
     prompt:
       "a cold bottle of beer with condensation, a glass of iced tea and a bottle of sparkling water on dark slate, backlit so the liquid glows",
   },
@@ -147,28 +147,21 @@ export const IMAGE_PROMPTS: Record<string, ImagePrompt> = {
    */
   "banner-delivery": {
     path: "/banners/delivery.jpg",
-    have: false,
+    have: true,
     shape: "banner",
     prompt:
       "a delivery rider on a small motorbike on a palm-lined tropical island road at golden hour, a plain grey insulated food bag strapped behind the seat, seen from behind and to the right so the left third of the frame is open road and soft sky, no logos, no lettering, no branding on the bag or the bike",
   },
   "banner-pies": {
     path: "/banners/pies.jpg",
-    have: false,
+    have: true,
     shape: "banner",
     prompt:
       "three golden hand-sized meat pies on dark slate, one broken open to show a thick beef and gravy filling, steam rising, a fork and a linen cloth to the right, the left third of the frame empty dark surface, no packaging, no lettering",
   },
-  "banner-frozen": {
-    path: "/banners/frozen.jpg",
-    have: false,
-    shape: "banner",
-    prompt:
-      "frozen blueberries, raspberries and strawberries spilling across dark slate with visible frost crystals, green asparagus spears and broccoli florets behind them, cold blue-tinged light on the right against warm shadow, the left third of the frame empty, no packaging, no lettering",
-  },
   "banner-ostrich": {
     path: "/banners/ostrich.jpg",
-    have: false,
+    have: true,
     shape: "banner",
     prompt:
       "two thick dark-red ostrich steaks resting on butcher paper beside a mound of coarse ground ostrich meat, cracked black pepper and a sprig of thyme, the deep burgundy colour of very lean red meat, arranged to the right of the frame with the left third empty dark stone, no packaging, no lettering",

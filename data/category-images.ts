@@ -17,6 +17,14 @@ export const CATEGORY_PHOTO_SLUGS = new Set([
   "seafood-salmon",
   "hams-deli",
   "cheese-dairy",
+  "bakery-desserts",
+  "ready-meals",
+  "breakfast-cereals",
+  "frozen-fruit-veg",
+  "pantry-preserves",
+  "herbs-spices",
+  "snacks-sweets",
+  "drinks",
 ]);
 
 export function hasCategoryPhoto(slug: string): boolean {
@@ -75,15 +83,15 @@ export const CATEGORY_PHOTO_ALT: Record<string, string> = {
   "Breakfast & Cereals":
     "A bowl of rolled oats with honey pouring in, beside a jar of muesli and a jug of milk",
   "Frozen Fruit & Veg":
-    "Frozen berries, peas and green beans spilling onto dark slate, frost still on them",
+    "Frozen strawberries, raspberries, blackberries and blueberries spilling from a paper bag, with broccoli, green beans and peas behind them, frost still on everything",
   "Pantry & Preserves":
-    "Glass jars of jam, honey and pickles on a wooden shelf with olive oil and peanut butter",
+    "Four glass jars on a wooden table — sauerkraut, pickled onions with bay and peppercorns, whole gherkins with dill, and red cabbage",
   "Herbs & Spices":
-    "Small mounds of paprika, peppercorns, dried oregano and bay leaves on dark slate",
+    "Paprika, turmeric, chilli flakes, coarse salt, black and white peppercorns, dried oregano, bay leaves and star anise on dark slate with a brass spice scoop",
   "Snacks & Sweets":
-    "Broken dark chocolate, salted pretzels and roasted nuts scattered on dark stone",
+    "Broken dark chocolate on dark stone, with bowls of salted pretzels, mixed nuts, dried fruit, cookies and sugared jellies around it",
   Drinks:
-    "A cold bottle of beer, a glass of iced tea and sparkling water, backlit on dark slate",
+    "A frosted bottle of beer beside a tall glass of iced tea with lemon and mint, a bottle of sparkling water and glasses of juice, on a wet dark counter with ice",
 };
 
 /**

@@ -107,10 +107,14 @@ export const HERO_SLIDES: HeroSlide[] = [
     eyebrow: "What Bohol doesn't grow",
     headline: "Real berries. Straight from the freezer.",
     body: "Blueberries from ₱120 for 250g, strawberries, raspberries and mixed berries by the kilo. Broccoli, cauliflower, green asparagus and peas too — picked and frozen properly, not dried out.",
-    ...banner(
-      "banner-frozen",
-      "Frosted blueberries, raspberries and strawberries with asparagus and broccoli",
-    ),
+    /*
+     * No banner of its own, and it does not need one: the steak and sausage
+     * slides already run on their category photograph, and this one crops to
+     * 16/10 with the berries where the copy panel is not.
+     */
+    image: "/products/frozen-fruit-veg.jpg",
+    imageAlt:
+      "Frozen strawberries, raspberries and blueberries spilling from a paper bag beside broccoli, green beans and peas",
     cta: { label: "See frozen fruit & veg", href: "/panglao/frozen-fruit-veg" },
   },
   {
