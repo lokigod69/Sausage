@@ -50,13 +50,13 @@ export function LocationSection({ branch }: { branch: Branch }) {
 
             <div className="divider my-7" />
 
-            {/* All five channels, Messenger first — see QuickActions. */}
+            {/* All five channels in their own colours — see QuickActions. */}
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               <a
                 href={links.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-messenger"
               >
                 <MessengerIcon width={17} height={17} />
                 Messenger
@@ -78,7 +78,7 @@ export function LocationSection({ branch }: { branch: Branch }) {
                 href={links.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost"
+                className="btn btn-facebook"
               >
                 <FacebookIcon width={17} height={17} />
                 Facebook
@@ -87,7 +87,7 @@ export function LocationSection({ branch }: { branch: Branch }) {
                 href={links.directions}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost"
+                className="btn btn-maps"
               >
                 <MapPinIcon width={17} height={17} />
                 Directions

@@ -60,6 +60,22 @@ export function Hero({ branch }: { branch: Branch }) {
 
   const current = slideAt(index);
   const slide = slides[current];
+  const upcoming = slides[slideAt((index + 1) % slides.length)]?.image;
+
+  /*
+   * Warm the next slide's photograph.
+   *
+   * Without this, a rotation swaps the headline at once and the picture
+   * whenever it finishes downloading — so on a slow connection the new copy
+   * sits under the previous slide's photo for a beat, and "Twelve pies from
+   * Zac's Pie House" appears over a tray of steak. One image ahead is cheap;
+   * preloading all seven on a phone would not be.
+   */
+  useEffect(() => {
+    if (!upcoming) return;
+    const img = new window.Image();
+    img.src = upcoming;
+  }, [upcoming]);
 
   return (
     <section className="relative overflow-hidden pt-8 sm:pt-12">
@@ -138,7 +154,7 @@ export function Hero({ branch }: { branch: Branch }) {
                 href={links.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-messenger"
               >
                 <MessengerIcon width={18} height={18} />
                 Message us

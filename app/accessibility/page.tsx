@@ -113,9 +113,13 @@ export default function AccessibilityPage() {
                   does not exist yet, the space says so rather than sitting
                   there empty. Text and background colours
                   are measured, not guessed: body text sits at 14.8:1, the
-                  quietest text on the page at 4.7:1, and the buttons carry
-                  their labels at 5.4:1 — all above the 4.5:1 the standard asks
-                  for. The outline of a search box or a button clears 3:1
+                  quietest text on the page at 4.7:1, and every button
+                  carries its label at 5:1 or better — all above the 4.5:1 the
+                  standard asks for. The Messenger, WhatsApp, Facebook and
+                  Maps buttons wear their own platform&rsquo;s colour, but
+                  each one is that colour deepened until the label passes:
+                  WhatsApp&rsquo;s official green manages only 1.89:1 under
+                  white text, and we would rather be readable than exact. The outline of a search box or a button clears 3:1
                   against what is behind it, so you can find the thing you are
                   meant to click.
                 </p>
@@ -220,7 +224,7 @@ export default function AccessibilityPage() {
                     href={links.messenger}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-primary"
+                    className="btn btn-messenger"
                   >
                     <MessengerIcon width={18} height={18} aria-hidden />
                     Report a problem on Messenger

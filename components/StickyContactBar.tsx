@@ -24,10 +24,14 @@ export function StickyContactBar({ branch }: { branch: Branch }) {
     <div
       className="fixed inset-x-0 bottom-0 z-40 md:hidden"
       style={{
-        background: "color-mix(in oklab, var(--bg) 86%, transparent)",
+        /*
+         * Solid, like the header. This was 86% opacity over a blur, so the
+         * product list scrolled visibly through the bar — and the four
+         * buttons sat on whatever colour happened to be passing underneath.
+         */
+        background: "var(--surface)",
         borderTop: "1px solid var(--line)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
+        boxShadow: "0 -8px 24px -18px rgb(60 50 40 / 0.5)",
         paddingBottom: "env(safe-area-inset-bottom)",
       }}
     >
@@ -36,7 +40,7 @@ export function StickyContactBar({ branch }: { branch: Branch }) {
           href={links.messenger}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary"
+          className="btn btn-messenger"
           style={{ minHeight: 46, fontSize: "0.78rem" }}
         >
           <MessengerIcon width={17} height={17} />
@@ -64,7 +68,7 @@ export function StickyContactBar({ branch }: { branch: Branch }) {
           href={links.directions}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary"
+          className="btn btn-maps"
           style={{ minHeight: 46, fontSize: "0.78rem" }}
         >
           <MapPinIcon width={17} height={17} />

@@ -72,7 +72,7 @@ export function Footer({
             href={links.messenger}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary mt-6"
+            className="btn btn-messenger mt-6"
           >
             <MessengerIcon width={18} height={18} />
             Message the shop

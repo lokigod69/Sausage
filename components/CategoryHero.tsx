@@ -73,7 +73,7 @@ export function CategoryHero({
                 href={links.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-messenger"
               >
                 <MessengerIcon width={18} height={18} />
                 Ask what&rsquo;s in today
@@ -86,7 +86,7 @@ export function CategoryHero({
                 href={links.directions}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost"
+                className="btn btn-maps"
               >
                 <MapPinIcon width={18} height={18} />
                 Directions

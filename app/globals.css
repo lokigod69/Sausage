@@ -108,6 +108,32 @@
   --stock-in: #2f7d4f;
   --stock-low: #94620f;
   --stock-out: #8a7f74;
+
+  /*
+   * Channel colours, so a button is recognised before its label is read —
+   * which on a phone in the Philippines is most of the job a contact row does.
+   *
+   * These are NOT the official hex values, and that is deliberate. Measured
+   * against a white label: WhatsApp #25D366 is 1.89:1, Google's red #EA4335 is
+   * 3.73:1, Facebook #1877F2 is 4.03:1 and Messenger #006AFF is 4.44:1. Every
+   * one of them fails the 4.5:1 that normal text needs; the platforms ship
+   * them anyway inside their own apps, but this site publishes an
+   * accessibility statement with a number in it.
+   *
+   * So each is its own hue taken down until the white label passes — same
+   * colour, deeper. WhatsApp is still WhatsApp green and Maps is still Google
+   * red; nobody hesitates over which button is which, and the label can be
+   * read in Panglao sun. The bright originals stay available for glyphs on a
+   * light ground, where they are decoration rather than text.
+   */
+  --wa: #167f3d; /* WhatsApp green, 4.8:1 with white */
+  --wa-hover: #126733;
+  --messenger: #005fe6; /* Messenger blue, 5.3:1 */
+  --messenger-hover: #0050bf;
+  --facebook: #1465ce; /* Facebook blue, 5.3:1 */
+  --facebook-hover: #1259b6;
+  --maps: #c7392d; /* Google Maps red, 4.9:1 */
+  --maps-hover: #b03228;
 }
 
 .mono {
@@ -304,13 +330,47 @@ body {
   color: var(--text-strong);
   transform: translateY(-1px);
 }
+/*
+ * The four channel buttons. Same shape, same size, same type as every other
+ * button on the site — only the colour differs, because the colour is the
+ * whole point: it is what lets someone pick Messenger out of a row of five
+ * without reading. The shop's own terracotta stays on the shop's own actions
+ * (Call, "See the steaks", "All 14 aisles"), so the page still has one voice.
+ */
+.btn-messenger {
+  background: var(--messenger);
+  color: #fff;
+  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--messenger) 85%, black);
+}
+.btn-messenger:hover {
+  background: var(--messenger-hover);
+  transform: translateY(-1px);
+}
 .btn-wa {
-  background: #1faa55;
-  color: #f3fff7;
-  box-shadow: 0 10px 26px -14px rgb(31 170 85 / 0.7);
+  background: var(--wa);
+  color: #fff;
+  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--wa) 85%, black);
 }
 .btn-wa:hover {
-  background: #189048;
+  background: var(--wa-hover);
+  transform: translateY(-1px);
+}
+.btn-facebook {
+  background: var(--facebook);
+  color: #fff;
+  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--facebook) 85%, black);
+}
+.btn-facebook:hover {
+  background: var(--facebook-hover);
+  transform: translateY(-1px);
+}
+.btn-maps {
+  background: var(--maps);
+  color: #fff;
+  box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--maps) 85%, black);
+}
+.btn-maps:hover {
+  background: var(--maps-hover);
   transform: translateY(-1px);
 }
 
@@ -509,10 +569,30 @@ body {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: color-mix(in oklab, var(--bg) 86%, transparent);
+  /*
+   * Solid, not frosted. It was 86% opacity over a blur, which looks fine at
+   * the top of the page and poor everywhere else: scrolled down a category
+   * page, product photographs bleed through the bar and the fourteen aisle
+   * names sit on whatever colour happens to be passing underneath. On a phone
+   * the blur also costs a full-width repaint on every scroll frame for an
+   * effect nobody asked for. The bar is a bar.
+   */
+  background: var(--surface);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px) saturate(1.15);
-  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+}
+/* A shadow only once it is actually overlapping something, so the header
+   still sits flat against the announcement bar at the top of the page. */
+@supports (animation-timeline: scroll()) {
+  .site-header {
+    animation: header-lift linear both;
+    animation-timeline: scroll();
+    animation-range: 0 120px;
+  }
+  @keyframes header-lift {
+    to {
+      box-shadow: 0 6px 20px -14px rgb(60 50 40 / 0.45);
+    }
+  }
 }
 .site-header__bar {
   display: flex;

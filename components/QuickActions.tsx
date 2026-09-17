@@ -163,13 +163,18 @@ export function QuickActions({
             people open a conversation with a business, then WhatsApp for the
             expat half of the customer base, then the phone. The page and the
             map follow — useful, but not the action.
+
+            Each carries its own channel's colour, so the row is scanned by
+            colour rather than read word by word. The phone is the exception
+            and keeps the shop's terracotta: it is the shop's own line, not a
+            platform, and it stops the row from reading as five logos.
           */}
           <div className="quick-actions__links">
             <a
               href={links.messenger}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
+              className="btn btn-messenger"
             >
               <MessengerIcon width={18} height={18} />
               Messenger
@@ -191,7 +196,7 @@ export function QuickActions({
               href={links.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-ghost"
+              className="btn btn-facebook"
             >
               <FacebookIcon width={18} height={18} />
               Facebook
@@ -200,7 +205,7 @@ export function QuickActions({
               href={links.directions}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-ghost"
+              className="btn btn-maps"
             >
               <MapPinIcon width={18} height={18} />
               Directions

@@ -126,7 +126,7 @@ export function DeliverySection({ branch }: { branch: Branch }) {
                 href={links.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-messenger"
               >
                 <MessengerIcon width={18} height={18} />
                 Order on Messenger

@@ -65,7 +65,7 @@ export function Header({
             href={links.messenger}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary"
+            className="btn btn-messenger"
           >
             <MessengerIcon width={17} height={17} />
             Messenger
