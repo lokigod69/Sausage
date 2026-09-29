@@ -17,6 +17,8 @@
  * deliberately not reproduced here — see the boundary note in lib/types.ts.
  */
 
+import { IMAGE_PROMPTS } from "@/data/image-prompts";
+
 export interface WeightPrice {
   /** Counter sell price in PHP. */
   price: number;
@@ -335,4 +337,76 @@ const weightPrices = new Map(
 
 export function getWeightPrice(productName: string): WeightPrice | undefined {
   return weightPrices.get(productName.trim().toLowerCase());
+}
+
+/**
+ * Product photographs we hold ourselves, keyed by the POS name.
+ *
+ * The real source of product pictures is Loyverse: `npm run sync:loyverse`
+ * downloads whatever the shop has uploaded there into
+ * public/products/loyverse/, and 261 products are already covered that way.
+ * That is the better path, because a photograph in the POS is the actual
+ * product and it also shows up on the till.
+ *
+ * This map is the fallback for items the POS has no picture for. It is only
+ * ever consulted when `row.image` is empty, so the moment a real photograph
+ * is uploaded to Loyverse it wins and the entry here becomes dead weight —
+ * which is the right way round.
+ *
+ * Keyed on the POS name, not the display name, for the same reason every
+ * other lookup in this file is: a rename in the back office must not
+ * silently detach a product from its picture.
+ */
+export const PRODUCT_IMAGES: Record<string, string> = {
+  // --- Sausages -------------------------------------------------------
+  "Beef Hotdog": "/products/items/beef-hotdog.jpg",
+  "Bratwurst (Classic)": "/products/items/bratwurst-classic.jpg",
+  Cervelat: "/products/items/cervelat.jpg",
+  "Cheese Hotdog": "/products/items/cheese-hotdog.jpg",
+  "Chicken Chipolata": "/products/items/chicken-chipolata.jpg",
+  "English Bangers": "/products/items/english-bangers.jpg",
+  Frankfurter: "/products/items/frankfurter.jpg",
+  "Hungarian Cheesy Sausage": "/products/items/hungarian-cheesy.jpg",
+  "Hungarian Spicy Sausage": "/products/items/hungarian-spicy.jpg",
+  "Italian Garlic": "/products/items/italian-garlic.jpg",
+  "Italian Sausage": "/products/items/italian-sausage.jpg",
+  Kielbasa: "/products/items/kielbasa.jpg",
+  "Mergese Sausage": "/products/items/merguez.jpg",
+  "Nuernberger Sausage": "/products/items/nuernberger.jpg",
+  "Special Hotdog": "/products/items/special-hotdog.jpg",
+  "Spicy Italian with Fennel": "/products/items/spicy-italian-fennel.jpg",
+  "Thüringerian Bratwurst": "/products/items/thueringer.jpg",
+  "Veal Beef Bratwurst": "/products/items/veal-bratwurst.jpg",
+  "White Sausage": "/products/items/weisswurst.jpg",
+  Wienerli: "/products/items/wienerli.jpg",
+};
+
+const productImages = new Map(
+  Object.entries(PRODUCT_IMAGES).map(([name, path]) => [
+    name.trim().toLowerCase(),
+    path,
+  ]),
+);
+
+/** Paths in data/image-prompts.ts whose picture has actually been made. */
+const madePictures = new Set(
+  Object.values(IMAGE_PROMPTS)
+    .filter((p) => p.have)
+    .map((p) => p.path),
+);
+
+/**
+ * Our own photograph for a product the POS has none for — but only once the
+ * picture exists.
+ *
+ * The map above is written before the images are, the same way the hero
+ * slides name their banners in advance. Without this gate, naming a file that
+ * has not been made yet puts a broken image on a product tile, which is worse
+ * than the placeholder it was meant to replace. `have` in
+ * data/image-prompts.ts is flipped by the generator when it writes the file,
+ * so a picture appears on the next build and nothing here has to change.
+ */
+export function getProductImage(productName: string): string | undefined {
+  const path = productImages.get(productName.trim().toLowerCase());
+  return path && madePictures.has(path) ? path : undefined;
 }

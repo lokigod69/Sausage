@@ -42,6 +42,9 @@ const GEN_SIZE = "1536x1024";
 const SHAPES = {
   card: { width: 1200, height: 900 },
   banner: { width: 1600, height: 1000 },
+  // Renders at 44px beside a price. 800 square is generous for that, and
+  // leaves room if the thumbnail ever grows.
+  product: { width: 800, height: 800 },
 } as const;
 /** Matches the six photographs already in /public/products (200-250 KB). */
 const JPEG_QUALITY = 82;

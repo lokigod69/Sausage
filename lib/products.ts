@@ -9,6 +9,7 @@ import type {
 import { RAW_PRODUCTS } from "@/data/products";
 import {
   getDisplayName,
+  getProductImage,
   getWeightPrice,
   isExcludedProduct,
 } from "@/data/pos-overrides";
@@ -175,7 +176,12 @@ export function normalizeProduct(
   const unit = firstString(row.unit);
   if (unit) product.unit = unit;
 
-  const image = firstString(row.image);
+  /*
+   * The POS photograph wins. Ours is only reached when Loyverse has none, so
+   * uploading a real picture to the back office quietly replaces it — which
+   * is the direction that should be easy.
+   */
+  const image = firstString(row.image) ?? getProductImage(productName);
   if (image) product.image = image;
 
   const tags = toTags(row.tags);

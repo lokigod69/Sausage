@@ -20,6 +20,20 @@
  * See docs/image-generation-prompts.md for the long-form brief.
  */
 
+/*
+ * Product thumbnails are a different job from the category pictures.
+ *
+ * They render at 44 pixels, next to a name, a price and a stock badge. At
+ * that size a styled scene is mud: the sprig of rosemary is a green smudge,
+ * the slate board is a grey smudge, and two different sausages look the same.
+ * So these are shot like a catalogue, not like an editorial: one product,
+ * filling the frame, plain ground, nothing else in shot, and whatever makes
+ * this sausage different from the next one — colour, thickness, the grain of
+ * the meat — as the loudest thing in the picture.
+ */
+export const PRODUCT_STYLE =
+  "single product filling the frame on a plain dark slate background, straight-on catalogue product photograph, soft even light, no props, no garnish, no board, no cutlery, no packaging, no text, no logos, sharp throughout, natural colour";
+
 export const HOUSE_STYLE =
   "premium realistic food photography, dark stone background, warm side light, appetizing but not fake, shallow depth of field, no text baked into image, no logos in frame, natural color, subtle film grain";
 
@@ -34,9 +48,11 @@ export interface ImagePrompt {
    * Output shape. "card" is the 1200x900 category title image; "banner" is
    * the 1600x1000 hero slide, which is 16/10 on a wide screen and has the
    * copy panel sitting over its left half — so a banner prompt puts its
-   * subject right of centre and leaves that side quiet. Defaults to "card".
+   * subject right of centre and leaves that side quiet. "product" is the
+   * 800x800 square that renders as a 44px thumbnail beside a price.
+   * Defaults to "card".
    */
-  shape?: "card" | "banner";
+  shape?: "card" | "banner" | "product";
 }
 
 /** Keyed by category slug — see featuredCategories in data/branches.ts. */
@@ -166,11 +182,164 @@ export const IMAGE_PROMPTS: Record<string, ImagePrompt> = {
     prompt:
       "two thick dark-red ostrich steaks resting on butcher paper beside a mound of coarse ground ostrich meat, cracked black pepper and a sprig of thyme, the deep burgundy colour of very lean red meat, arranged to the right of the frame with the left third empty dark stone, no packaging, no lettering",
   },
+
+  /*
+   * Sausage thumbnails. Each is written so it cannot be mistaken for the one
+   * above it at 44 pixels: the Weisswurst is almost white, the merguez almost
+   * brick, the Nuremberger finger-sized, the kielbasa a horseshoe. If two
+   * prompts here ever start sounding alike, one of them is wrong.
+   */
+  "item-beef-hotdog": {
+    path: "/products/items/beef-hotdog.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "three smooth skinless beef hot dog sausages side by side, uniform deep reddish-brown, glossy, no casing wrinkles, blunt rounded ends",
+  },
+  "item-bratwurst-classic": {
+    path: "/products/items/bratwurst-classic.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two thick pale beige-pink German bratwurst in natural casing, coarse visible meat grain through the skin, plump and slightly curved, raw",
+  },
+  "item-cervelat": {
+    path: "/products/items/cervelat.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two short thick Swiss cervelat, smooth taut reddish-brown smoked skin, blunt tied ends, stubby barrel shape",
+  },
+  "item-cheese-hotdog": {
+    path: "/products/items/cheese-hotdog.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two hot dog sausages, one split lengthways with bright melted orange cheese visible inside, pale golden-brown skin",
+  },
+  "item-chicken-chipolata": {
+    path: "/products/items/chicken-chipolata.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "a row of four thin pale chicken chipolatas still linked in a chain, narrow, twisted between each link, very pale cream colour, raw",
+  },
+  "item-english-bangers": {
+    path: "/products/items/english-bangers.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "three thick pale pink English pork bangers in a linked chain, smooth fine-textured filling, plump, raw",
+  },
+  "item-frankfurter": {
+    path: "/products/items/frankfurter.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "four long slender frankfurters, smooth taut pale reddish-orange skin, even thickness end to end, glossy",
+  },
+  "item-hungarian-cheesy": {
+    path: "/products/items/hungarian-cheesy.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two Hungarian sausages, deep paprika-red coarse filling with clearly visible pale melted cheese pockets through the casing",
+  },
+  "item-hungarian-spicy": {
+    path: "/products/items/hungarian-spicy.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two Hungarian sausages, intense dark paprika-red, coarse chunky meat grain visible through a taut casing, dusted red",
+  },
+  "item-italian-garlic": {
+    path: "/products/items/italian-garlic.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two pale coarse-ground Italian sausages in natural casing with visible flecks of garlic and green herb through the skin, raw",
+  },
+  "item-italian-sausage": {
+    path: "/products/items/italian-sausage.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two pale coarse-ground Italian pork sausages in natural casing with visible whole fennel seeds, raw",
+  },
+  "item-kielbasa": {
+    path: "/products/items/kielbasa.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "one thick U-shaped Polish kielbasa horseshoe, deep mahogany smoked skin, wrinkled taut casing, generous diameter",
+  },
+  "item-merguez": {
+    path: "/products/items/merguez.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "a coil of thin deep brick-red merguez lamb sausage wound into a spiral, narrow diameter, spiced red surface",
+  },
+  "item-nuernberger": {
+    path: "/products/items/nuernberger.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "six very small thin pale Nuremberg sausages in a neat row, finger-sized, fine pale beige filling, marjoram flecks, raw",
+  },
+  "item-special-hotdog": {
+    path: "/products/items/special-hotdog.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "three plump hot dog sausages, smooth glossy skin in a warm golden-brown, slightly thicker than a frankfurter, blunt ends",
+  },
+  "item-spicy-italian-fennel": {
+    path: "/products/items/spicy-italian-fennel.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two coarse-ground Italian sausages in natural casing with visible red chilli flakes and whole fennel seeds through the pale filling, raw",
+  },
+  "item-thueringer": {
+    path: "/products/items/thueringer.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "three long slim Thuringian bratwurst, greyish-pink fine filling, noticeably longer and thinner than a classic bratwurst, raw",
+  },
+  "item-veal-bratwurst": {
+    path: "/products/items/veal-bratwurst.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two very pale cream-coloured veal bratwurst, smooth fine-textured filling with no visible grain, plump, raw",
+  },
+  "item-weisswurst": {
+    path: "/products/items/weisswurst.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "two plump very pale grey-white Bavarian Weisswurst, smooth skin, tied ends, almost no colour, raw",
+  },
+  "item-wienerli": {
+    path: "/products/items/wienerli.jpg",
+    have: false,
+    shape: "product",
+    prompt:
+      "a pair of slender Swiss Wienerli joined at one end, smooth pale reddish-tan skin, thin and even, glossy",
+  },
 };
 
-/** Compose a final prompt string with the shared house style appended. */
+/**
+ * Compose a final prompt, with the style that suits the shape appended — the
+ * editorial house style for a category picture or a banner, the flat
+ * catalogue style for a product thumbnail.
+ */
 export function buildPrompt(key: keyof typeof IMAGE_PROMPTS): string {
-  return `${IMAGE_PROMPTS[key].prompt}, ${HOUSE_STYLE}`;
+  const spec = IMAGE_PROMPTS[key];
+  const style = spec.shape === "product" ? PRODUCT_STYLE : HOUSE_STYLE;
+  return `${spec.prompt}, ${style}`;
 }
 
 /** Slugs still waiting on a picture — category cards and banners alike. */
