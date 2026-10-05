@@ -461,14 +461,19 @@ function LockerCell({
             {product.productName}
           </span>
           {hasNote && (
-            <button
-              type="button"
-              onClick={() => onOpen(product)}
-              className="product-info-button"
-              aria-label={`More about ${product.productName}`}
-            >
-              <InfoMark />
-            </button>
+            <>
+              <button
+                type="button"
+                onClick={() => onOpen(product)}
+                className="product-info-button"
+                aria-label={`More about ${product.productName}`}
+              >
+                <InfoMark />
+              </button>
+              <span className="in-page-not-painted" aria-hidden="true">
+                {product.description}
+              </span>
+            </>
           )}
         </span>
         {product.unit && (
@@ -543,14 +548,19 @@ function ProductCard({
               {product.productName}
             </span>
             {hasNote && (
-              <button
-                type="button"
-                onClick={() => onOpen(product)}
-                className="product-info-button"
-                aria-label={`More about ${product.productName}`}
-              >
-                <InfoMark />
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={() => onOpen(product)}
+                  className="product-info-button"
+                  aria-label={`More about ${product.productName}`}
+                >
+                  <InfoMark />
+                </button>
+                <span className="in-page-not-painted" aria-hidden="true">
+                  {product.description}
+                </span>
+              </>
             )}
           </span>
           <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">

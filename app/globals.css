@@ -1421,3 +1421,31 @@ body {
     align-items: center;
   }
 }
+
+/*
+ * Text that is in the page but not painted.
+ *
+ * Product descriptions live in a dialog that JavaScript fills when the info
+ * button is tapped, which means they never reach the server-rendered HTML.
+ * A crawler fetching the page with no JavaScript — which is every search
+ * engine and most assistants — got names, prices and stock and not one word
+ * of what anything tastes like. Those descriptions were the whole point of
+ * writing them.
+ *
+ * So each product carries its line here as well. Same HTML for everyone: the
+ * text is in the page, the dialog is how a person reads it. aria-hidden
+ * because a screen reader user scanning seventy spices should hear names and
+ * prices, exactly as a sighted user scans them, and reach for the info button
+ * when they want more — not be read every description twice.
+ */
+.in-page-not-painted {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
