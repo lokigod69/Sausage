@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T05:02:23.442Z",
+  "generatedAt": "2026-10-05T05:21:32.363Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-10-05T05:02:23.442Z",
+      "syncedAt": "2026-10-05T05:21:32.363Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -3952,7 +3952,7 @@
           "posVariantId": "8452785a-c96f-4cec-80f5-f32332ad1e9f",
           "category": "Meat & Steaks",
           "productName": "USDA Choice Angus Ribeye (St. Helens)",
-          "description": "Angus ribeye graded USDA Choice. Grain-fed and well marbled, so it eats richer and sweeter than grass-fed beef.",
+          "description": "Angus ribeye graded USDA Choice, grain-finished, from the American producer St. Helens. Well marbled, so it eats richer and sweeter than grass-fed beef.",
           "image": "/products/loyverse/1c43eb9d-f94c-4a21-a090-bdd036a34b7a.webp",
           "imageWidth": 533,
           "imageHeight": 495,
@@ -3966,7 +3966,7 @@
           "posVariantId": "5ed2d61e-9033-4364-b673-a5ec307f5544",
           "category": "Meat & Steaks",
           "productName": "USDA Choice Black Angus Ribeye (Demkota)",
-          "description": "Black Angus ribeye graded USDA Choice. Generous marbling through the eye gives it a buttery, full beef flavour.",
+          "description": "Black Angus ribeye graded USDA Choice, grain-finished, from the American producer Demkota. Generous marbling through the eye gives it a buttery, full beef flavour.",
           "image": "/products/loyverse/4b1210fd-866e-4346-9561-5693b1fe9b88.webp",
           "imageWidth": 392,
           "imageHeight": 392,
@@ -3980,7 +3980,7 @@
           "posVariantId": "236544da-69ea-4af3-847f-a6b1354793fd",
           "category": "Meat & Steaks",
           "productName": "USDA Choice Black Angus Ribeye(Nebraska)",
-          "description": "Black Angus ribeye graded USDA Choice. Grain-fed and well marbled — rich and juicy, mild rather than gamey.",
+          "description": "Black Angus ribeye graded USDA Choice, grain-finished and wet-aged for 28 days — the only one of the three American ribeyes that is aged. The ageing leaves it noticeably more tender, with a deeper, faintly tangy beef flavour.",
           "image": "/products/loyverse/a56f8b2b-26b0-48ca-a92f-18d38664e468.webp",
           "imageWidth": 360,
           "imageHeight": 360,
