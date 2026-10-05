@@ -79,12 +79,10 @@ export const WEIGHT_PRICES: Record<string, WeightPrice> = {
   "USDA Prime Excel Chuckeye": PER_KG(1250),
   "USDA Tenderloin": PER_KG(2450),
   "Australian Veal Beef Liver": PER_KG(1000),
-  "Beef Sukiyaki": { price: 920, unit: "1kg pack" },
-  "Rosemary burger": { price: 280, unit: "2-pack" },
 
   // ---- Poultry --------------------------------------------------------
   "Brazilian Chicken Wings": PER_KG(340),
-  "Duck Breast": PER_KG(900),
+  "Duck Breast(Dalee)": PER_KG(900),
   "Whole Turkey (Carolina)": PER_KG(550),
 
   // ---- Lamb & other meat ----------------------------------------------
@@ -129,7 +127,7 @@ export const WEIGHT_PRICES: Record<string, WeightPrice> = {
   "Premium Red Cheddar (Sausage Guy)": PER_KG(1120),
   // Priced by the kilo, handed over as a pack: the pack is weighed at the
   // till, so "per kg" is the honest label even though nobody buys a loose kilo.
-  "Mozzarella Cheese Block (Sausage Guy)": PER_KG(745),
+  "Mozzarella Cheese (Sausage Guy)": PER_KG(745),
 };
 
 /**
@@ -142,10 +140,15 @@ export const WEIGHT_PRICES: Record<string, WeightPrice> = {
  * purely cosmetic.
  */
 export const DISPLAY_NAMES: Record<string, string> = {
-  // Cut-to-order cheese counter
+  // The cheese counter. These arrive pre-packed; the suffix is dropped
+  // because the supplier behind our own label can change between visits.
   "Premium Red Cheddar (Sausage Guy)": "Premium Red Cheddar",
-  "Mozzarella Cheese Block (Sausage Guy)": "Mozzarella Cheese Block",
+  "Mozzarella Cheese (Sausage Guy)": "Mozzarella Cheese",
   "White Cheddar (Emborg)": "White Cheddar",
+
+  // Missing space in the POS name; cosmetic only, so it is fixed here
+  // rather than by renaming the item someone has to find at the till.
+  "Duck Breast(Dalee)": "Duck Breast (Dalee)",
   "Emmenthaler (Emborg)": "Emmenthaler",
   "Gran Amici (Emborg)": "Gran Amici",
   "Grana Padano (Emborg)": "Grana Padano",
@@ -195,7 +198,6 @@ export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   // ---- Cold cuts & sausages -------------------------------------------
   // The POS names carry a "(not 200g pack)" suffix; match it exactly.
   "Honey ham(not 200g pack)": "Hams & Cold Cuts",
-  "Farmers Ham(not 200g pack)": "Hams & Cold Cuts",
   "Forest Ham (Not 200g)": "Hams & Cold Cuts",
   Cervelat: "Sausages",
 
@@ -239,7 +241,6 @@ export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   // ---- Everything else -------------------------------------------------
   "Protein Instant Oatmeal 500G (Picky Farm)": "Breakfast & Cereals",
   "Sunflower Seed ( spiced flavor)": "Snacks & Sweets",
-  "Oregano flakes": "Herbs & Spices",
   "Rock Salt 50g": "Herbs & Spices",
   "Sesame Seeds Black 50g (Chef's Cabinet)": "Herbs & Spices",
   "Bambi Spring Roll 200g(Lumpia Wrapper)": "Bakery & Desserts",
@@ -360,7 +361,6 @@ export const EXCLUDED_PRODUCTS: string[] = [
    * If you start selling these by the kilo again, delete the three lines below
    * and add their per-kilo prices to WEIGHT_PRICES.
    */
-  "Farmers Ham(not 200g pack)",
   "Forest Ham (Not 200g)",
   "Honey ham(not 200g pack)",
 
@@ -370,7 +370,6 @@ export const EXCLUDED_PRODUCTS: string[] = [
    * had drifted to -2, which is what a dead entry looks like. Hidden here;
    * deleting it in Loyverse is the tidier end of the same fix.
    */
-  "Oregano flakes",
 ];
 
 const excluded = new Set(EXCLUDED_PRODUCTS.map((n) => n.toLowerCase()));
