@@ -1244,22 +1244,39 @@ body {
    see ProductCard. 24px square is the WCAG 2.5.8 minimum. */
 .product-info-button {
   flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: -0.1rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.1rem;
+  border: none;
   border-radius: 999px;
-  border: 1px solid var(--control-border);
-  background: transparent;
-  color: var(--muted);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-style: italic;
-  line-height: 1;
-  transition: background 0.15s var(--ease), color 0.15s var(--ease);
+  background: color-mix(in oklab, var(--accent-ink) 10%, transparent);
+  color: var(--accent-ink);
+  transition:
+    background 0.15s var(--ease),
+    transform 0.12s var(--ease);
+}
+/* The circle is deliberately small beside a 14px product name, so the hit
+   area is grown past the paint instead of inflating the mark — 1.2rem plus
+   this inset clears the 24px of WCAG 2.5.8 with room to spare. */
+.product-info-button::after {
+  content: "";
+  position: absolute;
+  inset: -0.25rem;
+  border-radius: inherit;
+}
+.product-info-button > svg {
+  width: 0.62rem;
+  height: 0.62rem;
 }
 .product-info-button:hover {
-  background: color-mix(in oklab, var(--accent) 12%, transparent);
-  color: var(--text-strong);
+  background: color-mix(in oklab, var(--accent-ink) 22%, transparent);
+}
+.product-info-button:active {
+  transform: scale(0.9);
 }
 
 .product-dialog {

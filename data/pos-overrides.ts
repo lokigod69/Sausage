@@ -485,31 +485,71 @@ export function getProductImage(productName: string): string | undefined {
   return path && madePictures.has(path) ? path : undefined;
 }
 
+/*
+ * The three bacon cures. Each is sold in four pack sizes, and the cure is what
+ * changes the flavour — 500g and 5kg of the honey cure taste the same — so one
+ * line covers all four sizes of a cure.
+ *
+ * Nothing here says the shop cured it. The bacon comes from a homemade
+ * producer; "Homemade Bacon (Sausage Guy)" is the label on the pack.
+ */
+const BACON_CURES: Record<string, string> = {
+  "Wood Smoked":
+    "Pork belly bacon, cured and then smoked over wood. Properly smoky and salty — the deepest flavoured of the three cures.",
+  Natural:
+    "Pork belly bacon, cured but not smoked. Clean, salty and pork-forward, so the meat itself leads.",
+  Honey:
+    "Pork belly bacon cured with honey. Salty with a clear sweet edge running through the fat.",
+};
+
+const BACON_SIZES = ["500g", "1kg", "3kg+", "5kg+"];
+
 /**
  * Descriptions written here rather than in Loyverse, keyed by the POS name.
  *
  * Loyverse holds its description on the ITEM, and 43 items carry more than
- * one variant — so 146 of the 459 products on the site would share a text
- * with their siblings. For 25 of those that is correct: a 250g and a 1kg pack
- * of the same ground beef want the same sentence, and writing it twice only
+ * one variant — so 146 of the products on the site would share a text with
+ * their siblings. For 25 of those that is correct: a 250g and a 1kg pack of
+ * the same ground beef want the same sentence, and writing it twice only
  * creates two things to keep in step.
  *
  * The other 121 differ by flavour. Most of them do not need their own line
  * either, because the flavour is already in the name — "Cake in a Tub — Ube
  * Mousse" is not clarified by a paragraph. This map is for the few that do:
- * the three bacon cures behave differently in a pan, the burger patties are
- * seasoned differently, and a customer choosing between them is choosing on
- * exactly the thing a shared text cannot say.
+ * the three bacon cures taste quite different from each other, the burger
+ * patties are seasoned differently, and a customer choosing between them is
+ * choosing on exactly the thing a shared text cannot say.
  *
- * Empty to start with. It exists so that "a description for every product" is
- * reachable without putting 459 of them in code and out of the shop's hands.
+ * Keys are the full product name as the site builds it: the Loyverse item
+ * name, an em dash, then the variant. The dash is U+2014, not a hyphen.
  *
  * This WINS over the Loyverse text. Everything else about product data is the
  * other way round — the POS is the source of truth and we defer to it — but a
  * sentence someone wrote here is a deliberate override of a shared one, and
  * being quietly replaced by the item-level text would defeat the point.
  */
-export const PRODUCT_DESCRIPTIONS: Record<string, string> = {};
+export const PRODUCT_DESCRIPTIONS: Record<string, string> = {
+  ...Object.fromEntries(
+    Object.entries(BACON_CURES).flatMap(([cure, text]) =>
+      BACON_SIZES.map((size) => [
+        `Homemade Bacon (Sausage Guy) — ${cure} ${size}`,
+        text,
+      ]),
+    ),
+  ),
+
+  /*
+   * The patties are made in the shop, so these describe the direction of the
+   * seasoning rather than claiming a recipe. If the kitchen wants to name the
+   * actual spices, they belong here.
+   */
+  "Beef Burger Patties 2-pack — US":
+    "Beef ground and pressed into two patties here, seasoned with nothing but salt and pepper. Plain and beef-forward — the one to pick when the toppings should lead.",
+  "Beef Burger Patties 2-pack — Mexican":
+    "Beef ground and pressed into two patties here, with chilli and warm spice worked through. The one with heat in it.",
+  "Beef Burger Patties 2-pack — Rosemary":
+    "Beef ground and pressed into two patties here, seasoned with rosemary. Herbal and savoury rather than hot.",
+};
 
 const productDescriptions = new Map(
   Object.entries(PRODUCT_DESCRIPTIONS).map(([name, text]) => [

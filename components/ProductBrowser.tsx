@@ -101,6 +101,23 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
 }
 
 /**
+ * The info mark on a product that has a note.
+ *
+ * Drawn rather than typed: a lowercase "i" set in the display face never
+ * optically centres inside a 19px circle, and nudging it with a negative
+ * margin was what made the button look homemade. Two shapes always sit where
+ * they are put, at any size, on any platform.
+ */
+function InfoMark() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <circle cx="8" cy="3.2" r="1.45" fill="currentColor" />
+      <rect x="6.7" y="6.1" width="2.6" height="7.2" rx="1.3" fill="currentColor" />
+    </svg>
+  );
+}
+
+/**
  * Counter price, right-aligned so a column of cards stays scannable.
  *
  * Sausages, premium steaks and the cheese counter are weighed and priced at
@@ -450,7 +467,7 @@ function LockerCell({
               className="product-info-button"
               aria-label={`More about ${product.productName}`}
             >
-              i
+              <InfoMark />
             </button>
           )}
         </span>
@@ -532,7 +549,7 @@ function ProductCard({
                 className="product-info-button"
                 aria-label={`More about ${product.productName}`}
               >
-                i
+                <InfoMark />
               </button>
             )}
           </span>

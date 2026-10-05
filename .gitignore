@@ -48,3 +48,7 @@ next-env.d.ts
 /.claude
 
 .env*
+
+# Safety copies taken before a description write (scripts/descriptions/apply.mts).
+# Local undo, not history — the descriptions themselves live in Loyverse.
+descriptions-backup-*.json
