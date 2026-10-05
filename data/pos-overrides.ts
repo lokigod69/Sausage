@@ -300,32 +300,18 @@ export function getMisfiledCategory(itemName: string): string | undefined {
  * Categories for single VARIANTS, keyed on the full "Item — Variant" name.
  *
  * UNCATEGORISED_CATEGORIES is keyed on the Loyverse item name, which is right
- * for "Cake in a Tub" — nine flavours, one shelf. It is wrong for "Slabs/ In
- * Packs", a single uncategorised item whose fourteen variants are a salmon
- * side, half the cold-cut counter and half the sausage counter. One entry
- * cannot send them to three different aisles, so these are listed one by one.
+ * for "Cake in a Tub" — nine flavours, one shelf. It is wrong when one item
+ * holds variants belonging to different aisles, and a single entry cannot
+ * send them to three places. This is where that case goes.
  *
- * Each goes where its sliced twin already lives: the Lyoner slab beside the
- * Lyoner, the Nuernberger slab beside the Nuernberger. A customer who finds
- * one should find the other.
+ * Empty today. It was written for "Slabs/ In Packs", whose fourteen variants
+ * span the cold-cut counter, the sausage counter and a side of salmon — and
+ * then that item turned out to be a till entry rather than a shelf, so it is
+ * hidden by EXCLUDED_PREFIXES instead. The mechanism stays because the
+ * problem it solves is real and was not obvious: without it an item is one
+ * category, whatever its variants are.
  */
-export const VARIANT_CATEGORIES: Record<string, string> = {
-  // The whole-slab and bulk-pack versions of the counter goods.
-  "Slabs/ In Packs — Beef polish": "Hams & Cold Cuts",
-  "Slabs/ In Packs — Chicken Ham": "Hams & Cold Cuts",
-  "Slabs/ In Packs — Florentiner": "Hams & Cold Cuts",
-  "Slabs/ In Packs — Lyoner": "Hams & Cold Cuts",
-  "Slabs/ In Packs — O Lyoner": "Hams & Cold Cuts",
-  "Slabs/ In Packs — P Lyoner": "Hams & Cold Cuts",
-  "Slabs/ In Packs — Pastrami": "Hams & Cold Cuts",
-  "Slabs/ In Packs — Salami": "Hams & Cold Cuts",
-  "Slabs/ In Packs — Cheese Hungarian": "Sausages",
-  "Slabs/ In Packs — Chipolata": "Sausages",
-  "Slabs/ In Packs — Italian garlic": "Sausages",
-  "Slabs/ In Packs — Mergese": "Sausages",
-  "Slabs/ In Packs — Nuernberger": "Sausages",
-  "Slabs/ In Packs — Salmon": "Seafood",
-};
+export const VARIANT_CATEGORIES: Record<string, string> = {};
 
 const variantCategories = new Map(
   Object.entries(VARIANT_CATEGORIES).map(([name, cat]) => [
@@ -389,8 +375,34 @@ export const EXCLUDED_PRODUCTS: string[] = [
 
 const excluded = new Set(EXCLUDED_PRODUCTS.map((n) => n.toLowerCase()));
 
+/**
+ * Whole POS items to hide, matched on the front of the variant name.
+ *
+ * "Slabs/ In Packs" is one Loyverse item with fourteen variants — Lyoner,
+ * Pastrami, Nuernberger, a side of salmon. It is not a shelf. It is how the
+ * counter rings up a whole slab or a bulk pack instead of a sliced order, and
+ * the names are written for staff: "O Lyoner", "P Lyoner", "Beef polish".
+ * None of them carries a price either, so each one rendered as a product with
+ * "BY WEIGHT" and no number.
+ *
+ * It was hidden by accident before — it sat uncategorised in "Other", which
+ * has no card and stays collapsed — and the October sync pass filed those
+ * variants into the real aisles, which put fourteen till entries on the
+ * sausage and cold-cut pages. Hiding it on purpose now.
+ *
+ * A prefix rather than fourteen names, because the counter adds variants to
+ * this item as the range changes and every one of them belongs behind the
+ * till too.
+ */
+export const EXCLUDED_PREFIXES: string[] = ["Slabs/ In Packs"];
+
+const excludedPrefixes = EXCLUDED_PREFIXES.map((p) => p.trim().toLowerCase());
+
 export function isExcludedProduct(productName: string): boolean {
-  return excluded.has(productName.trim().toLowerCase());
+  const name = productName.trim().toLowerCase();
+  return (
+    excluded.has(name) || excludedPrefixes.some((p) => name.startsWith(p))
+  );
 }
 
 const weightPrices = new Map(

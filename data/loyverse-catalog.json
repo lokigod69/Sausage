@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T00:42:51.946Z",
+  "generatedAt": "2026-10-05T01:03:00.131Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-10-05T00:42:51.946Z",
+      "syncedAt": "2026-10-05T01:03:00.131Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -1933,86 +1933,6 @@
           "stockUpdatedAt": "2026-10-01T05:28:26.000Z"
         },
         {
-          "posVariantId": "542cf335-da60-4568-9714-86ab482b92be",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — Beef polish",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "d9921121-bf57-45ec-ab32-c943c3487a16",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — Chicken Ham",
-          "variablePrice": true,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "a35f6b46-cc47-4849-b06c-4ce706cc4363",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — Florentiner",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "16f499b5-953a-42c8-913b-5556def3b9f5",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — Lyoner",
-          "variablePrice": true,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "8f6934d4-6635-4fe0-b0c2-0dc80a799c07",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — O Lyoner",
-          "variablePrice": true,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "e9815cae-c5b7-4b29-9e44-b05af5fd8931",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — P Lyoner",
-          "variablePrice": true,
-          "inStock": 1,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "bbfd4c2f-6d24-4407-9a68-b1b6ed0e606d",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — Pastrami",
-          "variablePrice": true,
-          "inStock": 9,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "7c48b252-c3bf-4d5d-b8c3-41aa75fd7078",
-          "category": "Hams & Cold Cuts",
-          "productName": "Slabs/ In Packs — Salami",
-          "variablePrice": true,
-          "inStock": 3,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
           "posVariantId": "b0fd0f96-8e20-4092-8e38-d6013f04cd96",
           "category": "Hams & Cold Cuts",
           "productName": "Turkey Ham",
@@ -2989,6 +2909,7 @@
           "posVariantId": "e0102b1a-3dc6-44e5-88bb-ba2b472912ca",
           "category": "Meat & Steaks",
           "productName": "Brazilian Ground Beef (from Ribeye) — 1kg",
+          "image": "/products/loyverse/a29439d2-0055-42a1-a3f8-d9314e20c13a.webp",
           "price": 1000,
           "inStock": 0,
           "trackStock": true,
@@ -2999,6 +2920,7 @@
           "posVariantId": "5ee3eebe-e239-4486-ae98-876228404487",
           "category": "Meat & Steaks",
           "productName": "Brazilian Ground Beef (from Ribeye) — 250g",
+          "image": "/products/loyverse/a29439d2-0055-42a1-a3f8-d9314e20c13a.webp",
           "price": 300,
           "inStock": 0,
           "trackStock": true,
@@ -3009,6 +2931,7 @@
           "posVariantId": "44dc32ce-48ad-48a7-bad2-b8bda7e905ce",
           "category": "Meat & Steaks",
           "productName": "Brazilian Ground Beef (from Ribeye) — 500g",
+          "image": "/products/loyverse/a29439d2-0055-42a1-a3f8-d9314e20c13a.webp",
           "price": 550,
           "inStock": 0,
           "trackStock": true,
@@ -3030,6 +2953,7 @@
           "posVariantId": "31679fd3-cff7-419d-89e5-362ab59fb637",
           "category": "Meat & Steaks",
           "productName": "Brazilian Sukiyaki Cut 1kg",
+          "image": "/products/loyverse/513065f4-56b4-4ffa-8aff-ae82095f9b03.webp",
           "price": 920,
           "inStock": 4,
           "trackStock": true,
@@ -3295,6 +3219,146 @@
           "variablePrice": true,
           "trackStock": false,
           "soldByWeight": false
+        },
+        {
+          "posVariantId": "542cf335-da60-4568-9714-86ab482b92be",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Beef polish",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "ff5e0270-c5c5-4a17-ad9e-12ed85a9f8a5",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Cheese Hungarian",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "d9921121-bf57-45ec-ab32-c943c3487a16",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Chicken Ham",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "d79ce825-4962-4d31-9cbb-e1e32ee0a274",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Chipolata",
+          "variablePrice": true,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "a35f6b46-cc47-4849-b06c-4ce706cc4363",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Florentiner",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "fd39ca2e-5d4a-4a1e-b558-72d64f5e51a9",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Italian garlic",
+          "variablePrice": true,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "16f499b5-953a-42c8-913b-5556def3b9f5",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Lyoner",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "4c929160-0b39-4fa0-ba8f-2870832e09e0",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Mergese",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "13e35fa4-72b2-4ef1-bcc6-eea69dc19917",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Nuernberger",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "8f6934d4-6635-4fe0-b0c2-0dc80a799c07",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — O Lyoner",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "e9815cae-c5b7-4b29-9e44-b05af5fd8931",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — P Lyoner",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "bbfd4c2f-6d24-4407-9a68-b1b6ed0e606d",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Pastrami",
+          "variablePrice": true,
+          "inStock": 9,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "7c48b252-c3bf-4d5d-b8c3-41aa75fd7078",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Salami",
+          "variablePrice": true,
+          "inStock": 3,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "e0c64934-596b-4eb7-a432-8761da4161ef",
+          "category": "Other",
+          "productName": "Slabs/ In Packs — Salmon",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
         },
         {
           "posVariantId": "2cfd802c-58fe-4a2d-899d-bb77c290ce8b",
@@ -4009,6 +4073,7 @@
           "category": "Poultry",
           "productName": "Brazilian Chicken Wings",
           "unit": "per kg",
+          "image": "/products/loyverse/6203dd8f-77f3-4df6-8346-2537d01e2809.webp",
           "variablePrice": true,
           "inStock": 0,
           "trackStock": true,
@@ -4042,6 +4107,7 @@
           "posVariantId": "4b0a9a88-34e2-4e4f-85f7-5934adeebec1",
           "category": "Poultry",
           "productName": "Whole Brazilian Chicken 1.1kg (Seara)",
+          "image": "/products/loyverse/c0fd85cd-9e85-4cff-ae9d-48db459e64fd.webp",
           "price": 295,
           "inStock": 0,
           "trackStock": true,
@@ -4052,6 +4118,7 @@
           "posVariantId": "f919d9bf-16ad-47d7-9e65-5cae20c46411",
           "category": "Poultry",
           "productName": "Whole Brazilian Chicken 1.3kg (Seara)",
+          "image": "/products/loyverse/ec95190d-4263-4274-88d6-3fecd54fca9a.webp",
           "price": 340,
           "inStock": 0,
           "trackStock": true,
@@ -4379,6 +4446,7 @@
           "posVariantId": "6cfa9c06-8968-4045-8dd7-829ca19b4155",
           "category": "Sausages",
           "productName": "Beef Hotdog",
+          "image": "/products/loyverse/ea8e3498-7ba7-46fd-b8f0-b66d179b60cb.webp",
           "variablePrice": true,
           "inStock": 5,
           "trackStock": true,
@@ -4402,6 +4470,7 @@
           "posVariantId": "5872f794-b129-4a46-8f4c-3c7161cc8111",
           "category": "Sausages",
           "productName": "Bratwurst (Classic)",
+          "image": "/products/loyverse/0cb6b67c-4a8c-4908-8104-5cf6c04c6dec.webp",
           "variablePrice": true,
           "inStock": 12,
           "trackStock": true,
@@ -4586,56 +4655,6 @@
           "stockUpdatedAt": "2026-10-04T00:16:15.000Z"
         },
         {
-          "posVariantId": "ff5e0270-c5c5-4a17-ad9e-12ed85a9f8a5",
-          "category": "Sausages",
-          "productName": "Slabs/ In Packs — Cheese Hungarian",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "d79ce825-4962-4d31-9cbb-e1e32ee0a274",
-          "category": "Sausages",
-          "productName": "Slabs/ In Packs — Chipolata",
-          "variablePrice": true,
-          "inStock": 2,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "fd39ca2e-5d4a-4a1e-b558-72d64f5e51a9",
-          "category": "Sausages",
-          "productName": "Slabs/ In Packs — Italian garlic",
-          "variablePrice": true,
-          "inStock": 2,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "4c929160-0b39-4fa0-ba8f-2870832e09e0",
-          "category": "Sausages",
-          "productName": "Slabs/ In Packs — Mergese",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
-          "posVariantId": "13e35fa4-72b2-4ef1-bcc6-eea69dc19917",
-          "category": "Sausages",
-          "productName": "Slabs/ In Packs — Nuernberger",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
-        },
-        {
           "posVariantId": "0655f5b1-3c50-4240-a121-db4982d164ef",
           "category": "Sausages",
           "productName": "Special Hotdog",
@@ -4760,16 +4779,6 @@
           "trackStock": true,
           "soldByWeight": false,
           "stockUpdatedAt": "2026-10-04T03:30:12.000Z"
-        },
-        {
-          "posVariantId": "e0c64934-596b-4eb7-a432-8761da4161ef",
-          "category": "Seafood",
-          "productName": "Slabs/ In Packs — Salmon",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
         },
         {
           "posVariantId": "54199020-3f40-4656-b28e-34691b6d055a",
