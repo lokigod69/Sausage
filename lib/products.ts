@@ -9,6 +9,7 @@ import type {
 import { RAW_PRODUCTS } from "@/data/products";
 import {
   getDisplayName,
+  getProductDescription,
   getProductImage,
   getWeightPrice,
   isExcludedProduct,
@@ -176,7 +177,15 @@ export function normalizeProduct(
   const unit = firstString(row.unit);
   if (unit) product.unit = unit;
 
-  const description = firstString(row.description);
+  /*
+   * Ours first, then Loyverse's. The opposite order to the photograph above,
+   * and deliberately: a picture in the POS is the real product and should
+   * replace our stand-in, but a sentence written in data/pos-overrides.ts is
+   * there precisely because the item-level one is shared by siblings and does
+   * not fit this variant.
+   */
+  const description =
+    getProductDescription(productName) ?? firstString(row.description);
   if (description) product.description = description;
 
   /*

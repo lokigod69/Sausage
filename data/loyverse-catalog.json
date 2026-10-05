@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T02:07:32.165Z",
+  "generatedAt": "2026-10-05T02:21:06.228Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-10-05T02:07:32.165Z",
+      "syncedAt": "2026-10-05T02:21:06.228Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -55,11 +55,11 @@
           "imageWidth": 400,
           "imageHeight": 400,
           "price": 79,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-10-04T09:22:51.000Z"
+          "stockUpdatedAt": "2026-10-05T02:08:54.000Z"
         },
         {
           "posVariantId": "973e101a-16c1-46bc-b8a7-b9d1debe7d0f",
@@ -2138,6 +2138,9 @@
           "posVariantId": "8157a362-c2c5-4b65-ab45-84827ae20c2c",
           "category": "Hams & Cold Cuts",
           "productName": "Honey ham(not 200g pack)",
+          "image": "/products/loyverse/b2ba2e40-3de7-42c4-8586-eb7155ae1718.webp",
+          "imageWidth": 600,
+          "imageHeight": 450,
           "variablePrice": true,
           "inStock": 7,
           "trackStock": true,
@@ -3062,7 +3065,7 @@
           "image": "/products/loyverse/f9ad64f1-1d89-47a0-bd2a-16881eefa1c1.webp",
           "imageWidth": 300,
           "imageHeight": 300,
-          "price": 46,
+          "price": 70,
           "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
@@ -3268,10 +3271,10 @@
           "imageWidth": 395,
           "imageHeight": 395,
           "price": 280,
-          "inStock": 13,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-10-04T09:22:51.000Z"
+          "stockUpdatedAt": "2026-10-05T02:08:54.000Z"
         },
         {
           "posVariantId": "08f0a5e4-1881-4264-93c9-22e3076184ab",
@@ -4041,6 +4044,9 @@
           "posVariantId": "e464ec83-1a90-4edf-836a-52a9f560ac2c",
           "category": "Pantry & Preserves",
           "productName": "Hormel Chili with Beans 425g",
+          "image": "/products/loyverse/e7267faf-befc-4d98-bc7e-7a2b83970634.webp",
+          "imageWidth": 341,
+          "imageHeight": 341,
           "price": 300,
           "inStock": 5,
           "trackStock": true,
@@ -5114,6 +5120,9 @@
           "posVariantId": "63f84287-dffd-4011-83b2-3cc656b3d519",
           "category": "Sausages",
           "productName": "Hungarian Spicy Sausage",
+          "image": "/products/loyverse/22f68333-1bb7-4219-95ca-88da8def0621.webp",
+          "imageWidth": 508,
+          "imageHeight": 360,
           "variablePrice": true,
           "inStock": 9,
           "trackStock": true,

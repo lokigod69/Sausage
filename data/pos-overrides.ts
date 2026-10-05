@@ -484,3 +484,41 @@ export function getProductImage(productName: string): string | undefined {
   const path = productImages.get(productName.trim().toLowerCase());
   return path && madePictures.has(path) ? path : undefined;
 }
+
+/**
+ * Descriptions written here rather than in Loyverse, keyed by the POS name.
+ *
+ * Loyverse holds its description on the ITEM, and 43 items carry more than
+ * one variant — so 146 of the 459 products on the site would share a text
+ * with their siblings. For 25 of those that is correct: a 250g and a 1kg pack
+ * of the same ground beef want the same sentence, and writing it twice only
+ * creates two things to keep in step.
+ *
+ * The other 121 differ by flavour. Most of them do not need their own line
+ * either, because the flavour is already in the name — "Cake in a Tub — Ube
+ * Mousse" is not clarified by a paragraph. This map is for the few that do:
+ * the three bacon cures behave differently in a pan, the burger patties are
+ * seasoned differently, and a customer choosing between them is choosing on
+ * exactly the thing a shared text cannot say.
+ *
+ * Empty to start with. It exists so that "a description for every product" is
+ * reachable without putting 459 of them in code and out of the shop's hands.
+ *
+ * This WINS over the Loyverse text. Everything else about product data is the
+ * other way round — the POS is the source of truth and we defer to it — but a
+ * sentence someone wrote here is a deliberate override of a shared one, and
+ * being quietly replaced by the item-level text would defeat the point.
+ */
+export const PRODUCT_DESCRIPTIONS: Record<string, string> = {};
+
+const productDescriptions = new Map(
+  Object.entries(PRODUCT_DESCRIPTIONS).map(([name, text]) => [
+    name.trim().toLowerCase(),
+    text,
+  ]),
+);
+
+/** Our own line about a product, when the shared one will not do. */
+export function getProductDescription(productName: string): string | undefined {
+  return productDescriptions.get(productName.trim().toLowerCase());
+}
