@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T05:25:47.754Z",
+  "generatedAt": "2026-10-05T05:31:29.820Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-10-05T05:25:47.754Z",
+      "syncedAt": "2026-10-05T05:31:29.820Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -3528,7 +3528,7 @@
           "posVariantId": "10d91368-43c0-4eed-9ced-2e6595421e83",
           "category": "Meat & Steaks",
           "productName": "Beef Burger Patties 2-pack — Mexican",
-          "description": "Ground beef pressed into two patties, in three seasonings. Loose-textured and beef-forward rather than springy.",
+          "description": "Brazilian grass-fed chuck eye, ground and pressed into two patties, in three seasonings. Loose-textured and beef-forward rather than springy.",
           "image": "/products/loyverse/dddb2b95-0539-453e-86d7-d7dbf0eea162.webp",
           "imageWidth": 395,
           "imageHeight": 395,
@@ -3542,7 +3542,7 @@
           "posVariantId": "07e9fc28-10b5-4f7c-b3f8-9d21c6713ebe",
           "category": "Meat & Steaks",
           "productName": "Beef Burger Patties 2-pack — Rosemary",
-          "description": "Ground beef pressed into two patties, in three seasonings. Loose-textured and beef-forward rather than springy.",
+          "description": "Brazilian grass-fed chuck eye, ground and pressed into two patties, in three seasonings. Loose-textured and beef-forward rather than springy.",
           "image": "/products/loyverse/dddb2b95-0539-453e-86d7-d7dbf0eea162.webp",
           "imageWidth": 395,
           "imageHeight": 395,
@@ -3556,7 +3556,7 @@
           "posVariantId": "370ce990-4041-43f7-8ca9-503f3cbd1e4a",
           "category": "Meat & Steaks",
           "productName": "Beef Burger Patties 2-pack — US",
-          "description": "Ground beef pressed into two patties, in three seasonings. Loose-textured and beef-forward rather than springy.",
+          "description": "Brazilian grass-fed chuck eye, ground and pressed into two patties, in three seasonings. Loose-textured and beef-forward rather than springy.",
           "image": "/products/loyverse/dddb2b95-0539-453e-86d7-d7dbf0eea162.webp",
           "imageWidth": 395,
           "imageHeight": 395,

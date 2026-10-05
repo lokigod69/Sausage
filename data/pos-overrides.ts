@@ -559,11 +559,11 @@ export const PRODUCT_DESCRIPTIONS: Record<string, string> = {
    * reading about a burger that is not in front of them.
    */
   "Beef Burger Patties 2-pack — US":
-    "Beef with garlic, onion, pepper and a little oregano. Savoury and well rounded — the straight-ahead one, with room for whatever goes on top.",
+    "Brazilian grass-fed chuck eye with garlic, onion, pepper and a little oregano. Savoury and well rounded — room for whatever goes on top.",
   "Beef Burger Patties 2-pack — Mexican":
-    "Beef with garlic, onion, paprika, curry powder and a pinch of cayenne. Warm and a touch smoky-sweet from the paprika — spiced, not hot.",
+    "Brazilian grass-fed chuck eye with garlic, onion, paprika, curry powder and a pinch of cayenne. Warm and a touch smoky-sweet — spiced, not hot.",
   "Beef Burger Patties 2-pack — Rosemary":
-    "Beef with garlic, onion, pepper and dried rosemary. Just enough rosemary to catch: a clean pine note, not a herb burger.",
+    "Brazilian grass-fed chuck eye with garlic, onion, pepper and dried rosemary. Just enough rosemary to catch: a clean pine note, not a herb burger.",
 };
 
 const productDescriptions = new Map(
