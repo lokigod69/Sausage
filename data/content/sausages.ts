@@ -1,7 +1,7 @@
 import type { CategoryContent } from "@/data/category-content";
 
 export const sausages: CategoryContent = {
-  lede: "Twenty-five sausages made the way they are made at home — German bratwurst, Swiss schüblig, Hungarian, Italian, British bangers and Merguez, from small producers who still make them by hand.",
+  lede: "Twenty-five sausages made the way they are made at home — German bratwurst, Swiss schüblig, Hungarian, Italian, British bangers and Merguez, from small local and homemade producers.",
   metaDescription:
     "German, Swiss, Hungarian and Italian sausages in Panglao, Bohol: bratwurst, Nürnberger, cheese krainer, Landjäger, bangers and Merguez, priced by the kilo.",
   intro:
