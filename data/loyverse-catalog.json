@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-16T04:04:03.981Z",
+  "generatedAt": "2026-10-05T00:42:51.946Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-09-16T04:04:03.981Z",
+      "syncedAt": "2026-10-05T00:42:51.946Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -36,10 +36,10 @@
           "productName": "Bambi Spring Roll 200g(Lumpia Wrapper)",
           "image": "/products/loyverse/a1195f32-449d-49ec-84bb-db29306439b2.webp",
           "price": 50,
-          "inStock": 6,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:53:32.000Z"
+          "stockUpdatedAt": "2026-09-30T03:16:59.000Z"
         },
         {
           "posVariantId": "4013f6bf-26c3-41ef-ae8b-d3ad594f2699",
@@ -47,41 +47,41 @@
           "productName": "Burger Buns (Pack of 2)",
           "image": "/products/loyverse/b2f03580-765d-4215-9a28-cc59617783a4.webp",
           "price": 79,
-          "inStock": 16,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-12T07:59:21.000Z"
+          "stockUpdatedAt": "2026-10-04T09:22:51.000Z"
         },
         {
           "posVariantId": "973e101a-16c1-46bc-b8a7-b9d1debe7d0f",
           "category": "Bakery & Desserts",
           "productName": "Cake in a Tub — Almond Kisses",
           "price": 165,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T09:09:08.000Z"
+          "stockUpdatedAt": "2026-10-01T07:31:06.000Z"
         },
         {
           "posVariantId": "259e6f94-5597-40ae-8edb-4f86104b682a",
           "category": "Bakery & Desserts",
           "productName": "Cake in a Tub — Black Forest",
           "price": 150,
-          "inStock": 4,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-28T08:54:13.000Z"
+          "stockUpdatedAt": "2026-09-23T08:21:51.000Z"
         },
         {
           "posVariantId": "dcff675a-e550-4367-beb5-cdd1643ba89e",
           "category": "Bakery & Desserts",
           "productName": "Cake in a Tub — Chocolate Pistachio",
           "price": 330,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-28T07:29:55.000Z"
+          "stockUpdatedAt": "2026-09-23T08:02:24.000Z"
         },
         {
           "posVariantId": "5a950700-8d51-4be8-8913-c61d0609ecc6",
@@ -98,30 +98,30 @@
           "category": "Bakery & Desserts",
           "productName": "Cake in a Tub — Double Dutch",
           "price": 150,
-          "inStock": 5,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-28T07:29:55.000Z"
+          "stockUpdatedAt": "2026-10-04T10:31:22.000Z"
         },
         {
           "posVariantId": "af62a5fa-a13c-4ec6-b612-e1b679cf887c",
           "category": "Bakery & Desserts",
           "productName": "Cake in a Tub — Dream Cake",
           "price": 165,
-          "inStock": 4,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-28T07:29:55.000Z"
+          "stockUpdatedAt": "2026-09-30T04:51:13.000Z"
         },
         {
           "posVariantId": "42e5f947-e4c2-417b-a2e1-606411123930",
           "category": "Bakery & Desserts",
           "productName": "Cake in a Tub — Mango Float",
           "price": 250,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-28T07:29:55.000Z"
+          "stockUpdatedAt": "2026-09-19T08:11:06.000Z"
         },
         {
           "posVariantId": "a9b2e118-a292-4a7f-b103-3303e8909568",
@@ -205,11 +205,11 @@
           "unit": "each",
           "image": "/products/loyverse/36b7e789-7199-4cf5-bd5f-cd60f384e9b8.webp",
           "price": 285,
-          "inStock": 24,
+          "inStock": 15,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T03:28:36.000Z"
+          "stockUpdatedAt": "2026-10-02T07:54:42.000Z"
         },
         {
           "posVariantId": "1ad88636-0698-46a0-9a39-770b188e1239",
@@ -223,15 +223,25 @@
           "stockUpdatedAt": "2026-09-16T00:35:31.000Z"
         },
         {
+          "posVariantId": "e8484b86-aa50-4212-a973-45ab8b34da56",
+          "category": "Bakery & Desserts",
+          "productName": "Dark Chocolate Pistachio Kunafa",
+          "price": 695,
+          "inStock": 5,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-21T05:59:21.000Z"
+        },
+        {
           "posVariantId": "39eddc2a-e321-4af4-b3c8-899378863b99",
           "category": "Bakery & Desserts",
           "productName": "Hotdog Buns 2-pack",
           "image": "/products/loyverse/7bf612e2-6273-48de-b717-aab547aa0333.webp",
           "price": 59,
-          "inStock": 10,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T06:23:25.000Z"
+          "stockUpdatedAt": "2026-10-01T05:07:57.000Z"
         },
         {
           "posVariantId": "9391f2b4-480c-4e4d-a038-0e5028223d6d",
@@ -250,11 +260,11 @@
           "productName": "Sausage Roll",
           "image": "/products/loyverse/c1887f7c-c8ac-4102-b747-435600e8686f.webp",
           "price": 200,
-          "inStock": 20,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-16T01:01:37.000Z"
+          "stockUpdatedAt": "2026-10-04T00:16:15.000Z"
         },
         {
           "posVariantId": "b0fec378-eab3-4dbf-b7df-60596a9c58a1",
@@ -273,10 +283,10 @@
           "productName": "Sticky Toffee Pudding",
           "image": "/products/loyverse/c9a022ca-96fe-47cb-b489-9daeb66fbbf4.webp",
           "price": 180,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T01:07:23.000Z"
+          "stockUpdatedAt": "2026-10-02T07:54:42.000Z"
         },
         {
           "posVariantId": "9058ef3b-c147-462e-ab42-9cf7b7b6b420",
@@ -284,10 +294,10 @@
           "productName": "Tortilla Wraps (Liberty) — Wheat Flour",
           "image": "/products/loyverse/bd3bc36f-49d2-43bd-ab16-3f5300356f24.webp",
           "price": 150,
-          "inStock": 0,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:49:06.000Z"
+          "stockUpdatedAt": "2026-10-02T01:49:42.000Z"
         },
         {
           "posVariantId": "6e53375c-91d1-4aa2-99ce-f86f34e1d95b",
@@ -299,7 +309,7 @@
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-10T03:33:09.000Z"
+          "stockUpdatedAt": "2026-10-01T05:20:46.000Z"
         },
         {
           "posVariantId": "d9dad130-ba7d-427d-8ae3-4b0e728a1a3b",
@@ -307,11 +317,11 @@
           "productName": "Almond Butter Granola Bites 150g (Naturalmind)",
           "image": "/products/loyverse/03c493fa-2744-4b0e-b292-2ba341463477.webp",
           "price": 199,
-          "inStock": 9,
+          "inStock": 13,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T02:26:12.000Z"
+          "stockUpdatedAt": "2026-10-02T05:35:26.000Z"
         },
         {
           "posVariantId": "569ed174-140f-414a-86fe-891ddc0b755e",
@@ -330,11 +340,11 @@
           "productName": "Classic Walnut Granola 200g (Naturalmind)",
           "image": "/products/loyverse/9220de09-bb80-4aa7-aa01-bf98f229d1cf.webp",
           "price": 199,
-          "inStock": 1,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T03:04:04.000Z"
+          "stockUpdatedAt": "2026-10-04T09:22:51.000Z"
         },
         {
           "posVariantId": "9bafcc98-0c84-4dcc-91da-b5d944875014",
@@ -353,11 +363,11 @@
           "productName": "Crunchy Granola 275g (Fit & Flex) — Choco Almond Cookies",
           "image": "/products/loyverse/b6c6459e-b68b-4029-886d-feabacb74bb9.webp",
           "price": 250,
-          "inStock": 2,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-08-17T09:39:31.000Z"
+          "stockUpdatedAt": "2026-10-04T04:16:52.000Z"
         },
         {
           "posVariantId": "d59bdfde-db4b-4daf-bce4-ddb11987481b",
@@ -365,11 +375,11 @@
           "productName": "Crunchy Granola 275g (Fit & Flex) — Happy Berries",
           "image": "/products/loyverse/b6c6459e-b68b-4029-886d-feabacb74bb9.webp",
           "price": 250,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-08-17T07:52:04.000Z"
+          "stockUpdatedAt": "2026-09-17T03:47:00.000Z"
         },
         {
           "posVariantId": "e666acaa-c62c-40fc-ac78-b992aedf9932",
@@ -377,11 +387,11 @@
           "productName": "Crunchy Granola 275g (Fit & Flex) — Mango Coconut",
           "image": "/products/loyverse/b6c6459e-b68b-4029-886d-feabacb74bb9.webp",
           "price": 250,
-          "inStock": 0,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-07-17T09:23:56.000Z"
+          "stockUpdatedAt": "2026-09-27T01:15:30.000Z"
         },
         {
           "posVariantId": "37118940-efaf-4bbf-85e7-cef528e78b60",
@@ -389,11 +399,11 @@
           "productName": "Crunchy Granola 275g (Fit & Flex) — Mixed Fruit",
           "image": "/products/loyverse/b6c6459e-b68b-4029-886d-feabacb74bb9.webp",
           "price": 250,
-          "inStock": 0,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-14T06:37:06.000Z"
+          "stockUpdatedAt": "2026-10-04T04:25:15.000Z"
         },
         {
           "posVariantId": "3822cd61-6c70-48ae-be90-0f2ed73163b2",
@@ -413,11 +423,11 @@
           "productName": "Crunchy Granola 340g (Emco) — Triple Chocolate",
           "image": "/products/loyverse/4c91b84a-cb28-4304-853f-97bfb4ec70a9.webp",
           "price": 250,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-07-20T07:43:59.000Z"
+          "stockUpdatedAt": "2026-09-30T02:59:54.000Z"
         },
         {
           "posVariantId": "e25ab448-397a-4ac5-80c0-82cd712931f8",
@@ -460,31 +470,31 @@
           "category": "Breakfast & Cereals",
           "productName": "High Protein Power Oats 400g (Fit & Flex) — Honey",
           "image": "/products/loyverse/ea923892-7bd3-42d3-b34b-62642a977372.webp",
-          "price": 310,
-          "inStock": 0,
+          "price": 315,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-13T01:22:41.000Z"
+          "stockUpdatedAt": "2026-10-01T01:30:43.000Z"
         },
         {
           "posVariantId": "1d9a5307-270e-4982-87ac-954ef726f31f",
           "category": "Breakfast & Cereals",
           "productName": "High Protein Power Oats 400g (Fit & Flex) — Peanut Butter Choco",
           "image": "/products/loyverse/ea923892-7bd3-42d3-b34b-62642a977372.webp",
-          "price": 310,
-          "inStock": 0,
+          "price": 315,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T06:46:59.000Z"
+          "stockUpdatedAt": "2026-10-04T04:32:39.000Z"
         },
         {
           "posVariantId": "e168cbeb-31c6-48d1-bc88-45a8a20f6acb",
           "category": "Breakfast & Cereals",
           "productName": "Muesli 210g (Fit & Flex) — Choco Almond Cookie",
           "image": "/products/loyverse/8f449147-ba66-4e79-a233-a1f0cae54101.webp",
-          "price": 175,
+          "price": 185,
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
@@ -496,19 +506,19 @@
           "category": "Breakfast & Cereals",
           "productName": "Muesli 210g (Fit & Flex) — Fruity Crunch",
           "image": "/products/loyverse/8f449147-ba66-4e79-a233-a1f0cae54101.webp",
-          "price": 175,
-          "inStock": 0,
+          "price": 185,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-07T03:23:19.000Z"
+          "stockUpdatedAt": "2026-10-04T04:26:50.000Z"
         },
         {
           "posVariantId": "8176a18d-7f15-4ecf-9225-62637215ad7d",
           "category": "Breakfast & Cereals",
           "productName": "Muesli 210g (Fit & Flex) — Nuts About Nuts",
           "image": "/products/loyverse/8f449147-ba66-4e79-a233-a1f0cae54101.webp",
-          "price": 175,
+          "price": 185,
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
@@ -521,11 +531,11 @@
           "productName": "Muesli 350g (Sante) — Fruit",
           "image": "/products/loyverse/ec197ffc-3a03-4d36-8e0a-852c02b28ed8.webp",
           "price": 199,
-          "inStock": 5,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T02:31:53.000Z"
+          "stockUpdatedAt": "2026-09-29T03:39:42.000Z"
         },
         {
           "posVariantId": "362e012b-be53-44f5-a5ec-bf9a6535125f",
@@ -545,11 +555,11 @@
           "productName": "Müsli Crunchy 375g (Emco) — Blueberry Raspberry",
           "image": "/products/loyverse/fcff85c0-fbc4-495e-a6b6-649fc1378c72.webp",
           "price": 230,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T02:37:25.000Z"
+          "stockUpdatedAt": "2026-09-29T09:39:17.000Z"
         },
         {
           "posVariantId": "895ad568-0b80-41e6-b403-403fe87f3d6c",
@@ -557,11 +567,11 @@
           "productName": "Müsli Crunchy 375g (Emco) — Strawberry Almond",
           "image": "/products/loyverse/fcff85c0-fbc4-495e-a6b6-649fc1378c72.webp",
           "price": 230,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-08-24T05:25:35.000Z"
+          "stockUpdatedAt": "2026-09-23T07:58:03.000Z"
         },
         {
           "posVariantId": "32310f47-f1aa-490d-b79b-89e070d75d9b",
@@ -603,12 +613,12 @@
           "category": "Breakfast & Cereals",
           "productName": "Rolled Oats 200G (Nature Food)",
           "image": "/products/loyverse/39fd3b88-86b5-4d4a-94d6-0ad09e04c95a.webp",
-          "price": 80,
-          "inStock": 0,
+          "price": 90,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T09:00:05.000Z"
+          "stockUpdatedAt": "2026-10-02T05:45:43.000Z"
         },
         {
           "posVariantId": "7442155c-d5b6-48fb-9500-3b88d9b2370e",
@@ -628,11 +638,11 @@
           "productName": "Butter Unsalted 200g (Arla)",
           "image": "/products/loyverse/03623c93-199f-4845-81d6-17943f29aa81.webp",
           "price": 260,
-          "inStock": 7,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:39:42.000Z"
+          "stockUpdatedAt": "2026-09-30T01:11:37.000Z"
         },
         {
           "posVariantId": "b8db4117-ccca-4b6b-9de2-d39b8f6864c2",
@@ -640,11 +650,11 @@
           "productName": "Cheddar Burger Slices 130g (Emborg)",
           "image": "/products/loyverse/1ca44242-e903-4dd1-946e-5c5887cfba09.webp",
           "price": 125,
-          "inStock": 10,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T08:38:05.000Z"
+          "stockUpdatedAt": "2026-09-27T07:08:04.000Z"
         },
         {
           "posVariantId": "3eea107f-5869-4001-9c6b-fc80bb8a3b6e",
@@ -664,10 +674,10 @@
           "productName": "Emmenthaler (Emborg)",
           "image": "/products/loyverse/e41755e2-9658-41cc-9378-e644c9828189.webp",
           "variablePrice": true,
-          "inStock": 1,
+          "inStock": 17,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T11:13:34.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "fff90634-1dfa-44a9-bb7e-bf9a96962ad4",
@@ -697,10 +707,10 @@
           "category": "Cheese & Dairy",
           "productName": "Gran Amici (Emborg)",
           "variablePrice": true,
-          "inStock": 0,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-06-22T10:03:56.000Z"
+          "stockUpdatedAt": "2026-09-28T07:12:51.000Z"
         },
         {
           "posVariantId": "ee21e59c-9df4-4f08-9186-aa6c909ff741",
@@ -718,22 +728,22 @@
           "category": "Cheese & Dairy",
           "productName": "Grated Parmesan Cheese 226g (Euro Chef)",
           "price": 430,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-08-18T06:29:45.000Z"
+          "stockUpdatedAt": "2026-09-29T09:39:17.000Z"
         },
         {
           "posVariantId": "e12fbf53-00f8-473d-abcf-1af36445a3c1",
           "category": "Cheese & Dairy",
           "productName": "Greek Yoghurt 500g (Naturalmind)",
           "price": 299,
-          "inStock": 5,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-15T00:54:43.000Z"
+          "stockUpdatedAt": "2026-10-04T03:30:12.000Z"
         },
         {
           "posVariantId": "18e0f34a-d773-4e99-83cc-2336402b7e15",
@@ -741,11 +751,11 @@
           "productName": "Homemade Yoghurt 500ml (Naturalmind)",
           "image": "/products/loyverse/1d54f942-8280-4fd2-b34f-194f21e266d1.webp",
           "price": 199,
-          "inStock": 10,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-15T00:54:37.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "d0dd9e2b-ce22-4465-9696-2cb507fb922c",
@@ -777,11 +787,11 @@
           "productName": "Mozzarella Cheese Block (Sausage Guy)",
           "image": "/products/loyverse/439ce0d7-83bc-4a23-92b5-947e44fb856c.webp",
           "variablePrice": true,
-          "inStock": 8,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T10:54:47.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "4dc57928-4f0e-4270-931e-b0376e18a75f",
@@ -799,11 +809,11 @@
           "category": "Cheese & Dairy",
           "productName": "Premium Red Cheddar (Sausage Guy)",
           "variablePrice": true,
-          "inStock": 0,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-16T00:53:38.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "45c1b3c0-375a-4244-82f2-559abcff8ea0",
@@ -821,11 +831,11 @@
           "productName": "White Cheddar (Emborg)",
           "image": "/products/loyverse/552e605f-eb56-40cd-b8f4-7e9225cdf8a6.webp",
           "variablePrice": true,
-          "inStock": 23,
+          "inStock": 20,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-16T03:34:21.000Z"
+          "stockUpdatedAt": "2026-10-04T10:47:10.000Z"
         },
         {
           "posVariantId": "f1e051f9-818e-460a-87a6-01d98e4d7d89",
@@ -833,11 +843,11 @@
           "productName": "2in1 Coffee in Bag English Style Roast 10pcs (Culture Blends)",
           "image": "/products/loyverse/64ad7d22-be13-41d9-a586-969bfd1bd909.webp",
           "price": 270,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-06-21T04:55:43.000Z"
+          "stockUpdatedAt": "2026-09-21T04:33:24.000Z"
         },
         {
           "posVariantId": "bf52b6b0-7980-421a-9ec7-7a4aa7e74175",
@@ -845,11 +855,11 @@
           "productName": "Almond Milk 946ml (Kirkland Signature)",
           "image": "/products/loyverse/7068687c-eb21-4c01-9de0-ae0c8f0aaf08.webp",
           "price": 160,
-          "inStock": 2,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-08-24T08:02:25.000Z"
+          "stockUpdatedAt": "2026-09-27T01:11:36.000Z"
         },
         {
           "posVariantId": "337903f4-857a-4352-9d84-e374e270092a",
@@ -868,11 +878,11 @@
           "category": "Drinks",
           "productName": "Cabernet Sauvignon (Aristizabal)",
           "price": 550,
-          "inStock": 3,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T02:46:57.000Z"
+          "stockUpdatedAt": "2026-10-01T06:25:44.000Z"
         },
         {
           "posVariantId": "f6cce262-7baa-4f5e-963b-651bd66fd21e",
@@ -1050,11 +1060,11 @@
           "productName": "Coffee Beans Robusta (Naturalmind) — 1kg",
           "image": "/products/loyverse/f84b885c-a017-44ff-bf00-f10caeb66f25.webp",
           "price": 820,
-          "inStock": 0,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 1,
-          "stockUpdatedAt": "2026-09-09T06:55:51.000Z"
+          "stockUpdatedAt": "2026-09-21T05:57:43.000Z"
         },
         {
           "posVariantId": "f043b781-0f93-47ab-973c-f033293cb33f",
@@ -1062,11 +1072,11 @@
           "productName": "Coffee Drink 180ml (Nescafe) — Cappuccino",
           "image": "/products/loyverse/beaf4487-3407-4429-a9b5-e393e4bbfd76.webp",
           "price": 50,
-          "inStock": 13,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:12:31.000Z"
+          "stockUpdatedAt": "2026-10-04T10:19:48.000Z"
         },
         {
           "posVariantId": "f05f3f2a-5e53-45fb-91b5-bf1880cfaa96",
@@ -1074,11 +1084,11 @@
           "productName": "Coffee Drink 180ml (Nescafe) — Ice Black",
           "image": "/products/loyverse/beaf4487-3407-4429-a9b5-e393e4bbfd76.webp",
           "price": 50,
-          "inStock": 24,
+          "inStock": 22,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-14T05:48:46.000Z"
+          "stockUpdatedAt": "2026-09-28T01:01:55.000Z"
         },
         {
           "posVariantId": "eb0bb5c7-4f8e-469a-a59e-52d601fbd4a8",
@@ -1141,7 +1151,7 @@
           "category": "Drinks",
           "productName": "Ginger Ale 355ml (Canada Dry)",
           "image": "/products/loyverse/5f298603-d752-4ad0-898a-a2e680260e02.webp",
-          "price": 65,
+          "price": 70,
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
@@ -1154,11 +1164,11 @@
           "productName": "Ginseng & Honey Green Tea (Arizona)",
           "image": "/products/loyverse/a9d7a0d1-f33a-403d-8287-9a030e2b9807.webp",
           "price": 89,
-          "inStock": 0,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T00:43:47.000Z"
+          "stockUpdatedAt": "2026-09-29T05:07:48.000Z"
         },
         {
           "posVariantId": "48fc8aac-915c-472c-94f2-f51100e9f43c",
@@ -1224,10 +1234,10 @@
           "productName": "Malt Beer 330ml (Heineken) — Heineken Silver",
           "image": "/products/loyverse/28b452c2-baf4-44f6-a0d2-3ef7db8e4402.webp",
           "price": 110,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T08:40:32.000Z"
+          "stockUpdatedAt": "2026-09-28T01:01:55.000Z"
         },
         {
           "posVariantId": "311bbcaf-a74c-4498-be87-2baf3f3c0b14",
@@ -1318,10 +1328,10 @@
           "productName": "Raw Milk 1L — Carabao",
           "image": "/products/loyverse/66ad2a50-0b4e-4ff0-a5c4-de18f12d1019.webp",
           "price": 150,
-          "inStock": 11,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-06T00:52:10.000Z"
+          "stockUpdatedAt": "2026-09-26T02:23:35.000Z"
         },
         {
           "posVariantId": "2023c8b0-b1c4-4327-81fa-97b59dc815bd",
@@ -1329,10 +1339,10 @@
           "productName": "Raw Milk 1L — Cow",
           "image": "/products/loyverse/66ad2a50-0b4e-4ff0-a5c4-de18f12d1019.webp",
           "price": 120,
-          "inStock": 7,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T06:17:25.000Z"
+          "stockUpdatedAt": "2026-10-04T06:32:25.000Z"
         },
         {
           "posVariantId": "b21638fc-4564-42ed-88be-5682cd5140ff",
@@ -1340,10 +1350,10 @@
           "productName": "Raw Milk 1L — Goat",
           "image": "/products/loyverse/66ad2a50-0b4e-4ff0-a5c4-de18f12d1019.webp",
           "price": 195,
-          "inStock": 0,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-08T09:15:28.000Z"
+          "stockUpdatedAt": "2026-09-18T06:09:13.000Z"
         },
         {
           "posVariantId": "b3175d1c-527d-4e91-943e-16c8612e25d0",
@@ -1383,22 +1393,52 @@
           "category": "Drinks",
           "productName": "Rhodes 1L — Apple& Cranberry",
           "price": 199,
-          "inStock": 3,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T05:08:02.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
+        },
+        {
+          "posVariantId": "6fd6afa0-ac89-474d-821a-b7216545036f",
+          "category": "Drinks",
+          "productName": "Rhodes 1L — Litchi",
+          "price": 199,
+          "inStock": 3,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T06:47:37.000Z"
+        },
+        {
+          "posVariantId": "040dffea-b11c-4842-a234-20ffd6548166",
+          "category": "Drinks",
+          "productName": "Rhodes 1L — Orange",
+          "price": 199,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
+        },
+        {
+          "posVariantId": "49394056-b5a3-463b-b23a-b450134d2bd4",
+          "category": "Drinks",
+          "productName": "Rhodes 1L — Red Grapes",
+          "price": 199,
+          "inStock": 3,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T06:01:54.000Z"
         },
         {
           "posVariantId": "4d3d97a0-4690-41cc-8d0f-ccb540c9a993",
           "category": "Drinks",
           "productName": "Rhodes 1L — Strawberry&Banana",
           "price": 199,
-          "inStock": 5,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T05:08:02.000Z"
+          "stockUpdatedAt": "2026-10-02T06:00:34.000Z"
         },
         {
           "posVariantId": "788fb1f0-6c04-44cd-8e14-82ba2c623c39",
@@ -1460,11 +1500,11 @@
           "productName": "Sun Brewed Style Iced Tea (Arizona) — Lemon 650ml",
           "image": "/products/loyverse/34e9cfbe-bafe-4981-8507-acd706034ea5.webp",
           "price": 99,
-          "inStock": 4,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-08-23T02:39:39.000Z"
+          "stockUpdatedAt": "2026-09-30T06:46:41.000Z"
         },
         {
           "posVariantId": "835cc15f-ff78-4eb3-817c-ac36fa10d560",
@@ -1495,10 +1535,10 @@
           "productName": "Blueberries — Blueberries 1kg",
           "image": "/products/loyverse/a15c3f3e-8b7f-4a2d-9384-9c5f79aac9ce.webp",
           "price": 410,
-          "inStock": 2,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T03:18:33.000Z"
+          "stockUpdatedAt": "2026-10-04T08:09:17.000Z"
         },
         {
           "posVariantId": "b4808ad9-d876-4408-9eab-ae71c552c66d",
@@ -1574,10 +1614,10 @@
           "productName": "Edamame 1kg",
           "image": "/products/loyverse/89dd6a5a-dd1d-4784-934b-1b33d5d1e3ca.webp",
           "price": 270,
-          "inStock": 3,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-14T05:34:07.000Z"
+          "stockUpdatedAt": "2026-09-30T09:54:38.000Z"
         },
         {
           "posVariantId": "1c50a128-1b15-4f28-92ac-0f18cdb8f6f2",
@@ -1589,7 +1629,7 @@
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-07T04:42:31.000Z"
+          "stockUpdatedAt": "2026-10-01T05:30:44.000Z"
         },
         {
           "posVariantId": "fcc8b957-5fe9-41d2-8c3f-15ac35f3b536",
@@ -1601,7 +1641,7 @@
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:22:07.000Z"
+          "stockUpdatedAt": "2026-10-01T05:31:37.000Z"
         },
         {
           "posVariantId": "8a0e39f4-cac7-4ac8-ad27-d5eee9738025",
@@ -1613,7 +1653,7 @@
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-14T08:04:15.000Z"
+          "stockUpdatedAt": "2026-10-04T08:28:22.000Z"
         },
         {
           "posVariantId": "2ace79df-3ba0-4211-b2a2-645e1d10a705",
@@ -1625,19 +1665,19 @@
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-14T05:35:07.000Z"
+          "stockUpdatedAt": "2026-10-01T05:30:54.000Z"
         },
         {
           "posVariantId": "673b9480-4e32-4730-baea-5a04c0cada52",
           "category": "Frozen Fruit & Veg",
           "productName": "Raspberry (Whole)",
           "image": "/products/loyverse/60de1b22-4138-4f0c-a8d1-bdc091f40623.webp",
-          "price": 430,
-          "inStock": 0,
+          "price": 710,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T00:55:15.000Z"
+          "stockUpdatedAt": "2026-09-30T01:55:23.000Z"
         },
         {
           "posVariantId": "7b4b8789-4e9b-4970-a5a0-0755c32605bf",
@@ -1668,11 +1708,11 @@
           "productName": "Spinach Ball",
           "image": "/products/loyverse/9cb9e74a-17ab-42e0-986e-40a26de2eb5f.webp",
           "price": 250,
-          "inStock": 3,
+          "inStock": 11,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T05:34:23.000Z"
+          "stockUpdatedAt": "2026-09-30T03:21:00.000Z"
         },
         {
           "posVariantId": "916b1c13-c326-48d9-a6e4-a3198a1d825c",
@@ -1680,10 +1720,10 @@
           "productName": "Strawberry — Strawberry 1kg",
           "image": "/products/loyverse/79910dd8-11ae-4bb3-87d4-c8cc48a78487.webp",
           "price": 355,
-          "inStock": 3,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T03:18:33.000Z"
+          "stockUpdatedAt": "2026-09-28T11:17:45.000Z"
         },
         {
           "posVariantId": "45da9e16-5f72-4a64-895b-cd9ab110f823",
@@ -1713,11 +1753,11 @@
           "unit": "per kg",
           "image": "/products/loyverse/02a4385c-ea3a-462c-bff0-d1bb0cf0bf11.webp",
           "variablePrice": true,
-          "inStock": 13,
+          "inStock": 11,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T03:18:33.000Z"
+          "stockUpdatedAt": "2026-09-30T09:54:38.000Z"
         },
         {
           "posVariantId": "e8c2b726-2950-436c-9e08-05559ddead75",
@@ -1726,11 +1766,11 @@
           "unit": "per kg",
           "image": "/products/loyverse/b6c6e0ab-d01b-4047-9835-d0c61ce145be.webp",
           "variablePrice": true,
-          "inStock": 9,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T06:21:29.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "b4fb509e-a5c6-404e-bced-99a4dcbbdcd2",
@@ -1750,10 +1790,10 @@
           "unit": "per kg",
           "image": "/products/loyverse/a2018c04-59cb-4ccd-ab72-e4caef44cb00.webp",
           "variablePrice": true,
-          "inStock": 19,
+          "inStock": 15,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:18:14.000Z"
+          "stockUpdatedAt": "2026-10-02T09:53:02.000Z"
         },
         {
           "posVariantId": "217ea404-81da-4076-aa0b-48ee32992f17",
@@ -1761,10 +1801,10 @@
           "productName": "Farmers Ham (200g Pack)",
           "image": "/products/loyverse/02718fb6-6fa0-456f-8280-c309cf17818c.webp",
           "price": 220,
-          "inStock": 21,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T11:13:34.000Z"
+          "stockUpdatedAt": "2026-10-01T08:36:05.000Z"
         },
         {
           "posVariantId": "c7154ae3-b826-4272-9e2c-63644bbabf04",
@@ -1774,7 +1814,7 @@
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-24T03:15:48.000Z"
+          "stockUpdatedAt": "2026-09-22T08:39:06.000Z"
         },
         {
           "posVariantId": "898d6c41-29ed-48ea-afc0-7d978fe5f3af",
@@ -1782,20 +1822,20 @@
           "productName": "Florentiner",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 1,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T11:13:34.000Z"
+          "stockUpdatedAt": "2026-10-04T06:15:39.000Z"
         },
         {
           "posVariantId": "acbfa721-23b4-4ee5-812f-5a4ea30855b2",
           "category": "Hams & Cold Cuts",
           "productName": "Forest Ham (200g Pack)",
           "price": 230,
-          "inStock": 17,
+          "inStock": 22,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T02:22:26.000Z"
+          "stockUpdatedAt": "2026-10-01T08:14:51.000Z"
         },
         {
           "posVariantId": "0ab3c679-a522-4e95-8f82-469e6204bfb5",
@@ -1813,10 +1853,10 @@
           "productName": "Honey Ham (200g Pack)",
           "image": "/products/loyverse/602b5f77-b82a-4aa3-a7d8-cf9f26aee23e.webp",
           "price": 240,
-          "inStock": 5,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T02:22:26.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "8157a362-c2c5-4b65-ab45-84827ae20c2c",
@@ -1834,10 +1874,10 @@
           "productName": "Lyoner",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 19,
+          "inStock": 17,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:31:22.000Z"
+          "stockUpdatedAt": "2026-10-01T04:01:36.000Z"
         },
         {
           "posVariantId": "97115f90-bcea-425a-9066-f4e635ea859b",
@@ -1845,20 +1885,20 @@
           "productName": "Meat Loaf (Sliced)",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T05:53:45.000Z"
+          "stockUpdatedAt": "2026-09-26T08:40:16.000Z"
         },
         {
           "posVariantId": "822153c5-c929-4f8d-86b3-9fd52136df4a",
           "category": "Hams & Cold Cuts",
           "productName": "Mixed Cold Cuts (200g Pack)",
           "price": 210,
-          "inStock": 12,
+          "inStock": 18,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T02:04:06.000Z"
+          "stockUpdatedAt": "2026-10-02T09:53:02.000Z"
         },
         {
           "posVariantId": "2a2f4460-40d6-402c-bd9e-a3135d2b2f40",
@@ -1887,10 +1927,90 @@
           "category": "Hams & Cold Cuts",
           "productName": "Polish (Beef Cold Cut)",
           "variablePrice": true,
-          "inStock": 13,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:17:31.000Z"
+          "stockUpdatedAt": "2026-10-01T05:28:26.000Z"
+        },
+        {
+          "posVariantId": "542cf335-da60-4568-9714-86ab482b92be",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — Beef polish",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "d9921121-bf57-45ec-ab32-c943c3487a16",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — Chicken Ham",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "a35f6b46-cc47-4849-b06c-4ce706cc4363",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — Florentiner",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "16f499b5-953a-42c8-913b-5556def3b9f5",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — Lyoner",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "8f6934d4-6635-4fe0-b0c2-0dc80a799c07",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — O Lyoner",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "e9815cae-c5b7-4b29-9e44-b05af5fd8931",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — P Lyoner",
+          "variablePrice": true,
+          "inStock": 1,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "bbfd4c2f-6d24-4407-9a68-b1b6ed0e606d",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — Pastrami",
+          "variablePrice": true,
+          "inStock": 9,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "7c48b252-c3bf-4d5d-b8c3-41aa75fd7078",
+          "category": "Hams & Cold Cuts",
+          "productName": "Slabs/ In Packs — Salami",
+          "variablePrice": true,
+          "inStock": 3,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
         },
         {
           "posVariantId": "b0fd0f96-8e20-4092-8e38-d6013f04cd96",
@@ -1898,20 +2018,20 @@
           "productName": "Turkey Ham",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 10,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:21:12.000Z"
+          "stockUpdatedAt": "2026-09-26T08:40:16.000Z"
         },
         {
           "posVariantId": "7d3071d2-e7ec-449c-904d-007ff5c39486",
           "category": "Hams & Cold Cuts",
           "productName": "Wood-Smoked Ham — 1kg",
           "price": 700,
-          "inStock": 2,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-14T04:42:58.000Z"
+          "stockUpdatedAt": "2026-10-02T04:11:55.000Z"
         },
         {
           "posVariantId": "4e0dfed6-d789-4061-9920-a9d461402fea",
@@ -1921,7 +2041,7 @@
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-06T00:35:08.000Z"
+          "stockUpdatedAt": "2026-09-23T01:34:36.000Z"
         },
         {
           "posVariantId": "d83a1302-4c16-4434-8a86-3873e83f80af",
@@ -1951,11 +2071,11 @@
           "productName": "Asin Tibuok Dinosaur Egg Salt 500g (Naturalmind)",
           "image": "/products/loyverse/13c8831b-b21e-4287-934e-0133f7bf734d.webp",
           "price": 600,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-08-23T10:35:39.000Z"
+          "stockUpdatedAt": "2026-09-27T07:08:04.000Z"
         },
         {
           "posVariantId": "def1309f-cba2-4c45-ad79-fe56754428cc",
@@ -2035,10 +2155,10 @@
           "productName": "Beef Stew Seasoning 100g (Muscat Blends)",
           "image": "/products/loyverse/41720731-cccd-4549-acc3-02be677dadfd.webp",
           "price": 205,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T01:48:45.000Z"
+          "stockUpdatedAt": "2026-09-17T03:27:18.000Z"
         },
         {
           "posVariantId": "5fb41afb-61ad-4df1-bfd6-404eca7adf5d",
@@ -2082,11 +2202,11 @@
           "productName": "Cardamon Brown 50g (Chef's Cabinet)",
           "image": "/products/loyverse/a0e304b9-8c0d-45e5-addd-90c49fd4dc02.webp",
           "price": 120,
-          "inStock": 0,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T01:29:23.000Z"
+          "stockUpdatedAt": "2026-09-19T05:09:50.000Z"
         },
         {
           "posVariantId": "1e6be283-e99e-46ab-bcaa-270b47f0cb33",
@@ -2118,11 +2238,11 @@
           "productName": "Cheese Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/194d6c27-aed8-4741-ae86-1d6bb0ef26f6.webp",
           "price": 65,
-          "inStock": 1,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-07-16T04:37:56.000Z"
+          "stockUpdatedAt": "2026-09-19T05:11:43.000Z"
         },
         {
           "posVariantId": "d79c7ae7-0ce1-4762-b7c5-70762e65b865",
@@ -2142,11 +2262,11 @@
           "productName": "Chicken Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/3853a83f-90ab-4fdb-8c06-70bd51fe138d.webp",
           "price": 80,
-          "inStock": 3,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:55:04.000Z"
+          "stockUpdatedAt": "2026-09-30T02:59:54.000Z"
         },
         {
           "posVariantId": "1fce0d40-3e85-4463-aef9-3a602901f701",
@@ -2178,11 +2298,11 @@
           "productName": "Cinnamon Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/b407554e-de0a-4337-94cd-1e6bc04fac4f.webp",
           "price": 75,
-          "inStock": 5,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:54:18.000Z"
+          "stockUpdatedAt": "2026-10-02T06:41:32.000Z"
         },
         {
           "posVariantId": "028a3eb3-e6e8-423b-bd0e-95617dadf0c2",
@@ -2202,11 +2322,11 @@
           "productName": "Cloves Whole 50g (Chef's Cabinet)",
           "image": "/products/loyverse/dcd43527-c804-46f1-974c-2f5d54fb7e92.webp",
           "price": 195,
-          "inStock": 3,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:02:01.000Z"
+          "stockUpdatedAt": "2026-09-19T05:07:25.000Z"
         },
         {
           "posVariantId": "d087a31b-eaac-4b12-b88f-26178229cbfa",
@@ -2225,11 +2345,22 @@
           "productName": "Coriander Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/21cd5f41-5abe-415a-be0e-444e5bacd186.webp",
           "price": 75,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-08-23T04:49:19.000Z"
+          "stockUpdatedAt": "2026-09-26T09:40:16.000Z"
+        },
+        {
+          "posVariantId": "a6163d41-a74b-421b-a086-2aaa652f7462",
+          "category": "Herbs & Spices",
+          "productName": "Coriander Seeds 50g (Chef's Cabinet)",
+          "price": 75,
+          "inStock": 4,
+          "trackStock": true,
+          "soldByWeight": false,
+          "lowStock": 3,
+          "stockUpdatedAt": "2026-09-19T05:23:00.000Z"
         },
         {
           "posVariantId": "958bcd6e-a216-4d76-9eb8-0e7eb7338309",
@@ -2249,11 +2380,11 @@
           "productName": "Cumin Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/ab5b8de7-521e-43d6-9fc1-1b9706727b15.webp",
           "price": 75,
-          "inStock": 3,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:49:59.000Z"
+          "stockUpdatedAt": "2026-10-01T05:20:46.000Z"
         },
         {
           "posVariantId": "90fb4f63-d326-4596-8723-a1b031484419",
@@ -2295,11 +2426,11 @@
           "productName": "Five Spice 50g (Chef's Cabinet)",
           "image": "/products/loyverse/e7e09a72-37a7-4424-bb9d-bfbb03896691.webp",
           "price": 70,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-08-04T05:05:16.000Z"
+          "stockUpdatedAt": "2026-09-22T08:11:26.000Z"
         },
         {
           "posVariantId": "6b5d9c02-ec96-4853-b7c0-50481ea4672d",
@@ -2307,11 +2438,11 @@
           "productName": "Fried Garlic 50g (Chef's Cabinet)",
           "image": "/products/loyverse/02d7a5be-770b-4d8f-9d7b-e8ca3d3c620a.webp",
           "price": 65,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:05:23.000Z"
+          "stockUpdatedAt": "2026-09-20T09:45:34.000Z"
         },
         {
           "posVariantId": "b5727a32-dded-473e-a1c0-39b0b3bcc482",
@@ -2319,11 +2450,11 @@
           "productName": "Garlic Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/eb9b47b3-fe0f-49db-90fe-0d632e532f4b.webp",
           "price": 75,
-          "inStock": 1,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-07-28T04:42:43.000Z"
+          "stockUpdatedAt": "2026-10-04T05:16:49.000Z"
         },
         {
           "posVariantId": "0bdff65a-e0f2-4413-a321-73fd946bd5e8",
@@ -2354,10 +2485,10 @@
           "productName": "Himalayan Pink Salt Fine Grind 250g (Greenola)",
           "image": "/products/loyverse/f76b8019-b768-4b3b-b2fe-0ef70b546f35.webp",
           "price": 115,
-          "inStock": 4,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T03:18:33.000Z"
+          "stockUpdatedAt": "2026-09-30T10:03:43.000Z"
         },
         {
           "posVariantId": "a8e7669a-11df-477b-93ab-3679f03c8c6b",
@@ -2365,11 +2496,11 @@
           "productName": "Himalayan Salt 50g (Chef's Cabinet)",
           "image": "/products/loyverse/c25b0c47-8c43-4e08-8ccf-f8e73c736047.webp",
           "price": 60,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:48:16.000Z"
+          "stockUpdatedAt": "2026-10-02T05:35:26.000Z"
         },
         {
           "posVariantId": "01da417b-0419-4afd-9bce-45521c59c7a1",
@@ -2401,11 +2532,11 @@
           "productName": "Meat Tenderizer 50g (Chef's Cabinet)",
           "image": "/products/loyverse/13416436-393d-49b3-875f-e6256068349d.webp",
           "price": 70,
-          "inStock": 6,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:55:55.000Z"
+          "stockUpdatedAt": "2026-09-26T08:50:14.000Z"
         },
         {
           "posVariantId": "dd7ec57b-fede-43b7-b670-a4dd01643d47",
@@ -2444,26 +2575,16 @@
           "stockUpdatedAt": "2026-09-09T07:48:31.000Z"
         },
         {
-          "posVariantId": "59048b0b-0008-416d-85b9-8dfd6d450abb",
-          "category": "Herbs & Spices",
-          "productName": "Oregano flakes",
-          "price": 115,
-          "inStock": 2,
-          "trackStock": true,
-          "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T00:51:32.000Z"
-        },
-        {
           "posVariantId": "bd79e82f-befc-49f7-b911-ff8f2b7e922b",
           "category": "Herbs & Spices",
           "productName": "Oregano Flakes 50g (Chef's Cabinet)",
           "image": "/products/loyverse/a4cf2a85-0052-44ad-875a-86c4b5a480f7.webp",
-          "price": 79,
-          "inStock": 3,
+          "price": 115,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:03:44.000Z"
+          "stockUpdatedAt": "2026-09-28T01:29:47.000Z"
         },
         {
           "posVariantId": "07d278db-85cf-4f01-a1e1-ea04965a0076",
@@ -2482,10 +2603,10 @@
           "productName": "Pangasinan Organic Rock Salt 500g (The Sausage Guy)",
           "image": "/products/loyverse/8eed71a5-a139-462b-8bb5-e88d1154a568.webp",
           "price": 60,
-          "inStock": 17,
+          "inStock": 16,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T01:57:32.000Z"
+          "stockUpdatedAt": "2026-10-04T05:16:49.000Z"
         },
         {
           "posVariantId": "f2bf71d9-72d0-4b89-a9f3-90a3d82909fa",
@@ -2493,11 +2614,11 @@
           "productName": "Parsley Flakes 50g (Chef's Cabinet)",
           "image": "/products/loyverse/fd2d1a1f-00cb-48c2-a679-8228768e627b.webp",
           "price": 105,
-          "inStock": 3,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:03:30.000Z"
+          "stockUpdatedAt": "2026-09-19T05:10:43.000Z"
         },
         {
           "posVariantId": "37125139-2036-4df2-97eb-fc5f0beda45c",
@@ -2505,10 +2626,10 @@
           "productName": "Parsley Garlic Salt 110g (Organic Seasoning)",
           "image": "/products/loyverse/80e7f865-1c27-4653-9274-aea9c8ad9880.webp",
           "price": 60,
-          "inStock": 29,
+          "inStock": 27,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T01:57:50.000Z"
+          "stockUpdatedAt": "2026-10-04T03:23:07.000Z"
         },
         {
           "posVariantId": "26934d31-b2ad-4c88-8eb7-cd30e8025eb6",
@@ -2527,11 +2648,11 @@
           "productName": "Pork Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/c38c8362-224f-4e42-b795-f0f12919aaad.webp",
           "price": 65,
-          "inStock": 4,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:01:00.000Z"
+          "stockUpdatedAt": "2026-09-30T02:59:54.000Z"
         },
         {
           "posVariantId": "75469d00-f944-4acd-b556-6fa66d0055f0",
@@ -2560,11 +2681,11 @@
           "productName": "Rosemary Flakes 50g (Chef's Cabinet)",
           "image": "/products/loyverse/9df21705-d00b-4be0-9695-fd9b6301c757.webp",
           "price": 100,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:04:57.000Z"
+          "stockUpdatedAt": "2026-09-29T08:11:08.000Z"
         },
         {
           "posVariantId": "769f887b-a88a-4365-a81e-97b63c7278f0",
@@ -2584,8 +2705,10 @@
           "productName": "Salmon Rub & Seasoning 100g (Muscat Blends)",
           "image": "/products/loyverse/b5f4f130-99de-4537-b3b8-debf823458b5.webp",
           "price": 240,
-          "trackStock": false,
-          "soldByWeight": false
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-06-30T06:15:30.000Z"
         },
         {
           "posVariantId": "f0ca104c-a618-4b40-b9e3-42dbf8bc6fce",
@@ -2663,11 +2786,11 @@
           "productName": "Spanish Paprika Red 50g (Chef's Cabinet)",
           "image": "/products/loyverse/99896b64-4b35-4f86-8ff8-dea1bdbe3555.webp",
           "price": 70,
-          "inStock": 2,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T08:05:50.000Z"
+          "stockUpdatedAt": "2026-09-19T05:09:39.000Z"
         },
         {
           "posVariantId": "11673ac7-65ca-4cba-87f8-a29819ee1492",
@@ -2732,11 +2855,11 @@
           "productName": "Turmeric Powder 50g (Chef's Cabinet)",
           "image": "/products/loyverse/26e5457d-9675-4e10-9e0b-883bc7ccc41c.webp",
           "price": 70,
-          "inStock": 7,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-09T07:59:24.000Z"
+          "stockUpdatedAt": "2026-10-04T00:16:15.000Z"
         },
         {
           "posVariantId": "527fbb37-daeb-492a-85fe-749db52553b0",
@@ -2757,11 +2880,11 @@
           "unit": "per kg",
           "image": "/products/loyverse/2368dae2-c526-41f8-87b0-bf9c0d6b0d50.webp",
           "variablePrice": true,
-          "inStock": 25,
+          "inStock": 22,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-14T08:04:15.000Z"
+          "stockUpdatedAt": "2026-10-01T06:29:12.000Z"
         },
         {
           "posVariantId": "d10d10d1-874a-4228-9ed8-a237c2a7c093",
@@ -2769,10 +2892,10 @@
           "productName": "Beef and Lamb Kofta",
           "image": "/products/loyverse/c64e16f5-66c4-473b-b2e6-b087295de80e.webp",
           "variablePrice": true,
-          "inStock": 25,
+          "inStock": 21,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-08T03:34:08.000Z"
+          "stockUpdatedAt": "2026-09-22T07:32:44.000Z"
         },
         {
           "posVariantId": "10d91368-43c0-4eed-9ced-2e6595421e83",
@@ -2780,10 +2903,10 @@
           "productName": "Beef Burger Patties 2-pack — Mexican",
           "image": "/products/loyverse/dddb2b95-0539-453e-86d7-d7dbf0eea162.webp",
           "price": 280,
-          "inStock": 2,
+          "inStock": 16,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T01:42:39.000Z"
+          "stockUpdatedAt": "2026-09-27T09:58:55.000Z"
         },
         {
           "posVariantId": "07e9fc28-10b5-4f7c-b3f8-9d21c6713ebe",
@@ -2791,10 +2914,10 @@
           "productName": "Beef Burger Patties 2-pack — Rosemary",
           "image": "/products/loyverse/dddb2b95-0539-453e-86d7-d7dbf0eea162.webp",
           "price": 280,
-          "inStock": 0,
+          "inStock": 14,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T00:22:48.000Z"
+          "stockUpdatedAt": "2026-10-02T09:53:02.000Z"
         },
         {
           "posVariantId": "370ce990-4041-43f7-8ca9-503f3cbd1e4a",
@@ -2802,22 +2925,10 @@
           "productName": "Beef Burger Patties 2-pack — US",
           "image": "/products/loyverse/dddb2b95-0539-453e-86d7-d7dbf0eea162.webp",
           "price": 280,
-          "inStock": 0,
+          "inStock": 13,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T05:46:03.000Z"
-        },
-        {
-          "posVariantId": "91ef32a1-bd0c-41cf-a2ac-77e1d8983d48",
-          "category": "Meat & Steaks",
-          "productName": "Beef Sukiyaki",
-          "image": "/products/loyverse/0eeb3dcf-ea54-4e79-8556-94ccdb07bce9.webp",
-          "variablePrice": true,
-          "inStock": 0,
-          "trackStock": true,
-          "soldByWeight": false,
-          "lowStock": 2,
-          "stockUpdatedAt": "2026-09-05T08:03:57.000Z"
+          "stockUpdatedAt": "2026-10-04T09:22:51.000Z"
         },
         {
           "posVariantId": "08f0a5e4-1881-4264-93c9-22e3076184ab",
@@ -2836,10 +2947,10 @@
           "productName": "Brazilian Chuckeye Steak",
           "image": "/products/loyverse/d015c09d-0a86-48e5-b0be-05df21b1ad4b.webp",
           "variablePrice": true,
-          "inStock": 32,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T01:44:49.000Z"
+          "stockUpdatedAt": "2026-10-04T08:09:17.000Z"
         },
         {
           "posVariantId": "23b8fd98-6875-4950-9520-3d9573839503",
@@ -2850,7 +2961,7 @@
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T00:23:14.000Z"
+          "stockUpdatedAt": "2026-09-28T07:41:54.000Z"
         },
         {
           "posVariantId": "46d60d85-290e-4d36-8ab9-551f122adb6f",
@@ -2858,10 +2969,10 @@
           "productName": "Brazilian Ground Beef (from Chuckeye) — 250g",
           "image": "/products/loyverse/3046e606-689b-467e-8976-5f77c1cc8628.webp",
           "price": 250,
-          "inStock": 0,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-08-31T08:21:02.000Z"
+          "stockUpdatedAt": "2026-09-26T03:00:21.000Z"
         },
         {
           "posVariantId": "a248944d-ba26-4162-9490-bffd8b4fed4f",
@@ -2869,10 +2980,10 @@
           "productName": "Brazilian Ground Beef (from Chuckeye) — 500g",
           "image": "/products/loyverse/3046e606-689b-467e-8976-5f77c1cc8628.webp",
           "price": 450,
-          "inStock": 0,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T05:19:52.000Z"
+          "stockUpdatedAt": "2026-10-05T00:15:07.000Z"
         },
         {
           "posVariantId": "e0102b1a-3dc6-44e5-88bb-ba2b472912ca",
@@ -2910,10 +3021,10 @@
           "productName": "Brazilian Ribeye Steak",
           "image": "/products/loyverse/49d7abc9-71fa-4acc-8f90-03567e8c3e43.webp",
           "variablePrice": true,
-          "inStock": 22,
+          "inStock": 11,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-14T09:28:31.000Z"
+          "stockUpdatedAt": "2026-10-04T05:16:49.000Z"
         },
         {
           "posVariantId": "31679fd3-cff7-419d-89e5-362ab59fb637",
@@ -3020,10 +3131,10 @@
           "productName": "Homemade Bacon (Sausage Guy) — Wood Smoked 1kg",
           "image": "/products/loyverse/745f1c3b-0f64-43ed-b101-1af70efb2729.webp",
           "price": 700,
-          "inStock": 37,
+          "inStock": 16,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T01:26:45.000Z"
+          "stockUpdatedAt": "2026-10-04T11:19:15.000Z"
         },
         {
           "posVariantId": "6ef56a71-c5be-45f1-8de2-29fb8d4eb89e",
@@ -3031,10 +3142,10 @@
           "productName": "Homemade Bacon (Sausage Guy) — Wood Smoked 3kg+",
           "image": "/products/loyverse/745f1c3b-0f64-43ed-b101-1af70efb2729.webp",
           "price": 650,
-          "inStock": 5,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T03:09:32.000Z"
+          "stockUpdatedAt": "2026-09-25T03:01:04.000Z"
         },
         {
           "posVariantId": "768f29cd-6e7c-49ea-8ce4-f28fe3d2b985",
@@ -3053,10 +3164,10 @@
           "productName": "Homemade Bacon (Sausage Guy) — Wood Smoked 5kg+",
           "image": "/products/loyverse/745f1c3b-0f64-43ed-b101-1af70efb2729.webp",
           "price": 600,
-          "inStock": 5,
+          "inStock": -5,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T03:09:32.000Z"
+          "stockUpdatedAt": "2026-10-03T05:26:54.000Z"
         },
         {
           "posVariantId": "64ea4e5b-3776-49da-a75f-369f1b93d13f",
@@ -3064,41 +3175,41 @@
           "productName": "Lamb Burger 2- pack",
           "image": "/products/loyverse/394e1842-b738-42b8-9fc0-c13c72c42a8a.webp",
           "price": 480,
-          "inStock": 3,
+          "inStock": 15,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-14T08:04:15.000Z"
+          "stockUpdatedAt": "2026-10-01T06:48:38.000Z"
         },
         {
           "posVariantId": "d91646cd-aa9a-4593-90f7-17ef40277ad4",
           "category": "Meat & Steaks",
           "productName": "Lamb Shanks",
           "variablePrice": true,
-          "inStock": 4,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-06T00:58:39.000Z"
+          "stockUpdatedAt": "2026-10-04T05:16:49.000Z"
         },
         {
           "posVariantId": "bdd4eba3-c61d-4fa3-a79e-93c861531471",
           "category": "Meat & Steaks",
           "productName": "Ostrich Ground 1kg (Big Bird)",
           "price": 950,
-          "inStock": 2,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-08T04:40:36.000Z"
+          "stockUpdatedAt": "2026-10-01T06:23:57.000Z"
         },
         {
           "posVariantId": "f25424fd-7b64-4d1a-9126-d6988cd8cf4b",
           "category": "Meat & Steaks",
           "productName": "Ostrich Steak (Big Bird)",
           "variablePrice": true,
-          "inStock": 16,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T10:09:15.000Z"
+          "stockUpdatedAt": "2026-09-30T07:26:41.000Z"
         },
         {
           "posVariantId": "f40b4cf4-9373-412a-a90f-1988b4201181",
@@ -3106,11 +3217,11 @@
           "productName": "Picnic Bacon",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 52,
+          "inStock": 46,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 10,
-          "stockUpdatedAt": "2026-09-14T03:04:04.000Z"
+          "stockUpdatedAt": "2026-09-29T02:28:44.000Z"
         },
         {
           "posVariantId": "8452785a-c96f-4cec-80f5-f32332ad1e9f",
@@ -3118,10 +3229,10 @@
           "productName": "USDA Choice Angus Ribeye (St. Helens)",
           "image": "/products/loyverse/1c43eb9d-f94c-4a21-a090-bdd036a34b7a.webp",
           "variablePrice": true,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T00:21:34.000Z"
+          "stockUpdatedAt": "2026-09-21T09:25:19.000Z"
         },
         {
           "posVariantId": "5ed2d61e-9033-4364-b673-a5ec307f5544",
@@ -3129,10 +3240,10 @@
           "productName": "USDA Choice Black Angus Ribeye (Demkota)",
           "image": "/products/loyverse/4b1210fd-866e-4346-9561-5693b1fe9b88.webp",
           "variablePrice": true,
-          "inStock": 5,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T00:21:42.000Z"
+          "stockUpdatedAt": "2026-10-03T09:44:50.000Z"
         },
         {
           "posVariantId": "236544da-69ea-4af3-847f-a6b1354793fd",
@@ -3140,10 +3251,10 @@
           "productName": "USDA Choice Black Angus Ribeye(Nebraska)",
           "image": "/products/loyverse/a56f8b2b-26b0-48ca-a92f-18d38664e468.webp",
           "variablePrice": true,
-          "inStock": 6,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T01:44:09.000Z"
+          "stockUpdatedAt": "2026-10-03T09:44:50.000Z"
         },
         {
           "posVariantId": "c8ce7d3b-c68f-436a-81b1-b0335865543a",
@@ -3162,11 +3273,11 @@
           "productName": "USDA Tenderloin",
           "image": "/products/loyverse/d87ff9da-dd8c-4225-9fe6-0a99421e06a3.webp",
           "variablePrice": true,
-          "inStock": 23,
+          "inStock": 14,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-15T01:52:23.000Z"
+          "stockUpdatedAt": "2026-10-02T09:53:02.000Z"
         },
         {
           "posVariantId": "c25b8914-58cd-4050-8da5-1f338c365bd3",
@@ -3257,11 +3368,11 @@
           "productName": "Asparagus in Brine 430g (Hosen)",
           "image": "/products/loyverse/abbc0499-659c-4630-9b85-84fe59871012.webp",
           "price": 185,
-          "inStock": 7,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:23:23.000Z"
+          "stockUpdatedAt": "2026-10-04T05:54:02.000Z"
         },
         {
           "posVariantId": "0cff5b30-2a44-43de-a5d1-d1964cdc96dc",
@@ -3315,11 +3426,11 @@
           "category": "Pantry & Preserves",
           "productName": "Cherry Tomatoes 425ml(Mazza)",
           "price": 130,
-          "inStock": 25,
+          "inStock": 24,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-14T03:04:04.000Z"
+          "stockUpdatedAt": "2026-10-04T05:54:02.000Z"
         },
         {
           "posVariantId": "3299d86c-f9de-4d1f-bc35-5a1ebd260127",
@@ -3338,11 +3449,11 @@
           "productName": "Chopped Tomatoes 400g (Dolce Vita)",
           "image": "/products/loyverse/d2f18e2c-378e-492b-90fb-67733ae602ce.webp",
           "price": 112,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-08T06:04:44.000Z"
+          "stockUpdatedAt": "2026-10-01T05:20:46.000Z"
         },
         {
           "posVariantId": "c71d4db6-12cf-4f02-8240-6bb87d1e4d0b",
@@ -3356,16 +3467,38 @@
           "stockUpdatedAt": "2026-09-15T06:20:20.000Z"
         },
         {
+          "posVariantId": "0bb9da9d-0e0d-4e96-ba1c-3ad7ae298cba",
+          "category": "Pantry & Preserves",
+          "productName": "Condensed Soup Cream of Chicken (298g (Campbell's)",
+          "image": "/products/loyverse/df232b55-e4ff-406c-8c61-2e2908e6aa7b.webp",
+          "price": 140,
+          "inStock": 8,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T07:06:47.000Z"
+        },
+        {
           "posVariantId": "d16a3dca-cd39-4056-8e60-56f7b78a8ae7",
           "category": "Pantry & Preserves",
           "productName": "Course Mustard 255g (Kühne)",
           "image": "/products/loyverse/de0e21f7-1751-4580-9ea3-3c67d9bb2f43.webp",
           "price": 260,
-          "inStock": 4,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-13T02:22:26.000Z"
+          "stockUpdatedAt": "2026-10-04T00:45:25.000Z"
+        },
+        {
+          "posVariantId": "2ffd916e-2b02-4cd1-8c1e-ac5a54478269",
+          "category": "Pantry & Preserves",
+          "productName": "Cream of Mushroom (Campbell's)",
+          "image": "/products/loyverse/5d03f889-c569-49a6-950a-0fa049d523f0.webp",
+          "price": 150,
+          "inStock": 8,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T07:10:07.000Z"
         },
         {
           "posVariantId": "aa906b25-191a-465f-9bb8-1babd3d43d9d",
@@ -3373,11 +3506,11 @@
           "productName": "Cream Style Sweet Corn 425g (Members Value)",
           "image": "/products/loyverse/33e45bcd-c15b-45b1-8e23-3f58d7f422f1.webp",
           "price": 50,
-          "inStock": 7,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:23:07.000Z"
+          "stockUpdatedAt": "2026-09-21T02:07:40.000Z"
         },
         {
           "posVariantId": "d4165f5d-d289-46a3-8948-9daf3fa53466",
@@ -3385,11 +3518,22 @@
           "productName": "Dijon Mustard 370g (Bornier)",
           "image": "/products/loyverse/bb244ac8-1e85-4195-b8c3-50de82a8a767.webp",
           "price": 505,
-          "inStock": 4,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T01:07:42.000Z"
+          "stockUpdatedAt": "2026-09-30T09:33:03.000Z"
+        },
+        {
+          "posVariantId": "bb2a3ae9-a81c-401f-b072-9e35113285d9",
+          "category": "Pantry & Preserves",
+          "productName": "Double Cheddar Cheese Sauce 439g (Ragu)",
+          "image": "/products/loyverse/4f656970-d6fd-4225-b972-e22b1f6ca56d.webp",
+          "price": 305,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T07:05:45.000Z"
         },
         {
           "posVariantId": "5f4a99c5-c8b3-4522-9d31-f7fecffa72d2",
@@ -3433,11 +3577,21 @@
           "productName": "Honey Mustard Sauce 250g (CJ)",
           "image": "/products/loyverse/954d1fd6-44ba-4fb1-a505-65e95dbde67b.webp",
           "price": 140,
-          "inStock": 6,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T01:30:52.000Z"
+          "stockUpdatedAt": "2026-09-26T11:44:41.000Z"
+        },
+        {
+          "posVariantId": "e464ec83-1a90-4edf-836a-52a9f560ac2c",
+          "category": "Pantry & Preserves",
+          "productName": "Hormel Chili with Beans 425g",
+          "price": 300,
+          "inStock": 5,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T06:58:10.000Z"
         },
         {
           "posVariantId": "628e4cfd-f82d-4a22-866f-bdbc62cfda69",
@@ -3445,22 +3599,31 @@
           "productName": "Horseradish ready-to-use 140g (Kühne)",
           "image": "/products/loyverse/d1d2c5ef-b102-435b-8f3a-4463ce924a26.webp",
           "price": 250,
-          "inStock": 3,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T01:15:25.000Z"
+          "stockUpdatedAt": "2026-09-26T08:40:16.000Z"
+        },
+        {
+          "posVariantId": "d87f398f-3ebd-4a47-9467-61c42ef9fc37",
+          "category": "Pantry & Preserves",
+          "productName": "Kernel Corn 425g (Member's Value)",
+          "image": "/products/loyverse/8ed82b80-ffa6-42b2-a32b-ccca86b26c7d.webp",
+          "price": 55,
+          "trackStock": false,
+          "soldByWeight": false
         },
         {
           "posVariantId": "b94e065b-7b24-4742-ba9e-e7f6227c173b",
           "category": "Pantry & Preserves",
           "productName": "Liver Pate 250g (Sausage Guy)",
           "price": 329,
-          "inStock": 3,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-08-20T04:55:47.000Z"
+          "stockUpdatedAt": "2026-09-23T06:45:00.000Z"
         },
         {
           "posVariantId": "572989d8-5548-4c68-8155-b9c6ad5e2db6",
@@ -3479,10 +3642,21 @@
           "productName": "Old Fashioned Sauerkraut 946ml (Vlasic)",
           "image": "/products/loyverse/06879d9b-111b-45e4-8e75-7f067d8e6158.webp",
           "price": 445,
-          "inStock": 1,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T01:17:43.000Z"
+          "stockUpdatedAt": "2026-10-01T05:47:56.000Z"
+        },
+        {
+          "posVariantId": "f03dcd36-53b8-4b31-b44f-4078b64d2f14",
+          "category": "Pantry & Preserves",
+          "productName": "Olive Oil Mayonnaise 887ml (Kraft)",
+          "price": 895,
+          "inStock": 5,
+          "trackStock": true,
+          "soldByWeight": false,
+          "lowStock": 2,
+          "stockUpdatedAt": "2026-10-03T05:02:34.000Z"
         },
         {
           "posVariantId": "e4127fb4-d767-4077-8c2f-16acf18b537c",
@@ -3490,22 +3664,22 @@
           "productName": "Organic Apple Cider Vinegar 946ml (Kirkland Signature)",
           "image": "/products/loyverse/43f87561-d04d-42ad-b0e7-33207a2c1b6b.webp",
           "price": 485,
-          "inStock": 5,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-02T06:27:25.000Z"
+          "stockUpdatedAt": "2026-09-28T09:29:21.000Z"
         },
         {
           "posVariantId": "2599b1ae-1d2a-4746-9713-e4197c79029a",
           "category": "Pantry & Preserves",
           "productName": "Organic Chicken Stock 946ml (Kirkland Signature)",
           "price": 179,
-          "inStock": 8,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T05:22:53.000Z"
+          "stockUpdatedAt": "2026-10-01T01:25:58.000Z"
         },
         {
           "posVariantId": "b9eced6d-d28b-4610-bd81-875388dda86c",
@@ -3513,10 +3687,10 @@
           "productName": "Original Dijon Mustard 185g(Kühne)",
           "image": "/products/loyverse/33a6a44d-def0-4bdd-9425-35625ac3428f.webp",
           "price": 295,
-          "inStock": 3,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T07:25:48.000Z"
+          "stockUpdatedAt": "2026-09-21T05:36:46.000Z"
         },
         {
           "posVariantId": "85bbc25c-daea-452b-819c-5b5cf82aef5b",
@@ -3536,11 +3710,11 @@
           "productName": "Peanut Butter Creamy 800g (Member's Value)",
           "image": "/products/loyverse/6e913ce4-856b-4508-9573-a53773e0a3e4.webp",
           "price": 275,
-          "inStock": 5,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-02T06:35:22.000Z"
+          "stockUpdatedAt": "2026-10-01T11:08:14.000Z"
         },
         {
           "posVariantId": "212f9e8f-727b-4deb-a4a4-591b0f239395",
@@ -3572,11 +3746,11 @@
           "productName": "Pesto alla Genovese 180g (Mazza)",
           "image": "/products/loyverse/06a3999f-6b4d-40f9-92b4-57d495915508.webp",
           "price": 220,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:09:16.000Z"
+          "stockUpdatedAt": "2026-09-17T09:32:35.000Z"
         },
         {
           "posVariantId": "73dd22f4-6af7-4c13-b77e-c7ef2693cfb4",
@@ -3596,11 +3770,11 @@
           "productName": "Pickled Gherkins 670g (Kühne)",
           "image": "/products/loyverse/d3acabd4-98a6-40d6-826a-a65035b0aff0.webp",
           "price": 425,
-          "inStock": 16,
+          "inStock": 13,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T01:14:10.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "9162c57e-a182-473b-a937-96ca8f919dab",
@@ -3608,11 +3782,11 @@
           "productName": "Pickled Onions 330g (Kühne)",
           "image": "/products/loyverse/2b596a0f-5950-4999-842f-95922402f5b6.webp",
           "price": 215,
-          "inStock": 10,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-11T01:16:04.000Z"
+          "stockUpdatedAt": "2026-09-25T08:42:27.000Z"
         },
         {
           "posVariantId": "2689f637-080f-4d37-86b5-e3a11665c0d7",
@@ -3620,11 +3794,11 @@
           "productName": "Pizza Sauce 400g (Mazza)",
           "image": "/products/loyverse/990a57fc-d69f-4bd6-8417-65b8f14e56b1.webp",
           "price": 122,
-          "inStock": 8,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-11T11:15:12.000Z"
+          "stockUpdatedAt": "2026-09-20T07:45:42.000Z"
         },
         {
           "posVariantId": "eeb7625b-9986-4a9d-9d44-daebb4524ee9",
@@ -3643,10 +3817,10 @@
           "category": "Pantry & Preserves",
           "productName": "Red Kidney Beans (Dolce Vita)",
           "price": 90,
-          "inStock": 23,
+          "inStock": 20,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T07:20:50.000Z"
+          "stockUpdatedAt": "2026-09-22T08:11:26.000Z"
         },
         {
           "posVariantId": "044f696f-39db-4e67-a66f-e7eac79a00d9",
@@ -3654,11 +3828,11 @@
           "productName": "Sauerkraut Choucroute 720ml (Kühne)",
           "image": "/products/loyverse/ec8c1fb2-8958-48ac-a313-030f87fec313.webp",
           "price": 430,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-13T02:22:26.000Z"
+          "stockUpdatedAt": "2026-10-04T07:44:13.000Z"
         },
         {
           "posVariantId": "411e453d-4c96-4ed5-b559-337def26ea41",
@@ -3698,12 +3872,12 @@
           "category": "Pantry & Preserves",
           "productName": "Sun-Dried Tomatoes 280g (Dolce Vita)",
           "image": "/products/loyverse/adb8087b-2fc7-4abc-9b72-e6565325bc0d.webp",
-          "price": 210,
-          "inStock": 3,
+          "price": 230,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-15T06:17:25.000Z"
+          "stockUpdatedAt": "2026-10-02T05:42:06.000Z"
         },
         {
           "posVariantId": "266b98d7-1bc7-4960-9ee1-38b693ec7278",
@@ -3734,10 +3908,10 @@
           "productName": "Sweet Relish 710ml (Vlasic)",
           "image": "/products/loyverse/386ba946-8a0a-45b0-87b2-fd4408e7e278.webp",
           "price": 365,
-          "inStock": 12,
+          "inStock": 11,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T01:19:12.000Z"
+          "stockUpdatedAt": "2026-09-22T08:11:26.000Z"
         },
         {
           "posVariantId": "7d35edc2-e56c-4019-ac66-c8122460b3dc",
@@ -3745,11 +3919,11 @@
           "productName": "Whole Garbanzos Chickpeas 425g (Members Value)",
           "image": "/products/loyverse/eb33e504-929f-453b-9486-e3790e93bd7f.webp",
           "price": 48,
-          "inStock": 10,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:25:50.000Z"
+          "stockUpdatedAt": "2026-10-04T03:30:12.000Z"
         },
         {
           "posVariantId": "e03cc44e-5e2e-4390-9e79-34775a5f92dd",
@@ -3757,11 +3931,33 @@
           "productName": "Whole Green Peas Choice 425g (Members Value)",
           "image": "/products/loyverse/0d805cf0-8ced-4130-ba23-9de093cf3451.webp",
           "price": 50,
-          "inStock": 3,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:22:28.000Z"
+          "stockUpdatedAt": "2026-10-04T07:02:17.000Z"
+        },
+        {
+          "posVariantId": "8b64b137-ea3b-4848-a20f-6378525f23a3",
+          "category": "Pantry & Preserves",
+          "productName": "Whole Mushroom in Can 425g (Member's Value)",
+          "image": "/products/loyverse/bfd5b3ab-5aa2-4753-a1c9-4521edbfad85.webp",
+          "price": 80,
+          "inStock": 5,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T07:00:35.000Z"
+        },
+        {
+          "posVariantId": "000c6bfb-82af-4dde-86b1-757a74393ce3",
+          "category": "Pantry & Preserves",
+          "productName": "Whole Young Corn 425g (Member's Value)",
+          "image": "/products/loyverse/f14ea4e7-e6be-4f32-af12-3eaa3851f039.webp",
+          "price": 70,
+          "inStock": 5,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T06:59:43.000Z"
         },
         {
           "posVariantId": "d72788a0-62a6-43e0-b30c-67cde6d232aa",
@@ -3802,11 +3998,11 @@
           "productName": "Brazilian Chicken Breast 2kg",
           "image": "/products/loyverse/3b76649d-d39b-4056-8a59-f378cbd620ee.webp",
           "price": 760,
-          "inStock": 5,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-09T06:38:51.000Z"
+          "stockUpdatedAt": "2026-09-30T03:16:59.000Z"
         },
         {
           "posVariantId": "ac0614a5-ec62-454a-83d2-a7f90a197c19",
@@ -3825,11 +4021,11 @@
           "productName": "Chicken Boneless Legs 2kg (Seara)",
           "image": "/products/loyverse/ba065147-34c7-4f37-9384-1fb829d301df.webp",
           "price": 700,
-          "inStock": 4,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 2,
-          "stockUpdatedAt": "2026-09-06T00:48:41.000Z"
+          "stockUpdatedAt": "2026-09-20T09:45:34.000Z"
         },
         {
           "posVariantId": "debccfae-2a24-4e46-81d1-6416c4f975f8",
@@ -3837,10 +4033,10 @@
           "productName": "Duck Breast",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 18,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T08:54:49.000Z"
+          "stockUpdatedAt": "2026-10-04T03:23:07.000Z"
         },
         {
           "posVariantId": "4b0a9a88-34e2-4e4f-85f7-5934adeebec1",
@@ -3902,11 +4098,11 @@
           "productName": "Expat Meals — Beef N Brocolli 3x8",
           "image": "/products/loyverse/f18899df-f2b7-4f33-b2c1-d59b2215408f.webp",
           "price": 375,
-          "inStock": 3,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-07T10:09:34.000Z"
+          "stockUpdatedAt": "2026-09-26T08:40:16.000Z"
         },
         {
           "posVariantId": "62640862-0029-44ea-ae6d-90b4daebb2ea",
@@ -3926,11 +4122,11 @@
           "productName": "Expat Meals — Chili con Carne 3x8",
           "image": "/products/loyverse/f18899df-f2b7-4f33-b2c1-d59b2215408f.webp",
           "price": 375,
-          "inStock": 3,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-07T10:09:35.000Z"
+          "stockUpdatedAt": "2026-10-04T00:16:15.000Z"
         },
         {
           "posVariantId": "687b9ff4-b2d3-48f4-9e7f-c9e0d56dc2df",
@@ -3938,11 +4134,11 @@
           "productName": "Expat Meals — Lasagna 3x8",
           "image": "/products/loyverse/f18899df-f2b7-4f33-b2c1-d59b2215408f.webp",
           "price": 375,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-15T09:47:01.000Z"
+          "stockUpdatedAt": "2026-09-17T03:27:18.000Z"
         },
         {
           "posVariantId": "9efee25d-30e3-44e4-bf1e-6f3953660b1b",
@@ -3950,11 +4146,11 @@
           "productName": "Expat Meals — Lasagna 8x10",
           "image": "/products/loyverse/f18899df-f2b7-4f33-b2c1-d59b2215408f.webp",
           "price": 750,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-01T08:33:40.000Z"
+          "stockUpdatedAt": "2026-09-28T05:42:25.000Z"
         },
         {
           "posVariantId": "2a2f9b31-679a-4814-abd6-4d51596453e0",
@@ -3962,11 +4158,11 @@
           "productName": "Expat Meals — S&S Chicken 3x8",
           "image": "/products/loyverse/f18899df-f2b7-4f33-b2c1-d59b2215408f.webp",
           "price": 325,
-          "inStock": 2,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T05:22:26.000Z"
+          "stockUpdatedAt": "2026-09-17T02:34:30.000Z"
         },
         {
           "posVariantId": "38c6500a-5bcd-41d6-929d-75c25a209a28",
@@ -3974,11 +4170,11 @@
           "productName": "Expat Meals — Shepard's Pie 3x8",
           "image": "/products/loyverse/f18899df-f2b7-4f33-b2c1-d59b2215408f.webp",
           "price": 375,
-          "inStock": 4,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-07T10:09:35.000Z"
+          "stockUpdatedAt": "2026-09-24T10:15:48.000Z"
         },
         {
           "posVariantId": "1ff0f678-70c7-4e12-81f0-f2240dd9e787",
@@ -3986,11 +4182,11 @@
           "productName": "Pie (Zac's Pie House) — Apple",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 215,
-          "inStock": 3,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-08T08:54:46.000Z"
+          "stockUpdatedAt": "2026-10-04T01:16:30.000Z"
         },
         {
           "posVariantId": "5466f82b-01a7-42eb-a09e-e44009678c8b",
@@ -3998,11 +4194,11 @@
           "productName": "Pie (Zac's Pie House) — Beef & Mushroom",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 0,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T00:59:48.000Z"
+          "stockUpdatedAt": "2026-10-03T03:27:30.000Z"
         },
         {
           "posVariantId": "34506da9-41b4-4340-a793-262335dcf920",
@@ -4010,11 +4206,11 @@
           "productName": "Pie (Zac's Pie House) — Beef & Onion",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 5,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T00:59:48.000Z"
+          "stockUpdatedAt": "2026-10-03T07:46:45.000Z"
         },
         {
           "posVariantId": "43d1977e-3284-475e-94d7-1c237826831c",
@@ -4022,11 +4218,11 @@
           "productName": "Pie (Zac's Pie House) — Beef Curry",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 1,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T06:45:15.000Z"
+          "stockUpdatedAt": "2026-10-02T02:00:14.000Z"
         },
         {
           "posVariantId": "b969e725-1d9e-4428-be83-9e2e72f15c19",
@@ -4034,11 +4230,11 @@
           "productName": "Pie (Zac's Pie House) — Beef, Bacon, Cheese",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 1,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T02:04:39.000Z"
+          "stockUpdatedAt": "2026-10-04T01:16:31.000Z"
         },
         {
           "posVariantId": "9248e0e8-aea9-4725-906f-29e2dc480cf2",
@@ -4046,11 +4242,11 @@
           "productName": "Pie (Zac's Pie House) — Beef, Cheese, Pepper",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 2,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T00:59:48.000Z"
+          "stockUpdatedAt": "2026-10-04T01:16:30.000Z"
         },
         {
           "posVariantId": "3f7720aa-fe95-426a-b182-abdfd99ab6b5",
@@ -4058,11 +4254,11 @@
           "productName": "Pie (Zac's Pie House) — Beef, Jalapeno, Chee",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 0,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T02:04:39.000Z"
+          "stockUpdatedAt": "2026-10-04T01:16:31.000Z"
         },
         {
           "posVariantId": "452d4d8e-bd69-41e8-8415-0e7cc4f11967",
@@ -4070,11 +4266,11 @@
           "productName": "Pie (Zac's Pie House) — Beef, Onion & Cheese",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 0,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T00:59:48.000Z"
+          "stockUpdatedAt": "2026-10-03T03:27:30.000Z"
         },
         {
           "posVariantId": "22401500-8de2-42a5-8f1b-3fa4d5836777",
@@ -4106,11 +4302,11 @@
           "productName": "Pie (Zac's Pie House) — Pulled Pork",
           "image": "/products/loyverse/cd4b37f7-6eba-40c8-9f77-51314ef94bec.webp",
           "price": 245,
-          "inStock": 1,
+          "inStock": 2,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T02:04:39.000Z"
+          "stockUpdatedAt": "2026-10-02T07:54:42.000Z"
         },
         {
           "posVariantId": "4c2c0998-d159-4598-a282-4c49d3d9ae7c",
@@ -4130,10 +4326,10 @@
           "productName": "Pizza — Just Cheese",
           "image": "/products/loyverse/8d28a398-81bb-4b94-bde4-34feb6d0d016.webp",
           "price": 285,
-          "inStock": 1,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T07:59:21.000Z"
+          "stockUpdatedAt": "2026-09-29T08:11:08.000Z"
         },
         {
           "posVariantId": "c677150d-638a-46b5-8a22-a68cfce5163b",
@@ -4141,10 +4337,10 @@
           "productName": "Pizza — Meatlover",
           "image": "/products/loyverse/8d28a398-81bb-4b94-bde4-34feb6d0d016.webp",
           "price": 285,
-          "inStock": 8,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-11T03:32:04.000Z"
+          "stockUpdatedAt": "2026-09-30T05:30:06.000Z"
         },
         {
           "posVariantId": "f5a2c43e-d66c-494c-8332-7de76fc8d02b",
@@ -4163,10 +4359,10 @@
           "productName": "Pizza — Seafood",
           "image": "/products/loyverse/8d28a398-81bb-4b94-bde4-34feb6d0d016.webp",
           "price": 285,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-08T04:25:37.000Z"
+          "stockUpdatedAt": "2026-09-30T05:30:06.000Z"
         },
         {
           "posVariantId": "497ebbc7-65cd-4cc4-aebd-e6350bbe3619",
@@ -4174,10 +4370,10 @@
           "productName": "Pizza — Vegetarian",
           "image": "/products/loyverse/8d28a398-81bb-4b94-bde4-34feb6d0d016.webp",
           "price": 285,
-          "inStock": 2,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-08T04:25:37.000Z"
+          "stockUpdatedAt": "2026-09-30T05:33:40.000Z"
         },
         {
           "posVariantId": "6cfa9c06-8968-4045-8dd7-829ca19b4155",
@@ -4196,21 +4392,21 @@
           "unit": "per kg",
           "image": "/products/loyverse/3255cfc9-090e-46a3-b1e6-1c7b4b85b174.webp",
           "variablePrice": true,
-          "inStock": 23,
+          "inStock": 17,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 10,
-          "stockUpdatedAt": "2026-09-14T04:42:58.000Z"
+          "stockUpdatedAt": "2026-10-04T10:31:22.000Z"
         },
         {
           "posVariantId": "5872f794-b129-4a46-8f4c-3c7161cc8111",
           "category": "Sausages",
           "productName": "Bratwurst (Classic)",
           "variablePrice": true,
-          "inStock": 4,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-10T04:29:43.000Z"
+          "stockUpdatedAt": "2026-10-03T03:17:20.000Z"
         },
         {
           "posVariantId": "c05996f0-f775-4881-a002-91d3063904b5",
@@ -4218,11 +4414,11 @@
           "productName": "Breakfast Sausage Patty",
           "image": "/products/loyverse/af827340-1636-4316-b187-b79f1c7078d4.webp",
           "price": 250,
-          "inStock": 7,
+          "inStock": 3,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T03:18:33.000Z"
+          "stockUpdatedAt": "2026-09-30T02:30:17.000Z"
         },
         {
           "posVariantId": "6419339e-7c80-4365-a32f-0910f087a638",
@@ -4240,21 +4436,21 @@
           "category": "Sausages",
           "productName": "Cervelat",
           "variablePrice": true,
-          "inStock": 12,
+          "inStock": 11,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T06:02:08.000Z"
+          "stockUpdatedAt": "2026-09-22T07:32:43.000Z"
         },
         {
           "posVariantId": "275729ef-1d7a-4c5b-94b2-4b1f6edb0a36",
           "category": "Sausages",
           "productName": "Cheese Hotdog",
           "variablePrice": true,
-          "inStock": 9,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-14T08:04:15.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "a5b7eea7-4d3d-4f64-a3c7-78cf15c05439",
@@ -4262,10 +4458,10 @@
           "productName": "Cheesekrainer",
           "image": "/products/loyverse/c9440ecc-5c78-42d1-af57-5ac0902ce883.webp",
           "variablePrice": true,
-          "inStock": 3,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T03:04:23.000Z"
+          "stockUpdatedAt": "2026-10-04T09:08:12.000Z"
         },
         {
           "posVariantId": "6530fd7e-8e0e-4ccb-b4e1-f1595fc26b0e",
@@ -4273,10 +4469,10 @@
           "productName": "Chicken Chipolata",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 4,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-08T08:58:22.000Z"
+          "stockUpdatedAt": "2026-09-28T07:12:51.000Z"
         },
         {
           "posVariantId": "e966411b-cdb9-4121-a60f-5592a484a347",
@@ -4284,11 +4480,11 @@
           "productName": "English Bangers",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 17,
+          "inStock": 25,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 10,
-          "stockUpdatedAt": "2026-09-14T06:46:37.000Z"
+          "stockUpdatedAt": "2026-10-04T09:22:51.000Z"
         },
         {
           "posVariantId": "86380891-7aed-44e9-91d7-0cc257bc8f7d",
@@ -4296,30 +4492,31 @@
           "productName": "Frankfurter",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 19,
+          "inStock": 11,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T05:58:56.000Z"
+          "stockUpdatedAt": "2026-09-30T06:46:41.000Z"
         },
         {
           "posVariantId": "a7f89829-7144-4d95-8b37-4753dc0b2f92",
           "category": "Sausages",
           "productName": "Hungarian Cheesy Sausage",
           "variablePrice": true,
-          "inStock": 13,
+          "inStock": 7,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-14T06:45:15.000Z"
+          "lowStock": 3,
+          "stockUpdatedAt": "2026-10-03T09:08:28.000Z"
         },
         {
           "posVariantId": "63f84287-dffd-4011-83b2-3cc656b3d519",
           "category": "Sausages",
           "productName": "Hungarian Spicy Sausage",
           "variablePrice": true,
-          "inStock": 18,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T02:22:26.000Z"
+          "stockUpdatedAt": "2026-10-03T09:08:28.000Z"
         },
         {
           "posVariantId": "41742711-e0e8-49e8-9969-52b76ce7fa77",
@@ -4327,21 +4524,21 @@
           "productName": "Italian Garlic",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 8,
+          "inStock": 19,
           "trackStock": true,
           "soldByWeight": false,
-          "lowStock": 10,
-          "stockUpdatedAt": "2026-09-13T02:22:26.000Z"
+          "lowStock": 5,
+          "stockUpdatedAt": "2026-10-04T02:30:42.000Z"
         },
         {
           "posVariantId": "ee2db3c3-6f98-4ea4-80d7-ee7d7f18eaf8",
           "category": "Sausages",
           "productName": "Italian Sausage",
           "variablePrice": true,
-          "inStock": 12,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T06:23:25.000Z"
+          "stockUpdatedAt": "2026-10-05T00:15:07.000Z"
         },
         {
           "posVariantId": "801e3287-a482-4f61-a6c2-728b0092e89d",
@@ -4349,11 +4546,11 @@
           "productName": "Kielbasa",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 7,
+          "inStock": 10,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-14T05:48:46.000Z"
+          "stockUpdatedAt": "2026-10-04T00:25:33.000Z"
         },
         {
           "posVariantId": "d4e2969a-6b05-41af-b69c-f5c7ca8cd393",
@@ -4375,7 +4572,7 @@
           "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T03:10:30.000Z"
+          "stockUpdatedAt": "2026-10-04T06:14:44.000Z"
         },
         {
           "posVariantId": "7ae03030-1e42-44a2-8ae4-9e52c227165f",
@@ -4383,10 +4580,60 @@
           "productName": "Nuernberger Sausage",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 10,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T03:29:19.000Z"
+          "stockUpdatedAt": "2026-10-04T00:16:15.000Z"
+        },
+        {
+          "posVariantId": "ff5e0270-c5c5-4a17-ad9e-12ed85a9f8a5",
+          "category": "Sausages",
+          "productName": "Slabs/ In Packs — Cheese Hungarian",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "d79ce825-4962-4d31-9cbb-e1e32ee0a274",
+          "category": "Sausages",
+          "productName": "Slabs/ In Packs — Chipolata",
+          "variablePrice": true,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "fd39ca2e-5d4a-4a1e-b558-72d64f5e51a9",
+          "category": "Sausages",
+          "productName": "Slabs/ In Packs — Italian garlic",
+          "variablePrice": true,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "4c929160-0b39-4fa0-ba8f-2870832e09e0",
+          "category": "Sausages",
+          "productName": "Slabs/ In Packs — Mergese",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
+        },
+        {
+          "posVariantId": "13e35fa4-72b2-4ef1-bcc6-eea69dc19917",
+          "category": "Sausages",
+          "productName": "Slabs/ In Packs — Nuernberger",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
         },
         {
           "posVariantId": "0655f5b1-3c50-4240-a121-db4982d164ef",
@@ -4403,10 +4650,10 @@
           "category": "Sausages",
           "productName": "Spicy Italian with Fennel",
           "variablePrice": true,
-          "inStock": 23,
+          "inStock": 20,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-12T06:13:17.000Z"
+          "stockUpdatedAt": "2026-10-04T06:14:44.000Z"
         },
         {
           "posVariantId": "861cd98c-d706-4928-9467-a05204dfce1b",
@@ -4414,10 +4661,10 @@
           "productName": "Thüringerian Bratwurst",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 14,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:03:27.000Z"
+          "stockUpdatedAt": "2026-10-01T03:50:30.000Z"
         },
         {
           "posVariantId": "fb352d57-04b6-447e-a12a-ef2140a2c724",
@@ -4425,10 +4672,10 @@
           "productName": "Veal Beef Bratwurst",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 12,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-10T04:29:43.000Z"
+          "stockUpdatedAt": "2026-09-26T11:52:07.000Z"
         },
         {
           "posVariantId": "5df2f8f8-fc65-4c41-899e-c6716f834343",
@@ -4448,10 +4695,10 @@
           "productName": "Wienerli",
           "unit": "per kg",
           "variablePrice": true,
-          "inStock": 26,
+          "inStock": 22,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:08:07.000Z"
+          "stockUpdatedAt": "2026-09-27T01:15:30.000Z"
         },
         {
           "posVariantId": "32333542-9ad1-497b-9e96-34f0a3052908",
@@ -4497,11 +4744,11 @@
           "image": "/products/loyverse/4d9ac0af-be49-43dc-9ebe-c9992bf795e2.webp",
           "price": 365,
           "variablePrice": true,
-          "inStock": 3,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": true,
           "lowStock": 3,
-          "stockUpdatedAt": "2025-12-04T06:38:43.000Z"
+          "stockUpdatedAt": "2026-09-16T05:16:38.000Z"
         },
         {
           "posVariantId": "407ecb96-8777-4612-8c81-9a9a73d9d5ff",
@@ -4509,10 +4756,20 @@
           "productName": "Salmon Fillet",
           "image": "/products/loyverse/5e2c1924-d3cd-4abc-b15a-bc7dcb79d7c8.webp",
           "variablePrice": true,
-          "inStock": 4,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T02:51:14.000Z"
+          "stockUpdatedAt": "2026-10-04T03:30:12.000Z"
+        },
+        {
+          "posVariantId": "e0c64934-596b-4eb7-a432-8761da4161ef",
+          "category": "Seafood",
+          "productName": "Slabs/ In Packs — Salmon",
+          "variablePrice": true,
+          "inStock": 0,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-09-30T01:19:26.000Z"
         },
         {
           "posVariantId": "54199020-3f40-4656-b28e-34691b6d055a",
@@ -4552,11 +4809,11 @@
           "category": "Seafood",
           "productName": "Tuna Fillet 500g",
           "price": 285,
-          "inStock": 21,
+          "inStock": 12,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-09-16T03:38:44.000Z"
+          "stockUpdatedAt": "2026-10-02T01:21:44.000Z"
         },
         {
           "posVariantId": "97293f00-c6a2-4bb9-a26c-ae2ab2129d8e",
@@ -4576,10 +4833,10 @@
           "productName": "Almond Milk Chocolate 100g (Marini 1928)",
           "image": "/products/loyverse/49e8fbc1-a651-4d92-a8ce-7e9da2a696fc.webp",
           "price": 120,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-16T00:22:56.000Z"
+          "stockUpdatedAt": "2026-09-27T02:02:56.000Z"
         },
         {
           "posVariantId": "da0b2de5-e0e6-406b-9baf-33c010ab08b3",
@@ -4587,11 +4844,11 @@
           "productName": "Almonds 200g (Nature Food)",
           "image": "/products/loyverse/c380a424-e55b-4d41-ae45-7974c4da6aa9.webp",
           "price": 300,
-          "inStock": 6,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:51:03.000Z"
+          "stockUpdatedAt": "2026-09-28T04:47:49.000Z"
         },
         {
           "posVariantId": "8b2d963c-52d7-4daa-a051-d39627b98f37",
@@ -4599,10 +4856,10 @@
           "productName": "Amber Walnuts 100g (Mr. Squirrel)",
           "image": "/products/loyverse/1d75a38e-ba21-416b-85b1-a85713e4c57e.webp",
           "price": 115,
-          "inStock": 7,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T03:02:40.000Z"
+          "stockUpdatedAt": "2026-09-16T07:16:19.000Z"
         },
         {
           "posVariantId": "cf025794-9a91-4785-bbcb-ab873490236d",
@@ -4610,11 +4867,11 @@
           "productName": "California Dried Prunes Pitted 120g (Nature Food)",
           "image": "/products/loyverse/b8c8a860-c250-4c6c-b3e2-b42459c0d2db.webp",
           "price": 185,
-          "inStock": 10,
+          "inStock": 9,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T08:10:45.000Z"
+          "stockUpdatedAt": "2026-09-30T10:03:43.000Z"
         },
         {
           "posVariantId": "f1705a58-3ab6-4c46-ad17-1379f140f970",
@@ -4725,11 +4982,11 @@
           "productName": "Dried Dates Pakistan 200g (Nature Food)",
           "image": "/products/loyverse/c09ca433-db5d-4d91-9826-15a073538e13.webp",
           "price": 140,
-          "inStock": 18,
+          "inStock": 17,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T08:11:05.000Z"
+          "stockUpdatedAt": "2026-09-21T08:23:59.000Z"
         },
         {
           "posVariantId": "edf65635-37b1-421c-a2a7-be33be1d83ac",
@@ -4748,10 +5005,10 @@
           "productName": "Dried Mixed Berries 100g (Nature Food)",
           "image": "/products/loyverse/54e2226b-2703-482c-bf9e-e20b8f4b60c8.webp",
           "price": 195,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T08:10:07.000Z"
+          "stockUpdatedAt": "2026-09-30T10:03:43.000Z"
         },
         {
           "posVariantId": "75712ea7-a950-4847-b58d-7f7b95310aeb",
@@ -4766,15 +5023,26 @@
           "stockUpdatedAt": "2026-06-21T04:54:40.000Z"
         },
         {
+          "posVariantId": "16b1a378-9a72-492f-ba88-a0e3f2f21383",
+          "category": "Snacks & Sweets",
+          "productName": "Honey Roasted Peanuts 1.1kg (Member's Value)",
+          "image": "/products/loyverse/9d2194a1-6c46-4bbb-9e32-1b5e9421f34c.webp",
+          "price": 650,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T05:57:45.000Z"
+        },
+        {
           "posVariantId": "f46359fb-3c61-456e-89cb-1c8e84df5227",
           "category": "Snacks & Sweets",
           "productName": "Malungay Chips 120g (M's) — Barbeque",
           "image": "/products/loyverse/ad742efb-09ea-4236-8661-561acdb9cd26.webp",
           "price": 125,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:51:53.000Z"
+          "stockUpdatedAt": "2026-09-23T11:52:28.000Z"
         },
         {
           "posVariantId": "fe48dab2-1864-48fd-bd42-66acc651038b",
@@ -4804,10 +5072,10 @@
           "productName": "Malungay Chips 120g (M's) — Sour Cream",
           "image": "/products/loyverse/ad742efb-09ea-4236-8661-561acdb9cd26.webp",
           "price": 125,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:48:26.000Z"
+          "stockUpdatedAt": "2026-09-23T11:52:28.000Z"
         },
         {
           "posVariantId": "eb31f95b-a657-44a4-89df-a1a9c776d3fe",
@@ -4837,10 +5105,10 @@
           "productName": "Milka Chocolate 100g — Milka Oreo",
           "image": "/products/loyverse/4e4244ab-fe68-4863-a951-8311eab2a640.webp",
           "price": 170,
-          "inStock": 2,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T08:39:34.000Z"
+          "stockUpdatedAt": "2026-09-27T02:51:04.000Z"
         },
         {
           "posVariantId": "520d9bef-03d5-4fdc-ad23-c3379a0ab0b5",
@@ -4870,10 +5138,10 @@
           "category": "Snacks & Sweets",
           "productName": "Nacho Chips",
           "price": 385,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-15T03:11:03.000Z"
+          "stockUpdatedAt": "2026-09-20T00:54:47.000Z"
         },
         {
           "posVariantId": "57a47773-d841-48f5-99f3-da6cab406241",
@@ -4999,11 +5267,11 @@
           "productName": "Roasted Cashew Split 200g (Nature Food)",
           "image": "/products/loyverse/b7306036-b4e6-4856-ab18-a102083c96ba.webp",
           "price": 265,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T08:09:24.000Z"
+          "stockUpdatedAt": "2026-09-26T10:02:17.000Z"
         },
         {
           "posVariantId": "379b8920-83d3-4935-aa3c-3da1f3dd17b9",
@@ -5011,10 +5279,10 @@
           "productName": "Roasted Peanuts in Shell (Sausage Guy)",
           "image": "/products/loyverse/8ed94502-4601-4dc4-8226-74d288145063.webp",
           "price": 100,
-          "inStock": 9,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-06-20T09:04:37.000Z"
+          "stockUpdatedAt": "2026-10-04T07:55:58.000Z"
         },
         {
           "posVariantId": "40b6aab9-4197-4275-80fc-4280f7097fbe",
@@ -5022,11 +5290,11 @@
           "productName": "Roasted Pumpkin Seeds 200G (Nature Food)",
           "image": "/products/loyverse/0a74a80f-2a8a-4734-b495-8d10d7bb6c18.webp",
           "price": 205,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:47:37.000Z"
+          "stockUpdatedAt": "2026-09-26T04:46:34.000Z"
         },
         {
           "posVariantId": "578654c0-535d-4eae-b44c-eb628ab61d1e",
@@ -5062,6 +5330,17 @@
           "stockUpdatedAt": "2026-09-09T07:45:31.000Z"
         },
         {
+          "posVariantId": "cb737715-5642-4cac-843f-bfdbe704b157",
+          "category": "Snacks & Sweets",
+          "productName": "Salted Dry Roasted Peanuts 1.1kg (Member's Value)",
+          "image": "/products/loyverse/ebbd20d9-ba3c-434a-86c8-dcd1714b39fa.webp",
+          "price": 540,
+          "inStock": 2,
+          "trackStock": true,
+          "soldByWeight": false,
+          "stockUpdatedAt": "2026-10-02T05:56:58.000Z"
+        },
+        {
           "posVariantId": "1eb32163-a24e-4953-b094-0d575615d0d6",
           "category": "Snacks & Sweets",
           "productName": "Sunflower Seed ( spiced flavor)",
@@ -5079,11 +5358,11 @@
           "productName": "Sunflower Seeds 200g (Nature Food)",
           "image": "/products/loyverse/339543aa-1a2e-4650-a160-c4727a1a2a1b.webp",
           "price": 105,
-          "inStock": 6,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-09-09T07:46:20.000Z"
+          "stockUpdatedAt": "2026-09-28T07:41:54.000Z"
         },
         {
           "posVariantId": "323a3196-00f4-49c5-ad12-ed6963f68054",
@@ -5102,20 +5381,20 @@
           "productName": "Toasted Garlic Bread 150g (Switsis) — Original",
           "image": "/products/loyverse/4a98e7d7-4dd6-4626-830e-e65ef8218d6f.webp",
           "price": 95,
-          "inStock": 2,
+          "inStock": 1,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-09T06:53:18.000Z"
+          "stockUpdatedAt": "2026-09-25T06:54:55.000Z"
         },
         {
           "posVariantId": "d79b5f31-42d5-4b20-946c-51b5e1af3e78",
           "category": "Snacks & Sweets",
           "productName": "Traditional Beef Biltong",
           "price": 299,
-          "inStock": 9,
+          "inStock": 5,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-09-13T05:19:52.000Z"
+          "stockUpdatedAt": "2026-10-04T05:36:52.000Z"
         }
       ]
     }

@@ -17,7 +17,21 @@
  * deliberately not reproduced here — see the boundary note in lib/types.ts.
  */
 
-import { IMAGE_PROMPTS } from "@/data/image-prompts";
+/*
+ * Relative, with the extension, NOT "@/data/image-prompts".
+ *
+ * This file is imported by scripts/sync-loyverse.mts and friends, which Node
+ * runs directly through type-stripping — and Node does not know the "@/"
+ * alias. A value import written that way builds fine in Next and then kills
+ * every script with ERR_MODULE_NOT_FOUND, which is how it got in: the app
+ * kept working, so nothing complained until someone ran the sync.
+ *
+ * Type-only imports are safe either way, because type-stripping removes them
+ * before the resolver ever sees them — which is why data/branches.ts can say
+ * "@/lib/types" and get away with it. Anything that survives to runtime has
+ * to be relative.
+ */
+import { IMAGE_PROMPTS } from "./image-prompts.ts";
 
 export interface WeightPrice {
   /** Counter sell price in PHP. */
@@ -185,6 +199,11 @@ export const UNCATEGORISED_CATEGORIES: Record<string, string> = {
   "Forest Ham (Not 200g)": "Hams & Cold Cuts",
   Cervelat: "Sausages",
 
+  // ---- Added to the POS without a category, found by the October sync ---
+  "Dark Chocolate Pistachio Kunafa": "Bakery & Desserts",
+  "Hormel Chili with Beans 425g": "Pantry & Preserves",
+  "Olive Oil Mayonnaise 887ml (Kraft)": "Pantry & Preserves",
+
   // ---- Bakery counter --------------------------------------------------
   "Croissant 2-pack": "Bakery & Desserts",
   "Pain au Chocolate 2-pack": "Bakery & Desserts",
@@ -275,6 +294,49 @@ const misfiled = new Map(
 /** Corrected category for an item the POS has filed in the wrong place. */
 export function getMisfiledCategory(itemName: string): string | undefined {
   return misfiled.get(itemName.trim().toLowerCase());
+}
+
+/**
+ * Categories for single VARIANTS, keyed on the full "Item — Variant" name.
+ *
+ * UNCATEGORISED_CATEGORIES is keyed on the Loyverse item name, which is right
+ * for "Cake in a Tub" — nine flavours, one shelf. It is wrong for "Slabs/ In
+ * Packs", a single uncategorised item whose fourteen variants are a salmon
+ * side, half the cold-cut counter and half the sausage counter. One entry
+ * cannot send them to three different aisles, so these are listed one by one.
+ *
+ * Each goes where its sliced twin already lives: the Lyoner slab beside the
+ * Lyoner, the Nuernberger slab beside the Nuernberger. A customer who finds
+ * one should find the other.
+ */
+export const VARIANT_CATEGORIES: Record<string, string> = {
+  // The whole-slab and bulk-pack versions of the counter goods.
+  "Slabs/ In Packs — Beef polish": "Hams & Cold Cuts",
+  "Slabs/ In Packs — Chicken Ham": "Hams & Cold Cuts",
+  "Slabs/ In Packs — Florentiner": "Hams & Cold Cuts",
+  "Slabs/ In Packs — Lyoner": "Hams & Cold Cuts",
+  "Slabs/ In Packs — O Lyoner": "Hams & Cold Cuts",
+  "Slabs/ In Packs — P Lyoner": "Hams & Cold Cuts",
+  "Slabs/ In Packs — Pastrami": "Hams & Cold Cuts",
+  "Slabs/ In Packs — Salami": "Hams & Cold Cuts",
+  "Slabs/ In Packs — Cheese Hungarian": "Sausages",
+  "Slabs/ In Packs — Chipolata": "Sausages",
+  "Slabs/ In Packs — Italian garlic": "Sausages",
+  "Slabs/ In Packs — Mergese": "Sausages",
+  "Slabs/ In Packs — Nuernberger": "Sausages",
+  "Slabs/ In Packs — Salmon": "Seafood",
+};
+
+const variantCategories = new Map(
+  Object.entries(VARIANT_CATEGORIES).map(([name, cat]) => [
+    name.trim().toLowerCase(),
+    cat,
+  ]),
+);
+
+/** Category for one variant, when its item-level answer would be wrong. */
+export function getVariantCategory(fullName: string): string | undefined {
+  return variantCategories.get(fullName.trim().toLowerCase());
 }
 
 const fallbackCategories = new Map(

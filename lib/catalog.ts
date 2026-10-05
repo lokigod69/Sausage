@@ -15,6 +15,7 @@ import { mapCategory } from "@/data/loyverse-category-map";
 import {
   getFallbackCategory,
   getMisfiledCategory,
+  getVariantCategory,
 } from "@/data/pos-overrides";
 
 /**
@@ -139,16 +140,20 @@ async function applyLiveOverlay(
         ? categories.get(item.categoryId)
         : undefined;
 
+      // Same display name the sync would write, so an item added to the POS
+      // today reads "Cake in a Tub — Mango Float", not nine rows all called
+      // "Cake in a Tub".
+      const displayName = variant.optionValue
+        ? `${item.name} — ${variant.optionValue}`
+        : item.name;
+
       live.set(variant.variantId, {
-        // Same display name the sync would write, so an item added to the POS
-        // today reads "Cake in a Tub — Mango Float", not nine rows all called
-        // "Cake in a Tub".
-        productName: variant.optionValue
-          ? `${item.name} — ${variant.optionValue}`
-          : item.name,
+        productName: displayName,
         // And the same category, so it does not sit in "Other" until someone
-        // re-runs the sync.
+        // re-runs the sync. The variant is asked first: one item can hold
+        // fourteen variants that belong in three different aisles.
         category:
+          getVariantCategory(displayName) ??
           getMisfiledCategory(item.name) ??
           (posCategory
             ? mapCategory(posCategory)

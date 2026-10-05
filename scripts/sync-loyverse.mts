@@ -27,6 +27,7 @@ import { mapCategory } from "../data/loyverse-category-map.ts";
 import {
   getFallbackCategory,
   getMisfiledCategory,
+  getVariantCategory,
   getWeightPrice,
   isExcludedProduct,
 } from "../data/pos-overrides.ts";
@@ -200,7 +201,9 @@ async function main() {
 
       products.push({
         posVariantId: variant.variantId,
-        category,
+        // The item-level answer, unless this particular variant belongs
+        // somewhere else — see VARIANT_CATEGORIES.
+        category: getVariantCategory(name) ?? category,
         productName: name,
         // No option-value fallback here: when a variant has one it is already
         // part of `name` above ("… — 250g"), and repeating it as the unit
