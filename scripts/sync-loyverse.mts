@@ -55,15 +55,29 @@ const OUT_FILE = path.join(process.cwd(), "data", "loyverse-catalog.json");
 const IMAGE_DIR = path.join(process.cwd(), "public", "products", "loyverse");
 const IMAGE_PUBLIC_PATH = "/products/loyverse";
 
+/**
+ * Also records how big each photo really is.
+ *
+ * Loyverse's images are small — 206 to 853 pixels wide, 375 on average — and
+ * the enlarged view must not blow a 206px picture up to fill a laptop screen.
+ * Measuring once here beats guessing in the browser, and it is free: sharp
+ * already has the file open to convert it.
+ */
 async function downloadImages(
   items: { itemId: string; imageUrl?: string }[],
-): Promise<{ paths: Map<string, string>; fetched: number; failed: string[] }> {
+): Promise<{
+  paths: Map<string, string>;
+  sizes: Map<string, { width: number; height: number }>;
+  fetched: number;
+  failed: string[];
+}> {
   const withImages = items.filter((i) => i.imageUrl);
   const paths = new Map<string, string>();
+  const sizes = new Map<string, { width: number; height: number }>();
   const failed: string[] = [];
   let fetched = 0;
 
-  if (withImages.length === 0) return { paths, fetched, failed };
+  if (withImages.length === 0) return { paths, sizes, fetched, failed };
 
   await mkdir(IMAGE_DIR, { recursive: true });
   const existing = new Set(await readdir(IMAGE_DIR).catch(() => []));
@@ -72,8 +86,13 @@ async function downloadImages(
 
   for (const item of withImages) {
     const file = `${item.itemId}.webp`;
+    const full = path.join(IMAGE_DIR, file);
     if (existing.has(file)) {
       paths.set(item.itemId, `${IMAGE_PUBLIC_PATH}/${file}`);
+      const meta = await sharp(full).metadata();
+      if (meta.width && meta.height) {
+        sizes.set(item.itemId, { width: meta.width, height: meta.height });
+      }
       continue;
     }
     try {
@@ -81,8 +100,12 @@ async function downloadImages(
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const buf = Buffer.from(await res.arrayBuffer());
       const webp = await sharp(buf).webp({ quality: 82 }).toBuffer();
-      await writeFile(path.join(IMAGE_DIR, file), webp);
+      await writeFile(full, webp);
       paths.set(item.itemId, `${IMAGE_PUBLIC_PATH}/${file}`);
+      const meta = await sharp(webp).metadata();
+      if (meta.width && meta.height) {
+        sizes.set(item.itemId, { width: meta.width, height: meta.height });
+      }
       fetched++;
       if (fetched % 25 === 0) process.stdout.write(".");
     } catch {
@@ -92,7 +115,7 @@ async function downloadImages(
   }
 
   process.stdout.write("\n");
-  return { paths, fetched, failed };
+  return { paths, sizes, fetched, failed };
 }
 
 function slugify(input: string): string {
@@ -205,6 +228,9 @@ async function main() {
         // somewhere else — see VARIANT_CATEGORIES.
         category: getVariantCategory(name) ?? category,
         productName: name,
+        // Every variant of an item shares the item's description, same as
+        // the photo.
+        description: item.description,
         // No option-value fallback here: when a variant has one it is already
         // part of `name` above ("… — 250g"), and repeating it as the unit
         // would print the same thing twice on one card.
@@ -214,6 +240,8 @@ async function main() {
           (item.soldByWeight ? "per kg" : undefined),
         // Every variant of an item shares the item's photo.
         image: images.paths.get(item.itemId),
+        imageWidth: images.sizes.get(item.itemId)?.width,
+        imageHeight: images.sizes.get(item.itemId)?.height,
         price: variant.price,
         variablePrice: variant.variablePrice || undefined,
         inStock: level?.inStock,

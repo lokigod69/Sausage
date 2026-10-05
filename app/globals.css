@@ -1219,6 +1219,142 @@ body {
 }
 
 /* -------------------------------------------------------------------------
+   Product quick-view
+   The enlarged photograph plus the line the shop writes about the item. A
+   native <dialog>, so the focus trap, Escape and the inert background come
+   from the browser rather than from us.
+   ------------------------------------------------------------------------- */
+.product-thumb-button {
+  display: block;
+  border-radius: 6px;
+  flex-shrink: 0;
+  cursor: zoom-in;
+  transition: transform 0.15s var(--ease);
+}
+.product-thumb-button:hover {
+  transform: scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-thumb-button:hover {
+    transform: none;
+  }
+}
+
+/* The small (i). Quiet, and only drawn when there is something behind it —
+   see ProductCard. 24px square is the WCAG 2.5.8 minimum. */
+.product-info-button {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -0.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--control-border);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1;
+  transition: background 0.15s var(--ease), color 0.15s var(--ease);
+}
+.product-info-button:hover {
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
+  color: var(--text-strong);
+}
+
+.product-dialog {
+  padding: 0;
+  border: none;
+  background: transparent;
+  /* The browser centres a modal dialog with inset:0 + margin:auto, and the
+     max-width below is enough to make it forget. Stated rather than assumed. */
+  inset: 0;
+  margin: auto;
+  max-width: min(32rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: visible;
+}
+.product-dialog::backdrop {
+  background: rgb(20 16 13 / 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.product-dialog__panel {
+  position: relative;
+  padding: clamp(1.25rem, 4vw, 1.9rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+}
+.product-dialog__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.product-dialog__close:hover {
+  background: color-mix(in oklab, var(--text) 8%, transparent);
+  color: var(--text-strong);
+}
+.product-dialog__photo {
+  display: block;
+  margin: 0.5rem auto 1.25rem;
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  /* Never wider than the panel, and never taller than half the screen on a
+     phone, where a square photo would otherwise push the price out of view. */
+  max-width: 100%;
+  height: auto;
+  max-height: 46dvh;
+  object-fit: contain;
+}
+.product-dialog__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-strong);
+  text-wrap: balance;
+}
+.product-dialog__facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.7rem;
+}
+.product-dialog__price {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+.product-dialog__unit {
+  font-size: 0.85rem;
+  color: var(--faint);
+}
+.product-dialog__text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+/* -------------------------------------------------------------------------
    Mobile refinements
    Measured at 375x812 rather than guessed: the hero was pushing the search
    bar — the thing most visitors actually want — a full screen down.

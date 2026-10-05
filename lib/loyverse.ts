@@ -52,6 +52,14 @@ export interface PosItem {
   categoryId?: string;
   /** Loyverse-hosted product photo, when the item has one. */
   imageUrl?: string;
+  /**
+   * The shop's own line or two about the item, typed into the Loyverse back
+   * office. Plain text by the time it gets here — Loyverse stores it as HTML
+   * from a rich-text editor, and that is stripped at the boundary rather than
+   * carried into the app, so nothing a staff member pastes can ever become
+   * markup on the page.
+   */
+  description?: string;
   /** True for items rung up by weight — these are the "per kg" products. */
   soldByWeight: boolean;
   /** False when Loyverse keeps no stock count for the item. */
@@ -217,6 +225,31 @@ function str(value: unknown): string | undefined {
 }
 
 /**
+ * Loyverse's description field is edited with a rich-text box, so it arrives
+ * as HTML — and an empty one arrives as "<p>&nbsp;</p>" rather than "".
+ *
+ * Everything is stripped to plain text here, at the edge, so no markup a
+ * staff member pastes into the back office can reach the page. Block tags
+ * become spaces so "<p>a</p><p>b</p>" does not run together as "ab".
+ */
+function plainText(value: unknown): string | undefined {
+  const raw = typeof value === "string" ? value : "";
+  const text = raw
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<\/(p|div|li|h[1-6])>/gi, " ")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text === "" ? undefined : text;
+}
+
+/**
  * Map one raw Loyverse item onto our public-safe shape.
  * `cost` / `purchase_cost` are never read — see PRIVACY BOUNDARY above.
  */
@@ -269,6 +302,7 @@ function mapItem(
     name,
     categoryId: str(raw.category_id),
     imageUrl: str(raw.image_url),
+    description: plainText(raw.description),
     soldByWeight: raw.sold_by_weight === true,
     trackStock: raw.track_stock === true,
     variants,

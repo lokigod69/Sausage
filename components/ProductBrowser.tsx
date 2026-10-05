@@ -13,6 +13,8 @@ import Image from "next/image";
 import { getCategorySilhouette } from "@/data/category-images";
 import { SearchIcon, ChevronDown } from "./icons";
 import { SectionHeading } from "./SectionHeading";
+import { StockBadge } from "./StockBadge";
+import { ProductDialog } from "./ProductDialog";
 
 /**
  * Product browser: search + category chips + collapsible category sections.
@@ -26,35 +28,6 @@ import { SectionHeading } from "./SectionHeading";
  */
 
 const ALL = "All";
-
-const STOCK_LABEL: Record<StockStatus, string> = {
-  in: "In stock",
-  low: "Low stock",
-  out: "Sold out",
-  untracked: "",
-};
-
-const STOCK_COLOR: Record<StockStatus, string> = {
-  in: "var(--stock-in)",
-  low: "var(--stock-low)",
-  out: "var(--stock-out)",
-  untracked: "var(--faint)",
-};
-
-/**
- * Round the POS quantity for display. Weight items come back as e.g.
- * 4.2315 kg — a shelf does not need four decimals, and neither does a
- * visitor deciding whether to drive over.
- */
-function formatQuantity(quantity: number, unit: string | undefined): string {
-  const rounded =
-    unit === "kg" ? Math.round(quantity * 10) / 10 : Math.round(quantity);
-  // "kg" reads the same either way; the counted units need their singular.
-  let label = unit;
-  if (unit === "pack" && rounded !== 1) label = "packs";
-  else if (unit === "pcs" && rounded === 1) label = "pc";
-  return `${rounded} ${label ?? ""}`.trim();
-}
 
 /**
  * The product photo synced from the POS, falling back to the initial when an
@@ -122,35 +95,6 @@ function ProductThumb({ product, size }: { product: Product; size: number }) {
         />
       ) : (
         product.productName.charAt(0)
-      )}
-    </span>
-  );
-}
-
-/** "In stock · 4.2 kg" — badge plus the real number behind it. */
-function StockBadge({ product }: { product: Product }) {
-  const stock = product.stock;
-  if (!stock || stock.status === "untracked") return null;
-
-  const label = STOCK_LABEL[stock.status];
-  const quantity =
-    stock.status !== "out" && stock.quantity !== undefined
-      ? formatQuantity(stock.quantity, stock.quantityUnit)
-      : undefined;
-
-  return (
-    <span
-      className="mono inline-flex items-center gap-1.5 text-[0.65rem] uppercase tracking-wider"
-      style={{ color: STOCK_COLOR[stock.status] }}
-    >
-      <span
-        aria-hidden
-        className="inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
-        style={{ background: "currentColor" }}
-      />
-      {label}
-      {quantity && (
-        <span style={{ color: "var(--faint)" }}>· {quantity}</span>
       )}
     </span>
   );
@@ -226,6 +170,10 @@ export function ProductBrowser({
   /** Replaces the section heading when the page needs its own words. */
   heading?: { eyebrow: string; title: string; intro: string };
 }) {
+  // Which product the enlarged view is showing, if any. One dialog for the
+  // whole list rather than one per row: 450 dialogs in the DOM would be 450
+  // dialogs in the accessibility tree.
+  const [opened, setOpened] = useState<Product | null>(null);
   const [query, setQuery] = useState("");
   // Resolved after mount: a relative time rendered on the server would not
   // match the one the browser computes a moment later.
@@ -372,13 +320,14 @@ export function ProductBrowser({
             ? groups.length > 0 && (
                 <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4">
                   {filtered.map((p) => (
-                    <LockerCell key={p.id} product={p} />
+                    <LockerCell key={p.id} product={p} onOpen={setOpened} />
                   ))}
                 </ul>
               )
             : groups.map((group, i) => (
                 <CategorySection
                   key={group.category}
+                  onOpen={setOpened}
                   category={group.category}
                   products={group.products}
                   defaultOpen={i < 3 || active.length > 0 || query.length > 0}
@@ -386,15 +335,23 @@ export function ProductBrowser({
               ))}
         </div>
       </div>
+
+      {/*
+        One dialog for the whole list. Mounted here rather than inside each
+        row so the accessibility tree holds one, not four hundred and fifty.
+      */}
+      <ProductDialog product={opened} onClose={() => setOpened(null)} />
     </section>
   );
 }
 
 function CategorySection({
+  onOpen,
   category,
   products,
   defaultOpen,
 }: {
+  onOpen: (p: Product) => void;
   category: string;
   products: Product[];
   defaultOpen: boolean;
@@ -444,7 +401,7 @@ function CategorySection({
         <div className="px-5 pb-5" id={`cat-${slugify(category)}-items`}>
           <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
-              <ProductCard key={p.id} product={p} />
+              <ProductCard key={p.id} product={p} onOpen={onOpen} />
             ))}
           </ul>
         </div>
@@ -454,7 +411,14 @@ function CategorySection({
 }
 
 /** Dense locker-inventory cell (used in grid mode). */
-function LockerCell({ product }: { product: Product }) {
+function LockerCell({
+  product,
+  onOpen,
+}: {
+  product: Product;
+  onOpen: (p: Product) => void;
+}) {
+  const hasNote = Boolean(product.description);
   return (
     <li
       className="flex flex-col justify-between gap-3 p-3.5 transition-colors"
@@ -472,11 +436,23 @@ function LockerCell({ product }: { product: Product }) {
         {product.category}
       </span>
       <span>
-        <span
-          className="block text-sm font-medium leading-snug"
-          style={{ color: "var(--text-strong)" }}
-        >
-          {product.productName}
+        <span className="flex items-start gap-1.5">
+          <span
+            className="block text-sm font-medium leading-snug"
+            style={{ color: "var(--text-strong)" }}
+          >
+            {product.productName}
+          </span>
+          {hasNote && (
+            <button
+              type="button"
+              onClick={() => onOpen(product)}
+              className="product-info-button"
+              aria-label={`More about ${product.productName}`}
+            >
+              i
+            </button>
+          )}
         </span>
         {product.unit && (
           <span
@@ -495,8 +471,21 @@ function LockerCell({ product }: { product: Product }) {
   );
 }
 
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({
+  product,
+  onOpen,
+}: {
+  product: Product;
+  onOpen: (p: Product) => void;
+}) {
   const soldOut = product.stock?.status === "out";
+  /*
+   * The (i) appears only when the shop has written something about this
+   * product. It used to appear whenever there was a photo too, which made it
+   * a second button doing exactly what clicking the photo already did — and
+   * taught people that it means nothing. Now it means: there are words here.
+   */
+  const hasNote = Boolean(product.description);
 
   return (
     <li
@@ -509,7 +498,18 @@ function ProductCard({ product }: { product: Product }) {
         opacity: soldOut ? 0.62 : 1,
       }}
     >
-      <ProductThumb product={product} size={44} />
+      {product.image ? (
+        <button
+          type="button"
+          onClick={() => onOpen(product)}
+          className="product-thumb-button"
+          aria-label={`Enlarge the photo of ${product.productName}`}
+        >
+          <ProductThumb product={product} size={44} />
+        </button>
+      ) : (
+        <ProductThumb product={product} size={44} />
+      )}
       <span className="flex min-w-0 flex-1 items-center justify-between gap-3">
         <span className="min-w-0">
           {/*
@@ -518,11 +518,23 @@ function ProductCard({ product }: { product: Product }) {
             so a single clipped line turns different products into identical
             cards.
           */}
-          <span
-            className="line-clamp-2 block text-sm font-medium leading-snug"
-            style={{ color: "var(--text-strong)" }}
-          >
-            {product.productName}
+          <span className="flex items-start gap-1.5">
+            <span
+              className="line-clamp-2 block text-sm font-medium leading-snug"
+              style={{ color: "var(--text-strong)" }}
+            >
+              {product.productName}
+            </span>
+            {hasNote && (
+              <button
+                type="button"
+                onClick={() => onOpen(product)}
+                className="product-info-button"
+                aria-label={`More about ${product.productName}`}
+              >
+                i
+              </button>
+            )}
           </span>
           <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
             {product.unit && (

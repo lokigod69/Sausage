@@ -43,6 +43,9 @@ interface SnapshotProduct {
   category: string;
   productName: string;
   unit?: string;
+  description?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   price?: number;
   variablePrice?: boolean;
   inStock?: number;
@@ -84,7 +87,10 @@ function snapshotToRow(p: SnapshotProduct, currency: string): RawProductRow {
     category: p.category,
     productName: p.productName,
     unit: p.unit ?? null,
+    description: p.description ?? null,
     image: p.image ?? null,
+    imageWidth: p.imageWidth ?? null,
+    imageHeight: p.imageHeight ?? null,
     price: p.price ?? null,
     variablePrice: p.variablePrice ?? null,
     currency,
@@ -129,6 +135,7 @@ async function applyLiveOverlay(
       | "soldByWeight"
       | "lowStock"
       | "stockUpdatedAt"
+      | "description"
     > & { productName: string; category: string }
   >();
 
@@ -149,6 +156,9 @@ async function applyLiveOverlay(
 
       live.set(variant.variantId, {
         productName: displayName,
+        // Typed in the back office, so it can change without a deploy — the
+        // same reason prices and stock are read live.
+        description: item.description ?? null,
         // And the same category, so it does not sit in "Other" until someone
         // re-runs the sync. The variant is asked first: one item can hold
         // fourteen variants that belong in three different aisles.
@@ -186,6 +196,7 @@ async function applyLiveOverlay(
 
     merged.push({
       ...row,
+      description: fresh.description ?? row.description,
       price: fresh.price,
       variablePrice: fresh.variablePrice,
       inStock: fresh.inStock,

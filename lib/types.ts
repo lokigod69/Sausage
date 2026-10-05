@@ -40,8 +40,19 @@ export interface Product {
   productName: string;
   /** Optional, subtle unit hint, e.g. "per kg", "500g". */
   unit?: string;
+  /**
+   * A line or two about the product, written by the shop in the Loyverse back
+   * office. Plain text — see plainText() in lib/loyverse.ts.
+   */
+  description?: string;
   /** Optional image path under /public/products/{slug}.jpg. */
   image?: string;
+  /**
+   * The photo's real pixel size, when we know it. Used by the enlarged view
+   * so a 206px picture is never stretched to fill a laptop screen.
+   */
+  imageWidth?: number;
+  imageHeight?: number;
   /** Optional free-form tags for search/filtering (public-safe only). */
   tags?: string[];
   /** Optional explicit feature flag — only honored if the source sets it. */
@@ -69,6 +80,9 @@ export interface Product {
 export interface RawProductRow {
   category?: string | null;
   productName?: string | null;
+  description?: string | null;
+  imageWidth?: number | null;
+  imageHeight?: number | null;
   product?: string | null; // alternate header spelling
   name?: string | null; // alternate header spelling
   unit?: string | null;
