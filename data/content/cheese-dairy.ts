@@ -24,7 +24,7 @@ export const cheeseDairy: CategoryContent = {
       heading: "How the cheese comes",
       paragraphs: [
         "Cheese is alive in a way that most food in a shop is not. Even a hard, aged cheese keeps changing: moisture leaves, fat migrates, and the flavour concentrates. Every cut exposes a new surface to air, and from that moment the clock runs faster.",
-        "That is why the cheese here arrives already packed rather than being cut open at a counter and re-wrapped. Packs run roughly 150 to 250 grams, which is a sensible amount for a household — enough for a week of cooking, small enough to finish before it tires. The hard cheeses are priced by the kilo, so the weight of the pack you pick decides what it costs.",
+        "That is why the hard cheeses are portioned into household packs here, ahead of time and sealed, rather than being cut open in front of you and re-wrapped at the counter. Packs run roughly 150 to 250 grams — enough for a week of cooking, small enough to finish before it tires — and they are priced by the kilo, so the weight of the pack you pick decides what it costs.",
         "The practical upshot in this climate is that the seal stays shut until you open it at home. A cut face that has spent three weeks sweating under cling film in a chiller is the thing worth avoiding, and the way to avoid it is not to create one.",
       ],
     },
@@ -68,7 +68,7 @@ export const cheeseDairy: CategoryContent = {
       paragraphs: [
         "For a cheese board, count 80 to 100 grams per person across three to five cheeses, and aim for contrast rather than quantity: something hard and aged, something soft, something blue, and one mild one for the people who are suspicious of the other three.",
         "For a household week, one pack of a cutting cheese and one of something for melting covers most cooking. Grana Padano is the exception — a small pack lasts a surprisingly long time, because you use it in grams rather than slices.",
-        "Where a cheese carries no brand in its name, it is our own label: bought from whichever supplier has the right product that month, with the shop's name on it rather than a brand that might change between visits. The cheese is the same quality either way; we would rather not promise you a brand we cannot guarantee next week.",
+        "A cheese listed here without a brand is one we portion ourselves, and it is priced by the kilo. We leave the brand off those on purpose: the supplier behind them can change between visits, and naming this week's would turn a sensible substitution into a broken promise. The sealed packs — the blue, the mozzarella in brine, the grated parmesan, the butter — keep their brand, because there the brand is part of what you are buying.",
       ],
     },
   ],

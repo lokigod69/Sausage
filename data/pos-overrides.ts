@@ -140,8 +140,19 @@ export const WEIGHT_PRICES: Record<string, WeightPrice> = {
  * purely cosmetic.
  */
 export const DISPLAY_NAMES: Record<string, string> = {
-  // The cheese counter. These arrive pre-packed; the suffix is dropped
-  // because the supplier behind our own label can change between visits.
+  // The cheese counter, and the rule for it: a cheese WE repack into household
+  // units loses its brand, a sealed pack from the producer keeps it.
+  //
+  // The two are easy to tell apart and the POS already does. Anything priced
+  // PER_KG above is variable weight, which means it was portioned here — those
+  // are the ones below. Anything with a gram weight in its name (Castello 100g,
+  // Bayernland 100g, Euro Chef 226g, Arla 200g, the 130g burger slices) arrives
+  // sealed from the producer, and that brand is part of what is being bought,
+  // so it stays on the shelf label and on the site.
+  //
+  // Why hide ours at all: the supplier behind an own-label cheese can change
+  // between visits, and naming this week's would turn a substitution into a
+  // broken promise.
   "Premium Red Cheddar (Sausage Guy)": "Premium Red Cheddar",
   "Mozzarella Cheese (Sausage Guy)": "Mozzarella Cheese",
   "White Cheddar (Emborg)": "White Cheddar",
@@ -152,11 +163,6 @@ export const DISPLAY_NAMES: Record<string, string> = {
   "Emmenthaler (Emborg)": "Emmenthaler",
   "Gran Amici (Emborg)": "Gran Amici",
   "Grana Padano (Emborg)": "Grana Padano",
-
-  // The one sealed pack that also drops its brand. The other branded packs
-  // (Castello, Bayernland, Euro Chef) keep theirs — the brand is on the
-  // packet the customer picks up, and is part of what they are buying.
-  "Cheddar Burger Slices 130g (Emborg)": "Cheddar Burger Slices 130g",
 
 };
 
