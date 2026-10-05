@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T02:58:09.981Z",
+  "generatedAt": "2026-10-05T03:12:13.765Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-10-05T02:58:09.981Z",
+      "syncedAt": "2026-10-05T03:12:13.765Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
@@ -934,6 +934,9 @@
           "posVariantId": "4dc57928-4f0e-4270-931e-b0376e18a75f",
           "category": "Cheese & Dairy",
           "productName": "Mozzarella in Brine 100g (Bayernland)",
+          "image": "/products/loyverse/8acfc7ff-82b5-4622-a3ad-f6b1dfd6c503.webp",
+          "imageWidth": 563,
+          "imageHeight": 443,
           "price": 185,
           "inStock": 0,
           "trackStock": true,
@@ -2182,6 +2185,9 @@
           "posVariantId": "822153c5-c929-4f8d-86b3-9fd52136df4a",
           "category": "Hams & Cold Cuts",
           "productName": "Mixed Cold Cuts (200g Pack)",
+          "image": "/products/loyverse/8866cd88-4315-47eb-943a-6771c2ae36b3.webp",
+          "imageWidth": 533,
+          "imageHeight": 400,
           "price": 210,
           "inStock": 18,
           "trackStock": true,
@@ -3803,11 +3809,11 @@
           "imageWidth": 320,
           "imageHeight": 426,
           "price": 185,
-          "inStock": 5,
+          "inStock": 4,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 5,
-          "stockUpdatedAt": "2026-10-04T05:54:02.000Z"
+          "stockUpdatedAt": "2026-10-05T02:59:15.000Z"
         },
         {
           "posVariantId": "0cff5b30-2a44-43de-a5d1-d1964cdc96dc",
@@ -5022,7 +5028,7 @@
           "posVariantId": "c05996f0-f775-4881-a002-91d3063904b5",
           "category": "Sausages",
           "productName": "Breakfast Sausage Patty",
-          "description": "Seasoned pork pressed into flat patties with sage and pepper, cooked already. Savoury and herb-forward, softer than a sausage in a casing.",
+          "description": "Seasoned pork pressed into flat patties with sage and pepper. Savoury and herb-forward, softer than a sausage in a casing.",
           "image": "/products/loyverse/af827340-1636-4316-b187-b79f1c7078d4.webp",
           "imageWidth": 320,
           "imageHeight": 426,
@@ -5085,16 +5091,16 @@
           "imageWidth": 300,
           "imageHeight": 300,
           "variablePrice": true,
-          "inStock": 1,
+          "inStock": 0,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-10-04T09:08:12.000Z"
+          "stockUpdatedAt": "2026-10-05T02:58:18.000Z"
         },
         {
           "posVariantId": "6530fd7e-8e0e-4ccb-b4e1-f1595fc26b0e",
           "category": "Sausages",
           "productName": "Chicken Chipolata",
-          "description": "Lean chicken, lightly seasoned, in a thin casing, cooked already. Light and delicate, the gentlest thing on the counter.",
+          "description": "Lean chicken, lightly seasoned, in a thin casing, sold raw. Light and delicate, the gentlest thing on the counter.",
           "unit": "per kg",
           "image": "/products/loyverse/d0f60de8-d6b9-4597-833d-e406d7cc9caf.webp",
           "imageWidth": 500,
@@ -5145,11 +5151,11 @@
           "imageWidth": 585,
           "imageHeight": 430,
           "variablePrice": true,
-          "inStock": 7,
+          "inStock": 6,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-10-03T09:08:28.000Z"
+          "stockUpdatedAt": "2026-10-05T02:58:18.000Z"
         },
         {
           "posVariantId": "63f84287-dffd-4011-83b2-3cc656b3d519",
@@ -5205,11 +5211,11 @@
           "imageWidth": 300,
           "imageHeight": 400,
           "variablePrice": true,
-          "inStock": 9,
+          "inStock": 8,
           "trackStock": true,
           "soldByWeight": false,
           "lowStock": 3,
-          "stockUpdatedAt": "2026-10-05T02:36:34.000Z"
+          "stockUpdatedAt": "2026-10-05T02:58:18.000Z"
         },
         {
           "posVariantId": "d4e2969a-6b05-41af-b69c-f5c7ca8cd393",
@@ -5230,7 +5236,7 @@
           "posVariantId": "63566d60-5413-460a-9e22-83e45718abe3",
           "category": "Sausages",
           "productName": "Mergese Sausage",
-          "description": "Lamb with harissa, cumin, garlic and paprika, sold raw. Fiery and aromatic, and noticeably lean next to a pork sausage.",
+          "description": "Lamb and beef with harissa, cumin, garlic and paprika, sold raw. Fiery and aromatic, and noticeably lean next to a pork sausage.",
           "image": "/products/loyverse/8fb9a6c9-068e-41d6-89bb-ac631442ae57.webp",
           "imageWidth": 500,
           "imageHeight": 500,
@@ -5246,6 +5252,9 @@
           "productName": "Nuernberger Sausage",
           "description": "Small finger-length pork sausages seasoned with marjoram, sold raw. Mild and herbal, with marjoram the flavour you notice first.",
           "unit": "per kg",
+          "image": "/products/loyverse/eb29e927-930e-4691-986e-23503b7f8dd9.webp",
+          "imageWidth": 487,
+          "imageHeight": 487,
           "variablePrice": true,
           "inStock": 1,
           "trackStock": true,
@@ -5269,10 +5278,10 @@
           "productName": "Spicy Italian with Fennel",
           "description": "Coarse pork with fennel seed and chilli. Sweet aniseed first, then a slow heat behind it.",
           "variablePrice": true,
-          "inStock": 20,
+          "inStock": 19,
           "trackStock": true,
           "soldByWeight": false,
-          "stockUpdatedAt": "2026-10-04T06:14:44.000Z"
+          "stockUpdatedAt": "2026-10-05T02:58:18.000Z"
         },
         {
           "posVariantId": "861cd98c-d706-4928-9467-a05204dfce1b",
@@ -5290,7 +5299,7 @@
           "posVariantId": "fb352d57-04b6-447e-a12a-ef2140a2c724",
           "category": "Sausages",
           "productName": "Veal Beef Bratwurst",
-          "description": "Veal and beef, finely ground and mildly seasoned with white pepper, cooked already. Pale, soft and delicate — the mildest bratwurst here.",
+          "description": "Veal and pork, finely ground and mildly seasoned with white pepper. Pale, soft and delicate — the mildest bratwurst here.",
           "unit": "per kg",
           "variablePrice": true,
           "inStock": 8,
@@ -5821,6 +5830,9 @@
           "posVariantId": "0a1f23f2-97f0-487d-801d-a901ea6c5624",
           "category": "Snacks & Sweets",
           "productName": "Nacho Chips",
+          "image": "/products/loyverse/9f94a5ab-6459-4a11-9ff6-0be8732f8a16.webp",
+          "imageWidth": 341,
+          "imageHeight": 341,
           "price": 385,
           "inStock": 1,
           "trackStock": true,
