@@ -18,7 +18,7 @@ export const readyMeals: CategoryContent = {
     {
       heading: "The trays: lasagna, stew, chili, shepherd's pie",
       paragraphs: [
-        "The expat meals come in two tray sizes — 3x8 inches, which feeds two, and 8x10, which feeds four to six. Lasagna, beef stew, chili con carne, beef and broccoli, sweet and sour chicken and shepherd's pie make up the range.",
+        "The expat meals come in a 3x8 inch tray, which feeds two. The lasagna is also made in 8x10, which feeds four to six. Beef stew, chili con carne, beef and broccoli, sweet and sour chicken and shepherd's pie make up the rest of the range.",
         "Lasagna reheats best covered with foil at 180 °C for twenty-five to thirty minutes from chilled, then uncovered for a final ten to brown the top. Going straight in uncovered dries the edges long before the middle is hot. From frozen, add twenty minutes and keep it covered for most of that time.",
         "The stews — beef stew and chili — are more forgiving and can go on the stovetop instead, which is faster and gives you better control. Low heat, a splash of water or stock, a lid, and stir occasionally. They are both better on the second day, which is true of every stew ever made.",
         "Shepherd's pie wants the opposite treatment to lasagna: uncovered the whole way, at 190 °C, so the potato on top dries and crisps. If the top is not browning, thirty seconds under a hot grill at the end finishes it.",

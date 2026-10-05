@@ -19,8 +19,8 @@ export const snacksSweets: CategoryContent = {
     {
       heading: "The crisps and crackers",
       paragraphs: [
-        "Hand-cooked potato chips from Hunter's Gourmet come in the flavours that explain their price: black truffle, black truffle and parmesan, white truffle, white truffle and porcini, pesto parmesan, quattro formaggi, smoky tandoori, sour cream and onion. Hand-cooked means fried in small batches at a lower temperature, which produces the harder, blistered, uneven crisp that is the point.",
-        "Quinoa chips in Peruvian sea salt, jalapeño cheddar, sweet chilli salsa and salt and vinegar are the lighter alternative, and Lorenz naturals in balsamic vinegar, rosemary and salted are the straightforward European ones.",
+        "Hand-cooked potato chips from Hunter's Gourmet are the expensive ones on this shelf, and the flavours are where the money goes — truffle, cheese and herb blends rather than ready salted. Which ones are in changes with the delivery, so the list on this page is the one to trust. Hand-cooked means fried in small batches at a lower temperature, which produces the harder, blistered, uneven crisp that is the point.",
+        "Quinoa chips are the lighter alternative, and the Lorenz naturals — balsamic vinegar, rosemary and salted — are the straightforward European ones.",
         "Locally, Malungay chips come in five — barbecue, cheese, classic, sour cream, sweet corn — made with moringa, and cassava chips in barbecue and sour cream and onion. Both are worth trying if you have only ever bought imported.",
         "Rice crackers from Yummy in seaweed and natural sweet are the mildest thing on the shelf and the one children reliably eat. Toasted garlic bread in 150g, original and less sugar, sits somewhere between a cracker and a rusk.",
       ],
@@ -37,7 +37,7 @@ export const snacksSweets: CategoryContent = {
     {
       heading: "Biltong, and snacks that are actually meat",
       paragraphs: [
-        "Traditional beef biltong is the one item on this shelf that belongs to the butcher rather than the grocer. It is South African air-dried beef, cured with vinegar, salt and coriander, and it is not jerky: jerky is cooked with heat and usually sweet, biltong is air-dried and savoury, and the texture is completely different.",
+        "Traditional beef biltong is the one item on this shelf that belongs with the meat counter rather than the grocery aisle. It is South African air-dried beef, cured with vinegar, salt and coriander, and it is not jerky: jerky is cooked with heat and usually sweet, biltong is air-dried and savoury, and the texture is completely different.",
         "It is high protein, very low sugar, and it keeps for weeks without refrigeration, which makes it the most useful thing here to put in a dive bag or take on a long ride.",
         "Roasted peanuts in shell and party snacks in 1kg bags are the volume end, for when people are coming over and nobody is going to be counting.",
       ],

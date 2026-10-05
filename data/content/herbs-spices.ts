@@ -55,7 +55,7 @@ export const herbsSpices: CategoryContent = {
       heading: "Buying from a seventy-line shelf",
       paragraphs: [
         "Seventy lines is more than any household needs, and the way to use this category is not to browse it but to search it. The list on this page reads live from the till and is searchable — type what your recipe calls for rather than scrolling.",
-        "Prices run from ₱55 to ₱195 a sachet, with the whole spices and the saffron at the top end and the powders and starches at the bottom. Nothing here is expensive enough to agonise over; the real cost of a spice shelf is the half of it that goes stale unused.",
+        "Prices start at ₱55 a sachet for the plain salts, powders and starches. The whole spices cost more, the blended rubs more again, and the asin tibuok sits well above everything else — it is hand-made Bohol salt rather than a commodity. Nothing here is expensive enough to agonise over; the real cost of a spice shelf is the half of it that goes stale unused.",
         "If you are setting up a kitchen, buy the ten above and add as recipes demand. If you are cooking one specific dish, buy exactly what it needs in the 50g size. And if you take one thing away from this page that you did not come for, make it the Asin Tibuok — it is made half an hour from the shop and there is nothing else like it.",
       ],
     },
