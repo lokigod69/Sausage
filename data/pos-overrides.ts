@@ -548,12 +548,17 @@ export const PRODUCT_DESCRIPTIONS: Record<string, string> = {
    * seasoning rather than claiming a recipe. If the kitchen wants to name the
    * actual spices, they belong here.
    */
+  /*
+   * From the shop's own recipe sheet. All three share one base — salt, garlic,
+   * onion, white and black pepper, oregano — and the quantities stay out of
+   * the text: it is the shop's recipe, and a customer wants the taste.
+   */
   "Beef Burger Patties 2-pack — US":
-    "Beef ground and pressed into two patties here, seasoned with nothing but salt and pepper. Plain and beef-forward — the one to pick when the toppings should lead.",
+    "Beef seasoned with salt, garlic, onion, pepper and oregano. Savoury and well rounded.",
   "Beef Burger Patties 2-pack — Mexican":
-    "Beef ground and pressed into two patties here, with chilli and warm spice worked through. The one with heat in it.",
+    "The US seasoning plus paprika, curry powder and a little cayenne. Warm and mildly spiced, not hot.",
   "Beef Burger Patties 2-pack — Rosemary":
-    "Beef ground and pressed into two patties here, seasoned with rosemary. Herbal and savoury rather than hot.",
+    "The US seasoning with rosemary added. Gently herby.",
 };
 
 const productDescriptions = new Map(

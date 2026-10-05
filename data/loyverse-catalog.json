@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T05:21:32.363Z",
+  "generatedAt": "2026-10-05T05:25:47.754Z",
   "branches": {
     "panglao": {
       "storeId": "dee620ec-081c-4094-833a-09df447b01de",
       "storeName": "The Sausage Guy",
       "currency": "PHP",
-      "syncedAt": "2026-10-05T05:21:32.363Z",
+      "syncedAt": "2026-10-05T05:25:47.754Z",
       "products": [
         {
           "posVariantId": "d19af4e8-fbda-45a7-901c-a9cbade440fb",
