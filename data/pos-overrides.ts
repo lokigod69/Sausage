@@ -553,12 +553,17 @@ export const PRODUCT_DESCRIPTIONS: Record<string, string> = {
    * onion, white and black pepper, oregano — and the quantities stay out of
    * the text: it is the shop's recipe, and a customer wants the taste.
    */
+  /*
+   * Each stands on its own. They open one at a time in the dialog, so a line
+   * that says "the same mix as the US one" leaves whoever tapped Rosemary
+   * reading about a burger that is not in front of them.
+   */
   "Beef Burger Patties 2-pack — US":
-    "Beef seasoned with salt, garlic, onion, pepper and oregano. Savoury and well rounded.",
+    "Beef with garlic, onion, pepper and a little oregano. Savoury and well rounded — the straight-ahead one, with room for whatever goes on top.",
   "Beef Burger Patties 2-pack — Mexican":
-    "The US seasoning plus paprika, curry powder and a little cayenne. Warm and mildly spiced, not hot.",
+    "Beef with garlic, onion, paprika, curry powder and a pinch of cayenne. Warm and a touch smoky-sweet from the paprika — spiced, not hot.",
   "Beef Burger Patties 2-pack — Rosemary":
-    "The US seasoning with rosemary added. Gently herby.",
+    "Beef with garlic, onion, pepper and dried rosemary. Just enough rosemary to catch: a clean pine note, not a herb burger.",
 };
 
 const productDescriptions = new Map(
