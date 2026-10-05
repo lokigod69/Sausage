@@ -11,7 +11,7 @@
  * a brand repeated from the name, a note that outgrew its dialog, a sentence
  * pointing at a product that has since been deleted from the till.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { getProductDescription } from "../data/pos-overrides.ts";
 
 type Row = {
@@ -212,6 +212,69 @@ for (const kind of order) {
   for (const h of hits) console.log(`    ${h.product}\n        ${h.detail}`);
   console.log("");
 }
+/*
+ * The same claims, in the copy around the products.
+ *
+ * Category articles and data/seo.ts are written by hand and drift out of step
+ * with the shop. Both reach further than a product note does: seo.ts becomes
+ * the meta description AND the category blurb in /llms.txt, so a sentence
+ * wrong there is wrong in Google and wrong in every assistant that reads the
+ * site. Three of these had rotted before anyone looked.
+ */
+const FORBIDDEN: { pattern: RegExp; why: string }[] = [
+  {
+    pattern: /\bbutcher\b/i,
+    why: "The shop is a meat and deli store. The word stays off the site, including as a figure of speech.",
+  },
+  {
+    /* Only cheese. "Steaks cut to order, sausages, cold cuts, cheese and
+       groceries" is a correct sentence that an unanchored pattern will
+       happily accuse, because the word cheese is nearby in a list. */
+    pattern: /cut from the block|cheese[^.]{0,25}cut to order/i,
+    why: "Cheese arrives in sealed household packs. Nothing is cut from a block. Steaks and cold cuts ARE cut and sliced to order — those are fine.",
+  },
+  {
+    pattern: /fresh (?:carabao|raw) milk|raw milk[^.]{0,30}\bfresh\b/i,
+    why: "The raw milk is sold frozen, to be defrosted in the chiller and used within two to three days.",
+  },
+  {
+    pattern: /cured in-house|we cure|we smoke|hand-tied|our own sausage meat/i,
+    why: "Sausages, bacon, hams and charcuterie are bought from local and homemade producers. The shop grinds beef and makes burgers and kofta; it cures and smokes nothing.",
+  },
+];
+
+const copyFiles = [
+  ...readdirSync("data/content")
+    .filter((f) => f.endsWith(".ts"))
+    .map((f) => `data/content/${f}`),
+  "data/seo.ts",
+];
+
+/*
+ * Comments are stripped first. Both of these files carry a doc comment that
+ * explains the rule by quoting the wrong version of it — "must not sell the
+ * place as a butcher's shop", "a section headed Why we cut from the block" —
+ * and a checker that reads those accuses the very note warning against them.
+ */
+const withoutComments = (src: string) =>
+  src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^\s*\/\/.*$/gm, " ");
+
+let copyProblems = 0;
+for (const file of copyFiles) {
+  const text = withoutComments(readFileSync(file, "utf8"));
+  for (const { pattern, why } of FORBIDDEN) {
+    const m = text.match(pattern);
+    if (!m) continue;
+    copyProblems++;
+    const at = text.slice(Math.max(0, m.index! - 70), m.index! + 90).replace(/\s+/g, " ");
+    console.log(`COPY — ${file}`);
+    console.log(`    matched: ${m[0]}`);
+    console.log(`    why    : ${why}`);
+    console.log(`    near   : ...${at}...\n`);
+  }
+}
+if (copyProblems) hard += copyProblems;
+
 if (ALLOWED.length) {
   console.log(`Allowed on purpose — ${ALLOWED.length}`);
   for (const a of ALLOWED) console.log(`    ${a.product} (${a.kind})\n        ${a.why}`);

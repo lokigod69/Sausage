@@ -144,13 +144,24 @@ export default async function CategoryPage({ params }: { params: Params }) {
         "@type": "ItemList",
         name: `${label} at ${branch.name}`,
         numberOfItems: products.length,
-        itemListElement: products.slice(0, 50).map((p, i) => ({
+        /*
+         * Every product, not the first fifty. Herbs & Spices carries seventy,
+         * so the cap quietly hid twenty of them from anything reading the
+         * structured data — including the assistants this is mostly for.
+         */
+        itemListElement: products.map((p, i) => ({
           "@type": "ListItem",
           position: i + 1,
           item: {
             "@type": "Product",
             name: p.productName,
             category: label,
+            /*
+             * The description is the field that makes this worth parsing. A
+             * name and a price answer "how much"; only this answers "is it
+             * mild", "what is in it", "is it ready to eat".
+             */
+            ...(p.description ? { description: p.description } : {}),
             ...(p.image ? { image: `${SITE_URL}${p.image}` } : {}),
             ...(p.price !== undefined
               ? {
@@ -158,6 +169,28 @@ export default async function CategoryPage({ params }: { params: Params }) {
                     "@type": "Offer",
                     price: p.price,
                     priceCurrency: p.currency ?? "PHP",
+                    /*
+                     * A steak at ₱3,300 costs ₱3,300 PER KILO, and a bare
+                     * price says it costs ₱3,300. That is the difference
+                     * between a reasonable answer and one that sends somebody
+                     * away thinking we sell four-thousand-peso steaks, so the
+                     * unit is stated for anything priced by weight.
+                     */
+                    ...(p.unit === "per kg"
+                      ? {
+                          priceSpecification: {
+                            "@type": "UnitPriceSpecification",
+                            price: p.price,
+                            priceCurrency: p.currency ?? "PHP",
+                            referenceQuantity: {
+                              "@type": "QuantitativeValue",
+                              value: 1,
+                              unitCode: "KGM",
+                              unitText: "kilogram",
+                            },
+                          },
+                        }
+                      : {}),
                     availability:
                       p.stock?.status === "out"
                         ? "https://schema.org/OutOfStock"

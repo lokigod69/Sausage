@@ -38,6 +38,16 @@ export async function GET() {
     const content = getCategoryContent(card.label);
     const url = `${SITE_URL}/${branch.slug}/${categorySlug(card.label)}`;
 
+    /*
+     * Name, price and — since every product now carries one — the description.
+     *
+     * The description is the reason this file is worth fetching. A price list
+     * answers "how much is the Cervelat"; it cannot answer "which of your
+     * sausages is mild enough for a child", "what is in the Mergese" or "do
+     * you have anything smoked that is ready to eat", which is most of what
+     * anyone actually asks. The sentence that answers those is sitting in the
+     * catalogue, and leaving it out made this a worse document than the page.
+     */
     const productLines = items
       .map((p) => {
         const price =
@@ -46,7 +56,8 @@ export async function GET() {
             : p.variablePrice
               ? "priced by weight at the counter"
               : "price on request";
-        return `- ${p.productName}${p.unit ? ` (${p.unit})` : ""} — ${price}`;
+        const head = `- ${p.productName}${p.unit ? ` (${p.unit})` : ""} — ${price}`;
+        return p.description ? `${head}\n  ${p.description}` : head;
       })
       .join("\n");
 

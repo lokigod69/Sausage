@@ -40,7 +40,7 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   Sausages: {
     title: "German Sausages in Panglao, Bohol",
     description:
-      "Bratwurst, Nürnberger, Weisswurst, cheese krainer, Landjäger, bangers and Merguez, sold by the kilo. Made by hand by small local producers. Panglao, Bohol.",
+      "Bratwurst, Nürnberger, Weisswurst, cheese krainer, Landjäger, bangers and Merguez, sold by the kilo. From small local and homemade producers. Panglao, Bohol.",
   },
   "Meat & Steaks": {
     title: "Steaks & Fresh Meat in Panglao, Bohol",
@@ -65,7 +65,7 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   "Cheese & Dairy": {
     title: "European Cheese & Dairy in Panglao, Bohol",
     description:
-      "Emmenthaler, Grana Padano, cheddar and mozzarella cut from the block, plus butter, yoghurt, kefir and fresh carabao, cow and goat milk. Panglao, Bohol.",
+      "Emmenthaler, Grana Padano, cheddar and mozzarella in sealed household packs, plus butter, yoghurt, kefir and frozen carabao, cow and goat milk. Panglao, Bohol.",
   },
   "Bakery & Desserts": {
     title: "Sourdough, Croissants & Cakes in Panglao",
@@ -85,7 +85,7 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   "Frozen Fruit & Veg": {
     title: "Frozen Berries & Vegetables in Panglao",
     description:
-      "Blueberries, raspberries, strawberries, broccoli, cauliflower, asparagus, peas and mushrooms in 1kg packs — the produce Bohol does not grow. Panglao.",
+      "Blueberries, raspberries, strawberries, broccoli, cauliflower, asparagus, peas and mushrooms, frozen — the produce Bohol does not grow. Panglao.",
   },
   "Pantry & Preserves": {
     title: "European Pantry Goods in Panglao, Bohol",
@@ -95,12 +95,12 @@ export const CATEGORY_SEO: Record<string, SeoEntry> = {
   "Herbs & Spices": {
     title: "Spices, Rubs & Salt in Panglao, Bohol",
     description:
-      "Seventy spices in 50g sachets, steak and fish rubs, and five salts including Asin Tibuok — Bohol's own smoked dinosaur-egg salt. Bolod, Panglao.",
+      "Seventy herbs, spices and blends, mostly in 50g sachets, with steak and fish rubs and eight salts including Asin Tibuok — Bohol's own smoked dinosaur-egg salt. Panglao.",
   },
   "Snacks & Sweets": {
     title: "Nuts, Chips & Chocolate in Panglao, Bohol",
     description:
-      "Nuts, dried fruit, truffle crisps, quinoa chips, Milka chocolate and South African beef biltong — imported and local snacks in Bolod, Panglao.",
+      "Nuts, dried fruit, hand-cooked crisps, quinoa chips, Milka chocolate and South African beef biltong — imported and local snacks in Bolod, Panglao.",
   },
   Drinks: {
     title: "Wine, Beer & Bohol Coffee in Panglao",
