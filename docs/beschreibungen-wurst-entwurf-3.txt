@@ -1,0 +1,132 @@
+SAMPLE 3 — written from the Euro-Swiss product list and your two corrections.
+Nothing written to Loyverse yet.
+
+What changed: Euro-Swiss sorts its sausages into smoked, cooked, fresh,
+hotdogs, dried and Oktoberfest. That tells us for every one of these whether
+it arrives raw, cooked, smoked or dried — a fact, not a guess, and the thing
+a customer most often wants to know. It is now the first half of each line.
+
+"?" still means: I am naming the meat from what the type normally is, not
+from your recipe. Fewer of them than last time.
+
+
+--- HOTDOGS ---
+
+Beef Hotdog
+  Pure beef, no pork, finely ground and mildly seasoned. Smooth and savoury
+  with no coarseness to it.
+
+Special Hotdog
+  Beef with pork fat, which is what makes it richer than the pure beef one.
+  Fuller and rounder in flavour, still mild.
+
+Cheese Hotdog  ?
+  Hotdog sausage with cheese worked through the mix. Mild and savoury, turning
+  creamy and salty where the cheese sits.
+
+
+--- SMOKED (arrive smoked and cooked through) ---
+
+Cervelat  ?
+  Beef, pork and bacon, finely ground and smoked. Mild, smooth and gently
+  smoky — Switzerland's everyday sausage.
+
+Frankfurter  ?
+  Finely ground pork and beef, smoked, in a slim casing. Smooth, lightly
+  salty, with a clean mild smoke.
+
+Wienerli  ?
+  The slimmer Swiss wiener, smoked, sold in pairs. Mild and smooth, a little
+  gentler than the frankfurter.
+
+Cheesekrainer  ?
+  Coarse smoked pork with pockets of cheese through it. Smoky and salty, with
+  soft cheese running through each bite.
+
+Hungarian Cheesy Sausage  ?
+  Coarse pork heavy with sweet paprika, with cheese through it. Warm and
+  smoky-sweet rather than hot, rounded off by the cheese.
+
+Hungarian Spicy Sausage  ?
+  Coarse pork with hot and sweet paprika, garlic and chilli. The hottest
+  sausage on the counter, with the deep red sweetness of paprika underneath.
+
+Italian Garlic  ?
+  Smoked pork with a lot of garlic and black pepper. Big and savoury, garlic
+  first and last.
+
+Kielbasa  ?
+  Pork with garlic and marjoram, wood-smoked. Deeply savoury and smoky, firm
+  rather than juicy.
+
+
+--- COOKED (ready to eat, just warm through) ---
+
+Breakfast Sausage Patty  ?
+  Seasoned pork pressed into flat patties with sage and pepper. Savoury and
+  herb-forward, softer than a sausage in a casing.
+
+Veal Beef Bratwurst
+  Veal and beef, finely ground and mildly seasoned with white pepper. Pale,
+  soft and delicate — the mildest bratwurst here.
+
+Chicken Chipolata  ?
+  Lean chicken, lightly seasoned, in a thin casing. Light and delicate, the
+  gentlest thing on the counter.
+
+
+--- FRESH (raw, cook from scratch) ---
+
+English Bangers  ?
+  Pork with rusk, white pepper and sage. Mild and soft-textured, more bready
+  and tender than a German sausage.
+
+Mergese Sausage  ?
+  Lamb with harissa, cumin, garlic and paprika. Fiery and aromatic, and
+  noticeably lean next to a pork sausage.
+
+Nuernberger Sausage  ?
+  Small finger-length pork sausages seasoned with marjoram. Mild and herbal,
+  with marjoram the flavour you notice first.
+
+
+--- DRIED (keep without a fridge, eat as they are) ---
+
+Beer Sticks  ?
+  Beef and pork, air-dried and lightly smoked. Dense, chewy and salty with a
+  sour tang from the drying.
+
+Buure Schueblig  ?
+  Swiss farmhouse sausage of beef and pork, dried and smoked. Strongly meaty
+  and smoky, with a savoury finish.
+
+Landjaeger  ?
+  Beef and pork, air-dried and cold-smoked, pressed flat. Dense and chewy,
+  salty with a sour edge.
+
+
+--- NEED A WORD FROM YOU ---
+
+Bratwurst (Classic)
+  Euro-Swiss lists a Pork Bratwurst (Oktoberfest only) and a Veal Bratwurst
+  (cooked). Which is yours? The answer changes both the meat and whether it
+  arrives raw.
+
+Italian Sausage
+Spicy Italian with Fennel
+  Neither is on the Euro-Swiss list. Different supplier, or is one of them
+  their Luganighe?
+
+
+--- SOMETHING ELSE WORTH KNOWING ---
+
+Euro-Swiss marks two of your sausages as OKTOBERFEST, "available September to
+October only":
+
+  Thüringerian Bratwurst
+  White Sausage (Weisswurst)
+
+They are in season right now, and off the list in a few weeks. The website
+lists them like everything else. Worth deciding what it should say when they
+go — the stock count will drop to zero on its own, but a customer who came
+for Weisswurst in January deserves better than "sold out".

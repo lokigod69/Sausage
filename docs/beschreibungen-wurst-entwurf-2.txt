@@ -1,0 +1,125 @@
+SAMPLE 2 — taste and ingredients. Nothing written to Loyverse yet.
+
+Format: first sentence = what is in it. Second = what it tastes like.
+
+A "?" marks where I am describing what the TYPE normally contains, not what
+YOUR product contains. Those need checking at the counter before they go live
+— especially pork, see the note at the end.
+
+
+Beef Hotdog
+  Finely ground beef with salt, pepper and a little paprika, in a skinless
+  casing. Smooth and mild, the familiar hot dog flavour with no coarseness
+  to it.
+
+Beer Sticks  ?
+  Air-dried beef and pork, salted and lightly smoked. Dense and chewy, salty
+  with a sour tang from the drying.
+
+Bratwurst (Classic)  ?
+  Coarse pork with salt, white pepper and a touch of nutmeg. Mild and meaty
+  rather than spiced — the sausage every other bratwurst is measured against.
+
+Breakfast Sausage Patty  ?
+  Seasoned pork pressed flat, with sage and pepper. Savoury and herb-forward,
+  softer than a cased sausage.
+
+Buure Schueblig  ?
+  Swiss farmhouse sausage of pork and beef, lightly smoked. Mild, faintly
+  sweet, with a clean smoke that does not dominate.
+
+Cervelat  ?
+  Finely ground pork and beef, smoked. Smooth, mild and lightly smoky — the
+  sausage Swiss children grow up on.
+
+Cheese Hotdog
+  Hot dog sausage with cheese worked through the mix. Mild and savoury, the
+  cheese turning creamy where it melts.
+
+Cheesekrainer  ?
+  Coarse smoked pork studded with pockets of cheese. Smoky and salty, with
+  bursts of soft cheese through it.
+
+Chicken Chipolata  ?
+  Lean chicken, mildly seasoned, in a thin casing. Light and delicate — the
+  gentlest sausage on the counter.
+
+English Bangers  ?
+  Pork with rusk, white pepper and sage. Soft-textured and mild, more bready
+  and tender than a German sausage.
+
+Frankfurter  ?
+  Finely ground pork and beef, lightly smoked. Smooth, salty and mild, with a
+  clean snap to the skin.
+
+Hungarian Cheesy Sausage  ?
+  Coarse pork heavy with sweet paprika, with cheese through it. Warm and
+  smoky-sweet rather than hot, softened by the cheese.
+
+Hungarian Spicy Sausage  ?
+  Coarse pork with sweet and hot paprika, garlic and chilli. The hottest
+  sausage here — properly fiery, with the deep red sweetness of paprika
+  underneath.
+
+Italian Garlic  ?
+  Coarse pork with garlic, salt and pepper. Big, savoury and garlic-forward.
+
+Italian Sausage  ?
+  Coarse pork with fennel seed, salt and pepper. Savoury with the sweet
+  aniseed note of fennel that makes it unmistakably Italian.
+
+Kielbasa  ?
+  Pork with garlic and marjoram, smoked over wood. Deeply savoury and smoky,
+  firm rather than juicy.
+
+Landjaeger  ?
+  Beef and pork, air-dried and cold-smoked. Dense, chewy and salty, with a
+  sour tang from the drying.
+
+Mergese Sausage  ?
+  Lamb with harissa, cumin, garlic and paprika. Fiery and aromatic, and
+  noticeably lean next to a pork sausage.
+
+Nuernberger Sausage  ?
+  Finger-sized pork sausages seasoned with marjoram. Mild and herbal, with
+  marjoram as the flavour you notice first.
+
+Special Hotdog  ??
+  I do not know what makes this one special — tell me and I will write it.
+
+Spicy Italian with Fennel  ?
+  Coarse pork with fennel seed and chilli. Sweet aniseed first, then a slow
+  heat behind it.
+
+Thüringerian Bratwurst  ?
+  Pork with marjoram, caraway and garlic. More strongly seasoned than a
+  classic bratwurst, with marjoram leading.
+
+Veal Beef Bratwurst  ?
+  Veal and beef, finely ground, mildly seasoned. Pale, soft and delicate —
+  milder than any pork bratwurst.
+
+White Sausage
+  Veal and pork, very finely ground, with parsley, lemon zest and mace.
+  Delicate, milky and barely seasoned — the mildest thing on the counter.
+
+Wienerli  ?
+  Finely ground pork and beef, lightly smoked, in a slim casing. Smooth and
+  mild with a gentle smoke.
+
+
+---------------------------------------------------------------------------
+BEFORE ANY OF THIS GOES LIVE
+
+Nearly every line above names pork. That is what these sausage types normally
+contain — but I have not seen your recipes, and in the Philippines whether a
+product contains pork is not a detail. A Muslim customer reading "beef" and
+getting pork is a real harm, not a typo.
+
+So: someone at the counter needs to confirm the meat in each one before these
+are published. Same for the three that could carry allergens — the rusk in
+the bangers is wheat, and the cheese ones are dairy.
+
+If that check is too much work right now, the safe version is to drop the
+ingredient sentence and keep only the taste. Say the word and I will rewrite
+them that way.

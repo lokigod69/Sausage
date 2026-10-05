@@ -1,0 +1,78 @@
+SAMPLE — Sausage descriptions, 25 items. Nothing written to Loyverse yet.
+
+Beef Hotdog
+  Smooth, finely ground beef sausage in a skinless casing — the familiar hot dog, sold by weight rather than in a sealed pack. Simmer in water just off the boil for five minutes; a rolling boil splits them.
+
+Beer Sticks
+  Dried, firm snacking sausage, cut from the length rather than cooked. Keeps for weeks in the fridge and needs nothing done to it.
+
+Bratwurst (Classic)
+  The everyday German bratwurst: coarse pork in a natural casing, pale and plump, raw. Fry on a medium heat for twelve to fifteen minutes and turn often — too hot and the skin splits before the middle is done.
+
+Breakfast Sausage Patty
+  Seasoned sausage meat pressed into flat patties, no casing, ready for the pan. Four to five minutes a side in a dry pan is enough; they release their own fat.
+
+Buure Schueblig
+  Swiss farmhouse sausage, lightly smoked and already cooked through. Heat it gently in water at about 80 °C for ten minutes — boiling bursts the skin and the flavour goes into the pot.
+
+Cervelat
+  Switzerland's everyday sausage: short, thick, smooth and smoked, eaten hot or cold. Score the ends in a cross before grilling and they curl open.
+
+Cheese Hotdog
+  Hot dog sausage with cheese worked through it, so it melts as it heats. Grill or pan-fry rather than boil, or the cheese leaches out.
+
+Cheesekrainer
+  Austrian smoked sausage with pockets of cheese inside, sold by the kilo. Grill it until the skin blisters — the cheese should be running when you cut it.
+
+Chicken Chipolata
+  Thin chicken sausages, mild and lean, sold in their links. They cook faster than a pork sausage and dry out quickly, so eight minutes on a medium heat is plenty.
+
+English Bangers
+  The British breakfast sausage: pork, pale and soft-textured, with rusk in the mix that makes it tender rather than springy. Cook slowly — the name comes from what happens when the pan is too hot.
+
+Frankfurter
+  Long, slender, lightly smoked and already cooked. Hot water for five minutes and no further; frankfurters are ruined by boiling.
+
+Hungarian Cheesy Sausage
+  Paprika-red Hungarian sausage with cheese through it. Grill or pan-fry on a medium heat so the cheese softens without escaping.
+
+Hungarian Spicy Sausage
+  Coarse pork heavy with paprika and chilli — the hottest sausage on this counter. Good in a stew or with potatoes, where the fat carries the spice through the dish.
+
+Italian Garlic
+  Coarse Italian pork sausage with garlic through it, raw. Squeeze it out of the casing for a ragù, or leave it whole and roast it with peppers.
+
+Italian Sausage
+  Coarse pork with fennel seed, the classic Italian butcher's sausage. The meat out of the casing is the base of a proper ragù; whole, it wants a slow pan.
+
+Kielbasa
+  Thick Polish smoked sausage, already cooked, sold in its horseshoe. Slice it into a pan of cabbage or potatoes — it is a seasoning as much as a meat.
+
+Landjaeger
+  Flat, dark, air-dried snacking sausage that keeps without a fridge. Eat it as it is, with bread and a beer; cooking it is a waste.
+
+Mergese Sausage
+  Merguez: thin North African lamb sausage, deep red with harissa and cumin. Very lean, so it cooks in minutes and turns dry if you leave it on.
+
+Nuernberger Sausage
+  Small finger-length pork sausages from Nuremberg, seasoned with marjoram. Traditionally eaten three or six at a time; two minutes a side on a hot pan.
+
+Special Hotdog
+  A plumper hot dog than the standard beef one, sold by weight. Simmer gently or grill — never a hard boil.
+
+Spicy Italian with Fennel
+  Coarse Italian pork with fennel seed and chilli. The heat is in the sausage rather than the sauce, so it suits a plain tomato base.
+
+Thüringerian Bratwurst
+  Long, slim bratwurst from Thuringia, seasoned with marjoram and caraway. Grilled over charcoal is the point of it; a pan works but loses the smoke.
+
+Veal Beef Bratwurst
+  Pale, finely textured bratwurst of veal and beef — milder and softer than the pork classic. Gentle heat only; it has little fat to protect it.
+
+White Sausage
+  Bavarian Weisswurst: very pale, delicate, veal and pork with parsley and lemon. Heat in water at 70-80 °C for ten minutes and never boil it, then eat the inside and leave the skin.
+
+Wienerli
+  Slim Swiss wiener, smoked and already cooked, sold in pairs. Hot water for a few minutes is all it needs.
+
+Dry run. Pass --apply to write.
