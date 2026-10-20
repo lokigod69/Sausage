@@ -11,7 +11,8 @@
     "sync:loyverse": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local scripts/sync-loyverse.mts",
     "sync:reviews": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local scripts/sync-reviews.mts",
     "migrate:categories": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local scripts/migrate-loyverse-categories.mts",
-    "gen:images": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local scripts/generate-category-images.mts"
+    "gen:images": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local scripts/generate-category-images.mts",
+    "push": "bash scripts/push.sh"
   },
   "dependencies": {
     "next": "15.5.19",
